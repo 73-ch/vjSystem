@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ofMain.h"
-#include "ofxOsc.h"
-#include "ofxPubSubOsc.h"
+#include "common_settings.h"
+
+#include "SceneManager.h"
 
 class ofApp : public ofBaseApp{
 
