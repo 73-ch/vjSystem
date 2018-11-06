@@ -10,7 +10,9 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
-
+    
+        void initOsc();
+    
 		void keyPressed(int key);
 		void keyReleased(int key);
 		void mouseMoved(int x, int y );
@@ -23,4 +25,14 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
+    
+    ofxOscReceiver receiver;
+    SceneManager manager;
+    
+    ofShader post_processing;
+
+    
+    glm::vec4 seeds;
+    
+    string default_vertex = "#version 150\nuniform mat4 modelViewProjectionMatrix;in vec4 position;void main(){gl_Position = modelViewProjectionMatrix * position;}";
 };

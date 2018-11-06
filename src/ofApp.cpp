@@ -2,17 +2,49 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    // oF setup
+    ofSetBackgroundColor(0);
+    ofSetVerticalSync(false);
+    
+    ofxPublishOsc(MAX_HOST, MAX_PORT, "/fps", &ofGetFrameRate);
+    
+//    receiver.setup(3884);
+    
+    // post_processingのソース変更
+    post_processing.load("InitShader/default.vert", "InitShader/default.frag");
+    
+    initOsc();
+}
 
+void ofApp::initOsc() {
+    ofxSubscribeOsc(OF_PORT, "/post_processing/fragment", [=](const string &str) {
+        post_processing.setupShaderFromSource(GL_VERTEX_SHADER, default_vertex);
+        post_processing.setupShaderFromSource(GL_FRAGMENT_SHADER, str);
+        post_processing.bindDefaults();
+        post_processing.linkProgram();
+    });
+    
+    ofxSubscribeOsc(OF_PORT, "/post_processing/seeds", seeds);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+    post_processing.begin();
+    
+    ofSetColor(255);
+    
+    post_processing.setUniform4f("seeds", seeds);
+    
+    // debug
+    ofDrawPlane(0, 0, ofGetWidth(), ofGetHeight());
+    //
+    
+    post_processing.end();
 }
 
 //--------------------------------------------------------------
