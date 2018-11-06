@@ -6,9 +6,7 @@ void ofApp::setup(){
     ofSetBackgroundColor(0);
     ofSetVerticalSync(false);
     
-    ofxPublishOsc(MAX_HOST, MAX_PORT, "/fps", &ofGetFrameRate);
     
-//    receiver.setup(3884);
     
     // post_processingのソース変更
     post_processing.load("InitShader/default.vert", "InitShader/default.frag");
@@ -17,6 +15,8 @@ void ofApp::setup(){
 }
 
 void ofApp::initOsc() {
+    ofxPublishOsc(MAX_HOST, MAX_PORT, "/fps", &ofGetFrameRate);
+    
     ofxSubscribeOsc(OF_PORT, "/post_processing/fragment", [=](const string &str) {
         post_processing.setupShaderFromSource(GL_VERTEX_SHADER, default_vertex);
         post_processing.setupShaderFromSource(GL_FRAGMENT_SHADER, str);
