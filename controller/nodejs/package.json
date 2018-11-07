@@ -1,0 +1,17 @@
+{
+  "name": "controller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "filewatcher": "^3.0.1",
+    "fs": "0.0.1-security",
+    "glslify-import": "^3.1.0",
+    "npm": "^6.4.1"
+  }
+}

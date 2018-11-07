@@ -2,7 +2,7 @@
 	"name" : "controller",
 	"version" : 1,
 	"creationdate" : 3624367987,
-	"modificationdate" : 3624399490,
+	"modificationdate" : 3624368006,
 	"viewrect" : [ 25.0, 47.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -15,18 +15,6 @@
 				"local" : 1,
 				"toplevel" : 1
 			}
-
-		}
-,
-		"code" : 		{
-			"main.js" : 			{
-				"kind" : "javascript",
-				"local" : 1
-			}
-
-		}
-,
-		"externals" : 		{
 
 		}
 
