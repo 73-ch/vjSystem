@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 440.0, 90.0, 945.0, 617.0 ],
+		"rect" : [ 662.0, 543.0, 945.0, 617.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,14 +39,96 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-91",
-					"linecount" : 10,
+					"id" : "obj-155",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 717.4285888671875, 232.0, 99.0, 22.0 ],
+					"text" : "r shader-watcher"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-153",
+					"linecount" : 25,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 466.0, 444.0, 253.0, 143.0 ],
-					"text" : "test2.glsl \"#version 150\n#define GLSLIFY 1\n\nattribute vec4 position;\nattribute vec4 color;\nattribute vec4 normal;\n\nvoid main() {\n    gl_Position = vec4((1.0));\n}\""
+					"patching_rect" : [ 250.0, 543.0, 291.0, 344.0 ],
+					"text" : "\"#version 150\n#define GLSLIFY 1\n\nout vec4 outputColor;\n\nvoid main()\n{\n    // gl_FragCoord contains the window relative coordinate for the fragment.\n    // we use gl_FragCoord.x position to control the red color value.\n    // we use gl_FragCoord.y position to control the green color value.\n    // please note that all r, g, b, a values are between 0 and 1.\n\n    float windowWidth = 1024.0;\n    float windowHeight = 768.0;\n\n    float r = gl_FragCoord.x / windowWidth;\n    float g = gl_FragCoord.y / windowHeight;\n    float b = 1.0;\n    float a = 1.0;\n    outputColor = vec4(r, g, b, a);\n}\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-150",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 556.2618408203125, 442.0, 118.0, 22.0 ],
+					"text" : "test/gradation.frag"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-131",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 454.2618408203125, 457.0, 79.0, 22.0 ],
+					"text" : "r shader_text"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-129",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 556.2618408203125, 487.5238037109375, 36.0, 22.0 ],
+					"text" : "route"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-146",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 556.2618408203125, 523.0, 197.0, 22.0 ],
+					"text" : "prepend /post_processing/fragment"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-142",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 591.5, 399.0, 150.0, 20.0 ],
+					"text" : "shader_selector"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-130",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 616.0, 310.095245361328125, 81.0, 22.0 ],
+					"text" : "s shader_text"
 				}
 
 			}
@@ -57,52 +139,16 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-89",
+					"id" : "obj-126",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "n4m.monitor.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 835.0, 356.0, 400.0, 220.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-88",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"name" : "shader_select.maxpat",
+					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 890.0, 402.0, 55.0, 22.0 ],
-					"text" : "filewatch"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-87",
-					"items" : "<empty>",
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 722.0, 319.0, 100.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-84",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 611.5, 338.0, 68.0, 22.0 ],
-					"text" : "sel test.glsl"
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 556.2618408203125, 397.0, 24.0, 24.0 ],
+					"viewvisibility" : 1
 				}
 
 			}
@@ -112,7 +158,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 611.5, 402.0, 67.0, 22.0 ],
+					"patching_rect" : [ 556.2618408203125, 558.0, 67.0, 22.0 ],
 					"text" : "s osc-send"
 				}
 
@@ -123,7 +169,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 620.0, 432.0, 150.0, 20.0 ],
+					"patching_rect" : [ 616.0, 154.619049072265625, 150.0, 20.0 ],
 					"text" : "shader watch"
 				}
 
@@ -135,7 +181,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 784.0, 277.0, 51.0, 22.0 ],
+					"patching_rect" : [ 784.0, 299.0, 51.0, 22.0 ],
 					"text" : "sel start"
 				}
 
@@ -147,7 +193,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 721.0, 199.0, 109.0, 22.0 ],
+					"patching_rect" : [ 717.4285888671875, 199.0, 109.0, 22.0 ],
 					"text" : "setDir ../../shaders/"
 				}
 
@@ -171,7 +217,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 616.0, 247.0, 219.0, 22.0 ],
+					"patching_rect" : [ 616.0, 269.0, 219.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
@@ -241,7 +287,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 423.0, 225.0, 50.0, 22.0 ]
+					"patching_rect" : [ 210.0, 403.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -254,7 +300,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 366.0, 225.0, 50.0, 22.0 ]
+					"patching_rect" : [ 153.0, 403.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -267,7 +313,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 309.0, 225.0, 50.0, 22.0 ]
+					"patching_rect" : [ 96.0, 403.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -280,7 +326,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 252.0, 225.0, 50.0, 22.0 ]
+					"patching_rect" : [ 39.0, 403.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -291,7 +337,7 @@
 					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 252.0, 301.0, 81.0, 22.0 ],
+					"patching_rect" : [ 39.0, 479.0, 81.0, 22.0 ],
 					"text" : "pak 0. 0. 0. 0."
 				}
 
@@ -303,7 +349,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 252.0, 345.0, 182.0, 22.0 ],
+					"patching_rect" : [ 39.0, 523.0, 182.0, 22.0 ],
 					"text" : "prepend /post_processing/seeds"
 				}
 
@@ -314,20 +360,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 252.0, 438.0, 67.0, 22.0 ],
+					"patching_rect" : [ 39.0, 576.0, 67.0, 22.0 ],
 					"text" : "s osc-send"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 611.5, 368.0, 167.0, 22.0 ],
-					"text" : "/post_processing/fragment $2"
 				}
 
 			}
@@ -486,7 +520,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 78.0, 51.0, 37.0, 22.0 ],
+					"patching_rect" : [ 48.5, 25.0, 37.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -500,6 +534,66 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-150", 1 ],
+					"order" : 0,
+					"source" : [ "obj-126", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-150", 0 ],
+					"order" : 1,
+					"source" : [ "obj-126", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-146", 0 ],
+					"order" : 0,
+					"source" : [ "obj-129", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-153", 1 ],
+					"order" : 1,
+					"source" : [ "obj-129", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-129", 0 ],
+					"source" : [ "obj-131", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-83", 0 ],
+					"source" : [ "obj-146", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-129", 1 ],
+					"source" : [ "obj-150", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"source" : [ "obj-155", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-38", 0 ]
@@ -557,24 +651,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-77", 0 ],
-					"order" : 0,
-					"source" : [ "obj-52", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-89", 0 ],
-					"order" : 1,
-					"source" : [ "obj-52", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-91", 1 ],
+					"destination" : [ "obj-130", 0 ],
 					"source" : [ "obj-52", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-77", 0 ],
+					"source" : [ "obj-52", 1 ]
 				}
 
 			}
@@ -599,31 +684,12 @@
 				}
 
 			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-83", 0 ],
-					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-84", 0 ]
-				}
-
-			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "n4m.monitor.maxpat",
-				"bootpath" : "C74:/packages/Node For Max/patchers/debug-monitor",
+				"name" : "shader_select.maxpat",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.0_osx_release/apps/myApps/vjSystem/controller/patchers",
+				"patcherrelativepath" : ".",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "resize_n4m_monitor_patcher.js",
-				"bootpath" : "C74:/packages/Node For Max/patchers/debug-monitor",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
