@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 890.0, 309.0, 945.0, 617.0 ],
+		"rect" : [ 661.0, 74.0, 945.0, 617.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,12 +39,97 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-75",
+					"linecount" : 5,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 336.0, 614.0, 206.0, 76.0 ],
+					"text" : "test2.glsl \"#version 150\n\nvoid main() {\n    \n}\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-73",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 712.0, 432.0, 109.0, 22.0 ],
+					"text" : "setDir ../../shaders/"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-71",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 667.0, 330.0, 98.0, 22.0 ],
+					"text" : "script npm install"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-67",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 385.0, 523.0, 168.0, 22.0 ],
+					"text" : "addFile ../../shaders/test.glsl"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-63",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 788.0, 330.0, 49.0, 22.0 ],
+					"text" : "test.glsl"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-60",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 709.0, 366.0, 127.0, 22.0 ],
+					"text" : "sprintf ../../shaders/%s"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-57",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 522.0, 412.0, 95.0, 22.0 ],
+					"text" : "prepend addFile"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-55",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 530.0, 405.0, 64.0, 22.0 ],
+					"patching_rect" : [ 620.0, 405.0, 64.0, 22.0 ],
 					"text" : "script start"
 				}
 
@@ -63,7 +148,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 620.0, 492.0, 400.0, 220.0 ],
+					"patching_rect" : [ 579.5, 500.0, 400.0, 220.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -75,16 +160,16 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 530.0, 449.0, 109.0, 22.0 ],
+					"patching_rect" : [ 411.0, 470.0, 147.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
 						"node" : "",
-						"npm" : "",
+						"npm" : "install",
 						"watch" : 0
 					}
 ,
-					"text" : "node.script main.js"
+					"text" : "node.script nodejs/main.js"
 				}
 
 			}
@@ -245,7 +330,7 @@
 					"outlettype" : [ "", "int", "", "" ],
 					"outputmode" : 1,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 620.0, 41.5, 288.0, 215.0 ],
+					"patching_rect" : [ 748.0, 41.5, 288.0, 215.0 ],
 					"text" : "#version 150\nuniform vec4 seeds;\nout vec4 outputColor;\nvoid main(){\nfloat windowWidth = 1024.0;\nfloat windowHeight = 768.0;\nfloat r = gl_FragCoord.x / windowWidth;\nfloat g = gl_FragCoord.y / windowHeight;\nfloat b = 1.0;\nfloat a = 1.0;\noutputColor = vec4(r,g,b,seeds.w);\n}"
 				}
 
@@ -502,8 +587,57 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-75", 1 ],
+					"source" : [ "obj-52", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-52", 0 ],
 					"source" : [ "obj-55", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-67", 1 ],
+					"source" : [ "obj-57", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-57", 0 ],
+					"source" : [ "obj-60", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-60", 0 ],
+					"source" : [ "obj-63", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"source" : [ "obj-67", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"source" : [ "obj-71", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"source" : [ "obj-73", 0 ]
 				}
 
 			}
