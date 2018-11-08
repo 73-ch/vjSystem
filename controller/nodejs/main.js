@@ -14,6 +14,10 @@ Max.addHandler("stop", () => {
   clearFolderDir();
 });
 
+Max.addHandler("getFile", (__file_name) => {
+  outputFile(__file_name);
+});
+
 const setFolderDir = (__path) => {
   if (folder_path) clearFolderDir();
 
