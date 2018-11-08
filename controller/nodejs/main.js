@@ -1,5 +1,7 @@
 const Max = require('max-api');
 const FS = require('fs');
+const glslify = require('glslify');
+const glsl = require('glslify-import');
 
 let folder_path = "";
 let watcher;
@@ -27,12 +29,14 @@ const clearFolderDir = () => {
 };
 
 const outputFile = async (file_name) => {
-  console.log("output : " + folder_path + file_name);
-  fetchFile(folder_path + file_name).then((text) => {
-    console.log("read");
+  console.log("change : " + file_name);
 
-    console.log(text);
-    Max.outlet([file_name, text]);
+  fetchFile(folder_path + file_name).then((text) => {
+    const imported = glsl(folder_path + file_name, text, {});
+
+    const required = glslify.compile(imported, {basedir: folder_path});
+
+    Max.outlet([file_name, required]);
   });
 
 };

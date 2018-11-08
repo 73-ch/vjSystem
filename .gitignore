@@ -1,2 +1,6 @@
 vjSystem.xcodeproj
 bin/vjSystemDebug.app
+
+controller/nodejs/node_modules/*
+controller/nodejs/package-lock.json
+controller/.idea/*

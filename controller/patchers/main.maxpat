@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 661.0, 74.0, 945.0, 617.0 ],
+		"rect" : [ 440.0, 90.0, 945.0, 617.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,98 +39,14 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-75",
-					"linecount" : 5,
+					"id" : "obj-91",
+					"linecount" : 10,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 336.0, 614.0, 206.0, 76.0 ],
-					"text" : "test2.glsl \"#version 150\n\nvoid main() {\n    \n}\""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-73",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 712.0, 432.0, 109.0, 22.0 ],
-					"text" : "setDir ../../shaders/"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-71",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 667.0, 330.0, 98.0, 22.0 ],
-					"text" : "script npm install"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-67",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 385.0, 523.0, 168.0, 22.0 ],
-					"text" : "addFile ../../shaders/test.glsl"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-63",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 788.0, 330.0, 49.0, 22.0 ],
-					"text" : "test.glsl"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-60",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 709.0, 366.0, 127.0, 22.0 ],
-					"text" : "sprintf ../../shaders/%s"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-57",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 522.0, 412.0, 95.0, 22.0 ],
-					"text" : "prepend addFile"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-55",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 620.0, 405.0, 64.0, 22.0 ],
-					"text" : "script start"
+					"patching_rect" : [ 466.0, 444.0, 253.0, 143.0 ],
+					"text" : "test2.glsl \"#version 150\n#define GLSLIFY 1\n\nattribute vec4 position;\nattribute vec4 color;\nattribute vec4 normal;\n\nvoid main() {\n    gl_Position = vec4((1.0));\n}\""
 				}
 
 			}
@@ -141,15 +57,110 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-53",
+					"id" : "obj-89",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "n4m.monitor.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 579.5, 500.0, 400.0, 220.0 ],
+					"patching_rect" : [ 835.0, 356.0, 400.0, 220.0 ],
 					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-88",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 890.0, 402.0, 55.0, 22.0 ],
+					"text" : "filewatch"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-87",
+					"items" : "<empty>",
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 722.0, 319.0, 100.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-84",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 611.5, 338.0, 68.0, 22.0 ],
+					"text" : "sel test.glsl"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-83",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 611.5, 402.0, 67.0, 22.0 ],
+					"text" : "s osc-send"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-82",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 620.0, 432.0, 150.0, 20.0 ],
+					"text" : "shader watch"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-77",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 784.0, 277.0, 51.0, 22.0 ],
+					"text" : "sel start"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-73",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 721.0, 199.0, 109.0, 22.0 ],
+					"text" : "setDir ../../shaders/"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-55",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 616.0, 199.0, 64.0, 22.0 ],
+					"text" : "script start"
 				}
 
 			}
@@ -160,16 +171,16 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 411.0, 470.0, 147.0, 22.0 ],
+					"patching_rect" : [ 616.0, 247.0, 219.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"autostart" : 0,
+						"autostart" : 1,
 						"defer" : 0,
 						"node" : "",
-						"npm" : "install",
+						"npm" : "",
 						"watch" : 0
 					}
 ,
-					"text" : "node.script nodejs/main.js"
+					"text" : "node.script nodejs/main.js @autostart 1"
 				}
 
 			}
@@ -280,7 +291,7 @@
 					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 278.0, 303.0, 81.0, 22.0 ],
+					"patching_rect" : [ 252.0, 301.0, 81.0, 22.0 ],
 					"text" : "pak 0. 0. 0. 0."
 				}
 
@@ -292,7 +303,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 278.0, 347.0, 182.0, 22.0 ],
+					"patching_rect" : [ 252.0, 345.0, 182.0, 22.0 ],
 					"text" : "prepend /post_processing/seeds"
 				}
 
@@ -303,35 +314,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 273.0, 483.0, 67.0, 22.0 ],
+					"patching_rect" : [ 252.0, 438.0, 67.0, 22.0 ],
 					"text" : "s osc-send"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-25",
-					"maxclass" : "button",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 627.0, -1.0, 24.0, 24.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-9",
-					"linecount" : 12,
-					"maxclass" : "textedit",
-					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "int", "", "" ],
-					"outputmode" : 1,
-					"parameter_enable" : 0,
-					"patching_rect" : [ 748.0, 41.5, 288.0, 215.0 ],
-					"text" : "#version 150\nuniform vec4 seeds;\nout vec4 outputColor;\nvoid main(){\nfloat windowWidth = 1024.0;\nfloat windowHeight = 768.0;\nfloat r = gl_FragCoord.x / windowWidth;\nfloat g = gl_FragCoord.y / windowHeight;\nfloat b = 1.0;\nfloat a = 1.0;\noutputColor = vec4(r,g,b,seeds.w);\n}"
 				}
 
 			}
@@ -342,7 +326,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 627.0, 282.0, 167.0, 22.0 ],
+					"patching_rect" : [ 611.5, 368.0, 167.0, 22.0 ],
 					"text" : "/post_processing/fragment $2"
 				}
 
@@ -517,13 +501,6 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
-					"source" : [ "obj-25", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-38", 0 ]
 				}
@@ -580,14 +557,23 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-53", 0 ],
+					"destination" : [ "obj-77", 0 ],
+					"order" : 0,
 					"source" : [ "obj-52", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-75", 1 ],
+					"destination" : [ "obj-89", 0 ],
+					"order" : 1,
+					"source" : [ "obj-52", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-91", 1 ],
 					"source" : [ "obj-52", 0 ]
 				}
 
@@ -601,41 +587,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-67", 1 ],
-					"source" : [ "obj-57", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-57", 0 ],
-					"source" : [ "obj-60", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-60", 0 ],
-					"source" : [ "obj-63", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-52", 0 ],
-					"source" : [ "obj-67", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-52", 0 ],
-					"source" : [ "obj-71", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-52", 0 ],
 					"source" : [ "obj-73", 0 ]
 				}
@@ -643,7 +594,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
+					"destination" : [ "obj-73", 0 ],
+					"source" : [ "obj-77", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-83", 0 ],
 					"source" : [ "obj-8", 0 ]
 				}
 
@@ -651,7 +609,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-9", 0 ]
+					"source" : [ "obj-84", 0 ]
 				}
 
 			}
