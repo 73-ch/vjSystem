@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 662.0, 543.0, 945.0, 617.0 ],
+		"rect" : [ 662.0, 272.0, 945.0, 888.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,19 +46,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 717.4285888671875, 232.0, 99.0, 22.0 ],
 					"text" : "r shader-watcher"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-153",
-					"linecount" : 25,
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 250.0, 543.0, 291.0, 344.0 ],
-					"text" : "\"#version 150\n#define GLSLIFY 1\n\nout vec4 outputColor;\n\nvoid main()\n{\n    // gl_FragCoord contains the window relative coordinate for the fragment.\n    // we use gl_FragCoord.x position to control the red color value.\n    // we use gl_FragCoord.y position to control the green color value.\n    // please note that all r, g, b, a values are between 0 and 1.\n\n    float windowWidth = 1024.0;\n    float windowHeight = 768.0;\n\n    float r = gl_FragCoord.x / windowWidth;\n    float g = gl_FragCoord.y / windowHeight;\n    float b = 1.0;\n    float a = 1.0;\n    outputColor = vec4(r, g, b, a);\n}\""
 				}
 
 			}
@@ -552,15 +539,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-146", 0 ],
-					"order" : 0,
-					"source" : [ "obj-129", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-153", 1 ],
-					"order" : 1,
 					"source" : [ "obj-129", 0 ]
 				}
 

@@ -5,8 +5,7 @@ void ofApp::setup(){
     // oF setup
     ofSetBackgroundColor(0);
     ofSetVerticalSync(false);
-    
-    
+    ofEnableAlphaBlending();
     
     // post_processingのソース変更
     post_processing.load("InitShader/default.vert", "InitShader/default.frag");
@@ -29,14 +28,18 @@ void ofApp::initOsc() {
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
+    manager.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    manager.drawScene();
+    
     post_processing.begin();
     
     ofSetColor(255);
+    
+    manager.drawFbo();
     
     post_processing.setUniform4f("seeds", seeds);
     
