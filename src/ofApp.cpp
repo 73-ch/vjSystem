@@ -45,6 +45,9 @@ void ofApp::draw(){
     
     // debug
     ofDrawPlane(0, 0, ofGetWidth(), ofGetHeight());
+    
+    ofSetColor(255,0,0);
+    ofDrawPlane(0, 0, ofGetWidth(), ofGetHeight());
     //
     
     post_processing.end();

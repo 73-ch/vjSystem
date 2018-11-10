@@ -15,6 +15,10 @@ void SceneContainer::setOpacity(const float g_opacity) {
     opacity = g_opacity;
 };
 
+const float SceneContainer::getOpacity() const {
+    return opacity;
+};
+
 void SceneContainer::setScene(BaseScene* g_scene) {
     delete target_scene;
     
@@ -23,13 +27,13 @@ void SceneContainer::setScene(BaseScene* g_scene) {
 };
 
 void SceneContainer::update() {
-    if (attached) {
+    if (judgeRender()) {
         target_scene->update();
     };
 }
 
 void SceneContainer::drawScene() {
-    if (attached) {
+    if (judgeRender()) {
         ofPushMatrix();
         ofPushView();
         ofPushStyle();
@@ -41,11 +45,19 @@ void SceneContainer::drawScene() {
 }
 
 void SceneContainer::drawFbo() {
-    if (attached) {
+    if (judgeRender()) {
         ofSetColor(255,255,255, opacity);
         target_scene->getFbo()->draw(glm::vec2(0.));
     };
 }
+
+ofFbo* SceneContainer::getFbo() {
+    return target_scene->getFbo();
+}
+
+bool SceneContainer::judgeRender() {
+    return attached && opacity > 0.0;
+};
 
 BaseScene* SceneContainer::getScene() {
     return target_scene;

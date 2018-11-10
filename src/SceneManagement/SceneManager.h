@@ -24,6 +24,8 @@ public:
     void update();
     void drawScene();
     void drawFbo();
+    ofFbo* getFbo(size_t i);
+    void attachUniforms(ofShader* shader);
     
     BaseScene getCurrentScene();
     void setScene(size_t i, BaseScene *scene);

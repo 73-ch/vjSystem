@@ -9,8 +9,6 @@ SceneManager::SceneManager() {
         scene_containers[i] = new SceneContainer();
     }
     
-    cout << scene_containers[0]->attached << endl;
-    
     initOsc();
 }
 
@@ -48,6 +46,19 @@ void SceneManager::drawFbo() {
     for (auto container : scene_containers) {
         container->drawFbo();
     }
+}
+
+void SceneManager::attachUniforms(ofShader* shader) {
+    for (int i = 0; i < MAX_SCENES; ++i) {
+        if (scene_containers[i]->judgeRender()) {
+            shader->setUniformTexture("s_texture" + to_string(i), *scene_containers[i]->getFbo(), i);
+            shader->setUniform1f("s_opacity" + to_string(i), scene_containers[i]->getOpacity());
+        }
+    }
+}
+
+ofFbo* SceneManager::getFbo(size_t i) {
+    return scene_containers[i]->getFbo();
 }
 
 BaseScene * SceneManager::getSceneByName(const string name) {
