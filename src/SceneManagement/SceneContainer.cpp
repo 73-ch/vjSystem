@@ -20,7 +20,7 @@ const float SceneContainer::getOpacity() const {
 };
 
 void SceneContainer::setScene(BaseScene* g_scene) {
-    delete target_scene;
+//    delete target_scene;
     
     target_scene = g_scene;
     attached = true;

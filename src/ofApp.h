@@ -31,6 +31,4 @@ class ofApp : public ofBaseApp{
     ofShader post_processing;
     
     glm::vec4 seeds;
-    
-    string default_vertex = "#version 150\nuniform mat4 modelViewProjectionMatrix;in vec4 position;void main(){gl_Position = modelViewProjectionMatrix * position;}";
 };

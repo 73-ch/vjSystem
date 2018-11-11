@@ -72,7 +72,7 @@ BaseScene * SceneManager::getSceneByName(const string name) {
 
 void SceneManager::setScene(size_t container_i, BaseScene *scene) {
     if (container_i < MAX_SCENES) {
-        delete scene_containers[container_i]->getScene();
+//        delete scene_containers[container_i]->getScene();
 
         scene_containers[container_i]->setScene(scene);
     } else {
