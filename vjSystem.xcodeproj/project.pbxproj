@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3AA0D4FAA89D0F8A0E545 /* OscReceivedElements.cpp */; };
 		39CA03AF219812B000543095 /* VertexArt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39CA03AD219812B000543095 /* VertexArt.cpp */; };
+		39CA03B8219831B000543095 /* TestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39CA03B6219831B000543095 /* TestScene.cpp */; };
 		39F069B9219189AD00901CFB /* SceneContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39F069B7219189AD00901CFB /* SceneContainer.cpp */; };
 		39F069BD219194B000901CFB /* ShaderArt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39F069BB219194B000901CFB /* ShaderArt.cpp */; };
 		39FC26F121905CB100C54803 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39FC26EF21905CB100C54803 /* SceneManager.cpp */; };
@@ -73,6 +74,8 @@
 		3971605D21905A260041B7B8 /* common_settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common_settings.h; sourceTree = "<group>"; };
 		39CA03AD219812B000543095 /* VertexArt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexArt.cpp; sourceTree = "<group>"; };
 		39CA03AE219812B000543095 /* VertexArt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexArt.h; sourceTree = "<group>"; };
+		39CA03B6219831B000543095 /* TestScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestScene.cpp; sourceTree = "<group>"; };
+		39CA03B7219831B000543095 /* TestScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestScene.h; sourceTree = "<group>"; };
 		39ECE06A2191C00300CE02E0 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
 		39F069B7219189AD00901CFB /* SceneContainer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SceneContainer.cpp; sourceTree = "<group>"; };
 		39F069B8219189AD00901CFB /* SceneContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneContainer.h; sourceTree = "<group>"; };
@@ -180,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				3971605C219059870041B7B8 /* BaseScene.h */,
+				39CA03B52198319C00543095 /* TestScene */,
 				39CA03AC2198129800543095 /* VertexArt */,
 				39F069BA2191948A00901CFB /* ShaderArt */,
 			);
@@ -193,6 +197,15 @@
 				39CA03AE219812B000543095 /* VertexArt.h */,
 			);
 			path = VertexArt;
+			sourceTree = "<group>";
+		};
+		39CA03B52198319C00543095 /* TestScene */ = {
+			isa = PBXGroup;
+			children = (
+				39CA03B6219831B000543095 /* TestScene.cpp */,
+				39CA03B7219831B000543095 /* TestScene.h */,
+			);
+			path = TestScene;
 			sourceTree = "<group>";
 		};
 		39F069B62191897500901CFB /* SceneManagement */ = {
@@ -501,6 +514,7 @@
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,
+				39CA03B8219831B000543095 /* TestScene.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
 				39FC26F121905CB100C54803 /* SceneManager.cpp in Sources */,
 			);

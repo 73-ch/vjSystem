@@ -2,14 +2,14 @@
 
 #include "common_settings.h"
 
-class ShaderArt : public BaseScene {
+class TestScene : public BaseScene {
     ofPlanePrimitive plane;
     ofShader shader;
     
     void reloadShader();
     
 public:
-    ShaderArt();
+    TestScene();
     
     void setup() override;
     void initOsc() override;
@@ -17,9 +17,4 @@ public:
     void draw() override;
     
     void windowResized(int w, int h ) override;
-    
-    string vertex_text;
-    string fragment_text;
-    
-    glm::vec4 seed;
 };

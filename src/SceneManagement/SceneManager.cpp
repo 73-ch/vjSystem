@@ -3,6 +3,8 @@
 SceneManager::SceneManager() {
     // init store scenes
     stored_scenes["ShaderArt"] = new ShaderArt();
+    stored_scenes["TestScene"] = new TestScene();
+    
     
     // init container[3]
     for (size_t i = 0; i < MAX_SCENES; ++i) {
@@ -17,14 +19,14 @@ SceneManager::~SceneManager() {
 }
 
 void SceneManager::initOsc() {
-    // set scene
+    // set container scene
     ofxSubscribeOsc(OF_PORT, "/manager/set_scene", [=](const unsigned int i, const string &scene_name) {
         auto scene = getSceneByName(scene_name);
         setScene(i, scene);
         ofLogNotice() << scene_name << " is attatched to " << i << " container";
     });
     
-    // set opacity
+    // set container opacity
     ofxSubscribeOsc(OF_PORT, "/manager/set_opacity", [=](const unsigned int i, const float opacity) {
         scene_containers[i]->setOpacity(opacity);
     });
@@ -48,11 +50,11 @@ void SceneManager::drawFbo() {
     }
 }
 
-void SceneManager::attachUniforms(ofShader* shader) {
+void SceneManager::attachUniforms(ofShader& shader) {
     for (int i = 0; i < MAX_SCENES; ++i) {
         if (scene_containers[i]->judgeRender()) {
-            shader->setUniformTexture("s_texture" + to_string(i), *scene_containers[i]->getFbo(), i);
-            shader->setUniform1f("s_opacity" + to_string(i), scene_containers[i]->getOpacity());
+            shader.setUniformTexture("s_texture" + to_string(i), *scene_containers[i]->getFbo(), i);
+            shader.setUniform1f("s_opacity" + to_string(i), scene_containers[i]->getOpacity());
         }
     }
 }

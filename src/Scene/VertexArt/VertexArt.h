@@ -1,13 +1,25 @@
-//
-//  VertexArt.hpp
-//  vjSystem
-//
-//  Created by nami on 2018/11/11.
-//
+#pragma once
 
-#ifndef VertexArt_hpp
-#define VertexArt_hpp
+#include "common_settings.h"
 
-#include <stdio.h>
-
-#endif /* VertexArt_hpp */
+class VertexArt : public BaseScene {
+    ofPlanePrimitive plane;
+    ofShader shader;
+    
+    void reloadShader();
+    
+public:
+    VertexArt();
+    
+    void setup() override;
+    void initOsc() override;
+    void update() override;
+    void draw() override;
+    
+    void windowResized(int w, int h ) override;
+    
+    string vertex_text;
+    string fragment_text;
+    
+    glm::vec4 seed;
+};

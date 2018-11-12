@@ -4,7 +4,7 @@
 
 class BaseScene {
     
-protected:
+private:
     ofFbo output_fbo;
     
 public:

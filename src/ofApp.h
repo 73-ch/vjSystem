@@ -29,6 +29,14 @@ class ofApp : public ofBaseApp{
     SceneManager manager;
     
     ofShader post_processing;
+    string pvs_text;
+    string pfs_text;
     
     glm::vec4 seeds;
+    
+    glm::vec2 screen_size;
+    
+    ofPlanePrimitive screen_plane;
+    
+    ofImage image;
 };

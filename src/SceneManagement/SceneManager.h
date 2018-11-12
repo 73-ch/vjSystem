@@ -5,6 +5,7 @@
 
 // Scenes
 #include "ShaderArt.h"
+#include "TestScene.h"
 
 #define MAX_SCENES 3
 
@@ -25,7 +26,7 @@ public:
     void drawScene();
     void drawFbo();
     ofFbo* getFbo(size_t i);
-    void attachUniforms(ofShader* shader);
+    void attachUniforms(ofShader& shader);
     
     BaseScene getCurrentScene();
     void setScene(size_t i, BaseScene *scene);
