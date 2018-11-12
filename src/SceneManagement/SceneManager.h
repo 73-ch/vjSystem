@@ -31,4 +31,6 @@ public:
     BaseScene getCurrentScene();
     void setScene(size_t i, BaseScene *scene);
     BaseScene * getSceneByName(const string name);
+    
+    void windowResized(glm::vec2 size);
 };

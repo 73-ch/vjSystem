@@ -13,7 +13,7 @@ public:
     virtual void update(){};
     virtual void draw(){};
     
-    virtual void windowResized(int w, int h){};
+    virtual void windowResized(glm::vec2 size){};
     
     ofFbo* getFbo(){return &output_fbo;}
     

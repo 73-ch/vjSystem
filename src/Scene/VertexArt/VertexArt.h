@@ -16,7 +16,7 @@ public:
     void update() override;
     void draw() override;
     
-    void windowResized(int w, int h ) override;
+    void windowResized(glm::vec2 size) override;
     
     string vertex_text;
     string fragment_text;

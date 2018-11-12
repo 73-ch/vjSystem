@@ -81,3 +81,9 @@ void SceneManager::setScene(size_t container_i, BaseScene *scene) {
         cout << "SceneContainer index is out of range";
     }
 }
+
+void SceneManager::windowResized(glm::vec2 size) {
+    for (auto container : scene_containers) {
+        container->windowResized(size);
+    }
+}

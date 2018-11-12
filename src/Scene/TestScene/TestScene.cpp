@@ -10,7 +10,7 @@
 TestScene::TestScene() {
     name = "TestScene";
 //    output_fbo = new ofFbo();
-    windowResized(ofGetWidth(), ofGetHeight());
+    windowResized(glm::vec2(ofGetWidth(), ofGetHeight()));
 }
 
 void TestScene::initOsc() {
@@ -39,6 +39,6 @@ void TestScene::draw() {
     ofPopStyle();
 }
 
-void TestScene::windowResized(int w, int h) {
-    getFbo()->allocate(w, h, GL_RGBA);
+void TestScene::windowResized(glm::vec2 size) {
+    getFbo()->allocate(size.x, size.y, GL_RGBA);
 }

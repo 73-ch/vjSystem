@@ -10,12 +10,12 @@
 ShaderArt::ShaderArt() {
     name = "ShaderArt";
     
-    windowResized(ofGetWidth(), ofGetHeight());
-    
     vertex_text = DEFAULT_VERTEX;
     fragment_text = DEFAULT_FRAGMENT;
     
     initOsc();
+    
+    windowResized(glm::vec2(ofGetWidth(), ofGetHeight()));
 }
 
 void ShaderArt::initOsc() {
@@ -63,8 +63,8 @@ void ShaderArt::reloadShader() {
     shader.linkProgram();
 }
 
-void ShaderArt::windowResized(int w, int h) {
-    getFbo()->allocate(w, h, GL_RGBA);
+void ShaderArt::windowResized(glm::vec2 size) {
+    getFbo()->allocate(size.x, size.y, GL_RGBA);
     
-    plane.set(w, h);
+    plane.set(size.x, size.y);
 }

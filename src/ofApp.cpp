@@ -21,6 +21,8 @@ void ofApp::setup(){
     screen_plane.setPosition(0, 0, 0);
     
     image.load("test.png");
+    
+    windowResized(ofGetWidth(), ofGetHeight());
 }
 
 void ofApp::initOsc() {
@@ -113,6 +115,7 @@ void ofApp::mouseExited(int x, int y){
 void ofApp::windowResized(int w, int h){
     screen_size = glm::vec2(ofGetWidth(), ofGetHeight());
     screen_plane.set(screen_size.x*2., screen_size.y*2.);
+    manager.windowResized(screen_size);
 }
 
 //--------------------------------------------------------------

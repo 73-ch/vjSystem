@@ -20,4 +20,6 @@ public:
     
     void setScene(BaseScene* g_scene);
     BaseScene* getScene();
+    
+    void windowResized(glm::vec2 size);
 };

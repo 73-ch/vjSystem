@@ -63,3 +63,8 @@ BaseScene* SceneContainer::getScene() {
     return target_scene;
 };
 
+void SceneContainer::windowResized(glm::vec2 size) {
+    if (judgeRender()) {
+        target_scene->windowResized(size);
+    }
+};
