@@ -18,7 +18,8 @@ VertexArt::VertexArt(const BasicInfos* g_info) : BaseScene(g_info) {
     cam.setAspectRatio(ofGetWidth() / ofGetHeight());
     cam.setFarClip(1000);
     cam.setNearClip(0.1);
-    cam.setupPerspective();
+//    cam.setupPerspective();
+    cam.lookAt(glm::vec3(0.));
     cam.setPosition(0, 0, 200);
 }
 
@@ -53,9 +54,11 @@ void VertexArt::initOsc() {
     // camera
     ofxSubscribeOsc(OF_PORT, "/vertex_art/cam/position", [=](const glm::vec3 pos) {
         cam.setPosition(pos);
+        cam.lookAt(lookat);
     });
     
-    ofxSubscribeOsc(OF_PORT, "/vertex_art/cam/lookat", [=](const glm::vec3 lookat) {
+    ofxSubscribeOsc(OF_PORT, "/vertex_art/cam/lookat", [=](const glm::vec3 g_lookat) {
+        lookat = g_lookat;
         cam.lookAt(lookat);
     });
 }
@@ -69,17 +72,21 @@ void VertexArt::draw() {
     begin();
     ofClear(0);
     cam.begin();
+    shader.begin();
     
     shader.setUniform4f("seed", seed);
     shader.setUniform1f("time", info->time);
     shader.setUniform1i("vertex_num", vertex_num);
     shader.setUniform3f("cam_pos", cam.getPosition());
     
+    mesh.setMode(OF_PRIMITIVE_LINES);
     mesh.draw();
     
-    cam.end();
+    
     shader.end();
     
+    ofDrawAxis(10);
+    cam.end();
     end();
 }
 
