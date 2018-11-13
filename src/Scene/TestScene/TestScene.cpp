@@ -10,8 +10,6 @@
 TestScene::TestScene(const BasicInfos* g_info) : BaseScene(g_info) {
     name = "TestScene";
     ofSetCircleResolution(24);
-//    output_fbo = new ofFbo();
-    windowResized(glm::vec2(ofGetWidth(), ofGetHeight()));
 }
 
 void TestScene::initOsc() {
@@ -26,10 +24,7 @@ void TestScene::update() {
 }
 
 void TestScene::draw() {
-    ofPushMatrix();
-    ofPushView();
-    ofPushStyle();
-    getFbo()->begin();
+    begin();
     ofClear(0);
     
 //    ofSetColor(int(ofGetElapsedTimef()) % 255);
@@ -37,12 +32,10 @@ void TestScene::draw() {
 //    ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
     ofTranslate(ofGetWidth()*.5, ofGetHeight()*.5);
     ofDrawCircle(0, 0, 100);
-    getFbo()->end();
-    ofPopMatrix();
-    ofPopView();
-    ofPopStyle();
+    end();
 }
 
 void TestScene::windowResized(glm::vec2 size) {
+    BaseScene::windowResized(size);
     getFbo()->allocate(size.x, size.y, GL_RGBA);
 }

@@ -21,9 +21,7 @@ SceneManager::~SceneManager() {
 void SceneManager::initOsc() {
     // set container scene
     ofxSubscribeOsc(OF_PORT, "/manager/set_scene", [=](const unsigned int i, const string &scene_name) {
-        auto scene = getSceneByName(scene_name);
-        setScene(i, scene);
-        ofLogNotice() << scene_name << " is attatched to " << i << " container";
+        setScene(i, getSceneByName(scene_name));
     });
     
     // set container opacity
@@ -77,6 +75,7 @@ void SceneManager::setScene(size_t container_i, BaseScene *scene) {
 //        delete scene_containers[container_i]->getScene();
 
         scene_containers[container_i]->setScene(scene);
+        ofLogNotice() << scene->name << " is attatched to container " << container_i << ".";
     } else {
         cout << "SceneContainer index is out of range";
     }

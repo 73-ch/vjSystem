@@ -36,7 +36,7 @@ void ShaderArt::update() {
 }
 
 void ShaderArt::draw() {
-    getFbo()->begin();
+    begin();
     ofClear(0);
     
     shader.begin();
@@ -48,7 +48,7 @@ void ShaderArt::draw() {
     ofSetColor(255);
     plane.draw();
     shader.end();
-    getFbo()->end();
+    end();
 }
 
 void ShaderArt::reloadShader() {
@@ -59,7 +59,6 @@ void ShaderArt::reloadShader() {
 }
 
 void ShaderArt::windowResized(glm::vec2 size) {
-    getFbo()->allocate(size.x, size.y, GL_RGBA);
-    
+    BaseScene::windowResized(size);
     plane.set(size.x*2., size.y*2.);
 }

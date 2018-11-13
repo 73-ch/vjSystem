@@ -29,5 +29,5 @@ void main()
         final += texture(s_texture2, st).xyz * s_opacity2;
     }
 
-    outputColor = vec4(final,1.0);
+    outputColor = vec4(texture(s_texture0, st).xyz,1.0);
 }
