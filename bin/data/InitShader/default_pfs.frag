@@ -13,9 +13,10 @@ in vec2 v_texcoord;
 
 out vec4 outputColor;
 
+vec2 st = vec2(gl_FragCoord.x, u_resolution.y - gl_FragCoord.y);
+
 void main()
 {
-    vec2 st = gl_FragCoord.xy;
     vec3 final;
 
     if (s_opacity0 > 0.0) {
