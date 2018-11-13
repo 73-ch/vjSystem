@@ -12,8 +12,9 @@ void ofApp::setup(){
     pvs_text = post_processing.getShaderSource(GL_VERTEX_SHADER);
     pfs_text = post_processing.getShaderSource(GL_FRAGMENT_SHADER);
     
-    
     initOsc();
+    
+    manager = *new SceneManager(&info);
     
     screen_size = glm::vec2(ofGetWidth(), ofGetHeight());
     
@@ -42,6 +43,7 @@ void ofApp::initOsc() {
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    info.time = ofGetElapsedTimef();
     manager.update();
 }
 
@@ -55,11 +57,9 @@ void ofApp::draw(){
     ofSetColor(255);
     
     manager.attachUniforms(post_processing);
-//    manager.drawFbo();
-    
     
     post_processing.setUniform4f("seeds", seeds);
-//    post_processing.setUniformTexture("s_texture0", image.getTexture(), 0);
+    post_processing.setUniform1f("time", info.time);
     
     post_processing.setUniform2f("u_resolution", screen_size);
     
@@ -113,6 +113,8 @@ void ofApp::mouseExited(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
+    info.screen_size = glm::vec2(ofGetWidth(), ofGetHeight());
+    
     screen_size = glm::vec2(ofGetWidth(), ofGetHeight());
     screen_plane.set(screen_size.x*2., screen_size.y*2.);
     manager.windowResized(screen_size);

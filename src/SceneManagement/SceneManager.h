@@ -1,10 +1,12 @@
 #pragma once
 
 #include "common_settings.h"
+#include "BaseScene.h"
 #include "SceneContainer.h"
 
 // Scenes
 #include "ShaderArt.h"
+#include "VertexArt.h"
 #include "TestScene.h"
 
 #define MAX_SCENES 3
@@ -19,7 +21,8 @@ class SceneManager {
     void initOsc();
     
 public:
-    SceneManager();
+    SceneManager(){};
+    SceneManager(BasicInfos* g_info);
     ~SceneManager();
     
     void update();

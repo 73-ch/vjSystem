@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common_settings.h"
+#include "BaseScene.h"
 
 class TestScene : public BaseScene {
     ofPlanePrimitive plane;
@@ -9,7 +10,7 @@ class TestScene : public BaseScene {
     void reloadShader();
     
 public:
-    TestScene();
+    TestScene(const BasicInfos* g_info);
     
     void setup() override;
     void initOsc() override;

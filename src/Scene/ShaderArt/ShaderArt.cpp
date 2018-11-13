@@ -1,13 +1,6 @@
-//
-//  ShaderArt.cpp
-//  vjSystem
-//
-//  Created by nami on 2018/11/06.
-//
-
 #include "ShaderArt.h"
 
-ShaderArt::ShaderArt() {
+ShaderArt::ShaderArt(const BasicInfos* g_info) : BaseScene(g_info) {
     name = "ShaderArt";
     
     vertex_text = DEFAULT_VERTEX;
@@ -49,6 +42,8 @@ void ShaderArt::draw() {
     shader.begin();
     
     shader.setUniform4f("seed", seed);
+    shader.setUniform1f("time", info->time);
+    shader.setUniform2f("u_resolution", info->screen_size);
     
     ofSetColor(255);
     plane.draw();
@@ -66,5 +61,5 @@ void ShaderArt::reloadShader() {
 void ShaderArt::windowResized(glm::vec2 size) {
     getFbo()->allocate(size.x, size.y, GL_RGBA);
     
-    plane.set(size.x, size.y);
+    plane.set(size.x*2., size.y*2.);
 }

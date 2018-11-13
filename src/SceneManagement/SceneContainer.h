@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common_settings.h"
+#include "BaseScene.h"
 
 class SceneContainer {
     BaseScene* target_scene;

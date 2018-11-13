@@ -1,10 +1,10 @@
 #pragma once
 
 #include "common_settings.h"
-
+#include "BaseScene.h"
 #include "SceneManager.h"
 
-class ofApp : public ofBaseApp{
+class ofApp : public ofBaseApp {
 
 	public:
 		void setup();
@@ -39,4 +39,6 @@ class ofApp : public ofBaseApp{
     ofPlanePrimitive screen_plane;
     
     ofImage image;
+    
+    BasicInfos info;
 };

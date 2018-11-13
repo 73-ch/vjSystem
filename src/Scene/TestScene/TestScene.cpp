@@ -7,8 +7,9 @@
 
 #include "TestScene.h"
 
-TestScene::TestScene() {
+TestScene::TestScene(const BasicInfos* g_info) : BaseScene(g_info) {
     name = "TestScene";
+    ofSetCircleResolution(24);
 //    output_fbo = new ofFbo();
     windowResized(glm::vec2(ofGetWidth(), ofGetHeight()));
 }
@@ -31,8 +32,11 @@ void TestScene::draw() {
     getFbo()->begin();
     ofClear(0);
     
-    ofSetColor(ofRandom(255));
-    ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
+//    ofSetColor(int(ofGetElapsedTimef()) % 255);
+    ofSetColor(255);
+//    ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
+    ofTranslate(ofGetWidth()*.5, ofGetHeight()*.5);
+    ofDrawCircle(0, 0, 100);
     getFbo()->end();
     ofPopMatrix();
     ofPopView();

@@ -1,10 +1,10 @@
 #include "SceneManager.h"
 
-SceneManager::SceneManager() {
+SceneManager::SceneManager(BasicInfos* g_info) {
     // init store scenes
-    stored_scenes["ShaderArt"] = new ShaderArt();
-    stored_scenes["TestScene"] = new TestScene();
-    
+    stored_scenes["ShaderArt"] = new ShaderArt(g_info);
+    stored_scenes["TestScene"] = new TestScene(g_info);
+    stored_scenes["VertexArt"] = new VertexArt(g_info);
     
     // init container[3]
     for (size_t i = 0; i < MAX_SCENES; ++i) {
