@@ -56,12 +56,11 @@ void main(){
     float x = cos(th + gl_VertexID / 1000.)*r + noise(vec2(gl_VertexID/vertex_num, time))*10.;
     float y = sin(th)*r + noise(vec2(gl_VertexID/vertex_num + 201., time))*10.;
     gl_PointSize = 1.;
-    gl_Position = modelViewProjectionMatrix * vec4(x,y,gl_VertexID/ vertex_num * 1000.,1.0);
+    gl_Position = modelViewProjectionMatrix * vec4(x,y,gl_VertexID * 0.001,1.0);
 
     // gl_Position = modelViewProjectionMatrix * position;
 
     // gl_Position = vec4(vec3(gl_VertexID - vertex_num, 0., -100.), 1.0) *modelViewProjectionMatrix;
 
-    v_color = vec4(1.0, 0.1, 0.1, 1.0);
-    
+    v_color = vec4(vec3(1.-distance(vec2(x,y), vec2(0)) * 0.01), 1.0);    
 }

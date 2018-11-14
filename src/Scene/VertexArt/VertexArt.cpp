@@ -6,10 +6,10 @@ VertexArt::VertexArt(const BasicInfos* g_info) : BaseScene(g_info) {
     fragment_text = shader.getShaderSource(GL_FRAGMENT_SHADER);
 
     vertex_num = 3000000;
-    vector<glm::vec3> verts(vertex_num);
-    mesh.addVertices(verts);
+    changeVertexNum(vertex_num);
 //
     mesh.setMode(OF_PRIMITIVE_POINTS);
+    mesh.setUsage(GL_STATIC_DRAW);
 //
     initOsc();
     
@@ -94,16 +94,12 @@ void VertexArt::windowResized(glm::vec2 size) {
 }
 
 void VertexArt::changeVertexNum(const unsigned int num) {
-    const int diff = num - vertex_num;
-    vector<glm::vec3> tmp_verts(diff);
+    mesh.clearVertices();
     
-    if (diff > 0) {
-        mesh.addVertices(tmp_verts);
-    } else {
-        for (size_t i = 0; i > diff; --i) {
-            mesh.removeVertex(0);
-        }
-    }
+    vector<glm::vec3> verts(vertex_num);
+    mesh.addVertices(verts);
+    
+    ofLogNotice() << "vertex_num : " << mesh.getNumVertices();
     
     vertex_num = num;
 }
