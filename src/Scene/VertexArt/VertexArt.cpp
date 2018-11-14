@@ -79,7 +79,6 @@ void VertexArt::draw() {
     shader.setUniform1i("vertex_num", vertex_num);
     shader.setUniform3f("cam_pos", cam.getPosition());
     
-    mesh.setMode(OF_PRIMITIVE_LINES);
     mesh.draw();
     
     
