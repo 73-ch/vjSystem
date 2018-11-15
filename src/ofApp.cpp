@@ -28,6 +28,7 @@ void ofApp::setup(){
 
 void ofApp::initOsc() {
     ofxPublishOsc(MAX_HOST, MAX_PORT, "/fps", &ofGetFrameRate);
+    ofxPublishOsc(MAX_HOST, MAX_PORT, "/time", &ofGetElapsedTimef);
     
     ofxSubscribeOsc(OF_PORT, "/post_processing/fragment", [=](const string &str) {
         post_processing.setupShaderFromSource(GL_VERTEX_SHADER, pvs_text);
