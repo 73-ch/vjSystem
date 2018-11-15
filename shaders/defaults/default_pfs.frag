@@ -1,4 +1,4 @@
-#pragma glslify: import('./init_pfs.glsl')
+#pragma glslify: import('../inits/init_pfs.glsl')
 in vec2 v_texcoord;
 
 void main()

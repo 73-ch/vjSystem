@@ -1,4 +1,4 @@
-#pragma glslify: import(./init_pfs.glsl)
+#pragma glslify: import(./inits/init_pfs.glsl)
 
 void main() {
     vec2 st = gl_FragCoord.xy / u_resolution;
