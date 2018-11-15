@@ -96,12 +96,12 @@ void VertexArt::windowResized(glm::vec2 size) {
 void VertexArt::changeVertexNum(const unsigned int num) {
     mesh.clearVertices();
     
+    vertex_num = num;
+    
     vector<glm::vec3> verts(vertex_num);
     mesh.addVertices(verts);
     
     ofLogNotice() << "vertex_num : " << mesh.getNumVertices();
-    
-    vertex_num = num;
 }
 
 void VertexArt::reloadShader() {
