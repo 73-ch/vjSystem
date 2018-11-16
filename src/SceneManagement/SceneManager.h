@@ -8,6 +8,7 @@
 #include "ShaderArt.h"
 #include "VertexArt.h"
 #include "TestScene.h"
+#include "Instancing.h"
 
 #define MAX_SCENES 3
 
