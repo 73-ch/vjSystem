@@ -9,7 +9,7 @@
 Instancing::Instancing(const BasicInfos* g_info) : BaseScene(g_info) {
     name = "Instancing";
     
-    primitive_num = 1000000;
+    primitive_num = 100000;
     
     //
     initOsc();
@@ -17,7 +17,7 @@ Instancing::Instancing(const BasicInfos* g_info) : BaseScene(g_info) {
     // camera settings
     cam.setFov(45);
     cam.setAspectRatio(ofGetWidth() / ofGetHeight());
-    cam.setFarClip(1000);
+    cam.setFarClip(4000);
     cam.setNearClip(0.1);
     //    cam.setupPerspective();
     cam.lookAt(glm::vec3(0.));
@@ -53,8 +53,8 @@ void Instancing::setup() {
     
     // setup for transform_feedback shader.
     transform_feedback.setupShaderFromFile(GL_VERTEX_SHADER, "Instancing/transform_feedback.vert");
-    const GLchar* feedback_varings[] = { "out_position", "out_velocity", "out_age", "out_lifetime"};
-    glTransformFeedbackVaryings(shader.getProgram(), 4, feedback_varings, GL_SEPARATE_ATTRIBS);
+    const GLchar* feedback_varings[] = {"out_position", "out_velocity", "out_age", "out_lifetime"};
+    glTransformFeedbackVaryings(transform_feedback.getProgram(), 4, feedback_varings, GL_SEPARATE_ATTRIBS);
     transform_feedback.linkProgram();
     
     // primitive setting
@@ -78,10 +78,10 @@ void Instancing::setup() {
         lifetime_buffer[i].allocate();
         lifetime_buffer[i].setData(sizeof(float) * primitive_num, lifetime, GL_STREAM_DRAW);
         
-        vbo[i].setAttributeBuffer(shader.getAttributeLocation("in_position"), position_buffer[i], 3, 0);
-        vbo[i].setAttributeBuffer(shader.getAttributeLocation("in_velocity"), velocity_buffer[i], 3, 0);
-        vbo[i].setAttributeBuffer(shader.getAttributeLocation("in_age"), age_buffer[i], 1, 0);
-        vbo[i].setAttributeBuffer(shader.getAttributeLocation("in_lifetime"), lifetime_buffer[i], 1, 0);
+        vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_position"), position_buffer[i], 3, 0);
+        vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_velocity"), velocity_buffer[i], 3, 0);
+        vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_age"), age_buffer[i], 1, 0);
+        vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_lifetime"), lifetime_buffer[i], 1, 0);
         
         glBindTransformFeedback(GL_TRANSFORM_FEEDBACK, feedback[i]);
         glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 0, position_buffer[i].getId());
@@ -107,36 +107,16 @@ void Instancing::setup() {
     mesh_vbo.setAttributeDivisor(age_location, 1);
     mesh_vbo.setAttributeDivisor(lifetime_location, 1);
     
-    light_position = glm::vec3(0);
+    light_position = glm::vec3(1000);
     
-    scale = 1.0;
-    timestamp = 1.0;
+    scale = 0.2;
+    timestep = 1.0;
     
-    start_color = glm::vec4(1.0);
+    start_color = glm::vec4(glm::vec3(0.0), 1.0);
     end_color = glm::vec4(1.0);
 }
 
 void Instancing::initOsc() {
-//    ofxSubscribeOsc(OF_PORT, "/instancing/primitive_num", [=](const unsigned int num) {
-//        changeVertexNum(num);
-//    });
-    
-    ofxSubscribeOsc(OF_PORT, "/instancing/primitive_mode", [=](const unsigned int mode_num) {
-        mesh.setMode(static_cast<ofPrimitiveMode>(mode_num));
-    });
-    
-    ofxSubscribeOsc(OF_PORT, "/instancing/vertex", [=](const string &vert) {
-        vertex_text = vert;
-        reloadShader();
-        ofLogNotice() << "instancing vs changed";
-    });
-    
-    ofxSubscribeOsc(OF_PORT, "/instancing/fragment", [=](const string &frag) {
-        fragment_text = frag;
-        reloadShader();
-        ofLogNotice() << "instancing fs changed";
-    });
-    
     ofxSubscribeOsc(OF_PORT, "/instancing/seed", seed);
     
     
@@ -152,7 +132,7 @@ void Instancing::initOsc() {
     });
     
     ofxSubscribeOsc(OF_PORT, "/instancing/scale", scale);
-    ofxSubscribeOsc(OF_PORT, "/instancing/timestamp", timestamp);
+    ofxSubscribeOsc(OF_PORT, "/instancing/timestep", timestep);
 }
 
 
@@ -161,11 +141,12 @@ void Instancing::update() {
 }
 
 void Instancing::draw() {
-
+    light_position = glm::vec3(sin(info->time * .5), 0.0, sin(info->time * .5));
+    
     transform_feedback.begin();
     
     transform_feedback.setUniform1f("time", info->time);
-    transform_feedback.setUniform1f("timestamp", timestamp);
+    transform_feedback.setUniform1f("timestep", timestep);
     transform_feedback.setUniform1f("scale", scale);
     
     glEnable(GL_RASTERIZER_DISCARD);
@@ -221,11 +202,4 @@ void Instancing::windowResized(glm::vec2 size) {
 
 void Instancing::changeVertexNum(const unsigned int num) {
     
-}
-
-void Instancing::reloadShader() {
-    shader.setupShaderFromSource(GL_VERTEX_SHADER, vertex_text);
-    shader.setupShaderFromSource(GL_FRAGMENT_SHADER, fragment_text);
-    shader.bindDefaults();
-    shader.linkProgram();
 }

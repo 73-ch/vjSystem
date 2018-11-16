@@ -10,11 +10,6 @@ private:
     ofPrimitiveMode mode;
     glm::vec4 seed;
     
-    ofShader shader;
-    string vertex_text;
-    string fragment_text;
-    
-    void reloadShader();
     void changeVertexNum(const unsigned int num);
     
     ofCamera cam;
@@ -34,7 +29,7 @@ private:
     
     int position_location, velocity_location, age_location, lifetime_location;
     
-    float timestamp, scale;
+    float timestep, scale;
     glm::vec4 start_color, end_color;
     
 public:

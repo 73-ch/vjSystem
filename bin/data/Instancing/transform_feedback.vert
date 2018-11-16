@@ -34,10 +34,12 @@ void main() {
         vel.x += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 0.1352 * time)) * timestep;
         vel.y += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 1.2814 * time)) * timestep;
         vel.z += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 2.5564 * time)) * timestep;
-        
+        if (length(pos) > 1000.0) {
+            vel *= -1.0;
+        }
         age++;
     }
-    
+
     out_position = pos + vel;
     out_velocity = vel;
     out_age = age;

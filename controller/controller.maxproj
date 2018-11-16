@@ -2,7 +2,7 @@
 	"name" : "controller",
 	"version" : 1,
 	"creationdate" : 3624367987,
-	"modificationdate" : 3624949360,
+	"modificationdate" : 3625233278,
 	"viewrect" : [ 25.0, 47.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -22,6 +22,11 @@
 			}
 ,
 			"VertexArt.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"cam_control.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
