@@ -24,6 +24,10 @@ Instancing::Instancing(const BasicInfos* g_info) : BaseScene(g_info) {
     cam.setPosition(0, 0, 200);
     
     setup();
+    
+    GLint num;
+    glGetIntegerv(GL_MAX_TRANSFORM_FEEDBACK_BUFFERS, &num);
+    ofLogNotice() << "GL_MAX_TRANSFORM_FEEDBACK_BUFFERS " << num;
 }
 
 void Instancing::setup() {
@@ -51,10 +55,21 @@ void Instancing::setup() {
         lifetime[i] = 1;
     }
     
+    float * shadow = new float[primitive_num * 3];
+    for(int i = 0; i<primitive_num; i++){
+        shadow[i * 3 + 0] = ofRandom(-10, 10);
+        shadow[i * 3 + 1] = ofRandom(-10, 10);
+        shadow[i * 3 + 2] = ofRandom(-10, 10);
+    }
+    
     // setup for transform_feedback shader.
     transform_feedback.setupShaderFromFile(GL_VERTEX_SHADER, "Instancing/transform_feedback.vert");
     const GLchar* feedback_varings[] = {"out_position", "out_velocity", "out_age", "out_lifetime"};
     glTransformFeedbackVaryings(transform_feedback.getProgram(), 4, feedback_varings, GL_SEPARATE_ATTRIBS);
+    
+//    const GLchar* feedback_varings[] = {"out_position", "out_velocity", "out_shadow", "out_age", "out_lifetime"};
+//    glTransformFeedbackVaryings(transform_feedback.getProgram(), 5, feedback_varings, GL_SEPARATE_ATTRIBS);
+    
     transform_feedback.linkProgram();
     
     // primitive setting
@@ -78,16 +93,23 @@ void Instancing::setup() {
         lifetime_buffer[i].allocate();
         lifetime_buffer[i].setData(sizeof(float) * primitive_num, lifetime, GL_STREAM_DRAW);
         
+//        shadow_buffer[i].allocate();
+//        shadow_buffer[i].setData(sizeof(float) * primitive_num * 3, shadow, GL_STREAM_DRAW);
+        
         vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_position"), position_buffer[i], 3, 0);
         vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_velocity"), velocity_buffer[i], 3, 0);
         vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_age"), age_buffer[i], 1, 0);
         vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_lifetime"), lifetime_buffer[i], 1, 0);
+        
+//        vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_shadow"), velocity_buffer[i], 3, 0);
         
         glBindTransformFeedback(GL_TRANSFORM_FEEDBACK, feedback[i]);
         glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 0, position_buffer[i].getId());
         glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 1, velocity_buffer[i].getId());
         glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 2, age_buffer[i].getId());
         glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 3, lifetime_buffer[i].getId());
+//        glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 4, shadow_buffer[i].getId());
+        
     }
     
     glBindTransformFeedback(GL_TRANSFORM_FEEDBACK, 0);
@@ -112,13 +134,20 @@ void Instancing::setup() {
     scale = 0.2;
     timestep = 1.0;
     
-    start_color = glm::vec4(glm::vec3(0.0), 1.0);
+    start_color = glm::vec4(glm::vec3(1.0), 1.0);
     end_color = glm::vec4(1.0);
 }
 
 void Instancing::initOsc() {
-    ofxSubscribeOsc(OF_PORT, "/instancing/seed", seed);
+    ofxSubscribeOsc(OF_PORT, "/instancing/transform_feedback/vertex", [=] (const string &vert) {
+        transform_feedback.setupShaderFromSource(GL_VERTEX_SHADER, vert);
+        const GLchar* feedback_varings[] = {"out_position", "out_velocity", "out_age", "out_lifetime"};
+        glTransformFeedbackVaryings(transform_feedback.getProgram(), 4, feedback_varings, GL_SEPARATE_ATTRIBS);
+        
+        transform_feedback.linkProgram();
+    });
     
+    ofxSubscribeOsc(OF_PORT, "/instancing/seed", seed);
     
     // camera
     ofxSubscribeOsc(OF_PORT, "/instancing/cam/position", [=](const glm::vec3 pos) {
@@ -141,7 +170,7 @@ void Instancing::update() {
 }
 
 void Instancing::draw() {
-    light_position = glm::vec3(sin(info->time * .5), 0.0, sin(info->time * .5));
+    light_position = glm::vec3(cos(info->time * .5), 0.0, sin(info->time * .5)) * 1000.;
     
     transform_feedback.begin();
     
@@ -179,14 +208,28 @@ void Instancing::draw() {
     primitive_shader.setUniform4f("end_color", end_color);
     primitive_shader.setUniformMatrix4f("normal_matrix", ofGetCurrentNormalMatrix());
     
+    ofPushMatrix();
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
     
+    ofTranslate(glm::vec3(0, 500, 0));
+    
     mesh.drawInstanced(OF_MESH_FILL, primitive_num);
     glDisable(GL_CULL_FACE);
-    
+    ofPopMatrix();
     primitive_shader.end();
     
+    ofSetColor(200);
+    ofPushMatrix();
+    ofTranslate(glm::vec3(-500,0,-500));
+    ofRotateXDeg(90);
+    ofDrawRectangle(glm::vec3(0), 1000, 1000);
+    ofPopMatrix();
+    
+    // debug
+    ofSetColor(100,100, 200);
+    ofDrawSphere(light_position, 10);
+    ofSetColor(255);
     ofDrawAxis(10);
     cam.end();
     end();
@@ -195,6 +238,7 @@ void Instancing::draw() {
     
     ofDisableDepthTest();
 }
+
 
 void Instancing::windowResized(glm::vec2 size) {
     BaseScene::windowResized(size);

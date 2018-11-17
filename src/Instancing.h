@@ -19,7 +19,7 @@ private:
     ofShader primitive_shader;
     
     GLuint feedback[2];
-    ofBufferObject position_buffer[2], velocity_buffer[2], age_buffer[2], lifetime_buffer[2];
+    ofBufferObject position_buffer[2], velocity_buffer[2], age_buffer[2], lifetime_buffer[2], shadow_buffer[2];
     
     ofShader transform_feedback;
     

@@ -6,7 +6,7 @@ uniform mat4 textureMatrix;
 uniform mat4 modelViewProjectionMatrix;
 uniform vec4 globalColor;
 
-uniform mat4 normalMatrix;
+uniform mat4 normal_matrix;
 
 uniform vec3 light_position;
 uniform vec4 start_color;
@@ -39,7 +39,7 @@ void main() {
     v_position_varying = modelViewMatrix * position_varying;
     
     normal_varying = normalize(mat3(lookAt) * normal);
-    v_normal_varying = normalize(vec3(mat3(normalMatrix) * normal_varying));
+    v_normal_varying = normalize(vec3(mat3(normal_matrix) * normal_varying));
     
     vec3 color = map(vec3(elapsedTime), vec3(0.0), vec3(1.0), start_color.rgb, end_color.rgb);
     v_color = vec4(color, 1.0);

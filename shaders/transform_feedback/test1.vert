@@ -2,8 +2,8 @@
 
 #define PI 3.14159265358979
 
-#pragma include "util.glsl"
-#pragma include "noise.glsl"
+#pragma glslify: import('../imports/util.glsl')
+#pragma glslify: import('../imports/noise.glsl')
 
 in vec3 in_position;
 in vec3 in_velocity;
@@ -36,6 +36,9 @@ void main() {
         vel.x += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 0.1352 * time)) * timestep;
         vel.y += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 1.2814 * time)) * timestep;
         vel.z += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 2.5564 * time)) * timestep;
+        vel.x = pow(vel.x, 2.0);
+        vel.y = pow(vel.y, 2.0);
+        vel.z = pow(vel.z, 2.0);
         if (length(pos) > 1000.0) {
             vel *= -1.0;
         }
