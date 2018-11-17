@@ -4113,7 +4113,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 474.0, 162.0, 125.0, 22.0 ],
-									"text" : "maxpacketsize 10192"
+									"text" : "maxpacketsize 15000"
 								}
 
 							}

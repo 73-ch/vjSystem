@@ -112,6 +112,11 @@ void Instancing::setup() {
         
     }
     
+    delete [] position;
+    delete [] velocity;
+    delete [] age;
+    delete [] lifetime;
+    
     glBindTransformFeedback(GL_TRANSFORM_FEEDBACK, 0);
     
     frame = 0;
@@ -145,6 +150,49 @@ void Instancing::initOsc() {
         glTransformFeedbackVaryings(transform_feedback.getProgram(), 4, feedback_varings, GL_SEPARATE_ATTRIBS);
         
         transform_feedback.linkProgram();
+    });
+    
+    ofxSubscribeOsc(OF_PORT, "/instancing/transform_feedback/reset_buffer", [=]() {
+        float * position = new float[primitive_num * 3];
+        for(int i = 0; i<primitive_num; i++){
+            position[i * 3 + 0] = ofRandom(-10, 10);
+            position[i * 3 + 1] = ofRandom(-10, 10);
+            position[i * 3 + 2] = ofRandom(-10, 10);
+        }
+        
+        float * velocity = new float[primitive_num * 3];
+        for(int i = 0; i<primitive_num; i++){
+            velocity[i * 3 + 0] = ofRandom(-1, 1);
+            velocity[i * 3 + 1] = ofRandom(-1, 1);
+            velocity[i * 3 + 2] = ofRandom(-1, 1);
+        }
+        
+        float * age = new float[primitive_num];
+        for(int i = 0; i<primitive_num; i++){
+            age[i] = 1;
+        }
+        
+        float * lifetime = new float[primitive_num];
+        for(int i = 0; i<primitive_num; i++){
+            lifetime[i] = 1;
+        }
+        
+        for (int i = 0; i < 2; i++) {
+            position_buffer[i].unmap();
+            velocity_buffer[i].unmap();
+            age_buffer[i].unmap();
+            lifetime_buffer[i].unmap();
+            
+            position_buffer[i].setData(sizeof(float) * primitive_num * 3, position, GL_STREAM_DRAW);
+            velocity_buffer[i].setData(sizeof(float) * primitive_num * 3, velocity, GL_STREAM_DRAW);
+            age_buffer[i].setData(sizeof(float) * primitive_num, age, GL_STREAM_DRAW);
+            lifetime_buffer[i].setData(sizeof(float) * primitive_num, lifetime, GL_STREAM_DRAW);
+        }
+        
+        delete [] position;
+        delete [] velocity;
+        delete [] age;
+        delete [] lifetime;
     });
     
     ofxSubscribeOsc(OF_PORT, "/instancing/seed", seed);
