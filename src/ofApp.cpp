@@ -21,8 +21,6 @@ void ofApp::setup(){
     screen_plane.set(screen_size.x*2., screen_size.y*2.);
     screen_plane.setPosition(0, 0, 0);
     
-    image.load("test.png");
-    
     windowResized(ofGetWidth(), ofGetHeight());
 }
 
@@ -53,7 +51,6 @@ void ofApp::draw(){
     manager.drawScene();
     
     post_processing.begin();
-//    post_processing.bindDefaults();
     
     ofSetColor(255);
     

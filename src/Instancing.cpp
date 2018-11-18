@@ -28,6 +28,8 @@ Instancing::Instancing(const BasicInfos* g_info) : BaseScene(g_info) {
     GLint num;
     glGetIntegerv(GL_MAX_TRANSFORM_FEEDBACK_BUFFERS, &num);
     ofLogNotice() << "GL_MAX_TRANSFORM_FEEDBACK_BUFFERS " << num;
+    
+    windowResized(glm::vec2(ofGetWidth(), ofGetHeight()));
 }
 
 void Instancing::setup() {
@@ -317,6 +319,7 @@ void Instancing::draw() {
 
 void Instancing::windowResized(glm::vec2 size) {
     BaseScene::windowResized(size);
+    cam.setAspectRatio(size.x / size.y);
 }
 
 void Instancing::changeVertexNum(const unsigned int num) {

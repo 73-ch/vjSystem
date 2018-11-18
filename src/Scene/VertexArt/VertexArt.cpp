@@ -21,6 +21,7 @@ VertexArt::VertexArt(const BasicInfos* g_info) : BaseScene(g_info) {
 //    cam.setupPerspective();
     cam.lookAt(glm::vec3(0.));
     cam.setPosition(0, 0, 200);
+    windowResized(glm::vec2(ofGetWidth(), ofGetHeight()));
 }
 
 void VertexArt::setup() {
@@ -81,16 +82,15 @@ void VertexArt::draw() {
     
     mesh.draw();
     
-    
     shader.end();
     
-    ofDrawAxis(10);
     cam.end();
     end();
 }
 
 void VertexArt::windowResized(glm::vec2 size) {
     BaseScene::windowResized(size);
+    cam.setAspectRatio(size.x / size.y);
 }
 
 void VertexArt::changeVertexNum(const unsigned int num) {
@@ -100,8 +100,9 @@ void VertexArt::changeVertexNum(const unsigned int num) {
     
     vector<glm::vec3> verts(vertex_num);
     mesh.addVertices(verts);
+    verts.clear();
     
-    ofLogNotice() << "vertex_num : " << mesh.getNumVertices();
+//    ofLogNotice() << "vertex_num : " << mesh.getNumVertices();
 }
 
 void VertexArt::reloadShader() {
