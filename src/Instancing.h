@@ -19,12 +19,14 @@ private:
     ofShader primitive_shader;
     string primitive_shader_vertex;
     string primitive_shader_fragment;
+    glm::vec4 primitive_seed;
     void reloadPrimitiveShader();
     
     GLuint feedback[2];
     ofBufferObject position_buffer[2], velocity_buffer[2], shadow_buffer[2];
     
     ofShader transform_feedback;
+    glm::vec4 transform_seed;
     
     ofVbo vbo[2];
     int frame;
@@ -39,6 +41,7 @@ private:
     ofShader shadow_shader;
     string shadow_shader_vs;
     string shadow_shader_fs;
+    glm::vec4 shadow_seed;
     void reloadShadowShader();
     
 public:

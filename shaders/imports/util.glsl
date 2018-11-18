@@ -27,3 +27,15 @@ float random(float nx, float ny)
 {
     return random(vec2(nx, ny));
 }
+
+//Map
+float map(float value, float inputMin, float inputMax, float outputMin, float outputMax){
+    return ((value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin);
+}
+
+vec3 map(vec3 value, vec3 inputMin, vec3 inputMax, vec3 outputMin, vec3 outputMax){
+    float x = map(value.x, inputMin.x, inputMax.x, outputMin.x, outputMax.x);
+    float y = map(value.y, inputMin.y, inputMax.y, outputMin.y, outputMax.y);
+    float z = map(value.z, inputMin.z, inputMax.z, outputMin.z, outputMax.z);
+    return vec3(x, y, z);
+}

@@ -99,6 +99,8 @@ void Instancing::setup() {
     
     // primitive
     primitive_shader.load("Instancing/primitive_render");
+    primitive_shader_vertex = primitive_shader.getShaderSource(GL_VERTEX_SHADER);
+    primitive_shader_fragment = primitive_shader.getShaderSource(GL_FRAGMENT_SHADER);
     position_location = primitive_shader.getAttributeLocation("in_position");
     velocity_location = primitive_shader.getAttributeLocation("in_velocity");
     
@@ -136,7 +138,6 @@ void Instancing::initOsc() {
         transform_feedback.setupShaderFromSource(GL_VERTEX_SHADER, vert);
         const GLchar* feedback_varings[] = {"out_position", "out_velocity", "out_shadow"};
         glTransformFeedbackVaryings(transform_feedback.getProgram(), 3, feedback_varings, GL_SEPARATE_ATTRIBS);
-        
         transform_feedback.linkProgram();
         
         ofLogNotice() << "instancing transform_feedback vs changed";
@@ -146,14 +147,13 @@ void Instancing::initOsc() {
     ofxSubscribeOsc(OF_PORT, "/instancing/primitive_render/vertex", [=] (const string &vert) {
         primitive_shader_vertex = vert;
         reloadPrimitiveShader();
-        
         ofLogNotice() << "instancing primitive_shader vs changed";
     });
     
     ofxSubscribeOsc(OF_PORT, "/instancing/primitive_render/fragment", [=] (const string &frag) {
         primitive_shader_fragment = frag;
         reloadPrimitiveShader();
-        ofLogNotice() << "instancing transform_feedback vs changed";
+        ofLogNotice() << "instancing primitive_shader fs changed";
     });
     
     // shadow_shader update
@@ -210,6 +210,11 @@ void Instancing::initOsc() {
     
     ofxSubscribeOsc(OF_PORT, "/instancing/scale", scale);
     ofxSubscribeOsc(OF_PORT, "/instancing/timestep", timestep);
+    ofxSubscribeOsc(OF_PORT, "/instancing/light_position", light_position);
+    
+    ofxSubscribeOsc(OF_PORT, "/instancing/transform_seed", transform_seed);
+    ofxSubscribeOsc(OF_PORT, "/instancing/primitive_seed", primitive_seed);
+    ofxSubscribeOsc(OF_PORT, "/instancing/shadow_seed", shadow_seed);
 }
 
 
@@ -217,15 +222,14 @@ void Instancing::update() {
     
 }
 
-void Instancing::draw() {
-    light_position = glm::vec3(cos(info->time * .5), 1000.0, sin(info->time * .5)) * 1000.;
-    
+void Instancing::draw() {    
     transform_feedback.begin();
     
     transform_feedback.setUniform1f("time", info->time);
     transform_feedback.setUniform1f("timestep", timestep);
     transform_feedback.setUniform1f("scale", scale);
     transform_feedback.setUniform3f("light_position", light_position);
+    transform_feedback.setUniform4f("seed", transform_seed);
     
     glEnable(GL_RASTERIZER_DISCARD);
     glBindTransformFeedback(GL_TRANSFORM_FEEDBACK, feedback[frame]);
@@ -245,7 +249,7 @@ void Instancing::draw() {
     ofEnableDepthTest();
     
     begin();
-    ofClear(0);
+    ofClear(188);
     cam.begin();
     
     primitive_shader.begin();
@@ -255,6 +259,7 @@ void Instancing::draw() {
     primitive_shader.setUniform4f("end_color", end_color);
     primitive_shader.setUniformMatrix4f("normal_matrix", ofGetCurrentNormalMatrix());
     primitive_shader.setUniform1f("time", info->time);
+    primitive_shader.setUniform4f("seed", primitive_seed);
     
     ofPushMatrix();
     glEnable(GL_CULL_FACE);
@@ -273,10 +278,10 @@ void Instancing::draw() {
     
     ofPushMatrix();
     shadow_shader.begin();
+    shadow_shader.setUniform4f("seed", shadow_seed);
     ofSetColor(255);
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
-//    ofRotateXDeg(90);
     shadow_mesh.drawInstanced(OF_MESH_FILL, primitive_num);
     glDisable(GL_CULL_FACE);
     shadow_shader.end();
@@ -289,12 +294,12 @@ void Instancing::draw() {
 //    plane.draw();
     
     // stage
-    ofSetColor(200);
-    ofPushMatrix();
-    ofTranslate(glm::vec3(-500,0,-500));
-    ofRotateXDeg(90);
-    ofDrawRectangle(glm::vec3(0), 1000, 1000);
-    ofPopMatrix();
+//    ofSetColor(200);
+//    ofPushMatrix();
+//    ofTranslate(glm::vec3(-5000,0,-5000));
+//    ofRotateXDeg(90);
+//    ofDrawRectangle(glm::vec3(0), 10000, 10000);
+//    ofPopMatrix();
     
     // debug
     ofSetColor(100,100, 200);

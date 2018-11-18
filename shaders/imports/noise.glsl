@@ -1,52 +1,14 @@
-//
-// Description : Array and textureless GLSL 2D/3D/4D simplex
-//               noise functions.
-//      Author : Ian McEwan, Ashima Arts.
-//  Maintainer : ijm
-//     Lastmod : 20110822 (ijm)
-//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.
-//               Distributed under the MIT License. See LICENSE file.
-//               https://github.com/ashima/webgl-noise
-//
-
-float mod289(float x) {
-    return x - floor(x * (1.0 / 289.0)) * 289.0;
-}
-
-vec2 mod289(vec2 x) {
-    return x - floor(x * (1.0 / 289.0)) * 289.0;
-}
-
-vec3 mod289(vec3 x) {
-    return x - floor(x * (1.0 / 289.0)) * 289.0;
-}
-
-vec4 mod289(vec4 x) {
-    return x - floor(x * (1.0 / 289.0)) * 289.0;
-}
-
-float permute(float x) {
-    return mod289(((x*34.0)+1.0)*x);
-}
-
-vec3 permute(vec3 x) {
-    return mod289(((x*34.0)+1.0)*x);
-}
-
-vec4 permute(vec4 x) {
-    return mod289(((x*34.0)+1.0)*x);
-}
-
+float mod289(float x) {return x - floor(x * (1.0 / 289.0)) * 289.0;}
+vec2 mod289(vec2 x) {return x - floor(x * (1.0 / 289.0)) * 289.0;}
+vec3 mod289(vec3 x) {return x - floor(x * (1.0 / 289.0)) * 289.0;}
+vec4 mod289(vec4 x) {return x - floor(x * (1.0 / 289.0)) * 289.0;}
+float permute(float x) {return mod289(((x*34.0)+1.0)*x);}
+vec3 permute(vec3 x) {return mod289(((x*34.0)+1.0)*x);}
+vec4 permute(vec4 x) {return mod289(((x*34.0)+1.0)*x);}
 float taylorInvSqrt(float r)
-{
-    return 1.79284291400159 - 0.85373472095314 * r;
-}
-
+{return 1.79284291400159 - 0.85373472095314 * r;}
 vec4 taylorInvSqrt(vec4 r)
-{
-    return 1.79284291400159 - 0.85373472095314 * r;
-}
-
+{return 1.79284291400159 - 0.85373472095314 * r;}
 float snoise(vec2 v)
 {
     const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0
@@ -92,12 +54,8 @@ float snoise(vec2 v)
     // Compute final noise value at P
     vec3 g;
     g.x  = a0.x  * x0.x  + h.x  * x0.y;
-    g.yz = a0.yz * x12.xz + h.yz * x12.yw;
-    return 130.0 * dot(m, g);
-}
-
-float snoise(vec3 v)
-{
+    g.yz = a0.yz * x12.xz + h.yz * x12.yw;return 130.0 * dot(m, g);}
+float snoise(vec3 v){
     const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
     const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
     
@@ -110,14 +68,10 @@ float snoise(vec3 v)
     vec3 l = 1.0 - g;
     vec3 i1 = min( g.xyz, l.zxy );
     vec3 i2 = max( g.xyz, l.zxy );
-    
-    //   x0 = x0 - 0.0 + 0.0 * C.xxx;
-    //   x1 = x0 - i1  + 1.0 * C.xxx;
-    //   x2 = x0 - i2  + 2.0 * C.xxx;
-    //   x3 = x0 - 1.0 + 3.0 * C.xxx;
+
     vec3 x1 = x0 - i1 + C.xxx;
-    vec3 x2 = x0 - i2 + C.yyy; // 2.0*C.x = 1/3 = C.y
-    vec3 x3 = x0 - D.yyy;      // -1.0+3.0*C.x = -0.5 = -D.y
+    vec3 x2 = x0 - i2 + C.yyy;
+    vec3 x3 = x0 - D.yyy;
     
     // Permutations
     i = mod289(i);
@@ -166,11 +120,8 @@ float snoise(vec3 v)
     
     // Mix final noise value
     vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
-    m = m * m;
-    return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1),
-                                 dot(p2,x2), dot(p3,x3) ) );
-}
-
+    m = m * m;return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1),
+                                 dot(p2,x2), dot(p3,x3) ) );}
 vec4 grad4(float j, vec4 ip)
 {
     const vec4 ones = vec4(1.0, 1.0, 1.0, -1.0);
@@ -180,10 +131,7 @@ vec4 grad4(float j, vec4 ip)
     p.w = 1.5 - dot(abs(p.xyz), ones.xyz);
     s = vec4(lessThan(p, vec4(0.0)));
     p.xyz = p.xyz + (s.xyz*2.0 - 1.0) * s.www;
-    
-    return p;
-}
-
+    return p;}
 // (sqrt(5) - 1)/4 = F4, used once below
 #define F4 0.309016994374947451
 
@@ -231,14 +179,7 @@ float snoise(vec4 v)
     // Permutations
     i = mod289(i);
     float j0 = permute( permute( permute( permute(i.w) + i.z) + i.y) + i.x);
-    vec4 j1 = permute( permute( permute( permute (
-                                                  i.w + vec4(i1.w, i2.w, i3.w, 1.0 ))
-                                        + i.z + vec4(i1.z, i2.z, i3.z, 1.0 ))
-                               + i.y + vec4(i1.y, i2.y, i3.y, 1.0 ))
-                      + i.x + vec4(i1.x, i2.x, i3.x, 1.0 ));
-    
-    // Gradients: 7x7x6 points over a cube, mapped onto a 4-cross polytope
-    // 7*7*6 = 294, which is close to the ring size 17*17 = 289.
+    vec4 j1 = permute( permute( permute( permute (i.w + vec4(i1.w, i2.w, i3.w, 1.0 ))+ i.z + vec4(i1.z, i2.z, i3.z, 1.0 ))+ i.y + vec4(i1.y, i2.y, i3.y, 1.0 ))+ i.x + vec4(i1.x, i2.x, i3.x, 1.0 ));
     vec4 ip = vec4(1.0/294.0, 1.0/49.0, 1.0/7.0, 0.0) ;
     
     vec4 p0 = grad4(j0,   ip);
@@ -259,8 +200,6 @@ float snoise(vec4 v)
     vec3 m0 = max(0.6 - vec3(dot(x0,x0), dot(x1,x1), dot(x2,x2)), 0.0);
     vec2 m1 = max(0.6 - vec2(dot(x3,x3), dot(x4,x4)            ), 0.0);
     m0 = m0 * m0;
-    m1 = m1 * m1;
-    return 49.0 * ( dot(m0*m0, vec3( dot( p0, x0 ), dot( p1, x1 ), dot( p2, x2 )))
+    m1 = m1 * m1;return 49.0 * ( dot(m0*m0, vec3( dot( p0, x0 ), dot( p1, x1 ), dot( p2, x2 )))
                    + dot(m1*m1, vec2( dot( p3, x3 ), dot( p4, x4 ) ) ) ) ;
-    
 }
