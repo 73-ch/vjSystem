@@ -45,16 +45,6 @@ void Instancing::setup() {
         velocity[i * 3 + 2] = ofRandom(-1, 1);
     }
     
-    float * age = new float[primitive_num];
-    for(int i = 0; i<primitive_num; i++){
-        age[i] = 1;
-    }
-    
-    float * lifetime = new float[primitive_num];
-    for(int i = 0; i<primitive_num; i++){
-        lifetime[i] = 1;
-    }
-    
     float * shadow = new float[primitive_num * 3];
     for(int i = 0; i<primitive_num; i++){
         shadow[i * 3 + 0] = ofRandom(-10, 10);
@@ -64,12 +54,11 @@ void Instancing::setup() {
     
     // setup for transform_feedback shader.
     transform_feedback.setupShaderFromFile(GL_VERTEX_SHADER, "Instancing/transform_feedback.vert");
-    const GLchar* feedback_varings[] = {"out_position", "out_velocity", "out_age", "out_lifetime"};
-    glTransformFeedbackVaryings(transform_feedback.getProgram(), 4, feedback_varings, GL_SEPARATE_ATTRIBS);
+    const GLchar* feedback_varings[] = {"out_position", "out_velocity", "out_shadow"};
+    glTransformFeedbackVaryings(transform_feedback.getProgram(), 3, feedback_varings, GL_SEPARATE_ATTRIBS);
     
-//    const GLchar* feedback_varings[] = {"out_position", "out_velocity", "out_shadow", "out_age", "out_lifetime"};
-//    glTransformFeedbackVaryings(transform_feedback.getProgram(), 5, feedback_varings, GL_SEPARATE_ATTRIBS);
-    
+//    const GLchar* feedback_varings[] = {"out_position", "out_velocity"};
+//    glTransformFeedbackVaryings(transform_feedback.getProgram(), 2, feedback_varings, GL_SEPARATE_ATTRIBS);
     transform_feedback.linkProgram();
     
     // primitive setting
@@ -87,35 +76,22 @@ void Instancing::setup() {
         velocity_buffer[i].allocate();
         velocity_buffer[i].setData(sizeof(float) * primitive_num * 3, velocity, GL_STREAM_DRAW);
         
-        age_buffer[i].allocate();
-        age_buffer[i].setData(sizeof(float) * primitive_num, age, GL_STREAM_DRAW);
-        
-        lifetime_buffer[i].allocate();
-        lifetime_buffer[i].setData(sizeof(float) * primitive_num, lifetime, GL_STREAM_DRAW);
-        
-//        shadow_buffer[i].allocate();
-//        shadow_buffer[i].setData(sizeof(float) * primitive_num * 3, shadow, GL_STREAM_DRAW);
+        shadow_buffer[i].allocate();
+        shadow_buffer[i].setData(sizeof(float) * primitive_num * 3, shadow, GL_STREAM_DRAW);
         
         vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_position"), position_buffer[i], 3, 0);
         vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_velocity"), velocity_buffer[i], 3, 0);
-        vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_age"), age_buffer[i], 1, 0);
-        vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_lifetime"), lifetime_buffer[i], 1, 0);
-        
-//        vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_shadow"), velocity_buffer[i], 3, 0);
+        vbo[i].setAttributeBuffer(transform_feedback.getAttributeLocation("in_shadow"), shadow_buffer[i], 4, 0);
         
         glBindTransformFeedback(GL_TRANSFORM_FEEDBACK, feedback[i]);
         glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 0, position_buffer[i].getId());
         glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 1, velocity_buffer[i].getId());
-        glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 2, age_buffer[i].getId());
-        glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 3, lifetime_buffer[i].getId());
-//        glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 4, shadow_buffer[i].getId());
-        
+        glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 2, shadow_buffer[i].getId());
     }
     
     delete [] position;
     delete [] velocity;
-    delete [] age;
-    delete [] lifetime;
+    delete [] shadow;
     
     glBindTransformFeedback(GL_TRANSFORM_FEEDBACK, 0);
     
@@ -125,32 +101,64 @@ void Instancing::setup() {
     primitive_shader.load("Instancing/primitive_render");
     position_location = primitive_shader.getAttributeLocation("in_position");
     velocity_location = primitive_shader.getAttributeLocation("in_velocity");
-    age_location = primitive_shader.getAttributeLocation("in_age");
-    lifetime_location = primitive_shader.getAttributeLocation("in_lifetime");
     
     ofVbo& mesh_vbo = mesh.getVbo();
     mesh_vbo.setAttributeDivisor(position_location, 1);
     mesh_vbo.setAttributeDivisor(velocity_location, 1);
-    mesh_vbo.setAttributeDivisor(age_location, 1);
-    mesh_vbo.setAttributeDivisor(lifetime_location, 1);
     
     light_position = glm::vec3(1000);
     
-    scale = 0.2;
-    timestep = 1.0;
+    scale = 0.01;
+    timestep = 0.25;
     
     start_color = glm::vec4(glm::vec3(1.0), 1.0);
     end_color = glm::vec4(1.0);
+    
+    // primitive shadow
+    shadow_shader.load("Instancing/shadow");
+    shadow_shader_vs = shadow_shader.getShaderSource(GL_VERTEX_SHADER);
+    shadow_shader_fs = shadow_shader.getShaderSource(GL_FRAGMENT_SHADER);
+    
+    shadow_location = shadow_shader.getAttributeLocation("in_shadow");
+    shadow_velocity_location = shadow_shader.getAttributeLocation("in_velocity");
+    shadow_mesh.getVbo().setAttributeDivisor(shadow_location, 1);
+    shadow_mesh.getVbo().setAttributeDivisor(shadow_velocity_location, 1);
+    
+    ofPlanePrimitive plane;
+    plane.set(2, 10, 2, 2);
+//    shadow_mesh = plane.getMesh();
+    shadow_mesh = box.getMesh();
 }
 
 void Instancing::initOsc() {
+    // transform_feedback vs update
     ofxSubscribeOsc(OF_PORT, "/instancing/transform_feedback/vertex", [=] (const string &vert) {
         transform_feedback.setupShaderFromSource(GL_VERTEX_SHADER, vert);
-        const GLchar* feedback_varings[] = {"out_position", "out_velocity", "out_age", "out_lifetime"};
-        glTransformFeedbackVaryings(transform_feedback.getProgram(), 4, feedback_varings, GL_SEPARATE_ATTRIBS);
+        const GLchar* feedback_varings[] = {"out_position", "out_velocity", "out_shadow"};
+        glTransformFeedbackVaryings(transform_feedback.getProgram(), 3, feedback_varings, GL_SEPARATE_ATTRIBS);
         
         transform_feedback.linkProgram();
+        
+        ofLogNotice() << "instancing transform_feedback vs changed";
     });
+    
+    // primitive_shader update
+    ofxSubscribeOsc(OF_PORT, "/instancing/primitive_render/vertex", [=] (const string &vert) {
+        primitive_shader_vertex = vert;
+        reloadPrimitiveShader();
+        
+        ofLogNotice() << "instancing primitive_shader vs changed";
+    });
+    
+    ofxSubscribeOsc(OF_PORT, "/instancing/primitive_render/fragment", [=] (const string &frag) {
+        primitive_shader_fragment = frag;
+        reloadPrimitiveShader();
+        ofLogNotice() << "instancing transform_feedback vs changed";
+    });
+    
+    // shadow_shader update
+    ofxSubscribeOsc(OF_PORT, "/instancing/shadow_shader/vertex", shadow_shader_vs, [=](){ reloadShadowShader(); ofLogNotice() << "instancing shadow_shader vs changed"; });
+    ofxSubscribeOsc(OF_PORT, "/instancing/shadow_shader/fragment", shadow_shader_fs, [=](){ reloadShadowShader(); ofLogNotice() << "instancing shadow_shader fs changed"; });
     
     ofxSubscribeOsc(OF_PORT, "/instancing/transform_feedback/reset_buffer", [=]() {
         float * position = new float[primitive_num * 3];
@@ -167,32 +175,24 @@ void Instancing::initOsc() {
             velocity[i * 3 + 2] = ofRandom(-1, 1);
         }
         
-        float * age = new float[primitive_num];
+        float * shadow = new float[primitive_num * 3];
         for(int i = 0; i<primitive_num; i++){
-            age[i] = 1;
-        }
-        
-        float * lifetime = new float[primitive_num];
-        for(int i = 0; i<primitive_num; i++){
-            lifetime[i] = 1;
+            shadow[i * 3 + 0] = ofRandom(-10, 10);
+            shadow[i * 3 + 1] = ofRandom(-10, 10);
+            shadow[i * 3 + 2] = ofRandom(-10, 10);
         }
         
         for (int i = 0; i < 2; i++) {
             position_buffer[i].unmap();
             velocity_buffer[i].unmap();
-            age_buffer[i].unmap();
-            lifetime_buffer[i].unmap();
             
             position_buffer[i].setData(sizeof(float) * primitive_num * 3, position, GL_STREAM_DRAW);
             velocity_buffer[i].setData(sizeof(float) * primitive_num * 3, velocity, GL_STREAM_DRAW);
-            age_buffer[i].setData(sizeof(float) * primitive_num, age, GL_STREAM_DRAW);
-            lifetime_buffer[i].setData(sizeof(float) * primitive_num, lifetime, GL_STREAM_DRAW);
         }
         
         delete [] position;
         delete [] velocity;
-        delete [] age;
-        delete [] lifetime;
+        delete [] shadow;
     });
     
     ofxSubscribeOsc(OF_PORT, "/instancing/seed", seed);
@@ -218,13 +218,14 @@ void Instancing::update() {
 }
 
 void Instancing::draw() {
-    light_position = glm::vec3(cos(info->time * .5), 0.0, sin(info->time * .5)) * 1000.;
+    light_position = glm::vec3(cos(info->time * .5), 1000.0, sin(info->time * .5)) * 1000.;
     
     transform_feedback.begin();
     
     transform_feedback.setUniform1f("time", info->time);
     transform_feedback.setUniform1f("timestep", timestep);
     transform_feedback.setUniform1f("scale", scale);
+    transform_feedback.setUniform3f("light_position", light_position);
     
     glEnable(GL_RASTERIZER_DISCARD);
     glBindTransformFeedback(GL_TRANSFORM_FEEDBACK, feedback[frame]);
@@ -240,8 +241,6 @@ void Instancing::draw() {
     
     mesh.getVbo().setAttributeBuffer(position_location, position_buffer[frame], 3, 0);
     mesh.getVbo().setAttributeBuffer(velocity_location, velocity_buffer[frame], 3, 0);
-    mesh.getVbo().setAttributeBuffer(age_location, age_buffer[frame], 1, 0);
-    mesh.getVbo().setAttributeBuffer(lifetime_location, lifetime_buffer[frame], 1, 0);
     
     ofEnableDepthTest();
     
@@ -255,6 +254,7 @@ void Instancing::draw() {
     primitive_shader.setUniform4f("start_color", start_color);
     primitive_shader.setUniform4f("end_color", end_color);
     primitive_shader.setUniformMatrix4f("normal_matrix", ofGetCurrentNormalMatrix());
+    primitive_shader.setUniform1f("time", info->time);
     
     ofPushMatrix();
     glEnable(GL_CULL_FACE);
@@ -267,6 +267,28 @@ void Instancing::draw() {
     ofPopMatrix();
     primitive_shader.end();
     
+    // primitive shadow
+    shadow_mesh.getVbo().setAttributeBuffer(shadow_location, shadow_buffer[frame], 3, 0);
+    shadow_mesh.getVbo().setAttributeBuffer(shadow_velocity_location, velocity_buffer[frame], 3, 0);
+    
+    ofPushMatrix();
+    shadow_shader.begin();
+    ofSetColor(255);
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
+//    ofRotateXDeg(90);
+    shadow_mesh.drawInstanced(OF_MESH_FILL, primitive_num);
+    glDisable(GL_CULL_FACE);
+    shadow_shader.end();
+    
+    ofPopMatrix();
+    
+//    ofPlanePrimitive plane;
+//    plane.set(2, 10, 2, 2);
+//    plane.rotateDeg(90, glm::vec3(1,0,0));
+//    plane.draw();
+    
+    // stage
     ofSetColor(200);
     ofPushMatrix();
     ofTranslate(glm::vec3(-500,0,-500));
@@ -278,7 +300,7 @@ void Instancing::draw() {
     ofSetColor(100,100, 200);
     ofDrawSphere(light_position, 10);
     ofSetColor(255);
-    ofDrawAxis(10);
+//    ofDrawAxis(10);
     cam.end();
     end();
     
@@ -294,4 +316,18 @@ void Instancing::windowResized(glm::vec2 size) {
 
 void Instancing::changeVertexNum(const unsigned int num) {
     
+}
+
+void Instancing::reloadPrimitiveShader() {
+    primitive_shader.setupShaderFromSource(GL_VERTEX_SHADER, primitive_shader_vertex);
+    primitive_shader.setupShaderFromSource(GL_FRAGMENT_SHADER, primitive_shader_fragment);
+    primitive_shader.bindDefaults();
+    primitive_shader.linkProgram();
+}
+
+void Instancing::reloadShadowShader() {
+    shadow_shader.setupShaderFromSource(GL_VERTEX_SHADER, shadow_shader_vs);
+    shadow_shader.setupShaderFromSource(GL_FRAGMENT_SHADER, shadow_shader_fs);
+    shadow_shader.bindDefaults();
+    shadow_shader.linkProgram();
 }

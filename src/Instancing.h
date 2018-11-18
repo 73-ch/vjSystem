@@ -17,9 +17,12 @@ private:
     glm::vec3 lookat;
     
     ofShader primitive_shader;
+    string primitive_shader_vertex;
+    string primitive_shader_fragment;
+    void reloadPrimitiveShader();
     
     GLuint feedback[2];
-    ofBufferObject position_buffer[2], velocity_buffer[2], age_buffer[2], lifetime_buffer[2], shadow_buffer[2];
+    ofBufferObject position_buffer[2], velocity_buffer[2], shadow_buffer[2];
     
     ofShader transform_feedback;
     
@@ -27,10 +30,16 @@ private:
     int frame;
     glm::vec3 light_position;
     
-    int position_location, velocity_location, age_location, lifetime_location;
+    int position_location, velocity_location, age_location, lifetime_location, shadow_location, shadow_velocity_location;
     
     float timestep, scale;
     glm::vec4 start_color, end_color;
+    
+    ofVboMesh shadow_mesh;
+    ofShader shadow_shader;
+    string shadow_shader_vs;
+    string shadow_shader_fs;
+    void reloadShadowShader();
     
 public:
     Instancing(const BasicInfos* g_info);

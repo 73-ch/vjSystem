@@ -11,6 +11,7 @@ uniform mat4 normal_matrix;
 uniform vec3 light_position;
 uniform vec4 start_color;
 uniform vec4 end_color;
+uniform float time;
 
 in vec4 position;
 in vec3 normal;
@@ -19,8 +20,8 @@ in vec4 color;
 
 in vec3 in_position;
 in vec3 in_velocity;
-in float in_age;
-in float in_lifetime;
+//in float in_age;
+//in float in_lifetime;
 
 out vec4 position_varying;
 out vec3 normal_varying;
@@ -31,10 +32,10 @@ out vec4 v_position_varying;
 out vec3 v_light_position;
 
 void main() {
-    float elapsedTime = clamp(float(in_age) / float(max(in_lifetime, 1.0)), 0.0, 1.0);
+    float elapsedTime = mod(time, 1.0);
     
     mat4 lookAt = makeLookAt( in_velocity.xyz, vec3(0.0), vec3(0,1,0) );
-    vec4 size = vec4(vec3(sin(PI * elapsedTime)), 1.0);
+    vec4 size = vec4(vec3(1.0), 1.0);
     position_varying = vec4(vec3(lookAt * (position * size)) + in_position, 1.0);
     v_position_varying = modelViewMatrix * position_varying;
     
