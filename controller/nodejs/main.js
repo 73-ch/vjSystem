@@ -50,8 +50,9 @@ const fetchFile = (__path) => {
     FS.readFile(__path, 'utf8', (err, data) => {
       if (err) {
         console.error(err);
+      }else {
+        resolve(data);
       }
-      resolve(data);
     });
   });
 };

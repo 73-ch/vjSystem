@@ -304,9 +304,9 @@ void Instancing::draw() {
 //    ofPopMatrix();
     
     // debug
-    ofSetColor(100,100, 200);
-    ofDrawSphere(light_position, 10);
-    ofSetColor(255);
+//    ofSetColor(100,100, 200);
+//    ofDrawSphere(light_position, 10);
+//    ofSetColor(255);
 //    ofDrawAxis(10);
     cam.end();
     end();

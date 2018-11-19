@@ -26,9 +26,10 @@ mat4 makeLookAt(vec3 eye, vec3 center, vec3 up)
     return M;
 }
 
+
 void main() {
     mat4 look_at = makeLookAt( in_velocity, vec3(0.0), vec3(0,1,0) );
     vec3 pos = (look_at * position).xyz + in_shadow;
-    pos.y = 0.01;
+    pos.y = 0.0;
     gl_Position = modelViewProjectionMatrix * vec4(pos, 1.0);
 }

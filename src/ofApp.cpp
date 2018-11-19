@@ -42,6 +42,7 @@ void ofApp::initOsc() {
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    info.screen_size = glm::vec2(ofGetWidth(), ofGetHeight());
     info.time = ofGetElapsedTimef();
     manager.update();
 }
@@ -66,7 +67,7 @@ void ofApp::draw(){
     post_processing.end();
     
     ofSetColor(255);
-    ofDrawBitmapString(ofToString(ofGetFrameRate()), 10, 10);
+//    ofDrawBitmapString(ofToString(ofGetFrameRate()), 10, 10);
 }
 
 //--------------------------------------------------------------
