@@ -11,7 +11,7 @@ int main( ){
     settings.setSize(1920, 1080);// ここに会場のプロジェクターの解像度
     ofCreateWindow(settings);
 
-    ofSetFullscreen(true);
+//    ofSetFullscreen(true);
     
 
 	// this kicks off the running of my app

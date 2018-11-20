@@ -1,7 +1,5 @@
 #version 330
 
-#define PI 3.14159265358979
-
 #pragma glslify: import('../imports/util.glsl')
 #pragma glslify: import('../imports/noise.glsl')
 
@@ -40,12 +38,10 @@ void main() {
     vec3 m = out_position - l_pos;
     vec3 shadow = vec3(10000000.);
 
-
     if (bool(abs(step(l_pos.y, out_position.y)- 1.0))) {
         shadow = l_pos + (dot(vec3(0), up) - dot(up, l_pos)) / dot(up, m) * m;
         shadow.x = min(10000.0, abs(shadow.x)) * sign(shadow.x);
         shadow.z = min(10000.0, abs(shadow.z)) * sign(shadow.z);
     }
-
-    out_shadow = shadow;
+    out_shadow = vec3(shadow.xy, length(m));
 }

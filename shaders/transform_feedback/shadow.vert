@@ -2,12 +2,15 @@
 
 #define PI 3.14159265358979
 
-in vec3 in_shadow;
+in vec3 in_shadow; // vec3(shadow_pos.x, shadow_pos.z, length(light_pos - obj_pos))
 in vec3 in_velocity;
 in vec4 position;
 
 uniform float time;
 uniform mat4 modelViewProjectionMatrix;
+uniform vec3 light_position;
+
+out vec4 v_color;
 
 // excerpt from https://github.com/andreasmuller/NoiseWorkshop
 mat4 makeLookAt(vec3 eye, vec3 center, vec3 up)
@@ -29,7 +32,8 @@ mat4 makeLookAt(vec3 eye, vec3 center, vec3 up)
 
 void main() {
     mat4 look_at = makeLookAt( in_velocity, vec3(0.0), vec3(0,1,0) );
-    vec3 pos = (look_at * position).xyz + in_shadow;
+    vec3 pos = (look_at * position).xyz + in_shadow.xyy;
     pos.y = 0.0;
     gl_Position = modelViewProjectionMatrix * vec4(pos, 1.0);
+    v_color = vec4(vec3(1.0 - length(light_position)), 1.0);
 }

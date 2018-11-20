@@ -281,6 +281,7 @@ void Instancing::draw() {
     ofPushMatrix();
     shadow_shader.begin();
     shadow_shader.setUniform4f("seed", shadow_seed);
+    shadow_shader.setUniform3f("light_position", light_position);
     ofSetColor(255);
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);

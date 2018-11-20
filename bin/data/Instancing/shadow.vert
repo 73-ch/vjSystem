@@ -6,6 +6,8 @@ in vec3 in_shadow;
 in vec3 in_velocity;
 in vec4 position;
 
+out vec3 v_color;
+
 uniform float time;
 uniform mat4 modelViewProjectionMatrix;
 
@@ -29,6 +31,8 @@ mat4 makeLookAt(vec3 eye, vec3 center, vec3 up)
 void main() {
     mat4 look_at = makeLookAt( in_velocity, vec3(0.0), vec3(0,1,0) );
     vec3 pos = (look_at * position).xyz + in_shadow;
-    pos.y = 0.01;
-    gl_Position = modelViewProjectionMatrix * vec4(pos, 1.0);
+    float size = 1.0;
+    pos.y = 0.;
+    gl_Position = modelViewProjectionMatrix * vec4(pos * size, 1.0);
+    v_color = vec3(0.4);
 }
