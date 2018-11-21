@@ -17,6 +17,7 @@ uniform float time;
 uniform float timestep;
 uniform float scale;
 uniform vec3 light_position;
+uniform vec4 seed;
 
 void main() {
     vec3 pos = in_position;
@@ -44,6 +45,5 @@ void main() {
         shadow.x = min(10000.0, abs(shadow.x)) * sign(shadow.x);
         shadow.z = min(10000.0, abs(shadow.z)) * sign(shadow.z);
     }
-    
-    out_shadow = shadow;
+    out_shadow = vec3(shadow.xz, length(m));
 }

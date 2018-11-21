@@ -1,5 +1,7 @@
 #version 330
 
+#define PI 3.14159265358979
+
 #pragma glslify: import('../imports/util.glsl')
 #pragma glslify: import('../imports/noise.glsl')
 

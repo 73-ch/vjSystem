@@ -29,11 +29,11 @@ mat4 makeLookAt(vec3 eye, vec3 center, vec3 up)
     return M;
 }
 
-
 void main() {
     mat4 look_at = makeLookAt( in_velocity, vec3(0.0), vec3(0,1,0) );
     vec3 pos = (look_at * position).xyz + in_shadow.xyy;
     pos.y = 0.0;
     gl_Position = modelViewProjectionMatrix * vec4(pos, 1.0);
-    v_color = vec4(vec3(1.0 - length(light_position)), 1.0);
+    // v_color = vec4(vec3(1.0 - in_shadow.z/10.), 1.0);
+    v_color = vec4(sqrt(in_shadow.z)/ 50.-0.5);
 }
