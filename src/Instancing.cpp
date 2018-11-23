@@ -9,7 +9,7 @@
 Instancing::Instancing(const BasicInfos* g_info) : BaseScene(g_info) {
     name = "Instancing";
     
-    primitive_num = 100000;
+    primitive_num = 10000;
     
     //
     initOsc();
@@ -218,6 +218,7 @@ void Instancing::initOsc() {
     ofxSubscribeOsc(OF_PORT, "/instancing/transform_seed", transform_seed);
     ofxSubscribeOsc(OF_PORT, "/instancing/primitive_seed", primitive_seed);
     ofxSubscribeOsc(OF_PORT, "/instancing/shadow_seed", shadow_seed);
+    ofxSubscribeOsc(OF_PORT, "/instancing/primitive_num", primitive_num);
 }
 
 
