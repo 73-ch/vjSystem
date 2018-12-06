@@ -40,13 +40,11 @@ void VertexArt::initOsc() {
     ofxSubscribeOsc(OF_PORT, "/vertex_art/vertex", [=](const string &vert) {
         vertex_text = vert;
         reloadShader();
-        ofLogNotice() << "vertex_art vs changed";
     });
     
     ofxSubscribeOsc(OF_PORT, "/vertex_art/fragment", [=](const string &frag) {
         fragment_text = frag;
         reloadShader();
-        ofLogNotice() << "vertex_art fs changed";
     });
     
     ofxSubscribeOsc(OF_PORT, "/vertex_art/seed", seed);
@@ -106,8 +104,27 @@ void VertexArt::changeVertexNum(const unsigned int num) {
 }
 
 void VertexArt::reloadShader() {
-    shader.setupShaderFromSource(GL_VERTEX_SHADER, vertex_text);
-    shader.setupShaderFromSource(GL_FRAGMENT_SHADER, fragment_text);
+    const string b_vs = shader.getShaderSource(GL_VERTEX_SHADER);
+    const string b_fs = shader.getShaderSource(GL_FRAGMENT_SHADER);
+    
+    bool result = shader.setupShaderFromSource(GL_VERTEX_SHADER, vertex_text);
+    
+    if (!result) {
+        shader.setupShaderFromSource(GL_VERTEX_SHADER, b_vs);
+        vertex_text = b_vs;
+    } else {
+        ofLogNotice() << "vertex_art vs changed";
+    }
+    
+    result = shader.setupShaderFromSource(GL_FRAGMENT_SHADER, fragment_text);
+    
+    if (!result) {
+        shader.setupShaderFromSource(GL_FRAGMENT_SHADER, b_fs);
+        fragment_text= b_fs;
+    } else {
+        ofLogNotice() << "vertex_art fs changed";
+    }
+    
     shader.bindDefaults();
     shader.linkProgram();
 }

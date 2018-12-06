@@ -29,12 +29,18 @@ void ofApp::initOsc() {
     ofxPublishOsc(MAX_HOST, MAX_PORT, "/time", &ofGetElapsedTimef);
     
     ofxSubscribeOsc(OF_PORT, "/post_processing/fragment", [=](const string &str) {
+        const string before = post_processing.getShaderSource(GL_FRAGMENT_SHADER);
         post_processing.setupShaderFromSource(GL_VERTEX_SHADER, pvs_text);
-        post_processing.setupShaderFromSource(GL_FRAGMENT_SHADER, str);
+        const bool result = post_processing.setupShaderFromSource(GL_FRAGMENT_SHADER, str);
+        
+        if (!result) {
+            post_processing.setupShaderFromSource(GL_FRAGMENT_SHADER, before);
+        } else {
+            ofLogNotice() << "pfs changed";
+        }
+        
         post_processing.bindDefaults();
         post_processing.linkProgram();
-        
-        ofLogNotice() << "pfs changed";
     });
     
     ofxSubscribeOsc(OF_PORT, "/post_processing/seeds", seeds);

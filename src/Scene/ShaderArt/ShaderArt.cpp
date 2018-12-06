@@ -52,8 +52,23 @@ void ShaderArt::draw() {
 }
 
 void ShaderArt::reloadShader() {
-    shader.setupShaderFromSource(GL_VERTEX_SHADER, vertex_text);
-    shader.setupShaderFromSource(GL_FRAGMENT_SHADER, fragment_text);
+    const string b_vs = shader.getShaderSource(GL_VERTEX_SHADER);
+    const string b_fs = shader.getShaderSource(GL_FRAGMENT_SHADER);
+    
+    bool result = shader.setupShaderFromSource(GL_VERTEX_SHADER, vertex_text);
+    
+    if (!result) {
+        shader.setupShaderFromSource(GL_VERTEX_SHADER, b_vs);
+        vertex_text = b_vs;
+    }
+    
+    result = shader.setupShaderFromSource(GL_FRAGMENT_SHADER, fragment_text);
+    
+    if (!result) {
+        shader.setupShaderFromSource(GL_FRAGMENT_SHADER, b_fs);
+        fragment_text= b_fs;
+    }
+    
     shader.bindDefaults();
     shader.linkProgram();
 }
