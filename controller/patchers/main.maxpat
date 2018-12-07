@@ -39,6 +39,129 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 8,
+							"minor" : 0,
+							"revision" : 1,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 84.0, 106.0, 640.0, 480.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"visible" : 1,
+						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 352.0, 179.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 317.0, 228.0, 183.0, 22.0 ],
+									"text" : "prepend /mesh_chain/add_chain"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 287.0, 325.0, 67.0, 22.0 ],
+									"text" : "s osc-send"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-1",
+									"index" : 1,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 15.0, 14.0, 30.0, 30.0 ]
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 588.0, 244.0, 79.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"tags" : ""
+					}
+,
+					"text" : "p MeshChain"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -81,7 +204,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-50",
@@ -126,7 +248,6 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"format" : 6,
@@ -729,7 +850,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 626.0, 229.0, 90.0, 22.0 ],
+					"patching_rect" : [ 588.0, 209.0, 90.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -6163,7 +6284,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1405.0, 78.0, 383.0, 166.0 ],
+						"rect" : [ 1537.0, 1033.0, 383.0, 166.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -6192,6 +6313,33 @@
 						"subpatcher_template" : "",
 						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 712.0, 100.5, 116.0, 20.0 ],
+									"presentation" : 1,
+									"presentation_rect" : [ 290.0, 111.0, 76.0, 20.0 ],
+									"text" : "send current"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 712.0, 126.0, 24.0, 24.0 ],
+									"presentation" : 1,
+									"presentation_rect" : [ 290.0, 132.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
@@ -6303,7 +6451,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 487.0, 100.5, 150.0, 20.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 143.0, 108.0, 150.0, 20.0 ],
+									"presentation_rect" : [ 120.0, 111.0, 150.0, 20.0 ],
 									"text" : "post process shader"
 								}
 
@@ -6422,7 +6570,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 530.0, 186.0, 50.0, 49.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 169.0, 130.0, 132.0, 22.0 ],
+									"presentation_rect" : [ 146.0, 133.0, 132.0, 22.0 ],
 									"style" : "chiba",
 									"text" : "post/color-diff.frag"
 								}
@@ -6529,7 +6677,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 589.0, 539.0, 131.0, 35.0 ],
-									"text" : "/manager/set_opacity 2 0."
+									"text" : "/manager/set_scene 2 ShaderArt"
 								}
 
 							}
@@ -6537,7 +6685,7 @@
 								"box" : 								{
 									"allowdrag" : 0,
 									"id" : "obj-61",
-									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject" ],
+									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -6549,9 +6697,9 @@
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "umenu[2]",
-											"parameter_mmax" : 3.0,
+											"parameter_mmax" : 4.0,
 											"parameter_shortname" : "umenu",
-											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject" ],
+											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain" ],
 											"parameter_type" : 2
 										}
 
@@ -6583,7 +6731,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 343.0, 539.0, 131.0, 35.0 ],
-									"text" : "/manager/set_opacity 1 1."
+									"text" : "/manager/set_scene 1 VertexArt"
 								}
 
 							}
@@ -6591,7 +6739,7 @@
 								"box" : 								{
 									"allowdrag" : 0,
 									"id" : "obj-58",
-									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject" ],
+									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -6603,9 +6751,9 @@
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "umenu[1]",
-											"parameter_mmax" : 3.0,
+											"parameter_mmax" : 4.0,
 											"parameter_shortname" : "umenu",
-											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject" ],
+											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain" ],
 											"parameter_type" : 2
 										}
 
@@ -6637,7 +6785,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 120.0, 539.0, 130.0, 35.0 ],
-									"text" : "/manager/set_opacity 0 1."
+									"text" : "/manager/set_scene 0 MeshChain"
 								}
 
 							}
@@ -6645,7 +6793,7 @@
 								"box" : 								{
 									"allowdrag" : 0,
 									"id" : "obj-42",
-									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject" ],
+									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -6659,7 +6807,7 @@
 											"parameter_longname" : "umenu",
 											"parameter_mmax" : 2.0,
 											"parameter_shortname" : "umenu",
-											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject" ],
+											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain" ],
 											"parameter_type" : 2
 										}
 
@@ -6711,7 +6859,7 @@
 										}
 , 										{
 											"number" : 5,
-											"data" : [ 5, "obj-42", "umenu", "int", 3, 5, "obj-58", "umenu", "int", 1, 5, "obj-61", "umenu", "int", 0, 5, "obj-68", "live.slider", "float", 1.0, 5, "obj-16", "live.slider", "float", 1.0, 5, "obj-70", "live.slider", "float", 0.0 ]
+											"data" : [ 5, "obj-42", "umenu", "int", 3, 5, "obj-58", "umenu", "int", 1, 5, "<invalid>", "umenu", "int", 0, 5, "obj-68", "live.slider", "float", 1.0, 5, "obj-16", "live.slider", "float", 1.0, 5, "obj-70", "live.slider", "float", 0.0 ]
 										}
 , 										{
 											"number" : 7,
@@ -6761,7 +6909,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 474.0, 136.0, 24.0, 24.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 143.0, 130.0, 24.0, 24.0 ],
+									"presentation_rect" : [ 120.0, 133.0, 24.0, 24.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -6884,6 +7032,54 @@
 								"patchline" : 								{
 									"destination" : [ "obj-57", 1 ],
 									"source" : [ "obj-59", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-16", 0 ],
+									"order" : 2,
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-42", 0 ],
+									"order" : 5,
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-58", 0 ],
+									"order" : 3,
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-61", 0 ],
+									"order" : 1,
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-68", 0 ],
+									"order" : 4,
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-70", 0 ],
+									"order" : 0,
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -7020,7 +7216,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-6",

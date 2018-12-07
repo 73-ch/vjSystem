@@ -38,11 +38,7 @@ void FeedbackObject::initOsc() {
     
     ofxSubscribeOsc(OF_PORT, "/feedback_obj/draw_obj", [&](const int i){
         draw_obj = static_cast<DrawObj>(i);
-        ofLogNotice() << draw_obj;
-        
     });
-    
-//    ofxSubscribeOsc(OF_PORT, "/feedback_obj", <#T &value#>)
 }
 
 void FeedbackObject::setup() {

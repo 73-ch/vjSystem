@@ -10,6 +10,7 @@
 #include "TestScene.h"
 #include "Instancing.h"
 #include "FeedbackObject.h"
+#include "MeshChain.h"
 
 #define MAX_SCENES 3
 
