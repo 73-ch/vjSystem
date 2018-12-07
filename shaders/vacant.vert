@@ -40,110 +40,18 @@ vec3 W(float a){return vec3((a-.5)*.9,(mod(a,.25)-.125)*4./(1.+step(-.24999,-abs
 vec3 X(float a){return vec3(vec2(1.2*mod(a,.50001)-.3,(mod(a,.50001)*2.-.5)*sign(a-.50001)),.0);}
 vec3 Y(float a){return vec3(vec2((1.2*mod(a,.50001)-.3)*sign(a-.50001)*step(.25,mod(a,.50001)),(mod(a,.50001)*2.-.5)),.0);}
 vec3 Z(float a){return vec3(vec2(mod(a,.33333333)*2.4-.4,sign(a*2.-1.)*min(abs(a*3.-1.5),.5)),.0);}
-#define wordinput float id, float v_num, float size, float span
+
 float rnd(vec2 p){return fract(sin(dot(p,vec2(15.79,81.93))*45678.9123));}
+float noise(vec2 p){vec2 i=floor(p);vec2 f=fract(p);f=f*f*(3.-2.*f);return mix(mix(rnd(i+vec2(0.,0.)),rnd(i+vec2(1.,0.)),f.x),mix(rnd(i+vec2(0.,1.)),rnd(i+vec2(1.,1.)),f.x),f.y);}
+float fbm(vec2 uv,float d){float sum=0.;float amp=.7;for(int i=0;i<4;++i){sum+=noise(uv)*amp;uv+=uv*d;amp*=.4;}return sum;}
 
-float noise(vec2 p) {
-    vec2 i = floor(p);
-    vec2 f = fract(p);
-    f = f*f*(3.-2.*f);
+#define wordinput float id, float v_num, float si, float sp
+vec3 saskia(wordinput){float n=mod(id*6.,v_num);float l=v_num/6.;if(n<=l){return S(n/l)*si+vec3(-(sp)*3.5,.0,.0);} if(n<=l*2.){return A((n-l)/l)*si+vec3(-(sp)*2.,.0,.0);}if(n<=l*3.){return S((n-l*2.)/l)*si+vec3(-sp*.5,.0,.0);}if(n<=l*4.){return K((n-l*3.)/l)*si+vec3((sp),.0,.0);}if(n<=l*5.){return I((n-l*4.)/l)*si+vec3((sp)*2.25,.0,.0);}return A((n-l*5.)/l)*si+vec3((sp)*3.5,.0,.0);}
+vec3 tokyo(wordinput){float n=mod(id*5.,v_num);float l=v_num/5.;if(n<=l){return T(n/l)*si+vec3(-(sp)*3.5,.0,.0);}if(n<=l*2.){return O((n-l)/l)*si+vec3(-(sp)*1.75,0.0,0.0);}if(n<=l*3.){return K((n-l*2.)/l)*si;}if(n<=l*4.){return Y((n-l*3.)/l)*si+vec3((sp)*1.5,.0,.0);}return O((n-l*4.)/l)*si+vec3((sp)*3.,.0,.0);}
+vec3 maxmsp(wordinput){float n=mod(id*6.,v_num);float l=v_num/6.;if(n<=l)return M(n/l)*si+vec3(-(sp)*4,.0,.0);if(n<=l*2.)return A((n-l)/l)*si+vec3(-(sp)*2.25,.0,.0);if(n<=l*3.)return X((n-l*2.)/l)*si+vec3(-sp*.75,.0,.0);if(n<=l*4.)return M((n-l*3.)/l)*si+vec3((sp)*.75,.0,.0);if(n<=l*5.)return S((n-l*4.)/l)*si+vec3((sp)*2.25,.0,.0);return P((n - l*5.)/l) * si+vec3((sp)*3.75,.0,.0);}
+vec3 ableton(wordinput){float n=mod(id*7.,v_num);float l=v_num/7.;if(n<=l)return A(n/l)*si+vec3(-(sp)*4.5,.0,.0);if(n<=l*2.)return B((n-l)/l)*si+vec3(-(sp)*3.,.0,.0);if(n<=l*3.)return L((n-l*2.)/l)*si+vec3(-sp*1.75,.0,.0);if(n<=l*4.)return E((n-l*3.)/l)*si+vec3(-sp*.25,.0,.0);if(n<=l*5.)return T((n-l*4.)/l)*si+vec3((sp)*1.25,.0,.0);if(n<=l*6.)return O((n-l*5.)/l)*si+vec3((sp)*2.8,.0,.0);return N((n - l*6.) / l) * si+vec3((sp)*4.5,.0,.0);}
+vec3 vacant(wordinput) {float n=mod(id*6.,v_num);float l=v_num/6.;if(n<=l)return V(n/l)*si+vec3(-(sp)*3.75,.0,.0);if(n<=l*2.)return A((n-l)/l)*si+vec3(-(sp)*2.5,.0,.0);if(n<=l*3.)return C((n-l*2.)/l)*si+vec3(-sp*.75,.0,.0);if(n<=l*4.)return A((n-l*3.)/l)*si+vec3((sp)*.75,.0,.0);if(n<=l*5.)return N((n-l*4.)/l)*si+vec3((sp)*2.25,.0,.0);return T((n-l*5.)/l)*si+vec3((sp)*3.75,.0,.0);}
 
-    float bottomOfGrid = mix( rnd( i + vec2( 0.0, 0.0 ) ), rnd( i + vec2( 1.0, 0.0 ) ), f.x );
-    float topOfGrid = mix( rnd( i + vec2( 0.0, 1.0 ) ), rnd( i + vec2( 1.0, 1.0 ) ), f.x );
-
-    return mix( bottomOfGrid, topOfGrid, f.y );
-}
-
-float fbm( vec2 uv , float diff)
-{
-    float sum = 0.00;
-    float amp = 0.7;
-    
-    for( int i = 0; i < 4; ++i ){
-        sum += noise( uv ) * amp;
-        uv += uv * diff;
-        amp *= 0.4;
-    }
-    return sum;
-}
-
-vec3 saskia(wordinput) {
-    float devide = 6.0;
-    float n = mod(id*devide, v_num);
-    float L_NUM = v_num / devide;
-    float V_L_NUM = 1.0 / L_NUM;
-
-    if (n <= L_NUM) {
-        return S(n * V_L_NUM)*size+vec3(-(span)*4,.0,.0);
-    } else if(n <= L_NUM *2.) {
-        return A((n - L_NUM) * V_L_NUM) * size+vec3(-(span)*2.5,.0,.0);
-    } else if(n <= L_NUM* 3.) {
-        return S((n - L_NUM * 2.) * V_L_NUM) * size+vec3(-span,.0,.0);
-    } else if(n <= L_NUM*4.) {
-        return K((n - L_NUM*3.) * V_L_NUM) * size+vec3((span),.0,.0);
-    } else if(n <= L_NUM*5.) {
-        return I((n - L_NUM*4.) * V_L_NUM) * size+vec3((span)*2.,.0,.0);
-    } else {
-        return A((n - L_NUM*5.) * V_L_NUM) * size+vec3((span)*3.,.0,.0);
-    }
-}
-
-vec3 tokyo(wordinput) {
-    float n = mod(id*5.0, v_num);
-    float L_NUM = v_num / 5.0;
-    float V_L_NUM =  1.0/L_NUM;
-    if (n <= L_NUM) {
-        return T(n * V_L_NUM)*size+vec3(-(span)*3.5,.0,.0);
-    } else if(n <= L_NUM *2.) {
-        return O((n - L_NUM) * V_L_NUM) * size+vec3(-(span)*1.75,0.0,0.0);
-    } else if(n <= L_NUM* 3.) {
-        return K((n - L_NUM * 2.) * V_L_NUM) * size;
-    } else if(n <= L_NUM*4.) {
-        return Y((n - L_NUM*3.) * V_L_NUM) * size+vec3((span)*1.5,.0,.0);
-    } else {
-        return O((n - L_NUM*4.) * V_L_NUM) * size+vec3((span)*3.,.0,.0);
-    }
-}
-
-vec3 maxmsp(wordinput) {
-    float n = mod(id*6., v_num);
-    float L_NUM = v_num / 6.;
-    float V_L_NUM = 1.0 / L_NUM;
-
-    if (n <= L_NUM) {
-        return M(n * V_L_NUM)*size+vec3(-(span)*4,.0,.0);
-    } else if(n <= L_NUM *2.) {
-        return A((n - L_NUM) * V_L_NUM) * size+vec3(-(span)*2.25,.0,.0);
-    } else if(n <= L_NUM* 3.) {
-        return X((n - L_NUM * 2.) * V_L_NUM) * size+vec3(-span*.75,.0,.0);
-    } else if(n <= L_NUM*4.) {
-        return M((n - L_NUM*3.) * V_L_NUM) * size+vec3((span)*.75,.0,.0);
-    } else if(n <= L_NUM*5.) {
-        return S((n - L_NUM*4.) * V_L_NUM) * size+vec3((span)*2.25,.0,.0);
-    } else {
-        return P((n - L_NUM*5.) * V_L_NUM) * size+vec3((span)*3.75,.0,.0);
-    }
-}
-
-vec3 vacant(wordinput) {
-    float n = mod(id*6.0, v_num);
-    float L_NUM = v_num / 6.0;
-    float V_L_NUM = 1.0 / L_NUM;
-
-    if (n <= L_NUM) {
-        return V(n * V_L_NUM)*size+vec3(-(span)*3.75,.0,.0);
-    } else if(n <= L_NUM *2.) {
-        return A((n - L_NUM) * V_L_NUM) * size+vec3(-(span)*2.5,.0,.0);
-    } else if(n <= L_NUM* 3.) {
-        return C((n - L_NUM * 2.) * V_L_NUM) * size+vec3(-span*.75,.0,.0);
-    } else if(n <= L_NUM*4.) {
-        return A((n - L_NUM*3.) * V_L_NUM) * size+vec3((span)*.75,.0,.0);
-    } else if(n <= L_NUM*5.) {
-        return N((n - L_NUM*4.) * V_L_NUM) * size+vec3((span)*2.25,.0,.0);
-    } else {
-        return T((n - L_NUM*5.) * V_L_NUM) * size+vec3((span)*3.75,.0,.0);
-    }
-}
 
 float vertex_i = gl_VertexID / float(vertex_num);
 
@@ -152,8 +60,8 @@ void main() {
     float v_num = vertex_num;
     float v_time = time * 1.;
 
-    float size = 200;
-    float span = size / 2. + 20.*exp(fract(v_time));
+    float size = 200.;
+    float span = size / 2. + 20.;
 
     // float th_x = (gl_VertexID + time * 100.) / float(vertex_num) * 2 * PI;
     // float th_y = (float(vertex_num) - gl_VertexID + rnd(vec2(time, vertex_i)) * 100.) / float(vertex_num) * PI_2;
@@ -162,7 +70,7 @@ void main() {
     // a_pos.x -= 500.;
 
     // pos_a & effect
-    vec3 pos_a = vacant(id, v_num, size, span);
+    vec3 pos_a = ableton(id, v_num, size, span);
 
     // pos *= sin(v_time + gl_VertexID * 0.000002);
     // pos_saskia += fract(gl_VertexID/10.) * 50. * sin(v_time);
@@ -172,12 +80,13 @@ void main() {
 
     // morph param
     float mp;
-    // mp = fract(v_time);
-    mp = clamp(sin((seed.y + v_time*.5))*3.-1.5, 0., 1.);
+    mp = fract(v_time);
+    // mp = clamp(sin((seed.y + v_time*.5))*3.-1.5, 0., 1.);
     
     // final output
     vec3 final;
-    final = mix(pos_a, pos_b, mp);
+    // final = mix(pos_a, pos_b, mp);
+    final = saskia(id, v_num, size, span);
 
     gl_Position = modelViewProjectionMatrix * vec4(final,1.0);
 
