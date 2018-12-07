@@ -6,12 +6,6 @@
 #define H_SQRT_2 0.7071067811865476
 #define SQRT_3 0.8660254037844386
 
-#define L_SIZE 200.
-#define SPAN 20.
-#define L_SIZE_SPAN L_SIZE/2.+SPAN
-// saskia
-// tokyo
-
 uniform float time;
 uniform int vertex_num;
 uniform vec4 seed;
@@ -46,83 +40,150 @@ vec3 W(float a){return vec3((a-.5)*.9,(mod(a,.25)-.125)*4./(1.+step(-.24999,-abs
 vec3 X(float a){return vec3(vec2(1.2*mod(a,.50001)-.3,(mod(a,.50001)*2.-.5)*sign(a-.50001)),.0);}
 vec3 Y(float a){return vec3(vec2((1.2*mod(a,.50001)-.3)*sign(a-.50001)*step(.25,mod(a,.50001)),(mod(a,.50001)*2.-.5)),.0);}
 vec3 Z(float a){return vec3(vec2(mod(a,.33333333)*2.4-.4,sign(a*2.-1.)*min(abs(a*3.-1.5),.5)),.0);}
+#define wordinput float id, float v_num, float size, float span
+float rnd(vec2 p){return fract(sin(dot(p,vec2(15.79,81.93))*45678.9123));}
 
-vec3 saskia(float id, float v_num) {
+float noise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    f = f*f*(3.-2.*f);
+
+    float bottomOfGrid = mix( rnd( i + vec2( 0.0, 0.0 ) ), rnd( i + vec2( 1.0, 0.0 ) ), f.x );
+    float topOfGrid = mix( rnd( i + vec2( 0.0, 1.0 ) ), rnd( i + vec2( 1.0, 1.0 ) ), f.x );
+
+    return mix( bottomOfGrid, topOfGrid, f.y );
+}
+
+float fbm( vec2 uv , float diff)
+{
+    float sum = 0.00;
+    float amp = 0.7;
+    
+    for( int i = 0; i < 4; ++i ){
+        sum += noise( uv ) * amp;
+        uv += uv * diff;
+        amp *= 0.4;
+    }
+    return sum;
+}
+
+vec3 saskia(wordinput) {
     float devide = 6.0;
     float n = mod(id*devide, v_num);
     float L_NUM = v_num / devide;
     float V_L_NUM = 1.0 / L_NUM;
 
-    vec3 pos = vec3(1000000.0,.0,100000.);
-
     if (n <= L_NUM) {
-        pos = S(n * V_L_NUM)*L_SIZE+vec3(-(L_SIZE_SPAN)*4,.0,.0);
+        return S(n * V_L_NUM)*size+vec3(-(span)*4,.0,.0);
     } else if(n <= L_NUM *2.) {
-        pos = A((n - L_NUM) * V_L_NUM) * L_SIZE+vec3(-(L_SIZE_SPAN)*2.5,.0,.0);
+        return A((n - L_NUM) * V_L_NUM) * size+vec3(-(span)*2.5,.0,.0);
     } else if(n <= L_NUM* 3.) {
-        pos = S((n - L_NUM * 2.) * V_L_NUM) * L_SIZE+vec3(-L_SIZE_SPAN,.0,.0);
+        return S((n - L_NUM * 2.) * V_L_NUM) * size+vec3(-span,.0,.0);
     } else if(n <= L_NUM*4.) {
-        pos = K((n - L_NUM*3.) * V_L_NUM) * L_SIZE+vec3((L_SIZE_SPAN),.0,.0);
+        return K((n - L_NUM*3.) * V_L_NUM) * size+vec3((span),.0,.0);
     } else if(n <= L_NUM*5.) {
-        pos = I((n - L_NUM*4.) * V_L_NUM) * L_SIZE+vec3((L_SIZE_SPAN)*2.,.0,.0);
-    } else if(n <= L_NUM*6.) {
-        pos = A((n - L_NUM*5.) * V_L_NUM) * L_SIZE+vec3((L_SIZE_SPAN)*3.,.0,.0);
+        return I((n - L_NUM*4.) * V_L_NUM) * size+vec3((span)*2.,.0,.0);
+    } else {
+        return A((n - L_NUM*5.) * V_L_NUM) * size+vec3((span)*3.,.0,.0);
     }
-    return pos;
 }
 
-vec3 tokyo(float id, float v_num) {
-    float devide = 5.0;
-    float n = mod(id*devide, v_num);
-    float L_NUM = v_num / devide;
+vec3 tokyo(wordinput) {
+    float n = mod(id*5.0, v_num);
+    float L_NUM = v_num / 5.0;
     float V_L_NUM =  1.0/L_NUM;
-    vec3 pos = vec3(1000000.0,.0,100000.);
-
     if (n <= L_NUM) {
-        pos = T(n * V_L_NUM)*L_SIZE+vec3(-(L_SIZE_SPAN)*3.5,.0,.0);
+        return T(n * V_L_NUM)*size+vec3(-(span)*3.5,.0,.0);
     } else if(n <= L_NUM *2.) {
-        pos = O((n - L_NUM) * V_L_NUM) * L_SIZE+vec3(-(L_SIZE_SPAN)*1.75,0.0,0.0);
+        return O((n - L_NUM) * V_L_NUM) * size+vec3(-(span)*1.75,0.0,0.0);
     } else if(n <= L_NUM* 3.) {
-        pos = K((n - L_NUM * 2.) * V_L_NUM) * L_SIZE;
+        return K((n - L_NUM * 2.) * V_L_NUM) * size;
     } else if(n <= L_NUM*4.) {
-        pos = Y((n - L_NUM*3.) * V_L_NUM) * L_SIZE+vec3((L_SIZE_SPAN)*1.5,.0,.0);
-    } else if(n <= L_NUM*5.) {
-        pos = O((n - L_NUM*4.) * V_L_NUM) * L_SIZE+vec3((L_SIZE_SPAN)*3.,.0,.0);
+        return Y((n - L_NUM*3.) * V_L_NUM) * size+vec3((span)*1.5,.0,.0);
+    } else {
+        return O((n - L_NUM*4.) * V_L_NUM) * size+vec3((span)*3.,.0,.0);
     }
-
-    return pos;
 }
 
+vec3 maxmsp(wordinput) {
+    float n = mod(id*6., v_num);
+    float L_NUM = v_num / 6.;
+    float V_L_NUM = 1.0 / L_NUM;
 
+    if (n <= L_NUM) {
+        return M(n * V_L_NUM)*size+vec3(-(span)*4,.0,.0);
+    } else if(n <= L_NUM *2.) {
+        return A((n - L_NUM) * V_L_NUM) * size+vec3(-(span)*2.25,.0,.0);
+    } else if(n <= L_NUM* 3.) {
+        return X((n - L_NUM * 2.) * V_L_NUM) * size+vec3(-span*.75,.0,.0);
+    } else if(n <= L_NUM*4.) {
+        return M((n - L_NUM*3.) * V_L_NUM) * size+vec3((span)*.75,.0,.0);
+    } else if(n <= L_NUM*5.) {
+        return S((n - L_NUM*4.) * V_L_NUM) * size+vec3((span)*2.25,.0,.0);
+    } else {
+        return P((n - L_NUM*5.) * V_L_NUM) * size+vec3((span)*3.75,.0,.0);
+    }
+}
+
+vec3 vacant(wordinput) {
+    float n = mod(id*6.0, v_num);
+    float L_NUM = v_num / 6.0;
+    float V_L_NUM = 1.0 / L_NUM;
+
+    if (n <= L_NUM) {
+        return V(n * V_L_NUM)*size+vec3(-(span)*3.75,.0,.0);
+    } else if(n <= L_NUM *2.) {
+        return A((n - L_NUM) * V_L_NUM) * size+vec3(-(span)*2.5,.0,.0);
+    } else if(n <= L_NUM* 3.) {
+        return C((n - L_NUM * 2.) * V_L_NUM) * size+vec3(-span*.75,.0,.0);
+    } else if(n <= L_NUM*4.) {
+        return A((n - L_NUM*3.) * V_L_NUM) * size+vec3((span)*.75,.0,.0);
+    } else if(n <= L_NUM*5.) {
+        return N((n - L_NUM*4.) * V_L_NUM) * size+vec3((span)*2.25,.0,.0);
+    } else {
+        return T((n - L_NUM*5.) * V_L_NUM) * size+vec3((span)*3.75,.0,.0);
+    }
+}
+
+float vertex_i = gl_VertexID / float(vertex_num);
 
 void main() {
     float id = mod(gl_VertexID, vertex_num);
     float v_num = vertex_num;
-    float v_time = time * 2.;
+    float v_time = time * 1.;
 
-    
-    vec3 pos_saskia = saskia(id, v_num);
-    vec3 pos_tokyo = tokyo(id, v_num);
-    
+    float size = 200;
+    float span = size / 2. + 20.*exp(fract(v_time));
 
-    // vec3 pos2 = vec3(sin(t/cos(t)) * 400., cos(t*t) * 400., mod(t +v_time + fract(gl_VertexID /vertex_num * 10.0), 100.));
+    // float th_x = (gl_VertexID + time * 100.) / float(vertex_num) * 2 * PI;
+    // float th_y = (float(vertex_num) - gl_VertexID + rnd(vec2(time, vertex_i)) * 100.) / float(vertex_num) * PI_2;
+    // float r = 500. * sin(2. * th_y) - 250.;
+    // vec3 a_pos = vec3(cos(th_x) * cos(r)*r + rnd(vec2(exp(vertex_i) /gl_VertexID, 0.378347)) * 1000., rnd(vec2(cos(th_y), rnd(vec2(vertex_i, 0.89393939)))) + sin(th_x) * sin(r + time * 2.) * r + rnd(vec2(gl_VertexID, seed.y)), 500. * sin(2 * th_y+time)  + rnd(vec2(gl_VertexID, seed.z)) * 500.) - vec3(noise(vec2(time* 0.1, gl_VertexID)-0.25) * 4000., 0. ,0.);
+    // a_pos.x -= 500.;
+
+    // pos_a & effect
+    vec3 pos_a = vacant(id, v_num, size, span);
 
     // pos *= sin(v_time + gl_VertexID * 0.000002);
     // pos_saskia += fract(gl_VertexID/10.) * 50. * sin(v_time);
 
-    float t = gl_VertexID / vertex_num + cos(v_time + length(pos_saskia +fract(v_time)));
+    // pos_b & effect
+    vec3 pos_b = maxmsp(id, v_num, size, span);
 
-
-    float a = fract(time);
-    // a = clamp(sin((seed.y + v_time*.5))*3.-1.5, 0., 1.);
+    // morph param
+    float mp;
+    // mp = fract(v_time);
+    mp = clamp(sin((seed.y + v_time*.5))*3.-1.5, 0., 1.);
     
-    vec3 final = mix(pos_saskia, pos_tokyo, a);
+    // final output
+    vec3 final;
+    final = mix(pos_a, pos_b, mp);
 
     gl_Position = modelViewProjectionMatrix * vec4(final,1.0);
 
 
     v_color = vec4((normalize(final)+vec3(1.0))*.25, 1.0);
-
+    // float t = vertex_i + cos(v_time + length(final +fract(v_time)));
 
     // gl_PointSize = max(5 * cos(t+t*t), 10.);
     gl_PointSize = 3.0;
