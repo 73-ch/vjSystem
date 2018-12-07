@@ -6,6 +6,7 @@ SceneManager::SceneManager(BasicInfos* g_info) {
     stored_scenes["TestScene"] = new TestScene(g_info);
     stored_scenes["VertexArt"] = new VertexArt(g_info);
     stored_scenes["Instancing"] = new Instancing(g_info);
+    stored_scenes["FeedbackObject"] = new FeedbackObject(g_info);
     // init container[3]
     for (size_t i = 0; i < MAX_SCENES; ++i) {
         scene_containers[i] = new SceneContainer();

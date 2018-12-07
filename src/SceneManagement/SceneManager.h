@@ -9,6 +9,7 @@
 #include "VertexArt.h"
 #include "TestScene.h"
 #include "Instancing.h"
+#include "FeedbackObject.h"
 
 #define MAX_SCENES 3
 

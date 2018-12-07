@@ -16,12 +16,14 @@ VertexArt::VertexArt(const BasicInfos* g_info) : BaseScene(g_info) {
     // camera settings
     cam.setFov(45);
     cam.setAspectRatio(ofGetWidth() / ofGetHeight());
-    cam.setFarClip(1000);
+    cam.setFarClip(3000);
     cam.setNearClip(0.1);
 //    cam.setupPerspective();
     cam.lookAt(glm::vec3(0.));
     cam.setPosition(0, 0, 200);
     windowResized(glm::vec2(ofGetWidth(), ofGetHeight()));
+    
+    glEnable(GL_PROGRAM_POINT_SIZE);
 }
 
 void VertexArt::setup() {
