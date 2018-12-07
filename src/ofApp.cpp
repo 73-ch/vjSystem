@@ -6,6 +6,7 @@ void ofApp::setup(){
     ofSetBackgroundColor(0);
     ofSetVerticalSync(false);
     ofEnableAlphaBlending();
+    ofHideCursor();
     
     // post_processingのソース変更
     post_processing.load("InitShader/default.vert", "InitShader/default_pfs.frag");
