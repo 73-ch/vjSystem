@@ -57,7 +57,6 @@ void FeedbackObject::draw() {
     
     ofSetColor(feedback_color.r, feedback_color.g, feedback_color.b, feedback_color.a);
     ofDrawRectangle(0, 0, fbo[0].getWidth(), fbo[0].getHeight());
-    ofLogNotice() << feedback_color;
     fbo[1].draw(0,0);
     ofPushMatrix();
     cam.begin();
@@ -68,7 +67,6 @@ void FeedbackObject::draw() {
     glm::vec3 col = glm::vec3(ofNoise(info->time)*.5+(sin(info->time)+1.)*.25, abs(sin(info->time)), 0.9) + base_color;
     col*=255;
     
-    ofLogNotice() << col;
     
     ofSetColor(col.x, col.y, col.z);
     

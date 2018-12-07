@@ -36,7 +36,6 @@ void MeshChain::initOsc() {
     ofxSubscribeOsc(OF_PORT, "/mesh_chain/set_mode", [&](const int mode_num){current_mode = static_cast<ChainMode>(mode_num);});
     
     ofxSubscribeOsc(OF_PORT, "/mesh_chain/add_chain", [=](){
-        ofLogNotice() << "rad";
         addChain();
     });
     

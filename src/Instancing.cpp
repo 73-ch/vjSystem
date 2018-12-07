@@ -137,7 +137,6 @@ void Instancing::setup() {
 void Instancing::initOsc() {
     // transform_feedback vs update
     ofxSubscribeOsc(OF_PORT, "/instancing/transform_feedback/vertex", [=] (const string &vert) {
-        ofLogNotice() << "read";
         transform_feedback.setupShaderFromSource(GL_VERTEX_SHADER, vert);
         const GLchar* feedback_varings[] = {"out_position", "out_velocity", "out_shadow"};
         glTransformFeedbackVaryings(transform_feedback.getProgram(), 3, feedback_varings, GL_SEPARATE_ATTRIBS);
