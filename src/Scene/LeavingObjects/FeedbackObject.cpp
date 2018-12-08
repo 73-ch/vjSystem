@@ -28,6 +28,8 @@ void FeedbackObject::initOsc() {
         cam.lookAt(lookat);
     });
     
+
+    
     ofxSubscribeOsc(OF_PORT, "/feedback_obj/cam/lookat", [=](const glm::vec3 g_lookat) {
         lookat = g_lookat;
         cam.lookAt(lookat);

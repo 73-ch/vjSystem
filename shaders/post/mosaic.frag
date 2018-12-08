@@ -14,8 +14,10 @@ out vec4 outputColor;
 void main() {
     vec3 final;
     vec2 st = vec2(gl_FragCoord.x, u_resolution.y - gl_FragCoord.y);
+    
+    float size = 10. * seeds.x + 1. +length(st/ u_resolution + sin(time));
 
-    st = mod(st*floor(seeds.x*5.+1.), u_resolution);
+    st = floor(st/size)*size;
 
     float sum_opacity = max(s_opacity0 + s_opacity1 + s_opacity2, 1.0);
     

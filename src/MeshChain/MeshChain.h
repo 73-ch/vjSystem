@@ -14,6 +14,7 @@ class MeshChain : public BaseScene {
     };
     
     void addChain();
+    void updateMode();
     
 public:
     MeshChain(const BasicInfos* g_info);
@@ -42,6 +43,8 @@ public:
     float cam_distance;
     
     bool create_chain;
+    
+    float before_time;
     
     float opacity;
     

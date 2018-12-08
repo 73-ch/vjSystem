@@ -18,6 +18,8 @@ class Chain {
     void changeMode(ofPrimitiveMode select_mode);
     void changeSpeed(float g_speed);
     void changeOpacity(float g_opacity);
+    void changeNoisePower(const float power);
+    void updateDirection();
     static ofPrimitiveMode getRandomMode() {
         array<ofPrimitiveMode, 3>modes;
         modes[0] = OF_PRIMITIVE_LINE_STRIP;
@@ -32,6 +34,8 @@ class Chain {
     ofVec3f position;
     float speed;
     float opacity;
+    
+    glm::vec3 direction;
     
     
     private :

@@ -58,42 +58,54 @@ float vertex_i = gl_VertexID / float(vertex_num);
 void main() {
     float id = mod(gl_VertexID, vertex_num);
     float v_num = vertex_num;
-    float v_time = time * 1.;
+    float v_time = time + seed.x;
 
     float size = 200.;
     float span = size / 2. + 20.;
 
-    // float th_x = (gl_VertexID + time * 100.) / float(vertex_num) * 2 * PI;
-    // float th_y = (float(vertex_num) - gl_VertexID + rnd(vec2(time, vertex_i)) * 100.) / float(vertex_num) * PI_2;
-    // float r = 500. * sin(2. * th_y) - 250.;
-    // vec3 a_pos = vec3(cos(th_x) * cos(r)*r + rnd(vec2(exp(vertex_i) /gl_VertexID, 0.378347)) * 1000., rnd(vec2(cos(th_y), rnd(vec2(vertex_i, 0.89393939)))) + sin(th_x) * sin(r + time * 2.) * r + rnd(vec2(gl_VertexID, seed.y)), 500. * sin(2 * th_y+time)  + rnd(vec2(gl_VertexID, seed.z)) * 500.) - vec3(noise(vec2(time* 0.1, gl_VertexID)-0.25) * 4000., 0. ,0.);
-    // a_pos.x -= 500.;
+    float th_x = (gl_VertexID + time * 100.) / float(vertex_num) * 2 * PI;
+    float th_y = (float(vertex_num) - gl_VertexID + rnd(vec2(cos(time + seed.x), vertex_i)) * 100.) / float(vertex_num) * PI_2;
+    float r = 500. * sin(2. * th_y) - 250.;
+    vec3 a_pos = vec3(cos(th_x) * cos(r)*r + rnd(vec2(exp(vertex_i) /gl_VertexID, 0.378347)) * 1000., rnd(vec2(cos(th_y), rnd(vec2(vertex_i, 0.89393939)))) + sin(th_x) * sin(r + time * 2.) * r + rnd(vec2(gl_VertexID, seed.y)), 500. * sin(2 * th_y+time)  + rnd(vec2(gl_VertexID, seed.z)) * 500.) - vec3(noise(vec2(time* 0.1, gl_VertexID)-0.25) * 4000., 0. ,0.);
+    a_pos.x -= 500.;
 
     // pos_a & effect
-    vec3 pos_a = ableton(id, v_num, size, span);
+    vec3 pos_a_a = maxmsp(id + seed.x*0.01, v_num, size, span);
+    vec3 pos_a_b = ableton(id + seed.x*0.01, v_num, size, span);
 
-    // pos *= sin(v_time + gl_VertexID * 0.000002);
+    float amp = step(0.5, fract(v_time*.2));
+    amp = clamp(mod(abs(sin(v_time))*3., 3.0)-1.5, 0.0, 1.0);
+
+    vec3 pos_a = mix(pos_a_a, pos_a_b, amp);
+    
+
+    a_pos *= sin(v_time + gl_VertexID * 0.000002);
     // pos_saskia += fract(gl_VertexID/10.) * 50. * sin(v_time);
+    // vec3 new_pos = vec3(cos(v_time), sin(v_time, id)) * 100.;
 
     // pos_b & effect
-    vec3 pos_b = maxmsp(id, v_num, size, span);
+    vec3 pos_b = tokyo(id, v_num, size, span);
+    pos_b.z = a_pos.z;
+    pos_b.y = a_pos.b;
+    pos_b.x = a_pos.x;
+    // pos_b.x += sin(time + seed.x);
 
     // morph param
     float mp;
-    mp = fract(v_time);
-    // mp = clamp(sin((seed.y + v_time*.5))*3.-1.5, 0., 1.);
-    
+    mp = clamp(sin(v_time)*3., 0., 1.0);
     // final output
     vec3 final;
-    // final = mix(pos_a, pos_b, mp);
-    final = saskia(id, v_num, size, span);
+    final = pos_a;
+    final = mix(pos_a, pos_b, mp);
 
+    // final = maxmsp(id, v_num, size, span);
     gl_Position = modelViewProjectionMatrix * vec4(final,1.0);
 
 
-    v_color = vec4((normalize(final)+vec3(1.0))*.25, 1.0);
-    // float t = vertex_i + cos(v_time + length(final +fract(v_time)));
+    v_color = vec4(1.0);
+    v_color = vec4(cos(v_time*PI_2)*.5,mp*amp+.5, (fbm(vec2(mp, dot(pos_a_a,pos_a_b)),1.2)+ abs(sin(v_time*.25)))*1.25, 1.0);
+    float t = vertex_i + cos(v_time + length(final +fract(v_time)));
 
-    // gl_PointSize = max(5 * cos(t+t*t), 10.);
-    gl_PointSize = 3.0;
+    gl_PointSize = 4.0;
+    gl_PointSize = min(5. * cos(t*t), 4.);
 }

@@ -20,6 +20,9 @@ Chain::Chain(float g_speed, float g_z){
     
     speed = g_speed;
     
+    updateDirection();
+    vbo.addVertex(glm::vec3(ofNoise(select_point / noise_power, noise_seed.x) * 900 - 450, ofNoise(select_point / noise_power, noise_seed.y) * 900 - 450, z) + direction);
+    
     opacity = 100;
     z = g_z;
 }
@@ -37,7 +40,12 @@ void Chain::update() {
     select_point = floor(ofGetFrameNum() / 6);
     if (ofGetFrameNum() % 6 == 0 && select_point > 0) {
         z += speed;
-        vbo.addVertex(ofVec3f(ofNoise(select_point / noise_power, noise_seed.x) * 900 - 450, ofNoise(select_point / noise_power, noise_seed.y) * 900 - 450, z));
+
+        
+        direction = (glm::vec3(1.0)-glm::step(glm::vec3(450, 450, 10.), glm::abs(vbo.getVertices().back()))) * direction;
+        
+        vbo.addVertex(glm::vec3(ofNoise(select_point * noise_power, noise_seed.x) * 900 - 450, ofNoise(select_point * noise_power, noise_seed.y) * 900 - 450, z) + direction);
+        
         if (use_index && ofGetFrameNum() % 12 == 0) {
             int last_vertex = vbo.getVertices().size();
             int num = last_vertex - last_vertex % 3;
@@ -84,10 +92,18 @@ void Chain::changeMode(ofPrimitiveMode select_mode){
     }
 }
 
+void Chain::changeNoisePower(const float power) {
+    noise_power = power;
+}
+
 void Chain::changeSpeed(float g_speed) {
     speed = g_speed;
 }
 
 void Chain::changeOpacity(float g_opacity) {
     opacity = g_opacity;
+}
+
+void Chain::updateDirection() {
+    direction = glm::vec3(ofRandom(100.), ofRandom(100.), 0.);
 }

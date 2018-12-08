@@ -17,7 +17,7 @@ out vec4 outputColor;
 void main() {
     vec3 final;
     vec2 diff = vec2(seeds.x * 10.);
-
+    st = mod(st + seeds.x*sin(time)* 200., u_resolution);
     st = abs(st-u_resolution * vec2(.5));
 
     float sum_opacity = max(s_opacity0 + s_opacity1 + s_opacity2, 1.0);

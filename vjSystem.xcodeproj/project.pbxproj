@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3AA0D4FAA89D0F8A0E545 /* OscReceivedElements.cpp */; };
+		391C402B21A6C59A00F05BFD /* Cigarbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 391C402921A6C59A00F05BFD /* Cigarbox.cpp */; };
 		3957247C219EAFB500446459 /* PrimitiveRoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3957247A219EAFB500446459 /* PrimitiveRoom.cpp */; };
 		39572481219EBB4C00446459 /* Instancing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3957247F219EBB4C00446459 /* Instancing.cpp */; };
+		39CB5FC321BA4278008D6F77 /* FeedbackObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39CB5FC221BA4278008D6F77 /* FeedbackObject.cpp */; };
+		39CB5FC721BA6F67008D6F77 /* MeshChain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39CB5FC521BA6F67008D6F77 /* MeshChain.cpp */; };
+		39CB5FCA21BA6FED008D6F77 /* Chain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39CB5FC821BA6FED008D6F77 /* Chain.cpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
 		505D2E041A71BF1B13DED5A2 /* ShaderArt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4E16AB6A373C75A6BDAAC07 /* ShaderArt.cpp */; };
 		510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6DEF695B88BA5FAACEAA937 /* UdpSocket.cpp */; };
@@ -57,11 +61,19 @@
 		32182F86A22602685E1723AD /* VertexArt.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = VertexArt.h; path = src/Scene/VertexArt/VertexArt.h; sourceTree = SOURCE_ROOT; };
 		335C5D4BB187671BDB08592B /* ofxOscArrayPublisher.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscArrayPublisher.h; path = ../../../addons/ofxPubSubOsc/src/details/ofxOscArrayPublisher.h; sourceTree = SOURCE_ROOT; };
 		369E3026B25606BACEB87179 /* ofxOscSubscribeParameter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscSubscribeParameter.h; path = ../../../addons/ofxPubSubOsc/src/details/Subscriber/ofxOscSubscribeParameter.h; sourceTree = SOURCE_ROOT; };
+		391C402921A6C59A00F05BFD /* Cigarbox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cigarbox.cpp; sourceTree = "<group>"; };
+		391C402A21A6C59A00F05BFD /* Cigarbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cigarbox.h; sourceTree = "<group>"; };
 		3957247A219EAFB500446459 /* PrimitiveRoom.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PrimitiveRoom.cpp; sourceTree = "<group>"; };
 		3957247B219EAFB500446459 /* PrimitiveRoom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrimitiveRoom.h; sourceTree = "<group>"; };
 		3957247D219EB57000446459 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
 		3957247F219EBB4C00446459 /* Instancing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Instancing.cpp; sourceTree = "<group>"; };
 		39572480219EBB4C00446459 /* Instancing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Instancing.h; sourceTree = "<group>"; };
+		39CB5FC121BA4278008D6F77 /* FeedbackObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedbackObject.h; path = Scene/LeavingObjects/FeedbackObject.h; sourceTree = "<group>"; };
+		39CB5FC221BA4278008D6F77 /* FeedbackObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FeedbackObject.cpp; path = Scene/LeavingObjects/FeedbackObject.cpp; sourceTree = "<group>"; };
+		39CB5FC521BA6F67008D6F77 /* MeshChain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MeshChain.cpp; sourceTree = "<group>"; };
+		39CB5FC621BA6F67008D6F77 /* MeshChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeshChain.h; sourceTree = "<group>"; };
+		39CB5FC821BA6FED008D6F77 /* Chain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Chain.cpp; sourceTree = "<group>"; };
+		39CB5FC921BA6FED008D6F77 /* Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chain.h; sourceTree = "<group>"; };
 		3B1ABAF7CA1329A00C687FEF /* TestScene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TestScene.cpp; path = src/Scene/TestScene/TestScene.cpp; sourceTree = SOURCE_ROOT; };
 		3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = NetworkingUtils.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/posix/NetworkingUtils.cpp; sourceTree = SOURCE_ROOT; };
 		3BA630E62B5867A0AB7F52CB /* common_settings.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = common_settings.h; path = src/common_settings.h; sourceTree = SOURCE_ROOT; };
@@ -348,6 +360,15 @@
 			name = libs;
 			sourceTree = "<group>";
 		};
+		391C402821A6C58A00F05BFD /* Cigarbox */ = {
+			isa = PBXGroup;
+			children = (
+				391C402921A6C59A00F05BFD /* Cigarbox.cpp */,
+				391C402A21A6C59A00F05BFD /* Cigarbox.h */,
+			);
+			name = Cigarbox;
+			sourceTree = "<group>";
+		};
 		39572479219EAF9E00446459 /* PrimitiveRoom */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +385,26 @@
 				39572480219EBB4C00446459 /* Instancing.h */,
 			);
 			name = Instancing;
+			sourceTree = "<group>";
+		};
+		39CB5FC021BA4264008D6F77 /* FeedbackObject */ = {
+			isa = PBXGroup;
+			children = (
+				39CB5FC221BA4278008D6F77 /* FeedbackObject.cpp */,
+				39CB5FC121BA4278008D6F77 /* FeedbackObject.h */,
+			);
+			name = FeedbackObject;
+			sourceTree = "<group>";
+		};
+		39CB5FC421BA6F49008D6F77 /* MeshChain */ = {
+			isa = PBXGroup;
+			children = (
+				39CB5FC821BA6FED008D6F77 /* Chain.cpp */,
+				39CB5FC921BA6FED008D6F77 /* Chain.h */,
+				39CB5FC521BA6F67008D6F77 /* MeshChain.cpp */,
+				39CB5FC621BA6F67008D6F77 /* MeshChain.h */,
+			);
+			path = MeshChain;
 			sourceTree = "<group>";
 		};
 		4474A3CAEAD7B44C6CD0064F /* TestScene */ = {
@@ -454,6 +495,9 @@
 		B89229C0696BBC314DF43718 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				39CB5FC421BA6F49008D6F77 /* MeshChain */,
+				39CB5FC021BA4264008D6F77 /* FeedbackObject */,
+				391C402821A6C58A00F05BFD /* Cigarbox */,
 				3957247E219EBB3A00446459 /* Instancing */,
 				39572479219EAF9E00446459 /* PrimitiveRoom */,
 				310A667AB51058DFE6BF5F6D /* ShaderArt */,
@@ -946,16 +990,20 @@
 				991E891BC94C417C2EA2FECF /* SceneContainer.cpp in Sources */,
 				505D2E041A71BF1B13DED5A2 /* ShaderArt.cpp in Sources */,
 				EBF89BB8B18AF9B3358B2C58 /* VertexArt.cpp in Sources */,
+				39CB5FC721BA6F67008D6F77 /* MeshChain.cpp in Sources */,
 				C55839D5A3B89A90111CC06D /* TestScene.cpp in Sources */,
+				39CB5FC321BA4278008D6F77 /* FeedbackObject.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
+				39CB5FCA21BA6FED008D6F77 /* Chain.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
+				391C402B21A6C59A00F05BFD /* Cigarbox.cpp in Sources */,
 				3957247C219EAFB500446459 /* PrimitiveRoom.cpp in Sources */,
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,
 				39572481219EBB4C00446459 /* Instancing.cpp in Sources */,
