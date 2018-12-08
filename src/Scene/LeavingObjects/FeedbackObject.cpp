@@ -64,11 +64,11 @@ void FeedbackObject::draw() {
     ofTranslate(glm::vec3(ofNoise(info->time)*100.,((int)glm::fract(info->time)%20)*10., glm::mod(info->time, 1000.f)-500.f));
     ofRotateRad(info->time, ofNoise(sin(info->time)), sin(info->time), floor(info->time));
     
-    glm::vec3 col = glm::vec3(ofNoise(info->time)*.5+(sin(info->time)+1.)*.25, abs(sin(info->time)), 0.9) + base_color;
+    glm::vec3 col = glm::vec3(ofNoise(info->time)*.5+(sin(info->time)+1.)*.25, abs(sin(info->time)), 0.9) + glm::vec3(base_color.r, base_color.g, base_color.b);
     col*=255;
     
     
-    ofSetColor(col.x, col.y, col.z);
+    ofSetColor(col.x, col.y, col.z, base_color.a * 255.);
     
     ofBoxPrimitive box;
     box.set(10);

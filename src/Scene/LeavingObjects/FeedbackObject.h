@@ -42,7 +42,7 @@ public:
     ofEasyCam cam;
     
     glm::vec4 feedback_color;
-    glm::vec3 base_color;
+    glm::vec4 base_color;
     
     float before_opacity;
     glm::vec3 color;
