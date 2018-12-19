@@ -14,6 +14,7 @@ void ofApp::setup(){
     pfs_text = post_processing.getShaderSource(GL_FRAGMENT_SHADER);
     
     initOsc();
+    info.screen_size = glm::vec2(ofGetWidth(), ofGetHeight());
     
     manager = *new SceneManager(&info);
     
