@@ -29,6 +29,8 @@ public:
     
     void reloadMainShader();
     
+    void reloadTex();
+    
     void windowResized(glm::vec2 size) override;
     
     struct LargeDrop {
@@ -58,7 +60,8 @@ public:
     ofShader main_shader;
     string main_fragment;
     ofDirectory image_dir;
-    int current_image_dir;
+    int current_tex0;
+    int current_tex1;
     ofPlanePrimitive main_plane;
     ofImage tex0;
     ofImage tex1;

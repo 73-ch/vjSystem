@@ -21,11 +21,15 @@ RainDrop::RainDrop(const BasicInfos* g_info) : BaseScene(g_info) {
     refer_texture_shader.load("RainDrop/default.vert", "RainDrop/final_refer_texture.frag");
     
     // debug
-    tex0.allocate(info->screen_size.x, info->screen_size.y, OF_IMAGE_COLOR_ALPHA);
-    tex0.load("RainDrop/test_img.jpg");
-    tex1.allocate(info->screen_size.x, info->screen_size.y, OF_IMAGE_COLOR_ALPHA);
-    tex1.load("RainDrop/test_img.jpg");
     image_dir.open("RainDrop/pictures");
+    image_dir.allowExt("png");
+    image_dir.allowExt("jpg");
+    image_dir.listDir();
+    tex0.allocate(info->screen_size.x, info->screen_size.y, OF_IMAGE_COLOR_ALPHA);
+    tex1.allocate(info->screen_size.x, info->screen_size.y, OF_IMAGE_COLOR_ALPHA);
+    current_tex0 = 0;
+    current_tex1 = 0;
+    reloadTex();
     
     initOsc();
 }
@@ -43,6 +47,29 @@ void RainDrop::initOsc() {
     ofxSubscribeOsc(OF_PORT, "/rain_drop/clear_drops", [&](){large_drops.clear();});
     
     ofxSubscribeOsc(OF_PORT, "/rain_drop/spawn_probability", spawn_probability);
+    ofxSubscribeOsc(OF_PORT, "/rain_drop/image_mode", [&](const int mode_num){
+        if (mode_num == 0) {
+            image_dir.open("RainDrop/pictures");
+            
+        } else if (mode_num == 1) {
+            image_dir.open("RainDrop/legacy_mac");
+        }
+        
+        image_dir.allowExt("png");
+        image_dir.allowExt("jpg");
+        image_dir.listDir();
+        
+    });
+    
+    ofxSubscribeOsc(OF_PORT, "/rain_drop/tex0", [&](const int image_index) {
+        current_tex0 = image_index % image_dir.size();
+        reloadTex();
+    });
+    
+    ofxSubscribeOsc(OF_PORT, "/rain_drop/tex1", [&](const int image_index) {
+        current_tex1 = image_index % image_dir.size();
+        reloadTex();
+    });
 }
 
 void RainDrop::setup() {
@@ -202,7 +229,7 @@ void RainDrop::update() {
     
     main_shader.begin();
     main_shader.setUniform2f("u_resolution", info->screen_size);
-    main_shader.setUniform1f("timie", info->time);
+    main_shader.setUniform1f("time", info->time);
     main_shader.setUniformTexture("tex0", tex0.getTexture(), 0);
     main_shader.setUniformTexture("tex1", tex1.getTexture(), 1);
     
@@ -250,17 +277,27 @@ void RainDrop::reloadMainShader() {
     main_shader.linkProgram();
 }
 
+void RainDrop::reloadTex() {
+    tex0.load(image_dir.getPath(current_tex0));
+    tex0.resize(info->screen_size.x, info->screen_size.y);
+    tex1.load(image_dir.getPath(current_tex1));
+    tex1.resize(info->screen_size.x, info->screen_size.y);
+};
+
+
 void RainDrop::windowResized(glm::vec2 size) {
     BaseScene::windowResized(size);
     
     getFbo()->allocate(size.x, size.y, GL_RGBA);
-    
     main_scene.allocate(size.x, size.y, GL_RGBA);
     main_plane.set(size.x*2., size.y*2.);
+    tex0.allocate(info->screen_size.x, info->screen_size.y, OF_IMAGE_COLOR_ALPHA);
+    tex1.allocate(info->screen_size.x, info->screen_size.y, OF_IMAGE_COLOR_ALPHA);
     
-    tex0.allocate(size.x, size.y, OF_IMAGE_COLOR_ALPHA);
-    // ここで読み直し必要
-    tex1.allocate(size.x, size.y, OF_IMAGE_COLOR_ALPHA);
+    tex0.load(image_dir.getPath(current_tex0));
+    tex0.resize(info->screen_size.x, info->screen_size.y);
+    tex1.load(image_dir.getPath(current_tex1));
+    tex1.resize(info->screen_size.x, info->screen_size.y);
     
     large_scene.allocate(size.x, size.y, GL_RGBA);
 }
