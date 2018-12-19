@@ -53,6 +53,11 @@ void RainDrop::initOsc() {
             
         } else if (mode_num == 1) {
             image_dir.open("RainDrop/legacy_mac");
+        } else if (mode_num == 2) {
+            tex0.load("RainDrop/mojave_mono.png");
+            tex1.load("RainDrop/mojave_mono.png");
+            tex0.resize(info->screen_size.x, info->screen_size.y);
+            tex1.resize(info->screen_size.x, info->screen_size.y);
         }
         
         image_dir.allowExt("png");
