@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3AA0D4FAA89D0F8A0E545 /* OscReceivedElements.cpp */; };
+		390F53A221CA5F8400275008 /* RainDrop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 390F53A021CA5F8400275008 /* RainDrop.cpp */; };
 		391C402B21A6C59A00F05BFD /* Cigarbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 391C402921A6C59A00F05BFD /* Cigarbox.cpp */; };
 		3957247C219EAFB500446459 /* PrimitiveRoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3957247A219EAFB500446459 /* PrimitiveRoom.cpp */; };
 		39572481219EBB4C00446459 /* Instancing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3957247F219EBB4C00446459 /* Instancing.cpp */; };
@@ -61,6 +62,8 @@
 		32182F86A22602685E1723AD /* VertexArt.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = VertexArt.h; path = src/Scene/VertexArt/VertexArt.h; sourceTree = SOURCE_ROOT; };
 		335C5D4BB187671BDB08592B /* ofxOscArrayPublisher.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscArrayPublisher.h; path = ../../../addons/ofxPubSubOsc/src/details/ofxOscArrayPublisher.h; sourceTree = SOURCE_ROOT; };
 		369E3026B25606BACEB87179 /* ofxOscSubscribeParameter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxOscSubscribeParameter.h; path = ../../../addons/ofxPubSubOsc/src/details/Subscriber/ofxOscSubscribeParameter.h; sourceTree = SOURCE_ROOT; };
+		390F53A021CA5F8400275008 /* RainDrop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RainDrop.cpp; sourceTree = "<group>"; };
+		390F53A121CA5F8400275008 /* RainDrop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RainDrop.h; sourceTree = "<group>"; };
 		391C402921A6C59A00F05BFD /* Cigarbox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cigarbox.cpp; sourceTree = "<group>"; };
 		391C402A21A6C59A00F05BFD /* Cigarbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cigarbox.h; sourceTree = "<group>"; };
 		3957247A219EAFB500446459 /* PrimitiveRoom.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PrimitiveRoom.cpp; sourceTree = "<group>"; };
@@ -360,6 +363,15 @@
 			name = libs;
 			sourceTree = "<group>";
 		};
+		390F539E21CA5F6600275008 /* RainDrop */ = {
+			isa = PBXGroup;
+			children = (
+				390F53A021CA5F8400275008 /* RainDrop.cpp */,
+				390F53A121CA5F8400275008 /* RainDrop.h */,
+			);
+			path = RainDrop;
+			sourceTree = "<group>";
+		};
 		391C402821A6C58A00F05BFD /* Cigarbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +507,7 @@
 		B89229C0696BBC314DF43718 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				390F539E21CA5F6600275008 /* RainDrop */,
 				39CB5FC421BA6F49008D6F77 /* MeshChain */,
 				39CB5FC021BA4264008D6F77 /* FeedbackObject */,
 				391C402821A6C58A00F05BFD /* Cigarbox */,
@@ -988,6 +1001,7 @@
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				8100E56B2DE25F107E11466F /* SceneManager.cpp in Sources */,
 				991E891BC94C417C2EA2FECF /* SceneContainer.cpp in Sources */,
+				390F53A221CA5F8400275008 /* RainDrop.cpp in Sources */,
 				505D2E041A71BF1B13DED5A2 /* ShaderArt.cpp in Sources */,
 				EBF89BB8B18AF9B3358B2C58 /* VertexArt.cpp in Sources */,
 				39CB5FC721BA6F67008D6F77 /* MeshChain.cpp in Sources */,

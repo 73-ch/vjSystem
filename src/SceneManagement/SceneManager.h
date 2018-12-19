@@ -11,6 +11,7 @@
 #include "Instancing.h"
 #include "FeedbackObject.h"
 #include "MeshChain.h"
+#include "RainDrop.h"
 
 #define MAX_SCENES 3
 
