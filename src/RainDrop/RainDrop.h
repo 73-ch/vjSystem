@@ -27,6 +27,8 @@ public:
     void update() override;
     void draw() override;
     
+    void reloadMainShader();
+    
     void windowResized(glm::vec2 size) override;
     
     struct LargeDrop {
@@ -55,13 +57,17 @@ public:
     ofFbo large_scene;
     
     ofFbo main_scene;
+    ofShader main_shader;
+    string main_fragment;
+    ofDirectory image_dir;
+    int current_image_dir;
+    ofPlanePrimitive main_plane;
+    ofImage tex0;
+    ofImage tex1;
     
-    
-    ofEasyCam cam;
     ofShader refer_texture_shader;
     
     // debug
     ofImage test_image;
-    ofImage drop_image;
     ofShader rain_shader;
 };

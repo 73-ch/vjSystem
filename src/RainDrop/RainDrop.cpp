@@ -5,18 +5,38 @@ RainDrop::RainDrop(const BasicInfos* g_info) : BaseScene(g_info) {
     
     large_scene.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
     rain_shader.load("RainDrop/rain.vert", "RainDrop/rain.frag");
-    // 雨粒フィルターを通す前のシーン
+    
+    // main scene
     main_scene.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
+    main_plane.set(info->screen_size.x * 2., info->screen_size.y * 2.);
+    
+    main_shader.setupShaderFromSource(GL_VERTEX_SHADER, DEFAULT_VERTEX);
+    main_shader.setupShaderFromFile(GL_FRAGMENT_SHADER, "RainDrop/main_default.frag");
+    main_shader.bindDefaults();
+    main_shader.linkProgram();
+    
+    main_fragment = main_shader.getShaderSource(GL_FRAGMENT_SHADER);
     
     // 最後にテクスチャを参照してレンダリングする部分
     refer_texture_shader.load("RainDrop/default.vert", "RainDrop/final_refer_texture.frag");
     
     // debug
-    test_image.load("RainDrop/test_img.jpg");
+    tex0.allocate(info->screen_size.x, info->screen_size.y, OF_IMAGE_COLOR_ALPHA);
+    tex0.load("RainDrop/test_img.jpg");
+    tex1.allocate(info->screen_size.x, info->screen_size.y, OF_IMAGE_COLOR_ALPHA);
+    tex1.load("RainDrop/test_img.jpg");
+    image_dir.open("RainDrop/pictures");
+    
+    initOsc();
 }
 
 void RainDrop::initOsc() {
-    
+    ofxSubscribeOsc(OF_PORT, "/rain_drop/main_fragment", [=](const string &frag) {
+        main_fragment = frag;
+        reloadMainShader();
+        ofLogNotice() << "rain_drop main_fs changed";
+    });
+
 }
 
 void RainDrop::setup() {
@@ -171,8 +191,18 @@ void RainDrop::update() {
     ofPushMatrix();
     main_scene.begin();
     ofClear(0);
-    // debug
-    test_image.draw(vec2(0));
+    
+    main_shader.begin();
+    main_shader.setUniform2f("u_resolution", info->screen_size);
+    main_shader.setUniform1f("timie", info->time);
+    main_shader.setUniformTexture("tex0", tex0.getTexture(), 0);
+    main_shader.setUniformTexture("tex1", tex1.getTexture(), 1);
+    
+    ofSetColor(255);
+    
+    main_plane.draw();
+    
+    main_shader.end();
     
     main_scene.end();
     ofPopMatrix();
@@ -197,7 +227,32 @@ void RainDrop::draw() {
     end();
 }
 
+void RainDrop::reloadMainShader() {
+    const string b_fs = main_shader.getShaderSource(GL_FRAGMENT_SHADER);
+    
+    main_shader.setupShaderFromSource(GL_VERTEX_SHADER, DEFAULT_VERTEX);
+    bool result = main_shader.setupShaderFromSource(GL_FRAGMENT_SHADER, main_fragment);
+    
+    if (!result) {
+        main_shader.setupShaderFromSource(GL_FRAGMENT_SHADER, b_fs);
+        main_fragment = b_fs;
+    }
+    
+    main_shader.bindDefaults();
+    main_shader.linkProgram();
+}
+
 void RainDrop::windowResized(glm::vec2 size) {
     BaseScene::windowResized(size);
+    
     getFbo()->allocate(size.x, size.y, GL_RGBA);
+    
+    main_scene.allocate(size.x, size.y, GL_RGBA);
+    main_plane.set(size.x*2., size.y*2.);
+    
+    tex0.allocate(size.x, size.y, OF_IMAGE_COLOR_ALPHA);
+    // ここで読み直し必要
+    tex1.allocate(size.x, size.y, OF_IMAGE_COLOR_ALPHA);
+    
+    large_scene.allocate(size.x, size.y, GL_RGBA);
 }
