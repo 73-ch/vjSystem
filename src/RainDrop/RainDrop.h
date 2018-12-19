@@ -49,9 +49,7 @@ public:
     float fall_speed = 0.5;
     float trail_rate = 1.0;
     float last_time;
-    
-    bool raining = true;
-    
+    float spawn_probability;
     
     vector<LargeDrop*> large_drops;
     ofFbo large_scene;

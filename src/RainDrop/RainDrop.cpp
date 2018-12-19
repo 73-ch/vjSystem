@@ -37,6 +37,12 @@ void RainDrop::initOsc() {
         ofLogNotice() << "rain_drop main_fs changed";
     });
 
+    ofxSubscribeOsc(OF_PORT, "/rain_drop/time_scale", time_scale);
+    ofxSubscribeOsc(OF_PORT, "/rain_drop/fall_speed", fall_speed);
+    ofxSubscribeOsc(OF_PORT, "/rain_drop/trail_rate", trail_rate);
+    ofxSubscribeOsc(OF_PORT, "/rain_drop/clear_drops", [&](){large_drops.clear();});
+    
+    ofxSubscribeOsc(OF_PORT, "/rain_drop/spawn_probability", spawn_probability);
 }
 
 void RainDrop::setup() {
@@ -46,19 +52,21 @@ void RainDrop::setup() {
 void RainDrop::update() {
     //    time_scale = abs(sin(info->time * .5));
 //    fall_speed = fract(info->time * .5);
-
+    float comp = ofGetFrameRate() * 0.00166;
     // 大きい雨粒
-    if (ofGetFrameNum() % 1 == 0 && large_drops.size() <= 4000) {
-        // 新しい大きい雨粒の生成
-        auto large_drop = new LargeDrop();
-        large_drop->pos = vec2(ofRandom(info->screen_size.x), ofRandom(info->screen_size.y * 0.7));
-        
-        float r = MIN_R + pow(ofRandom(1.0),3.0) * (MAX_R - MIN_R);
-        large_drop->r = r;
-        large_drop->momentum.y = 1+((r-MIN_R)*0.1)+ofRandom(2);
-        large_drop->spread = vec2(1.5);
-        large_drop->spawn_time = info->time;
-        large_drops.push_back(large_drop);
+    for (int i = 0 ; i < 5; i++) {
+        if (spawn_probability > ofRandom(.9) + comp) {
+            // 新しい大きい雨粒の生成
+            auto large_drop = new LargeDrop();
+            large_drop->pos = vec2(ofRandom(info->screen_size.x), ofRandom(info->screen_size.y * 0.7));
+            
+            float r = MIN_R + pow(ofRandom(1.0),3.0) * (MAX_R - MIN_R);
+            large_drop->r = r;
+            large_drop->momentum.y = 1+((r-MIN_R)*0.1)+ofRandom(2);
+            large_drop->spread = vec2(1.5);
+            large_drop->spawn_time = info->time;
+            large_drops.push_back(large_drop);
+        }
     }
     
     // sort
@@ -80,26 +88,26 @@ void RainDrop::update() {
         (*drop)->r -= (*drop)->shrink * time_scale;
         if ((*drop)->r <= 0.01) (*drop)->killed = true;
         
-        if (raining) {
-            // update trail
-            (*drop)->last_spawn += (*drop)->momentum.y * time_scale + trail_rate;
+        
+        // update trail
+        (*drop)->last_spawn += (*drop)->momentum.y * time_scale + trail_rate;
+        
+        if ((*drop)->last_spawn > (*drop)->next_spawn && large_drops.size() <= 4000) {
+            auto trail_drop = new LargeDrop();
+            trail_drop->pos = (*drop)->pos + vec2(ofRandom(-(*drop)->r, (*drop)->r)*0.1, -(*drop)->r*0.01);
             
-            if ((*drop)->last_spawn > (*drop)->next_spawn && large_drops.size() <= 4000) {
-                auto trail_drop = new LargeDrop();
-                trail_drop->pos = (*drop)->pos + vec2(ofRandom(-(*drop)->r, (*drop)->r)*0.1, -(*drop)->r*0.01);
-                
-                trail_drop->r = (*drop)->r * ofRandom(0.2, 0.5);
-                trail_drop->spread.y = (*drop)->momentum.y * 0.1;
-                trail_drop->parent = (*drop);
-                trail_drop->spawn_time = info->time;
-                
-                (*drop)->r *= pow(0.97, time_scale);
-                (*drop)->last_spawn = 0.0;
-                (*drop)->next_spawn = ofRandom(MIN_R, MAX_R) - ((*drop)->momentum.y * 2. * trail_rate) + (MAX_R - (*drop)->r);
-                
-                new_drops.push_back(trail_drop);
-            }
+            trail_drop->r = (*drop)->r * ofRandom(0.2, 0.5);
+            trail_drop->spread.y = (*drop)->momentum.y * 0.1;
+            trail_drop->parent = (*drop);
+            trail_drop->spawn_time = info->time;
+            
+            (*drop)->r *= pow(0.97, time_scale);
+            (*drop)->last_spawn = 0.0;
+            (*drop)->next_spawn = ofRandom(MIN_R, MAX_R) - ((*drop)->momentum.y * 2. * trail_rate) + (MAX_R - (*drop)->r);
+            
+            new_drops.push_back(trail_drop);
         }
+        
         
         
         (*drop)->spread *= vec2(pow(0.4, time_scale), pow(0.7, time_scale));
