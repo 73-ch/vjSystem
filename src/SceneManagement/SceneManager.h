@@ -12,6 +12,7 @@
 #include "FeedbackObject.h"
 #include "MeshChain.h"
 #include "RainDrop.h"
+#include "TrainShadow.h"
 
 #define MAX_SCENES 3
 

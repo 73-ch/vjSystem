@@ -1,2 +1,4 @@
+ofxAssimpModelLoader
 ofxOsc
 ofxPubSubOsc
+ofxShaderTex

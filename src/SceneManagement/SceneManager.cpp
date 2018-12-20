@@ -9,6 +9,7 @@ SceneManager::SceneManager(BasicInfos* g_info) {
     stored_scenes["FeedbackObject"] = new FeedbackObject(g_info);
     stored_scenes["MeshChain"] = new MeshChain(g_info);
     stored_scenes["RainDrop"] = new RainDrop(g_info);
+    stored_scenes["TrainShadow"] = new TrainShadow(g_info);
     // init container[3]
     for (size_t i = 0; i < MAX_SCENES; ++i) {
         scene_containers[i] = new SceneContainer();

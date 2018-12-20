@@ -39,6 +39,131 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 8,
+							"minor" : 0,
+							"revision" : 2,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 421.0, 106.0, 640.0, 480.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"visible" : 1,
+						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 397.0, 207.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 397.0, 296.0, 196.0, 22.0 ],
+									"text" : "prepend /train_shadow/create_light"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 397.0, 343.0, 67.0, 22.0 ],
+									"text" : "s osc-send"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-1",
+									"index" : 1,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 38.0, 5.0, 30.0, 30.0 ]
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 765.0, 267.0, 89.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 765.0, 267.0, 89.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"tags" : ""
+					}
+,
+					"text" : "p TrainShadow"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-27",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -14188,7 +14313,7 @@
 								"box" : 								{
 									"allowdrag" : 0,
 									"id" : "obj-61",
-									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop" ],
+									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop", ",", "TrainShadow" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -14199,10 +14324,10 @@
 									"presentation_rect" : [ 260.0, 27.5, 100.0, 22.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop" ],
+											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop", "TrainShadow" ],
 											"parameter_type" : 2,
 											"parameter_longname" : "umenu[2]",
-											"parameter_mmax" : 5.0,
+											"parameter_mmax" : 6.0,
 											"parameter_shortname" : "umenu"
 										}
 
@@ -14242,7 +14367,7 @@
 								"box" : 								{
 									"allowdrag" : 0,
 									"id" : "obj-58",
-									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop" ],
+									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop", ",", "TrainShadow" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -14253,10 +14378,10 @@
 									"presentation_rect" : [ 136.0, 27.5, 100.0, 22.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop" ],
+											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop", "TrainShadow" ],
 											"parameter_type" : 2,
 											"parameter_longname" : "umenu[1]",
-											"parameter_mmax" : 5.0,
+											"parameter_mmax" : 6.0,
 											"parameter_shortname" : "umenu"
 										}
 
@@ -14288,7 +14413,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 120.0, 539.0, 131.0, 35.0 ],
-									"text" : "/manager/set_opacity 0 1."
+									"text" : "/manager/set_scene 0 ShaderArt"
 								}
 
 							}
@@ -14296,7 +14421,7 @@
 								"box" : 								{
 									"allowdrag" : 0,
 									"id" : "obj-42",
-									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop" ],
+									"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop", ",", "TrainShadow" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -14307,7 +14432,7 @@
 									"presentation_rect" : [ 14.5, 27.5, 100.0, 22.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop" ],
+											"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop", "TrainShadow" ],
 											"parameter_type" : 2,
 											"parameter_longname" : "umenu",
 											"parameter_mmax" : 5.0,
@@ -17740,16 +17865,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-150",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 340.2618408203125, 239.0, 118.0, 35.0 ],
+									"patching_rect" : [ 340.2618408203125, 239.0, 118.0, 22.0 ],
 									"presentation" : 1,
-									"presentation_linecount" : 2,
-									"presentation_rect" : [ 57.0, 19.0, 118.0, 35.0 ],
-									"text" : "emotional_noise.frag"
+									"presentation_rect" : [ 57.0, 19.0, 118.0, 22.0 ],
+									"text" : "fractal.frag"
 								}
 
 							}
@@ -18666,8 +18789,8 @@
 			"obj-3::obj-33" : [ "button[2]", "button[2]", 0 ],
 			"obj-5::obj-19" : [ "function[3]", "function", 0 ],
 			"obj-7::obj-41" : [ "live.dial[9]", "live.dial[6]", 0 ],
-			"obj-3::obj-58" : [ "umenu[1]", "umenu", 0 ],
 			"obj-3::obj-51" : [ "toggle[4]", "toggle[4]", 0 ],
+			"obj-3::obj-58" : [ "umenu[1]", "umenu", 0 ],
 			"obj-10::obj-50" : [ "toggle[16]", "toggle[16]", 0 ],
 			"obj-2::obj-126::obj-55" : [ "power", "power", 0 ],
 			"obj-1::obj-3" : [ "live.slider[8]", "seed.x", 0 ],
@@ -18768,8 +18891,8 @@
 			"obj-2::obj-38" : [ "live.dial[16]", "noise_cut", 0 ],
 			"obj-3::obj-68" : [ "live.slider", "container0 _opacity", 0 ],
 			"obj-5::obj-22" : [ "live.slider[17]", "look.y", 0 ],
-			"obj-3::obj-61" : [ "umenu[2]", "umenu", 0 ],
 			"obj-7::obj-58" : [ "toggle[11]", "toggle[7]", 0 ],
+			"obj-3::obj-61" : [ "umenu[2]", "umenu", 0 ],
 			"obj-1::obj-28" : [ "umenu[3]", "umenu[3]", 0 ],
 			"obj-3::obj-42" : [ "umenu", "umenu", 0 ],
 			"obj-5::obj-46" : [ "live.slider[19]", "cam.z", 0 ],
