@@ -40,12 +40,6 @@ TrainShadow::TrainShadow(const BasicInfos* g_info) : BaseScene(g_info) {
     cam.setFarClip(1500.);
     //
     
-    // light
-    //    light.setPosition(vec3(150, 100, -500));
-    //    light.setFov(50.0f);
-    //    light.lookAt(light.getGlobalPosition() + vec3(-100, 0,0));
-    //    light.rotateDeg(20.0f, vec3(0,0,1));
-    
     light_count = 0;
     //
     
@@ -55,9 +49,9 @@ TrainShadow::TrainShadow(const BasicInfos* g_info) : BaseScene(g_info) {
     //
     
     // model
-    loader.setScale(3.0,3.0,2.0);
-    loader.setRotation(0, 180, 0, 0, 1);
     loader.loadModel("TrainShadow/test.obj");
+    loader.setRotation(0, 180, 0, 0, 1);
+    loader.setScale(3.0,3.0,2.0);
     
     ofLogNotice() << loader.getMeshCount();
     
@@ -82,7 +76,7 @@ void TrainShadow::initOsc() {
         lights.push_back(*new TownLight(&fbo, &d_shader));
         light_count++;
         if (light_count >= light_max) light_count = 0;
-        ofLogNotice() << "read";
+        
     });
     
     ofxSubscribeOsc(OF_PORT, "/train_shadow/seed", seed);
@@ -97,6 +91,11 @@ void TrainShadow::initOsc() {
     ofxSubscribeOsc(OF_PORT, "/train_shadow/cam/lookat", [=](const glm::vec3 g_lookat) {
         lookat = g_lookat;
         cam.lookAt(lookat);
+    });
+    
+    ofxSubscribeOsc(OF_PORT, "/train_shadow/cam/rotate", [&](const float rad, const glm::vec3 v) {
+        cam.rotateRad(rad, v);
+        
     });
 }
 
@@ -233,10 +232,12 @@ void TrainShadow::draw() {
     shader.setUniform4f("ambientColor", vec4(0.1,0.1,0.1,1.0));
     
     mesh.draw();
-    
-    cam.end();
+
     shader.end();
+    cam.end();
     end();
+    
+    
     // debug
 //    cam.begin();
     //    light.draw();
@@ -258,6 +259,29 @@ void TrainShadow::draw() {
 //    }
     
     
+}
+
+of3dPrimitive TrainShadow::createPrimitive() {
+    int x = ofRandom(5.0);
+    
+    float height =ofRandom(100) + 100.;
+    
+    if (x > 4) {
+        ofCylinderPrimitive cylinder;
+        cylinder.set(ofRandom(30) + 20., height, 24, 2);
+        cylinder.setPosition(0, height*.5, 0);
+        return cylinder;
+    } else if (x > 3) {
+        ofConePrimitive cone;
+        cone.set(ofRandom(30) + 20., height, 24, 2);
+        cone.setPosition(0,  height*.5, 0);
+        return cone;
+    } else {
+        ofBoxPrimitive box;
+        box.set(ofRandom(60.) + 40., height, ofRandom(60.) + 40, 2, 2, 2);
+        box.setPosition(0,  height*.5, 0);
+        return box;
+    }
 }
 
 void TrainShadow::windowResized(glm::vec2 size) {

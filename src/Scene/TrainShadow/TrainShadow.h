@@ -9,6 +9,7 @@
 
 class TrainShadow : public BaseScene {
     void reloadShader();
+    of3dPrimitive createPrimitive();
     
 public:
     TrainShadow(const BasicInfos* g_info);

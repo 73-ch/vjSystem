@@ -33,6 +33,12 @@ float restDepth(vec4 RGBA){
 
 void main(){
     vec3 final = vec3(0.,0.,0.);
+    float lightCoord = 0.0;
+    vec3  light = vec3(500, 100, 0) - vPosition.xyz;
+    vec3  invLight = normalize(invMatrix * vec4(light, 0.0)).xyz;
+    float diffuse = clamp(dot(vNormal, invLight), 0.2, 1.0);
+    
+    final += (vec4(vec3(diffuse/2.), 1.0)).xyz;
     
     
     for (int i = 0; i < LIGHT_NUM; i++) {

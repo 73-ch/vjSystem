@@ -26,4 +26,4 @@ void main() {
     }
     
     gl_Position = mvpMatrix * position;
-}                   
+}
