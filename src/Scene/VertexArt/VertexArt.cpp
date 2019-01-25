@@ -4,6 +4,8 @@ VertexArt::VertexArt(const BasicInfos* g_info) : BaseScene(g_info) {
     shader.load("InitShader/default.vert", "InitShader/default.frag");
     vertex_text = shader.getShaderSource(GL_VERTEX_SHADER);
     fragment_text = shader.getShaderSource(GL_FRAGMENT_SHADER);
+    
+    splitVertexText();
 
     vertex_num = 3000000;
     changeVertexNum(vertex_num);
@@ -24,6 +26,9 @@ VertexArt::VertexArt(const BasicInfos* g_info) : BaseScene(g_info) {
     windowResized(glm::vec2(ofGetWidth(), ofGetHeight()));
     
     glEnable(GL_PROGRAM_POINT_SIZE);
+    
+//    plotter = new PlotCode(vertex_text, g_info);
+    plotter = new CodePlotter(g_info);
 }
 
 void VertexArt::setup() {
@@ -66,7 +71,7 @@ void VertexArt::initOsc() {
 
 
 void VertexArt::update() {
-    
+    plotter->update();
 }
 
 void VertexArt::draw() {
@@ -85,6 +90,14 @@ void VertexArt::draw() {
     shader.end();
     
     cam.end();
+    
+    plotter->draw();
+    
+//    for (int i = 0; i < splitted_text.size(); i++) {
+//        if(i == 0)ofLogNotice() << splitted_text[i];
+//        ofDrawBitmapString(splitted_text[i], 20, 20*i);
+//    }
+    
     end();
 }
 
@@ -129,4 +142,19 @@ void VertexArt::reloadShader() {
     
     shader.bindDefaults();
     shader.linkProgram();
+    
+//    splitVertexText();
+    plotter->setText(vertex_text);
+}
+
+void VertexArt::splitVertexText() {
+    splitted_text.clear();
+    
+    regex separator{"\n"};
+    
+    auto ite = sregex_token_iterator(vertex_text.begin(), vertex_text.end(), separator, -1);
+    auto end = sregex_token_iterator();
+    while (ite != end) {
+        splitted_text.push_back(*ite++);     // 分割文字列を格納
+    }
 }

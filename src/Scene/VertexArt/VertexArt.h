@@ -2,6 +2,7 @@
 
 #include "common_settings.h"
 #include "BaseScene.h"
+#include "PlotCode.h"
 
 class VertexArt : public BaseScene {
 private:
@@ -13,13 +14,18 @@ private:
     ofShader shader;
     string vertex_text;
     string fragment_text;
+    vector<string> splitted_text;
    
     void reloadShader();
     void changeVertexNum(const unsigned int num);
     
+    void splitVertexText();
+    
     ofCamera cam;
     glm::vec3 up_dir;
     glm::vec3 lookat;
+    
+    CodePlotter *plotter;
     
 public:
     VertexArt(const BasicInfos* g_info);
