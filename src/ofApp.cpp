@@ -4,7 +4,7 @@
 void ofApp::setup(){
     // oF setup
     ofSetBackgroundColor(0);
-    ofSetVerticalSync(false);
+//    ofSetVerticalSync(false);
     ofEnableAlphaBlending();
     ofHideCursor();
     
@@ -19,6 +19,11 @@ void ofApp::setup(){
     manager = *new SceneManager(&info);
     
     screen_size = glm::vec2(ofGetWidth(), ofGetHeight());
+    
+    pingPong[0].allocate(ofGetWidth(), ofGetHeight());
+    pingPong[1].allocate(ofGetWidth(), ofGetHeight());
+    pingPong[0].getTexture().getTextureData().bFlipTexture = true;
+    pingPong[1].getTexture().getTextureData().bFlipTexture = true;
     
     screen_plane.set(screen_size.x*2., screen_size.y*2.);
     screen_plane.setPosition(0, 0, 0);
@@ -59,6 +64,9 @@ void ofApp::update(){
 void ofApp::draw(){
     manager.drawScene();
     
+    pingPong[0].begin();
+    ofClear(0);
+    
     post_processing.begin();
     
     ofSetColor(255);
@@ -67,14 +75,20 @@ void ofApp::draw(){
     
     post_processing.setUniform4f("seeds", seeds);
     post_processing.setUniform1f("time", info.time);
+    post_processing.setUniformTexture("before_texture", pingPong[1], 4);
     
     post_processing.setUniform2f("u_resolution", screen_size);
     
     ofSetColor(255,255,255,255);
     screen_plane.draw();
     post_processing.end();
+    pingPong[0].end();
+    
+    swap(pingPong[0], pingPong[1]);
     
     ofSetColor(255);
+    pingPong[1].draw(0,0,info.screen_size.x, info.screen_size.y);
+    
 //    ofDrawBitmapString(ofToString(ofGetFrameRate()), 10, 10);
 }
 
@@ -125,6 +139,9 @@ void ofApp::windowResized(int w, int h){
     screen_size = glm::vec2(ofGetWidth(), ofGetHeight());
     screen_plane.set(screen_size.x*2., screen_size.y*2.);
     manager.windowResized(screen_size);
+    
+    pingPong[0].allocate(ofGetWidth(), ofGetHeight());
+    pingPong[1].allocate(ofGetWidth(), ofGetHeight());
 }
 
 //--------------------------------------------------------------

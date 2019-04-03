@@ -41,4 +41,5 @@ class ofApp : public ofBaseApp {
     ofImage image;
     
     BasicInfos info;
+    array<ofFbo, 2> pingPong;
 };
