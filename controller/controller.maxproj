@@ -2,7 +2,7 @@
 	"name" : "controller",
 	"version" : 1,
 	"creationdate" : 3624367987,
-	"modificationdate" : 3637441786,
+	"modificationdate" : 3637443164,
 	"viewrect" : [ 131.0, 531.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -62,6 +62,11 @@
 			}
 ,
 			"FeedbackObject.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"SceneSelect.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
