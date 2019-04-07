@@ -41,7 +41,11 @@ void MeshChain::initOsc() {
     
     ofxSubscribeOsc(OF_PORT, "/mesh_chain/move_z", move_z, [&](){for (auto& chain: chains) chain.changeSpeed(move_z * 6);});
     
-    ofxSubscribeOsc(OF_PORT, "/mesh_chain/remove_chain", [=](){chains.erase(chains.begin());});
+    ofxSubscribeOsc(OF_PORT, "/mesh_chain/remove_chain", [=](){
+        if (chains.size() > 1) {
+            chains.erase(chains.begin());
+        }
+    });
     ofxSubscribeOsc(OF_PORT, "/mesh_chain/opacity", opacity);
     ofxSubscribeOsc(OF_PORT, "/mesh_chain/noise_power", [&](const float power){for (auto& chain : chains) chain.changeNoisePower(power);});
     
