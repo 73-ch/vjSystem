@@ -24,6 +24,7 @@ public:
     
     void setup() override;
     void initOsc() override;
+    void attached() override;
     void update() override;
     void draw() override;
     
@@ -51,7 +52,7 @@ public:
     float fall_speed = 0.5;
     float trail_rate = 1.0;
     float last_time;
-    float spawn_probability;
+    float spawn_probability= 0.2;
     
     vector<LargeDrop*> large_drops;
     ofFbo large_scene;

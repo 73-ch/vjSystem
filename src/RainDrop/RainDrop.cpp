@@ -77,6 +77,11 @@ void RainDrop::initOsc() {
     });
 }
 
+void RainDrop::attached() {
+//    large_drops.clear();
+//    windowResized(info->screen_size);
+}
+
 void RainDrop::setup() {
     
 }
@@ -85,21 +90,27 @@ void RainDrop::update() {
     //    time_scale = abs(sin(info->time * .5));
 //    fall_speed = fract(info->time * .5);
     float comp = ofGetFrameRate() * 0.00166;
+    
+//    ofLogNotice() << comp;
     // 大きい雨粒
-    for (int i = 0 ; i < 5; i++) {
-        if (spawn_probability > ofRandom(.9) + comp) {
-            // 新しい大きい雨粒の生成
-            auto large_drop = new LargeDrop();
-            large_drop->pos = vec2(ofRandom(info->screen_size.x), ofRandom(info->screen_size.y * 0.7));
-            
-            float r = MIN_R + pow(ofRandom(1.0),3.0) * (MAX_R - MIN_R);
-            large_drop->r = r;
-            large_drop->momentum.y = 1+((r-MIN_R)*0.1)+ofRandom(2);
-            large_drop->spread = vec2(1.5);
-            large_drop->spawn_time = info->time;
-            large_drops.push_back(large_drop);
+    if (large_drops.size() < 3000) {
+        for (int i = 0 ; i < 5; i++) {
+            if (spawn_probability > ofRandom(.9) + glm::clamp(comp,0.0f, 0.1f)) {
+                // 新しい大きい雨粒の生成
+                auto large_drop = new LargeDrop();
+                large_drop->pos = vec2(ofRandom(info->screen_size.x), ofRandom(info->screen_size.y * 0.7));
+                
+                float r = MIN_R + pow(ofRandom(1.0),3.0) * (MAX_R - MIN_R);
+                large_drop->r = r;
+                large_drop->momentum.y = 1+((r-MIN_R)*0.1)+ofRandom(2);
+                large_drop->spread = vec2(1.5);
+                large_drop->spawn_time = info->time;
+                large_drops.push_back(large_drop);
+            }
         }
     }
+    
+//    ofLogNotice() << large_drops.size();
     
     // sort
     
@@ -124,7 +135,7 @@ void RainDrop::update() {
         // update trail
         (*drop)->last_spawn += (*drop)->momentum.y * time_scale + trail_rate;
         
-        if ((*drop)->last_spawn > (*drop)->next_spawn && large_drops.size() <= 4000) {
+        if ((*drop)->last_spawn > (*drop)->next_spawn && large_drops.size() <= 3000) {
             auto trail_drop = new LargeDrop();
             trail_drop->pos = (*drop)->pos + vec2(ofRandom(-(*drop)->r, (*drop)->r)*0.1, -(*drop)->r*0.01);
             
@@ -235,14 +246,14 @@ void RainDrop::update() {
     main_shader.begin();
     main_shader.setUniform2f("u_resolution", info->screen_size);
     main_shader.setUniform1f("time", info->time);
-    main_shader.setUniformTexture("tex0", tex0.getTexture(), 0);
-    main_shader.setUniformTexture("tex1", tex1.getTexture(), 1);
+    main_shader.setUniformTexture("tex0", tex0.getTexture(), 4);
+    main_shader.setUniformTexture("tex1", tex1.getTexture(), 5);
     
-    ofSetColor(255);
-    
+    ofSetColor(255, 255,255,255);
     main_plane.draw();
     
     main_shader.end();
+    //    tex0.draw(vec2(0), info->screen_size.x, info->screen_size.y);
     
     main_scene.end();
     ofPopMatrix();
@@ -263,6 +274,8 @@ void RainDrop::draw() {
     ofDrawPlane(0, 0, info->screen_size.x, info->screen_size.y);
     
     refer_texture_shader.end();
+//
+//    main_scene.draw(vec2(0.), info->screen_size.x*2., info->screen_size.y*2.);
     
     end();
 }
@@ -305,4 +318,6 @@ void RainDrop::windowResized(glm::vec2 size) {
     tex1.resize(info->screen_size.x, info->screen_size.y);
     
     large_scene.allocate(size.x, size.y, GL_RGBA);
+    
+//    large_drops.clear();
 }
