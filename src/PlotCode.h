@@ -10,7 +10,6 @@ class CodePlotter {
     vector<string> line_splitted_text;
     
     
-    ofColor color;
     int start_line;
     float update_span;
     float last_updated;
@@ -24,5 +23,7 @@ public:
     void update();
     void draw();
     void splitTextByLine();
+    
+    ofFloatColor color;
     
 };

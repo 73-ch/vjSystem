@@ -2,6 +2,7 @@
 
 #include "common_settings.h"
 #include "BaseScene.h"
+#include "PlotCode.h"
 
 class ShaderArt : public BaseScene {
     ofPlanePrimitive plane;
@@ -23,4 +24,6 @@ public:
     string fragment_text;
     
     glm::vec4 seed;
+    
+    CodePlotter& plotter = *new CodePlotter(info);
 };

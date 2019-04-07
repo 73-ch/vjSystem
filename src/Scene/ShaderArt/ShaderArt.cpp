@@ -2,6 +2,7 @@
 
 ShaderArt::ShaderArt(const BasicInfos* g_info) : BaseScene(g_info) {
     name = "ShaderArt";
+    plotter = *new CodePlotter(g_info);
     
     vertex_text = DEFAULT_VERTEX;
     fragment_text = DEFAULT_FRAGMENT;
@@ -9,6 +10,7 @@ ShaderArt::ShaderArt(const BasicInfos* g_info) : BaseScene(g_info) {
     initOsc();
     
     windowResized(glm::vec2(ofGetWidth(), ofGetHeight()));
+    
 }
 
 void ShaderArt::initOsc() {
@@ -32,7 +34,7 @@ void ShaderArt::setup() {
 }
 
 void ShaderArt::update() {
-    
+    plotter.update();
 }
 
 void ShaderArt::draw() {
@@ -71,6 +73,8 @@ void ShaderArt::reloadShader() {
     
     shader.bindDefaults();
     shader.linkProgram();
+    
+    plotter.setText(fragment_text);
 }
 
 void ShaderArt::windowResized(glm::vec2 size) {

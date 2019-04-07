@@ -67,6 +67,10 @@ void VertexArt::initOsc() {
         lookat = g_lookat;
         cam.lookAt(lookat);
     });
+    
+    ofxSubscribeOsc(OF_PORT, "/vertex_art/plotter/color", [=](const glm::vec4 color) {
+        plotter->color = ofFloatColor(color.x, color.y, color.z, color.w);
+    });
 }
 
 
