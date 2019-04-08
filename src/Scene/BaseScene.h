@@ -26,6 +26,7 @@ public:
     BaseScene(const BasicInfos* g_info) {
         info = g_info;
         windowResized(glm::vec2(ofGetWidth(), ofGetHeight()));
+        output_fbo.getTexture().getTextureData().bFlipTexture = true;
     };
     
     virtual void setup(){};
