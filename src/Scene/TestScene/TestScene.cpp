@@ -9,7 +9,9 @@
 
 TestScene::TestScene(const BasicInfos* g_info) : BaseScene(g_info) {
     name = "TestScene";
-    ofSetCircleResolution(24);
+
+    windowResized(glm::vec2(ofGetWidth(), ofGetHeight()));
+    initOsc();
 }
 
 void TestScene::initOsc() {
