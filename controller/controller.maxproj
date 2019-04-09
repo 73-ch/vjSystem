@@ -2,7 +2,7 @@
 	"name" : "controller",
 	"version" : 1,
 	"creationdate" : 3624367987,
-	"modificationdate" : 3637443164,
+	"modificationdate" : 3637636610,
 	"viewrect" : [ 131.0, 531.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -16,7 +16,17 @@
 				"toplevel" : 1
 			}
 ,
+			"shader_select.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
 			"container.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"SceneSelect.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -66,7 +76,27 @@
 				"local" : 1
 			}
 ,
-			"SceneSelect.maxpat" : 			{
+			"KakkuriText.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"AutoLyric.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"dictumenugenerator.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"lyric_cellblock_setter.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"LyricSelector.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}

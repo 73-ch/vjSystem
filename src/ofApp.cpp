@@ -29,6 +29,23 @@ void ofApp::setup(){
     screen_plane.setPosition(0, 0, 0);
     
     windowResized(ofGetWidth(), ofGetHeight());
+    
+    ofTrueTypeFontSettings font_settings("NotoSansCJKjp-Medium.otf", 50);
+    font_settings.addRanges(ofAlphabet::Japanese);
+    font_settings.addRange(ofUnicode::Latin);
+    font_settings.addRange(ofUnicode::Latin1Supplement);
+    font_settings.addRange(ofUnicode::Space);
+    font_settings.addRange(ofUnicode::NumberForms);
+    font_settings.addRange(ofUnicode::Hiragana);
+    font_settings.addRange(ofUnicode::Katakana);
+    font_settings.addRange(ofUnicode::HangulJamo);
+    font_settings.addRange(ofUnicode::HangulExtendedA);
+    font_settings.addRange(ofUnicode::HangulExtendedB);
+    font_settings.addRange(ofUnicode::HangulSyllables);
+    font_settings.addRange(ofUnicode::HangulCompatJamo);
+    font_settings.contours = true;
+    font_settings.antialiased = true;
+    info.font.load(font_settings);
 }
 
 void ofApp::initOsc() {

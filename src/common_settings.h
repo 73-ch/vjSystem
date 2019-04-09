@@ -6,7 +6,7 @@
 
 #define OF_PORT 3884
 
-#define MAX_HOST "localhost"
+#define MAX_HOST "127.0.0.1"
 #define MAX_PORT 4729
 
 #define DEFAULT_VERTEX "#version 150\nuniform mat4 modelViewProjectionMatrix;in vec4 position;in vec2 texcoord;out vec2 v_texcoord;void main(){gl_Position = modelViewProjectionMatrix * position;v_texcoord = texcoord;}"
@@ -15,4 +15,5 @@
 struct BasicInfos {
     float time;
     glm::vec2 screen_size;
+    ofTrueTypeFont font;
 };
