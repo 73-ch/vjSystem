@@ -90,7 +90,7 @@
 				"box" : 				{
 					"allowdrag" : 0,
 					"id" : "obj-61",
-					"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop", ",", "TrainShadow", ",", "KakkuriText" ],
+					"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop", ",", "TrainShadow", ",", "KakkuriText", ",", "PhysicsLyric" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -101,11 +101,11 @@
 					"presentation_rect" : [ 0.0, 0.0, 100.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_longname" : "umenu[3]",
-							"parameter_mmax" : 7,
 							"parameter_shortname" : "umenu",
-							"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop", "TrainShadow", "KakkuriText" ],
-							"parameter_type" : 2
+							"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop", "TrainShadow", "KakkuriText", "PhysicsLyric" ],
+							"parameter_type" : 2,
+							"parameter_longname" : "umenu[3]",
+							"parameter_mmax" : 8
 						}
 
 					}

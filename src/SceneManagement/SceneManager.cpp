@@ -10,6 +10,9 @@ SceneManager::SceneManager(BasicInfos* g_info) {
     stored_scenes["MeshChain"] = new MeshChain(g_info);
     stored_scenes["RainDrop"] = new RainDrop(g_info);
     stored_scenes["TrainShadow"] = new TrainShadow(g_info);
+    stored_scenes["KakkuriText"] = new KakkuriText(g_info);
+    stored_scenes["PhysicsLyric"] = new PhysicsLyric(g_info);
+    
     // init container[3]
     for (size_t i = 0; i < MAX_SCENES; ++i) {
         scene_containers[i] = new SceneContainer();
@@ -86,6 +89,10 @@ void SceneManager::setScene(size_t container_i, BaseScene *scene) {
 }
 
 void SceneManager::windowResized(glm::vec2 size) {
+    for (auto scene : stored_scenes) {
+        scene.second->windowResized(size);
+    }
+    
     for (auto container : scene_containers) {
         container->windowResized(size);
     }

@@ -13,6 +13,9 @@
 #include "MeshChain.h"
 #include "RainDrop.h"
 #include "TrainShadow.h"
+#include "AvoidObject.h"
+#include "KakkuriText.hpp"
+#include "PhysicsLyric.hpp"
 
 #define MAX_SCENES 3
 
