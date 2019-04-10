@@ -27,6 +27,10 @@ void ShaderArt::initOsc() {
     });
     
     ofxSubscribeOsc(OF_PORT, "/shader_art/seed", seed);
+    
+    ofxSubscribeOsc(OF_PORT, "/shader_art/plotter/color", [=](const glm::vec4 color) {
+        plotter.color = ofFloatColor(color.x, color.y, color.z, color.w);
+    });
 }
 
 void ShaderArt::setup() {
@@ -50,6 +54,9 @@ void ShaderArt::draw() {
     ofSetColor(255);
     plane.draw();
     shader.end();
+    
+    plotter.draw();
+    
     end();
 }
 
