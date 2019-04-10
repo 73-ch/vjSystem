@@ -6,6 +6,7 @@ CodePlotter::CodePlotter(const BasicInfos* g_info) {
     update_span = 0.5;
     interval = 6.0;
     string_count = 0;
+    speed = 1.0;
 }
 
 void CodePlotter::setText(string text) {
@@ -16,17 +17,21 @@ void CodePlotter::setText(string text) {
     splitTextByLine();
 }
 
+void CodePlotter::setSpeed(const float g_speed) {
+    speed = g_speed;
+}
+
 void CodePlotter::update() {
     if (shown_text.length() > string_count) {
         string_count++;
         splitTextByLine();
     }
     
-    if (info->time > last_updated + update_span) {
+    if ((info->time - last_updated) * speed > update_span) {
         int length = max({int(line_splitted_text.size() - floor(info->screen_size.y / 20)), 0}) + 1;
     
         start_line = (start_line + 1) % length;
-        last_updated = (start_line+1) % length ==  0 ? info->time + interval : info->time;
+        last_updated = (start_line+1) % length ==  0 ? info->time + interval * speed : info->time;
     }
 }
 
