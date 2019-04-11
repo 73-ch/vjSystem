@@ -45,35 +45,30 @@ float noise (in vec2 st) {
 
 
 void main() {
-    vec2 st = gl_FragCoord.xy;
     vec2 nst =  gl_FragCoord.xy / u_resolution.xy * 2. -1.;
     float u_time = time;
+    float size = 10.;
 
-    float size = 20. * seeds.x + 2.;
+    nst.x += noise(nst +time);
 
-    // nst += noise(fract(st * sin(time))) * cos(time + seeds.x);
-
-    vec2 bst = vec2(floor(nst.x*size)/ size, floor(nst.y*size)/ size);
-    float s = noise(bst*10.);
-    float n = smoothstep(s-0.1, s+0.1 , seeds.x - seeds.z);
+    float n = noise(vec2(floor(nst.x* size)/size, floor(nst.y * size * 2.)/size/2.));
+    
+    nst.x += n;
+    vec2 st = (nst + 1.0)*.25 * u_resolution;
 
     float sum_opacity = max(s_opacity0 + s_opacity1 + s_opacity2, 1.0);
-
-    vec3 a;
-    if (s_opacity0 > 0.0) {
-        a = texture(s_texture0, st).xyz * s_opacity0 / sum_opacity;
-    }
-
-    vec3 b;
-    if (s_opacity1 > 0.0) {
-        b = texture(s_texture1, st).xyz * s_opacity1 / sum_opacity;
-    }
+    vec3 final;
     
-    vec3 final = mix(a,b,n);
-
-    // final = mix(final, texture(before_texture, st).xyz,  seeds.z * .01 + .98);
+    if (s_opacity0 > 0.0) {
+        final += texture(s_texture0, st).xyz * s_opacity0 / sum_opacity;
+    }
+    if (s_opacity1 > 0.0) {
+        final += texture(s_texture1, st).xyz * s_opacity1 / sum_opacity;
+    }
+    if (s_opacity2 > 0.0) {
+        final += texture(s_texture2, st).xyz * s_opacity2 / sum_opacity;
+    }
     // final *= 1.0000001;
-    // final *= length((gl_FragCoord.xy*2. - u_resolution)/min(u_resolution.x, u_resolution.y));
     final *= (1.0 - length((gl_FragCoord.xy*2. - u_resolution)/min(u_resolution.x, u_resolution.y)))*.4+.6;
 
     out_color = vec4(final, 1.);
