@@ -277,7 +277,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 140.0, 431.0, 137.0, 22.0 ],
-					"restore" : [ 0.585227272727273 ],
+					"restore" : [ 1.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -389,7 +389,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 642.0, 565.0, 131.0, 35.0 ],
-					"text" : "/manager/set_scene 2 KakkuriText"
+					"text" : "/manager/set_opacity 2 0."
 				}
 
 			}
@@ -439,7 +439,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 167.0, 565.0, 131.0, 35.0 ],
-					"text" : "/manager/set_scene 0 PhysicsLyric"
+					"text" : "/manager/set_opacity 0 1."
 				}
 
 			}
@@ -3170,7 +3170,7 @@
 													}
 ,
 													"text" : "autopattr",
-													"varname" : "u471001093"
+													"varname" : "u227001165"
 												}
 
 											}
@@ -6109,7 +6109,7 @@
 													}
 ,
 													"text" : "autopattr",
-													"varname" : "u166001091"
+													"varname" : "u332001163"
 												}
 
 											}
@@ -7599,17 +7599,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-91",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 826.65386962890625, 142.857147216796875, 91.0, 22.0 ],
-					"text" : "print @popup 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"color" : [ 0.250980392156863, 0.203921568627451, 0.937254901960784, 1.0 ],
 					"id" : "obj-10",
 					"maxclass" : "newobj",
@@ -7653,7 +7642,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-61",
@@ -7753,13 +7741,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-33",
-									"linecount" : 4,
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 578.0, 369.0, 50.0, 62.0 ],
-									"text" : "post/positive-negative.frag"
+									"patching_rect" : [ 578.0, 369.0, 50.0, 49.0 ],
+									"text" : "post/normal_mix.frag"
 								}
 
 							}
@@ -9079,7 +9067,7 @@
 					}
 ,
 					"text" : "pattrstorage",
-					"varname" : "u618001087"
+					"varname" : "u676001157"
 				}
 
 			}
@@ -9175,8 +9163,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -9706,15 +9692,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-77", 0 ],
-					"order" : 1,
-					"source" : [ "obj-52", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-91", 0 ],
-					"order" : 0,
 					"source" : [ "obj-52", 1 ]
 				}
 
@@ -9874,61 +9851,61 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-10::obj-10" : [ "live.slider[12]", "live.slider[10]", 0 ],
-			"obj-29::obj-61" : [ "umenu[8]", "umenu", 0 ],
-			"obj-1::obj-2::obj-112" : [ "number", "number", 0 ],
+			"obj-2::obj-38" : [ "live.dial[16]", "noise_cut", 0 ],
+			"obj-2::obj-126::obj-63" : [ "CV3", "CV3", 0 ],
+			"obj-2::obj-126::obj-26" : [ "spectral", "spectral", 0 ],
+			"obj-68" : [ "live.slider[1]", "container0 _opacity", 0 ],
+			"obj-2::obj-6" : [ "live.gain~[1]", "gain/trim", 0 ],
+			"obj-2::obj-71" : [ "live.dial[19]", "feedback", 0 ],
+			"obj-10::obj-50" : [ "toggle[16]", "toggle[16]", 0 ],
+			"obj-10::obj-8" : [ "live.slider[11]", "live.slider[10]", 0 ],
+			"obj-2::obj-27" : [ "live.dial[1]", "thresh max", 0 ],
+			"obj-2::obj-9::obj-129" : [ "Interval[1]", "Interval", 0 ],
+			"obj-2::obj-126::obj-54" : [ "CV1", "CV1", 0 ],
 			"obj-2::obj-61::obj-7" : [ "display", "display", 0 ],
-			"obj-10::obj-4" : [ "live.slider[10]", "live.slider[10]", 0 ],
+			"obj-2::obj-9::obj-7" : [ "OutputRange[1]", "OutputRange", 0 ],
+			"obj-2::obj-126::obj-59" : [ "filter_mode", "filter_mode", 0 ],
+			"obj-1::obj-2::obj-28" : [ "umenu[9]", "umenu[3]", 0 ],
+			"obj-10::obj-3" : [ "toggle[20]", "toggle[18]", 0 ],
+			"obj-10::obj-10" : [ "live.slider[12]", "live.slider[10]", 0 ],
+			"obj-1::obj-2::obj-22::obj-21" : [ "toggle[22]", "toggle[21]", 0 ],
+			"obj-1::obj-2::obj-70" : [ "button[2]", "button[2]", 0 ],
 			"obj-10::obj-85" : [ "toggle[19]", "toggle[18]", 0 ],
-			"obj-1::obj-2::obj-22::obj-19" : [ "function[10]", "function", 0 ],
-			"obj-2::obj-61::obj-69" : [ "LinLog", "LinLog", 0 ],
+			"obj-2::obj-126::obj-55" : [ "power", "power", 0 ],
 			"obj-2::obj-126::obj-98" : [ "Gain", "Gain", 0 ],
+			"obj-2::obj-126::obj-95" : [ "Freq", "Freq", 0 ],
 			"obj-28::obj-6" : [ "live.slider[26]", "seed.w", 0 ],
 			"obj-28::obj-5" : [ "live.slider[27]", "seed.z", 0 ],
-			"obj-2::obj-126::obj-63" : [ "CV3", "CV3", 0 ],
-			"obj-28::obj-4" : [ "live.slider[28]", "seed.y", 0 ],
-			"obj-2::obj-45" : [ "live.numbox", "live.numbox", 0 ],
-			"obj-2::obj-26" : [ "live.dial", "thresh min", 0 ],
-			"obj-2::obj-126::obj-26" : [ "spectral", "spectral", 0 ],
-			"obj-28::obj-3" : [ "live.slider[29]", "seed.x", 0 ],
-			"obj-3::obj-61" : [ "umenu[7]", "umenu", 0 ],
-			"obj-1::obj-2::obj-22::obj-83" : [ "function[1]", "function", 0 ],
-			"obj-2::obj-9::obj-33" : [ "InputRange[1]", "InputRange", 0 ],
-			"obj-10::obj-55" : [ "toggle[17]", "toggle[17]", 0 ],
-			"obj-2::obj-71" : [ "live.dial[19]", "feedback", 0 ],
-			"obj-1::obj-2::obj-28" : [ "umenu[9]", "umenu[3]", 0 ],
-			"obj-2::obj-41" : [ "live.dial[17]", "amp_vol", 0 ],
-			"obj-2::obj-200" : [ "live.gain~[2]", "input vol", 0 ],
-			"obj-2::obj-126::obj-54" : [ "CV1", "CV1", 0 ],
-			"obj-2::obj-126::obj-59" : [ "filter_mode", "filter_mode", 0 ],
-			"obj-1::obj-40" : [ "live.gain~[3]", "live.gain~", 0 ],
-			"obj-18::obj-61" : [ "umenu[3]", "umenu", 0 ],
-			"obj-10::obj-8" : [ "live.slider[11]", "live.slider[10]", 0 ],
-			"obj-1::obj-2::obj-22::obj-21" : [ "toggle[22]", "toggle[21]", 0 ],
-			"obj-2::obj-2" : [ "live.dial[18]", "noise cut", 0 ],
-			"obj-2::obj-144::obj-29" : [ "Range", "wavefolder", 0 ],
-			"obj-2::obj-9::obj-129" : [ "Interval[1]", "Interval", 0 ],
-			"obj-2::obj-126::obj-95" : [ "Freq", "Freq", 0 ],
-			"obj-2::obj-112" : [ "live.button", "live.button", 0 ],
-			"obj-2::obj-9::obj-7" : [ "OutputRange[1]", "OutputRange", 0 ],
-			"obj-1::obj-2::obj-68" : [ "button[1]", "button[1]", 0 ],
-			"obj-10::obj-57" : [ "toggle[18]", "toggle[18]", 0 ],
 			"obj-1::obj-54" : [ "button", "button", 0 ],
-			"obj-2::obj-38" : [ "live.dial[16]", "noise_cut", 0 ],
-			"obj-2::obj-144::obj-1" : [ "Bypass", "Bypass", 0 ],
-			"obj-2::obj-126::obj-51" : [ "CV2", "CV2", 0 ],
-			"obj-2::obj-6" : [ "live.gain~[1]", "gain/trim", 0 ],
-			"obj-2::obj-5" : [ "live.gain~", "note_on", 0 ],
-			"obj-10::obj-50" : [ "toggle[16]", "toggle[16]", 0 ],
+			"obj-2::obj-200" : [ "live.gain~[2]", "input vol", 0 ],
+			"obj-28::obj-4" : [ "live.slider[28]", "seed.y", 0 ],
+			"obj-10::obj-55" : [ "toggle[17]", "toggle[17]", 0 ],
+			"obj-2::obj-112" : [ "live.button", "live.button", 0 ],
+			"obj-28::obj-3" : [ "live.slider[29]", "seed.x", 0 ],
 			"obj-10::obj-11" : [ "live.slider[13]", "live.slider[10]", 0 ],
 			"obj-70" : [ "container2 _opacity[1]", "container2 _opacity", 0 ],
-			"obj-2::obj-27" : [ "live.dial[1]", "thresh max", 0 ],
+			"obj-2::obj-41" : [ "live.dial[17]", "amp_vol", 0 ],
+			"obj-29::obj-61" : [ "umenu[8]", "umenu", 0 ],
+			"obj-1::obj-2::obj-22::obj-19" : [ "function[10]", "function", 0 ],
+			"obj-2::obj-126::obj-51" : [ "CV2", "CV2", 0 ],
 			"obj-97" : [ "scene1 _opacity[1]", "container1 _opacity", 0 ],
-			"obj-2::obj-126::obj-55" : [ "power", "power", 0 ],
-			"obj-68" : [ "live.slider[1]", "container0 _opacity", 0 ],
-			"obj-10::obj-3" : [ "toggle[20]", "toggle[18]", 0 ],
+			"obj-1::obj-40" : [ "live.gain~[3]", "live.gain~", 0 ],
+			"obj-18::obj-61" : [ "umenu[3]", "umenu", 0 ],
+			"obj-10::obj-4" : [ "live.slider[10]", "live.slider[10]", 0 ],
+			"obj-2::obj-61::obj-69" : [ "LinLog", "LinLog", 0 ],
+			"obj-2::obj-144::obj-1" : [ "Bypass", "Bypass", 0 ],
+			"obj-2::obj-2" : [ "live.dial[18]", "noise cut", 0 ],
+			"obj-2::obj-5" : [ "live.gain~", "note_on", 0 ],
+			"obj-3::obj-61" : [ "umenu[7]", "umenu", 0 ],
+			"obj-1::obj-2::obj-22::obj-83" : [ "function[1]", "function", 0 ],
 			"obj-2::obj-126::obj-11" : [ "Resonance", "Res", 0 ],
-			"obj-1::obj-2::obj-70" : [ "button[2]", "button[2]", 0 ],
+			"obj-2::obj-144::obj-29" : [ "Range", "wavefolder", 0 ],
+			"obj-1::obj-2::obj-112" : [ "number", "number", 0 ],
+			"obj-2::obj-9::obj-33" : [ "InputRange[1]", "InputRange", 0 ],
+			"obj-10::obj-57" : [ "toggle[18]", "toggle[18]", 0 ],
+			"obj-2::obj-26" : [ "live.dial", "thresh min", 0 ],
+			"obj-2::obj-45" : [ "live.numbox", "live.numbox", 0 ],
+			"obj-1::obj-2::obj-68" : [ "button[1]", "button[1]", 0 ],
 			"parameterbanks" : 			{
 
 			}

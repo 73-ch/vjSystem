@@ -4,15 +4,15 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 748.0, 595.0, 912.0, 571.0 ],
+		"rect" : [ 145.0, 396.0, 1018.0, 746.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -59,7 +59,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -340,7 +340,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 589.0, 187.0, 60.0, 22.0 ],
-									"text" : "0."
+									"text" : "0.040502"
 								}
 
 							}
@@ -1120,7 +1120,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "bang" ],
-					"patching_rect" : [ 7.0, 686.0, 32.0, 22.0 ],
+					"patching_rect" : [ 152.0, 646.0, 32.0, 22.0 ],
 					"text" : "t b b"
 				}
 
@@ -1261,7 +1261,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 666.0, 156.0, 161.0, 22.0 ],
+					"patching_rect" : [ 698.0, 175.0, 161.0, 22.0 ],
 					"text" : "lyric_cellblock_setter.maxpat"
 				}
 
@@ -1331,7 +1331,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 20.0, 112.0, 433.0, 370.0 ],
 					"rowhead" : 1,
-					"rows" : 101,
+					"rows" : 24,
 					"selmode" : 3
 				}
 
@@ -1530,7 +1530,7 @@
 					"presentation_rect" : [ 252.833333214124195, 536.666662335395813, 150.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_longname" : "umenu[3]",
+							"parameter_longname" : "umenu[9]",
 							"parameter_initial_enable" : 1,
 							"parameter_mmax" : 6,
 							"parameter_initial" : [ 6 ],
@@ -1567,7 +1567,7 @@
 					"patching_rect" : [ 338.0, 95.5, 141.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 228.999968965848439, 82.166662335395756, 215.0, 22.0 ],
-					"text" : "bts"
+					"text" : "Perfume"
 				}
 
 			}
@@ -1581,7 +1581,7 @@
 					"patching_rect" : [ 174.666666666666515, 95.333333333333314, 154.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 228.999968965848439, 49.166662335395756, 215.0, 22.0 ],
-					"text" : "\"So what\""
+					"text" : "\"Next Stage with YOU\""
 				}
 
 			}
@@ -1661,13 +1661,16 @@
 				"box" : 				{
 					"fontsize" : 24.0,
 					"id" : "obj-10",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 50.0, 728.5, 152.0, 35.0 ],
+					"patching_rect" : [ 50.0, 728.5, 587.0, 62.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 16.833333214124195, 490.166663726170782, 433.0, 35.0 ]
+					"presentation_linecount" : 3,
+					"presentation_rect" : [ 16.833333214124195, 490.166663726170782, 433.0, 89.0 ],
+					"text" : "\"\n違う風景を見るとき Next Stage with YOU\""
 				}
 
 			}
@@ -1707,6 +1710,18 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 928.0, 86.5, 50.0, 22.0 ],
 					"text" : "clear all"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 413.0, 64.166667000000004, 50.0, 22.0 ],
+					"text" : "set $1"
 				}
 
 			}
@@ -1759,6 +1774,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
 					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-66", 0 ],
+					"source" : [ "obj-19", 0 ]
 				}
 
 			}
@@ -2023,36 +2045,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-70" : [ "button[2]", "button[2]", 0 ],
-			"obj-22::obj-19" : [ "function[10]", "function", 0 ],
-			"obj-22::obj-83" : [ "function[1]", "function", 0 ],
-			"obj-22::obj-21" : [ "toggle[22]", "toggle[21]", 0 ],
-			"obj-112" : [ "number", "number", 0 ],
-			"obj-68" : [ "button[1]", "button[1]", 0 ],
-			"obj-28" : [ "umenu[3]", "umenu[3]", 0 ],
-			"parameterbanks" : 			{
-
-			}
-
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "lyric_cellblock_setter.maxpat",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "f3pb.maxpat",
-				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : "../../../../../../Max 8/Library",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"boxgroups" : [ 			{
 				"boxes" : [ "obj-33", "obj-35" ]
 			}

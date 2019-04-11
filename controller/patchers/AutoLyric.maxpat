@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 384.0, 661.0, 815.0, 371.0 ],
+		"rect" : [ 346.0, 730.0, 986.0, 371.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -101,12 +101,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-3",
-					"linecount" : 294,
+					"linecount" : 272,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 952.0, 828.0, 65.0, 3951.0 ],
+					"patching_rect" : [ 952.0, 828.0, 71.0, 3656.0 ],
 					"text" : "\"So what <br>Oh oh oh oh oh oh oh oh oh oh <br>Oh oh oh oh oh oh <br>Let go<br>… <br>Somebody call me right one<br>Somebody call me wrong<br>난 신경 쓰지 않을래<br>너도 그럼 어때<br>So what<br>Let go<br>한숨 그 안에 많은 걱정이 숨어있네<br>고민 그만해 너는 이미 다 알고 있지<br>이 길의 중간에 포기하고 싶은 순간에<br>더 크게 소리질러봐<br>So what what what<br>내 맘대로 되는 건 없고<br>숨을 곳은 뭐 더더욱 없어<br>이미 주사윈 던져진 지 오래<br>꾸물대단 휩쓸려가겠지 oh bae<br>고민들의 9할은 니가 만들어 낸 상상의 늪<br>고민보다 go go 쫄지마렴 cheer up<br>소리쳐봐 so what what<br>We are, we are, we are<br>Young and wild and free<br>답도 없는 고민 고민<br>그 속에 빠져 있지 마 yeah<br>경계선 위에서 위태롭다 해도<br>웃고 떠들며 바람을 가르자<br>때론 바보같이 멍청이 달리기<br>실수와 눈물 속에 we just go<br>So what<br>멈춰서 고민 하지마<br>다 쓸데 없어<br>Let go<br>아직은 답이 없지만<br>You can start the fight<br>So what<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>Let go<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>So what<br>Ay 누군 일들이 싫대<br>Ay 누군 쉬고만 싶대<br>Ay 그들의 고통과 피폐<br>Ay 모두 내게 몰아칠 때<br>Ay 어떡하긴 뭐 어떡해 uh<br>답은 하나밖에 없기에 uh<br>그냥 믿고 달려보자고 so what? oh yeah<br>I don’t wanna die right now<br>I don’t wanna, I don’t wanna fight right now<br>걱정이 싫어 인생은 길어<br>걍 가 I wanna live right now<br>브레이크 부러졌으니 밟아 엑셀<br>이러나 저러나 사람 신세<br>다 안다면 무슨 재미냐 고통은 내 훈장<br>그래서 so what?<br>We are, we are, we are<br>Young and wild and free<br>답도 없는 고민 고민<br>그 속에 빠져 있지 마 yeah<br>경계선 위에서 위태롭다 해도<br>웃고 떠들며 바람을 가르자<br>때론 바보같이 멍청이 달리기<br>실수와 눈물 속에 we just go<br>So what<br>멈춰서 고민 하지마<br>다 쓸데 없어<br>Let go<br>아직은 답이 없지만<br>You can start the fight<br>So what<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>Let go<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>Somebody call me right one (right one)<br>Somebody call me wrong (call me wrong)<br>난 신경 쓰지 않을래 (않을래)<br>너도 그럼 어때 (어때)<br>So what<br>멈춰서 고민 하지마<br>다 쓸데 없어<br>Let go<br>아직은 답이 없지만<br>You can start the fight<br>So what<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>Let go<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>So what<br>Somebody call me right one<br>Somebody call me wrong<br>난 신경 쓰지 않을래<br>너도 그럼 어때\""
 				}
 
@@ -288,13 +288,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-198",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 970.0, 98.0, 145.0, 49.0 ],
-					"text" : "\"Anti Everything (Album Rework)\" \"Young Juvenile Youth\""
+					"patching_rect" : [ 970.0, 98.0, 145.0, 35.0 ],
+					"text" : "Seed \"Young Juvenile Youth\""
 				}
 
 			}
@@ -547,7 +547,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1023.0, 330.0, 190.0, 22.0 ],
-					"text" : "\"So what\" bts"
+					"text" : "Seed \"Young Juvenile Youth\""
 				}
 
 			}
@@ -611,7 +611,7 @@
 					"patching_rect" : [ 701.0, 330.0, 190.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 265.49999988079071, 115.499996145566286, 190.0, 22.0 ],
-					"text" : "\"So what\" bts"
+					"text" : "Seed \"Young Juvenile Youth\""
 				}
 
 			}
@@ -689,7 +689,7 @@
 					"patching_rect" : [ 1013.0, 205.0, 175.0, 25.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 582.66666654745768, 61.0, 175.0, 39.0 ],
-					"text" : "bts\n"
+					"text" : "\"Young Juvenile Youth\""
 				}
 
 			}
@@ -704,7 +704,7 @@
 					"patching_rect" : [ 750.5, 205.0, 175.0, 25.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 326.99999988079071, 61.0, 175.0, 39.0 ],
-					"text" : "So what"
+					"text" : "Seed"
 				}
 
 			}
@@ -1261,13 +1261,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-20",
-					"linecount" : 5,
+					"linecount" : 7,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 171.5, 492.25, 98.0, 76.0 ],
-					"text" : "startRecognize /Users/nami/WebstormProjects/AutoLyrics/audio/sample.wav"
+					"patching_rect" : [ 171.5, 492.25, 116.0, 102.0 ],
+					"text" : "startRecognize /Users/nami/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/audio/sample.wav"
 				}
 
 			}
@@ -1330,13 +1330,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-9",
-					"linecount" : 4,
+					"linecount" : 6,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 357.5, 174.833333333333314, 164.0, 62.0 ],
-					"text" : "open \"Macintosh HD:/Users/nami/WebstormProjects/AutoLyrics/audio/sample.wav\" wave"
+					"patching_rect" : [ 357.5, 174.833333333333314, 137.5, 89.0 ],
+					"text" : "open /Users/nami/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/audio/sample.wav wave"
 				}
 
 			}
