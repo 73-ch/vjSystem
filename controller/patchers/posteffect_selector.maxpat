@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 342.0, 114.0, 1329.0, 927.0 ],
+		"rect" : [ 1960.0, 199.0, 922.0, 967.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,73 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 230.0, 294.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 24.0, 170.0, 150.0, 20.0 ],
+					"text" : "normal | 2-out | all-switch"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 38.5, 294.0, 63.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 14.0, 105.0, 63.0, 20.0 ],
+					"text" : "select out"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 203.0, 347.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 70.0, 206.0, 150.0, 20.0 ],
+					"text" : "select random/switch"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 434.0, 101.5, 62.0, 33.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 2,
+					"presentation_rect" : [ 92.0, 6.0, 62.0, 33.0 ],
+					"text" : "enable audioin"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 32.0, 107.0, 43.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 26.0, 19.0, 43.0, 20.0 ],
+					"text" : "pedal"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-26",
 					"maxclass" : "message",
@@ -69,7 +136,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 453.0, 137.0, 24.0, 24.0 ]
+					"patching_rect" : [ 453.0, 137.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 92.0, 49.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -93,7 +162,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 32.0, 143.0, 24.0, 24.0 ]
+					"patching_rect" : [ 32.0, 137.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 26.0, 49.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -166,7 +237,9 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 159.0, 341.0, 39.0, 32.0 ]
+					"patching_rect" : [ 159.0, 341.0, 39.0, 32.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 26.0, 200.0, 39.0, 32.0 ]
 				}
 
 			}
@@ -177,7 +250,7 @@
 					"numinlets" : 5,
 					"numoutlets" : 4,
 					"outlettype" : [ "int", "", "", "int" ],
-					"patching_rect" : [ 230.0, 380.0, 61.0, 22.0 ],
+					"patching_rect" : [ 230.0, 387.0, 61.0, 22.0 ],
 					"text" : "counter 1"
 				}
 
@@ -214,7 +287,9 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 257.0, 50.0, 22.0 ]
+					"patching_rect" : [ 66.0, 257.0, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 79.0, 105.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -245,14 +320,15 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-69",
-					"int" : 2,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"outputs" : 3,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 118.0, 288.0, 83.0, 32.0 ]
+					"patching_rect" : [ 118.0, 288.0, 83.0, 32.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 57.5, 129.0, 83.0, 32.0 ]
 				}
 
 			}
