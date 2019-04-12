@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 104.0, 696.0, 459.0 ],
+		"rect" : [ 776.0, 201.0, 696.0, 459.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,31 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-34",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 119.0, 19.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-29",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 210.0, 21.0, 35.0, 22.0 ],
+					"text" : "clear"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"format" : 6,
 					"id" : "obj-35",
@@ -102,7 +127,6 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-27",
-					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -115,6 +139,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-25",
+					"int" : 1,
 					"maxclass" : "gswitch",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -139,7 +164,6 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-23",
-					"int" : 1,
 					"maxclass" : "gswitch",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -164,6 +188,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-14",
+					"int" : 1,
 					"maxclass" : "gswitch",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -199,9 +224,10 @@
 			}
 , 			{
 				"box" : 				{
-					"addpoints" : [ 0.0, 0.0, 2, 0.0, 1.0, 2, 169.888426648809542, 0.0, 2, 208.809028597588224, 0.981355013847351, 2, 321.808510638297889, 1.0, 2, 412.2340425531915, 0.16, 2, 563.418957464238474, 0.190027101039886, 2, 680.180763310574434, 0.0, 2, 784.574468085106332, 0.453333333333333, 2, 948.30046562438315, 0.493550136089325, 2, 1000.0, 1.0, 2 ],
+					"addpoints_with_curve" : [ 0.0, 0.0, 2, 0.0, 199.468085106382972, 0.72, 2, 0.0, 300.531914893617, 0.44, 0, 0.0, 343.085106382978722, 0.24, 0, 0.0, 369.680851063829778, 0.0, 2, 0.0, 598.404255319148888, 0.0, 2, 0.0, 837.765957446808557, 1.0, 2, 0.0, 1000.0, 1.0, 2, 0.0 ],
 					"id" : "obj-19",
 					"maxclass" : "function",
+					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "float", "", "", "bang" ],
@@ -342,7 +368,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -375,7 +401,20 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-38",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 178.0, 42.0, 70.0, 22.0 ],
+									"text" : "loadmess 1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-13",
 									"maxclass" : "newobj",
@@ -394,7 +433,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 614.0, 74.0, 29.5, 22.0 ],
+									"patching_rect" : [ 588.25, 94.0, 29.5, 22.0 ],
 									"text" : "+"
 								}
 
@@ -478,7 +517,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 593.0, -27.0, 18.0, 22.0 ],
+									"patching_rect" : [ 593.0, -21.0, 18.0, 22.0 ],
 									"text" : "1"
 								}
 
@@ -569,10 +608,10 @@
 									"range" : [ 0.0, 6.28000020980835 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_shortname" : "function",
-											"parameter_type" : 3,
 											"parameter_longname" : "function[9]",
-											"parameter_invisible" : 1
+											"parameter_invisible" : 1,
+											"parameter_shortname" : "function",
+											"parameter_type" : 3
 										}
 
 									}
@@ -671,10 +710,10 @@
 									"patching_rect" : [ 329.0, 15.0, 41.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
+											"parameter_longname" : "live.dial[14]",
 											"parameter_shortname" : "live.dial[13]",
 											"parameter_type" : 0,
-											"parameter_unitstyle" : 0,
-											"parameter_longname" : "live.dial[14]"
+											"parameter_unitstyle" : 0
 										}
 
 									}
@@ -793,7 +832,7 @@
 							}
 , 							{
 								"box" : 								{
-									"addpoints_with_curve" : [ 0.0, 0.0, 2, 0.0, 19.300833256286982, 5.252363811839711, 2, 0.0, 149.478348049186394, 1.25600004196167, 2, 0.0, 220.484265208949694, 6.28000020980835, 0, 0.0, 451.253495978180467, 6.28000020980835, 2, 0.0, 545.928052191198276, 2.51200008392334, 2, 0.0, 723.442845090606511, 0.570909109982577, 2, 0.0, 900.957637990014746, 0.0, 2, 0.0, 983.797874676405286, 6.28000020980835, 2, 0.0 ],
+									"addpoints_with_curve" : [ 0.0, 0.0, 2, 0.0, 19.300833256286982, 5.252363811839711, 2, 0.0, 149.478348049186394, 1.25600004196167, 2, 0.0, 220.484265208949694, 6.28000020980835, 0, 0.0, 380.247578818417139, 0.456727287986062, 2, 0.0, 451.253495978180467, 6.28000020980835, 2, 0.0, 545.928052191198276, 2.51200008392334, 2, 0.0, 723.442845090606511, 0.570909109982577, 2, 0.0, 900.957637990014746, 0.0, 2, 0.0, 983.797874676405286, 6.28000020980835, 2, 0.0 ],
 									"id" : "obj-19",
 									"maxclass" : "function",
 									"mode" : 1,
@@ -805,10 +844,10 @@
 									"range" : [ 0.0, 6.28000020980835 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_shortname" : "function",
-											"parameter_type" : 3,
 											"parameter_longname" : "function[8]",
-											"parameter_invisible" : 1
+											"parameter_invisible" : 1,
+											"parameter_shortname" : "function",
+											"parameter_type" : 3
 										}
 
 									}
@@ -1313,13 +1352,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"source" : [ "obj-17", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-17", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
@@ -1408,6 +1440,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-3", 0 ]
 				}
@@ -1431,6 +1470,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-30", 0 ],
 					"source" : [ "obj-33", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 1 ],
+					"source" : [ "obj-34", 0 ]
 				}
 
 			}
@@ -1487,8 +1533,8 @@
  ],
 		"parameters" : 		{
 			"obj-50::obj-4" : [ "live.dial[14]", "live.dial[13]", 0 ],
-			"obj-50::obj-28" : [ "function[9]", "function", 0 ],
 			"obj-50::obj-19" : [ "function[8]", "function", 0 ],
+			"obj-50::obj-28" : [ "function[9]", "function", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -1498,7 +1544,7 @@
 		"dependency_cache" : [ 			{
 				"name" : "f3pb.maxpat",
 				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : "../../../../../../Max 8/Library",
+				"patcherrelativepath" : "../../../../../../../Max 8/Library",
 				"type" : "JSON",
 				"implicit" : 1
 			}
