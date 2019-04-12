@@ -20,7 +20,7 @@ void main() {
     vec2 st = gl_FragCoord.xy;
     vec3 final;
 
-    final = blur(tex0, st, 5.);
+    final = blur(tex0, st/u_resolution, 5.);
 
     out_color = vec4(final, 1.0);
 }

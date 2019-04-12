@@ -33,6 +33,7 @@ public:
     virtual void initOsc(){};
     virtual void update(){};
     virtual void draw(){};
+    virtual void attached(){};
     
     virtual void windowResized(glm::vec2 size){
         output_fbo.allocate(size.x, size.y, GL_RGBA);

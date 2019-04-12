@@ -31,6 +31,10 @@ void ShaderArt::initOsc() {
     ofxSubscribeOsc(OF_PORT, "/shader_art/plotter/color", [=](const glm::vec4 color) {
         plotter.color = ofFloatColor(color.x, color.y, color.z, color.w);
     });
+    
+    ofxSubscribeOsc(OF_PORT, "/shader_art/plotter/speed", [&](const float speed) {
+        plotter.setSpeed(speed);
+    });
 }
 
 void ShaderArt::setup() {

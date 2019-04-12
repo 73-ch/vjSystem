@@ -1,4 +1,5 @@
 ofxAssimpModelLoader
+ofxBullet
 ofxOsc
 ofxPubSubOsc
 ofxShaderTex

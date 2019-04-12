@@ -29,13 +29,13 @@ void main() {
         pos = vec3(0.0);
     }
     
-    vel.x += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 0.1352 * time)) * timestep;
-    vel.y += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 1.2814 * time)) * timestep;
-    vel.z += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 2.5564 * time)) * timestep;
-    out_position = pos + vel;
+    vel.x += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 0.1352 * time)) * timestep*2.0;
+    vel.y += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 1.2814 * time)) * timestep*2.0;
+    vel.z += snoise(vec4(pos.x * scale, pos.y * scale, pos.z * scale, 2.5564 * time)) * timestep*2.0;
+    out_position = pos + vel*timestep*0.05;
     out_velocity = vel;
     
-    vec3 l_pos = light_position - vec3(0, 500, 0);
+    vec3 l_pos = light_position - vec3(0, 1000, 0);
     vec3 up = vec3(0,1,0);
     vec3 m = out_position - l_pos;
     vec3 shadow = vec3(10000000.);

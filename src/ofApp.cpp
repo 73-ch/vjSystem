@@ -59,6 +59,7 @@ void ofApp::initOsc() {
         
         if (!result) {
             post_processing.setupShaderFromSource(GL_FRAGMENT_SHADER, before);
+            ofLogNotice() << "pfs failed";
         } else {
             ofLogNotice() << "pfs changed";
         }

@@ -31,7 +31,7 @@ void main() {
     float r = length(pos)*2.0;
     float a = atan(pos.y,pos.x);
 
-    vec3 final = vec3(max(sin(a * 150.), 0.)) * 0.3;
+    vec3 final = vec3(max(sin(a * 150.), 0.)) * 0.3  + 0.1;
     final += smoothstep(-0.7, -0.4, -r);
     // final.r = cos(a*50.*mod(time, PI* 2.));
     // final.g = sin(a*50.*mod(time, PI* 2.));

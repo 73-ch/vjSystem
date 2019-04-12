@@ -50,30 +50,43 @@ float plot(vec2 st, float pct){
     smoothstep( pct, pct + 0.005, st.y);
 }
 void main() {
+    float v_time = time ;
     vec2 p = (gl_FragCoord.xy*2. - u_resolution) / u_resolution.y;
     vec2 st = gl_FragCoord.xy / u_resolution.x;
-    st *= sin(time * .4);
-    st.y *= fract(fbm(st, seed.y) + sin(length(p+time*.2)*3.0));
-    p = fract(p * 3. * seed.y + sin(p.x+time+seed.y) * 2.0)-.5;
-    vec3 pol = c(seed.x*2.  + mod(floor(st.y*12.) + time,2), p, seed.z*1.0);
+    // st *= sin(v_time * .4);
+    // st.y *= fract(fbm(st, seed.y) + sin(length(p+v_time*.2)*3.0));
+    // p = fract(p * 3. * seed.y + sin(p.x+v_time+seed.y) * 2.0)-.5;
+
+    // vec3 pol = genPolygon(seed.x*2.  + mod(floor(st.y*12.) + v_time,2), p, seed.z*1.0);
+    // st*=pol.x;
+
+    // st.x += sin(v_time*0.1+seed.y * 2.0);
     
-    st*=pol.x;
-    st.x += sin(time*0.1+seed.y * 2.0);
-    float n = fract(fbm(st, 1.2)*100 * sin(time * .07) + step(0.7, seed.y) * .6);
-    st.x += (fbm(vec2(sin(time * .3 * length(p * pow(cos(sin(time * .1)), 2.0 + seed.z) * .15)), distance(st, vec2(sin(time)*10., cos(time)))), 1.8) )* step(sin(time)*.5+.25,seed.y);
-    st.y = mod(fbm(st, 1.2) * 10., 2.0) * .5;
+    st.x += fbm(
+        vec2(
+            sin(v_time * .3 * length(
+                p * pow(sin(v_time * .1), 2.0) * .15)
+            ),
+            distance(st, vec2(
+                sin(v_time)*10.,
+                cos(v_time))
+            )
+        )
+    , 1.8)
+    // * step(sin(v_time)*.5+.25,seed.y)
+    ;
 
-    // float n =fbm(st, 1.2);
-    n = abs(step(0.1, seed.z) - n);
+    // st.y = mod(fbm(st, 1.2) * 10., 2.0) * .5;
+    // float n = fract(fbm(st, 1.2)*100 * sin(v_time * .07) + step(0.7, seed.y) * .6);
+    float n =fbm(st, 1.2) * cos(sin(v_time));
+    // n = abs(step(0.1, seed.z) - n);
 
-    vec3 a = vec3(1.0, abs(sin(time)), seed.y);
+    vec3 a = vec3(1.0, abs(sin(v_time)), seed.y);
 
-    for (int i= 0 ;i < 5; i++) {
-        a += vec3(plot(st+sin(i) * i * .1, sin(time*.1 + length(p))));
-    }
-    vec3 final = vec3(n) * mix(a, vec3(1.0), sin(time*.1 + seed.z*.3)*.5+.5);
+    // for (int i= 0 ;i < 5; i++) {
+    //     a += vec3(plot(st+sin(i) * i * .1, sin(v_time*.1 + length(p))));
+    // }
+    vec3 final = vec3(n) * mix(a, vec3(1.0), seed.x);
     out_color = vec4(final,1.0);
-    
-    
-    // out_color = vec4(pol,1.0);
+    // out_color = vec4pol,1.0);
 }

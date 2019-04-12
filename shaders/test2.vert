@@ -1,4 +1,4 @@
-#version 150
+#version 330
 
 void main() {
     float test = 1.0;
