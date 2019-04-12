@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 880.0, 451.0, 892.0, 533.0 ],
+		"rect" : [ 961.0, 101.0, 916.0, 561.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -218,8 +218,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 43.166666666666515, 38.5, 113.0, 22.0 ],
-					"text" : "metro 90 @active 1"
+					"patching_rect" : [ 43.166667938232422, 38.5, 113.0, 22.0 ],
+					"text" : "metro 10 @active 1"
 				}
 
 			}
@@ -268,17 +268,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 183.5, 716.0, 29.5, 22.0 ],
 					"text" : "$2"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-43",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 183.5, 912.0, 91.0, 22.0 ],
-					"text" : "print @popup 1"
 				}
 
 			}
@@ -633,7 +622,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 589.0, 187.0, 60.0, 22.0 ],
-									"text" : "0."
+									"text" : "0.058768"
 								}
 
 							}
@@ -1435,7 +1424,6 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-39",
-					"int" : 1,
 					"maxclass" : "gswitch",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -1625,7 +1613,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 20.0, 112.0, 433.0, 370.0 ],
 					"rowhead" : 1,
-					"rows" : 24,
+					"rows" : 40,
 					"selmode" : 3
 				}
 
@@ -1832,7 +1820,7 @@
 					"patching_rect" : [ 331.0, 183.5, 141.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 228.999969482421875, 82.166664123535156, 215.0, 22.0 ],
-					"text" : "Perfume"
+					"text" : "あいみょん"
 				}
 
 			}
@@ -1843,10 +1831,10 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 167.666666666666515, 183.333333333333314, 154.0, 22.0 ],
+					"patching_rect" : [ 167.666671752929688, 183.333328247070312, 154.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 228.999969482421875, 49.166664123535156, 215.0, 22.0 ],
-					"text" : "\"Next Stage with YOU\""
+					"text" : "君はロックを聴かない"
 				}
 
 			}
@@ -1932,7 +1920,8 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 43.0, 943.5, 587.0, 35.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 16.833333969116211, 490.166656494140625, 433.0, 35.0 ]
+					"presentation_rect" : [ 16.833333969116211, 490.166656494140625, 433.0, 35.0 ],
+					"text" : "手を叩く合図"
 				}
 
 			}
@@ -2469,23 +2458,23 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-90", 0 ],
+					"destination" : [ "obj-11", 0 ],
+					"order" : 1,
 					"source" : [ "obj-84", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-43", 0 ],
+					"destination" : [ "obj-90", 0 ],
 					"order" : 0,
-					"source" : [ "obj-9", 0 ]
+					"source" : [ "obj-84", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-66", 0 ],
-					"order" : 1,
 					"source" : [ "obj-9", 0 ]
 				}
 

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -48,10 +48,10 @@
 					"patching_rect" : [ 375.0, 360.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[24]",
 							"parameter_shortname" : "live.dial[24]",
-							"parameter_type" : 0
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -170,6 +170,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-14",
+					"int" : 1,
 					"maxclass" : "gswitch",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -250,10 +251,10 @@
 					"patching_rect" : [ 722.0, 349.0, 39.0, 95.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.slider[25]",
 							"parameter_shortname" : "live.slider[25]",
-							"parameter_type" : 0
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -275,10 +276,10 @@
 					"presentation_rect" : [ 660.0, 244.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[13]",
 							"parameter_shortname" : "live.dial[2]",
-							"parameter_type" : 0
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -322,10 +323,10 @@
 					"patching_rect" : [ 873.5, 449.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[12]",
 							"parameter_shortname" : "live.dial[10]",
-							"parameter_type" : 0
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -345,10 +346,10 @@
 					"patching_rect" : [ 830.5, 445.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[11]",
 							"parameter_shortname" : "live.dial[10]",
-							"parameter_type" : 0
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -368,10 +369,10 @@
 					"patching_rect" : [ 787.5, 449.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[10]",
 							"parameter_shortname" : "live.dial[10]",
-							"parameter_type" : 0
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -594,7 +595,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "toggle[15]",
-							"parameter_mmax" : 1,
+							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "toggle[7]",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2
@@ -644,7 +645,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "toggle[14]",
-							"parameter_mmax" : 1,
+							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "toggle[7]",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2
@@ -694,7 +695,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "toggle[13]",
-							"parameter_mmax" : 1,
+							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "toggle[7]",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2
@@ -744,7 +745,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "toggle[12]",
-							"parameter_mmax" : 1,
+							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "toggle[7]",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2
@@ -794,7 +795,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "toggle[11]",
-							"parameter_mmax" : 1,
+							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "toggle[7]",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2
@@ -844,7 +845,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "toggle[10]",
-							"parameter_mmax" : 1,
+							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "toggle[7]",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2
@@ -894,7 +895,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "toggle[9]",
-							"parameter_mmax" : 1,
+							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "toggle[7]",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2
@@ -944,7 +945,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "toggle[8]",
-							"parameter_mmax" : 1,
+							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "toggle[7]",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2
@@ -982,7 +983,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "toggle[7]",
-							"parameter_mmax" : 1,
+							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "toggle[7]",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2
@@ -1019,10 +1020,10 @@
 					"presentation_rect" : [ 130.0, 175.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[9]",
 							"parameter_shortname" : "live.dial[6]",
-							"parameter_type" : 1
+							"parameter_type" : 1,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -1044,10 +1045,10 @@
 					"presentation_rect" : [ 93.0, 175.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[8]",
 							"parameter_shortname" : "live.dial[6]",
-							"parameter_type" : 1
+							"parameter_type" : 1,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -1069,10 +1070,10 @@
 					"presentation_rect" : [ 56.0, 175.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[7]",
 							"parameter_shortname" : "live.dial[6]",
-							"parameter_type" : 1
+							"parameter_type" : 1,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -1094,10 +1095,10 @@
 					"presentation_rect" : [ 173.0, 175.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[6]",
 							"parameter_shortname" : "live.dial[6]",
-							"parameter_type" : 1
+							"parameter_type" : 1,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -1131,10 +1132,10 @@
 					"presentation_rect" : [ 640.0, 230.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[5]",
 							"parameter_shortname" : "live.dial[2]",
-							"parameter_type" : 0
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -1156,10 +1157,10 @@
 					"presentation_rect" : [ 597.0, 230.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[4]",
 							"parameter_shortname" : "live.dial[2]",
-							"parameter_type" : 0
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -1181,10 +1182,10 @@
 					"presentation_rect" : [ 554.0, 230.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_unitstyle" : 0,
 							"parameter_longname" : "live.dial[2]",
 							"parameter_shortname" : "live.dial[2]",
-							"parameter_type" : 0
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -1324,7 +1325,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "umenu[4]",
-							"parameter_mmax" : 9,
+							"parameter_mmax" : 9.0,
 							"parameter_shortname" : "umenu[4]",
 							"parameter_enum" : [ "NONE", "BOX_MESH", "BOX_WIREFRAME", "SPHERE_MESH", "SPHERE_WIREFRAME", "ABLETON_LOGO", "MAX", "ABLETON", "WINDOW1", "WINDOW2" ],
 							"parameter_type" : 2
@@ -2070,9 +2071,18 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-38" : [ "live.dial[6]", "live.dial[6]", 0 ],
+			"obj-33" : [ "live.dial[2]", "live.dial[2]", 0 ],
+			"obj-41" : [ "live.dial[9]", "live.dial[6]", 0 ],
+			"obj-55" : [ "toggle[10]", "toggle[7]", 0 ],
+			"obj-70" : [ "toggle[15]", "toggle[7]", 0 ],
+			"obj-39" : [ "live.dial[7]", "live.dial[6]", 0 ],
+			"obj-17" : [ "live.dial[12]", "live.dial[10]", 0 ],
+			"obj-46" : [ "toggle[8]", "toggle[7]", 0 ],
+			"obj-64" : [ "toggle[13]", "toggle[7]", 0 ],
 			"obj-75" : [ "live.dial[13]", "live.dial[2]", 0 ],
 			"obj-34" : [ "live.dial[4]", "live.dial[2]", 0 ],
-			"obj-32" : [ "function[7]", "function", 0 ],
+			"obj-3" : [ "umenu[4]", "umenu[4]", 0 ],
 			"obj-45" : [ "toggle[7]", "toggle[7]", 0 ],
 			"obj-18" : [ "live.dial[11]", "live.dial[10]", 0 ],
 			"obj-58" : [ "toggle[11]", "toggle[7]", 0 ],
@@ -2083,17 +2093,8 @@
 			"obj-35" : [ "live.dial[5]", "live.dial[2]", 0 ],
 			"obj-19" : [ "live.dial[10]", "live.dial[10]", 0 ],
 			"obj-89" : [ "live.dial[24]", "live.dial[24]", 0 ],
+			"obj-32" : [ "function[7]", "function", 0 ],
 			"obj-61" : [ "toggle[12]", "toggle[7]", 0 ],
-			"obj-38" : [ "live.dial[6]", "live.dial[6]", 0 ],
-			"obj-33" : [ "live.dial[2]", "live.dial[2]", 0 ],
-			"obj-41" : [ "live.dial[9]", "live.dial[6]", 0 ],
-			"obj-55" : [ "toggle[10]", "toggle[7]", 0 ],
-			"obj-70" : [ "toggle[15]", "toggle[7]", 0 ],
-			"obj-39" : [ "live.dial[7]", "live.dial[6]", 0 ],
-			"obj-3" : [ "umenu[4]", "umenu[4]", 0 ],
-			"obj-17" : [ "live.dial[12]", "live.dial[10]", 0 ],
-			"obj-46" : [ "toggle[8]", "toggle[7]", 0 ],
-			"obj-64" : [ "toggle[13]", "toggle[7]", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -2103,7 +2104,7 @@
 		"dependency_cache" : [ 			{
 				"name" : "f3pb.maxpat",
 				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : "../../../../../../Max 8/Library",
+				"patcherrelativepath" : "../../../../../../../Max 8/Library",
 				"type" : "JSON",
 				"implicit" : 1
 			}

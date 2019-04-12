@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 346.0, 730.0, 986.0, 371.0 ],
+		"rect" : [ 897.0, 794.0, 986.0, 371.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,66 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-56",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1442.0, 594.0, 37.0, 22.0 ],
+					"text" : "finish"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-48",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 560.5, 65.0, 43.0, 22.0 ],
+					"text" : "record"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-45",
+					"linecount" : 22,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1325.0, 572.0, 38.0, 303.0 ],
+					"text" : "fetch \"Aoi - サカナクション\" \"ルーキー - サカナクション\" \"アイデンティティ - サカナクション\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-21",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1120.0, 441.0, 61.0, 22.0 ],
+					"text" : "recognize"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1435.0, 551.0, 78.0, 22.0 ],
+					"text" : "s lyric_status"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -100,19 +160,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-3",
-					"linecount" : 272,
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 952.0, 828.0, 71.0, 3656.0 ],
-					"text" : "\"So what <br>Oh oh oh oh oh oh oh oh oh oh <br>Oh oh oh oh oh oh <br>Let go<br>… <br>Somebody call me right one<br>Somebody call me wrong<br>난 신경 쓰지 않을래<br>너도 그럼 어때<br>So what<br>Let go<br>한숨 그 안에 많은 걱정이 숨어있네<br>고민 그만해 너는 이미 다 알고 있지<br>이 길의 중간에 포기하고 싶은 순간에<br>더 크게 소리질러봐<br>So what what what<br>내 맘대로 되는 건 없고<br>숨을 곳은 뭐 더더욱 없어<br>이미 주사윈 던져진 지 오래<br>꾸물대단 휩쓸려가겠지 oh bae<br>고민들의 9할은 니가 만들어 낸 상상의 늪<br>고민보다 go go 쫄지마렴 cheer up<br>소리쳐봐 so what what<br>We are, we are, we are<br>Young and wild and free<br>답도 없는 고민 고민<br>그 속에 빠져 있지 마 yeah<br>경계선 위에서 위태롭다 해도<br>웃고 떠들며 바람을 가르자<br>때론 바보같이 멍청이 달리기<br>실수와 눈물 속에 we just go<br>So what<br>멈춰서 고민 하지마<br>다 쓸데 없어<br>Let go<br>아직은 답이 없지만<br>You can start the fight<br>So what<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>Let go<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>So what<br>Ay 누군 일들이 싫대<br>Ay 누군 쉬고만 싶대<br>Ay 그들의 고통과 피폐<br>Ay 모두 내게 몰아칠 때<br>Ay 어떡하긴 뭐 어떡해 uh<br>답은 하나밖에 없기에 uh<br>그냥 믿고 달려보자고 so what? oh yeah<br>I don’t wanna die right now<br>I don’t wanna, I don’t wanna fight right now<br>걱정이 싫어 인생은 길어<br>걍 가 I wanna live right now<br>브레이크 부러졌으니 밟아 엑셀<br>이러나 저러나 사람 신세<br>다 안다면 무슨 재미냐 고통은 내 훈장<br>그래서 so what?<br>We are, we are, we are<br>Young and wild and free<br>답도 없는 고민 고민<br>그 속에 빠져 있지 마 yeah<br>경계선 위에서 위태롭다 해도<br>웃고 떠들며 바람을 가르자<br>때론 바보같이 멍청이 달리기<br>실수와 눈물 속에 we just go<br>So what<br>멈춰서 고민 하지마<br>다 쓸데 없어<br>Let go<br>아직은 답이 없지만<br>You can start the fight<br>So what<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>Let go<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>Somebody call me right one (right one)<br>Somebody call me wrong (call me wrong)<br>난 신경 쓰지 않을래 (않을래)<br>너도 그럼 어때 (어때)<br>So what<br>멈춰서 고민 하지마<br>다 쓸데 없어<br>Let go<br>아직은 답이 없지만<br>You can start the fight<br>So what<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>Let go<br>Oh oh oh oh oh oh oh oh oh oh<br>Oh oh oh oh oh oh<br>So what<br>Somebody call me right one<br>Somebody call me wrong<br>난 신경 쓰지 않을래<br>너도 그럼 어때\""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-233",
 					"maxclass" : "button",
 					"numinlets" : 1,
@@ -143,7 +190,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 437.0, 297.0, 30.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 267.833333333333485, 9.999996145566286, 30.0, 20.0 ],
+					"presentation_rect" : [ 267.833343505859375, 9.999996185302734, 30.0, 20.0 ],
 					"text" : "init"
 				}
 
@@ -206,7 +253,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 471.0, 295.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 301.833333333333485, 7.999996145566286, 24.0, 24.0 ]
+					"presentation_rect" : [ 301.833343505859375, 7.999996185302734, 24.0, 24.0 ]
 				}
 
 			}
@@ -243,7 +290,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1542.0, 329.25, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 779.0, 11.999996145566286, 24.0, 24.0 ]
+					"presentation_rect" : [ 779.0, 11.999996185302734, 24.0, 24.0 ]
 				}
 
 			}
@@ -255,7 +302,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1470.0, 330.25, 66.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 707.0, 12.999996145566286, 66.0, 20.0 ],
+					"presentation_rect" : [ 707.0, 12.999996185302734, 66.0, 20.0 ],
 					"text" : "translate?"
 				}
 
@@ -293,8 +340,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 970.0, 98.0, 145.0, 35.0 ],
-					"text" : "Seed \"Young Juvenile Youth\""
+					"patching_rect" : [ 970.0, 98.0, 145.0, 34.0 ],
+					"text" : "アイデンティティ サカナクション"
 				}
 
 			}
@@ -306,7 +353,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 106.5, 461.5, 63.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 608.5, 12.999996145566286, 63.0, 20.0 ],
+					"presentation_rect" : [ 608.5, 12.999996185302734, 63.0, 20.0 ],
 					"text" : "recognize"
 				}
 
@@ -333,7 +380,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1278.5, 330.25, 63.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 413.5, 11.999996145566286, 63.0, 20.0 ],
+					"presentation_rect" : [ 413.5, 11.999996185302734, 63.0, 20.0 ],
 					"text" : "select site"
 				}
 
@@ -346,7 +393,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 947.0, 207.0, 37.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 516.66666654745768, 63.0, 37.0, 20.0 ],
+					"presentation_rect" : [ 516.66668701171875, 63.0, 37.0, 20.0 ],
 					"text" : "artist"
 				}
 
@@ -359,7 +406,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 689.0, 207.0, 31.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 265.49999988079071, 63.0, 31.0, 20.0 ],
+					"presentation_rect" : [ 265.5, 63.0, 31.0, 20.0 ],
 					"text" : "title"
 				}
 
@@ -372,7 +419,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1049.416666666666742, 291.0, 68.833333333333371, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 592.250000000000227, 115.249996145566286, 68.833333333333371, 20.0 ],
+					"presentation_rect" : [ 592.25, 115.249992370605469, 68.833335876464844, 20.0 ],
 					"text" : "google"
 				}
 
@@ -385,7 +432,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 724.833333333333485, 293.0, 68.833333333333371, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 488.66666666666697, 115.249996145566286, 68.833333333333371, 20.0 ],
+					"presentation_rect" : [ 488.666656494140625, 115.249992370605469, 68.833335876464844, 20.0 ],
 					"text" : "edit search"
 				}
 
@@ -400,7 +447,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 987.0, 205.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 556.66666654745768, 61.0, 24.0, 24.0 ]
+					"presentation_rect" : [ 556.66668701171875, 61.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -497,7 +544,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 724.833333333333485, 205.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 301.333333214124195, 61.0, 24.0, 24.0 ]
+					"presentation_rect" : [ 301.333343505859375, 61.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -522,7 +569,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 724.5, 1026.5, 138.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 800.0, 68.166662335395756, 138.0, 22.0 ],
+					"presentation_rect" : [ 800.0, 68.166664123535156, 138.0, 22.0 ],
 					"text" : "print lyric_log @popup 1"
 				}
 
@@ -547,7 +594,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1023.0, 330.0, 190.0, 22.0 ],
-					"text" : "Seed \"Young Juvenile Youth\""
+					"text" : "アイデンティティ サカナクション"
 				}
 
 			}
@@ -561,7 +608,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1023.0, 289.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 565.833333333333485, 113.249996145566286, 24.0, 24.0 ]
+					"presentation_rect" : [ 565.83331298828125, 113.249992370605469, 24.0, 24.0 ]
 				}
 
 			}
@@ -610,8 +657,8 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 701.0, 330.0, 190.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 265.49999988079071, 115.499996145566286, 190.0, 22.0 ],
-					"text" : "Seed \"Young Juvenile Youth\""
+					"presentation_rect" : [ 265.5, 115.499992370605469, 190.0, 22.0 ],
+					"text" : "アイデンティティ サカナクション"
 				}
 
 			}
@@ -625,7 +672,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 701.0, 291.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 464.833333333333485, 113.249996145566286, 24.0, 24.0 ]
+					"presentation_rect" : [ 464.833343505859375, 113.249992370605469, 24.0, 24.0 ]
 				}
 
 			}
@@ -688,8 +735,8 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1013.0, 205.0, 175.0, 25.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 582.66666654745768, 61.0, 175.0, 39.0 ],
-					"text" : "\"Young Juvenile Youth\""
+					"presentation_rect" : [ 582.66668701171875, 61.0, 175.0, 39.0 ],
+					"text" : "サカナクション"
 				}
 
 			}
@@ -703,8 +750,8 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 750.5, 205.0, 175.0, 25.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 326.99999988079071, 61.0, 175.0, 39.0 ],
-					"text" : "Seed"
+					"presentation_rect" : [ 327.0, 61.0, 175.0, 39.0 ],
+					"text" : "アイデンティティ"
 				}
 
 			}
@@ -731,7 +778,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1342.5, 329.25, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 477.5, 10.999996145566286, 100.0, 22.0 ]
+					"presentation_rect" : [ 477.5, 10.999996185302734, 100.0, 22.0 ]
 				}
 
 			}
@@ -757,7 +804,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 171.5, 459.5, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 673.5, 10.999996145566286, 24.0, 24.0 ]
+					"presentation_rect" : [ 673.5, 10.999996185302734, 24.0, 24.0 ]
 				}
 
 			}
@@ -769,7 +816,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.25, 412.5, 35.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 333.833333333333485, 9.999996145566286, 35.0, 20.0 ],
+					"presentation_rect" : [ 333.833343505859375, 9.999996185302734, 35.0, 20.0 ],
 					"text" : "clear"
 				}
 
@@ -878,7 +925,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 313.25, 410.5, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 367.833333333333485, 7.999996145566286, 24.0, 24.0 ]
+					"presentation_rect" : [ 367.833343505859375, 7.999996185302734, 24.0, 24.0 ]
 				}
 
 			}
@@ -890,7 +937,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.5, 836.5, 250.5, 231.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 21.99999988079071, 240.833328604698181, 474.0, 106.999996304512024 ]
+					"presentation_rect" : [ 22.0, 240.833328247070312, 474.0, 107.0 ]
 				}
 
 			}
@@ -902,7 +949,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 460.5, 836.5, 250.5, 231.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 514.833333214124195, 240.833328604698181, 512.0, 106.999996304512024 ]
+					"presentation_rect" : [ 514.83331298828125, 240.833328247070312, 512.0, 107.0 ]
 				}
 
 			}
@@ -961,7 +1008,7 @@
 				"box" : 				{
 					"fontsize" : 24.0,
 					"id" : "obj-90",
-					"items" : "<empty>",
+					"items" : "アイデンティティ - サカナクション",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -969,7 +1016,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 827.833333333333485, 490.25, 512.0, 35.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 514.833333214124195, 193.583328604698181, 512.0, 35.0 ]
+					"presentation_rect" : [ 514.83331298828125, 193.583328247070312, 512.0, 35.0 ]
 				}
 
 			}
@@ -983,7 +1030,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 827.833333333333485, 459.5, 162.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 514.833333214124195, 160.833328604698181, 162.0, 22.0 ],
+					"presentation_rect" : [ 514.83331298828125, 160.833328247070312, 162.0, 22.0 ],
 					"text" : "r downloaded_music_umenu"
 				}
 
@@ -1057,7 +1104,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 146.5, 320.083333333333314, 70.5, 70.5 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 142.49999988079071, 86.999996145566286, 70.5, 70.5 ]
+					"presentation_rect" : [ 142.5, 86.999992370605469, 70.5, 70.5 ]
 				}
 
 			}
@@ -1085,14 +1132,14 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 146.5, 21.833333333333314, 79.0, 79.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 142.49999988079071, -11.500003854433714, 79.0, 79.0 ],
+					"presentation_rect" : [ 142.5, -11.500003814697266, 79.0, 79.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "button",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
-							"parameter_longname" : "button",
-							"parameter_mmax" : 1
+							"parameter_longname" : "button"
 						}
 
 					}
@@ -1124,15 +1171,15 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 26.0, 150.833333333333314, 48.0, 136.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 28.99999988079071, 18.833329399426759, 48.0, 136.0 ],
+					"presentation_rect" : [ 29.0, 18.833330154418945, 48.0, 136.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_mmax" : 6.0,
 							"parameter_shortname" : "live.gain~",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
-							"parameter_longname" : "live.gain~[3]",
-							"parameter_mmax" : 6.0
+							"parameter_longname" : "live.gain~[3]"
 						}
 
 					}
@@ -1157,7 +1204,7 @@
 				"box" : 				{
 					"fontsize" : 24.0,
 					"id" : "obj-36",
-					"items" : "<empty>",
+					"items" : "アイデンティティ - サカナクション",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1165,7 +1212,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 335.0, 492.25, 474.0, 35.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 21.99999988079071, 193.583328604698181, 474.0, 35.0 ]
+					"presentation_rect" : [ 22.0, 193.583328247070312, 474.0, 35.0 ]
 				}
 
 			}
@@ -1179,7 +1226,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 335.0, 459.5, 156.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 21.99999988079071, 160.833328604698181, 156.0, 22.0 ],
+					"presentation_rect" : [ 22.0, 160.833328247070312, 156.0, 22.0 ],
 					"text" : "r recognized_music_umenu"
 				}
 
@@ -1253,7 +1300,7 @@
 					"outlettype" : [ "signal", "signal" ],
 					"patching_rect" : [ 26.0, 99.833333333333314, 55.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 28.99999988079071, -11.500003854433714, 55.0, 22.0 ],
+					"presentation_rect" : [ 29.0, -11.500003814697266, 55.0, 22.0 ],
 					"text" : "adc~ 1 2"
 				}
 
@@ -1261,13 +1308,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-20",
-					"linecount" : 7,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 171.5, 492.25, 116.0, 102.0 ],
-					"text" : "startRecognize /Users/nami/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/audio/sample.wav"
+					"patching_rect" : [ 171.5, 492.25, 753.0, 22.0 ],
+					"text" : "startRecognize /Users/Namikawa/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/audio/sample.wav"
 				}
 
 			}
@@ -1320,6 +1366,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node" : "",
+						"npm" : "",
 						"watch" : 1
 					}
 ,
@@ -1330,13 +1378,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-9",
-					"linecount" : 6,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 357.5, 174.833333333333314, 137.5, 89.0 ],
-					"text" : "open /Users/nami/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/audio/sample.wav wave"
+					"patching_rect" : [ 357.5, 174.833328247070312, 619.0, 49.0 ],
+					"text" : "open /Users/Namikawa/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/audio/sample.wav wave"
 				}
 
 			}
@@ -1375,7 +1423,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 339.0, 26.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 256.0, 47.333333333333258, 511.0, 101.166662812233028 ],
+					"presentation_rect" : [ 256.0, 47.333332061767578, 511.0, 101.166664123535156 ],
 					"proportion" : 0.5
 				}
 
@@ -1525,6 +1573,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-205", 0 ],
 					"source" : [ "obj-206", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-21", 0 ]
 				}
 
 			}
@@ -1698,6 +1753,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
+					"order" : 1,
+					"source" : [ "obj-35", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-45", 0 ],
+					"order" : 0,
 					"source" : [ "obj-35", 0 ]
 				}
 
@@ -1810,6 +1874,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-45", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-49", 0 ],
 					"source" : [ "obj-47", 0 ]
 				}
@@ -1817,8 +1888,23 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-48", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"source" : [ "obj-49", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"order" : 0,
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}
@@ -1839,6 +1925,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
+					"order" : 1,
 					"source" : [ "obj-5", 0 ]
 				}
 
@@ -1873,6 +1960,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-48", 0 ],
+					"order" : 0,
+					"source" : [ "obj-52", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-83", 0 ],
 					"source" : [ "obj-52", 1 ]
 				}
@@ -1881,6 +1976,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
+					"order" : 1,
 					"source" : [ "obj-52", 2 ]
 				}
 
@@ -1889,6 +1985,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-52", 0 ],
 					"source" : [ "obj-54", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-56", 0 ]
 				}
 
 			}
@@ -2030,7 +2133,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-104", 0 ],
-					"order" : 0,
 					"source" : [ "obj-99", 2 ]
 				}
 
@@ -2044,14 +2146,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 1 ],
-					"order" : 1,
-					"source" : [ "obj-99", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-50", 0 ],
 					"source" : [ "obj-99", 0 ]
 				}
@@ -2060,6 +2154,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-53", 0 ],
+					"order" : 1,
+					"source" : [ "obj-99", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-56", 0 ],
+					"order" : 0,
 					"source" : [ "obj-99", 1 ]
 				}
 
