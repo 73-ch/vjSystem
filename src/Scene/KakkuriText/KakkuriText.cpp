@@ -49,8 +49,9 @@ void KakkuriText::draw() {
     cam.begin();
     ofClear(0);
     ofSetColor(255);
-
+    
     ofTranslate(-offset);
+    ofRotateXDeg(180);
     mesh.setMode(current_mode);
     mesh.draw();
     
@@ -146,7 +147,6 @@ void KakkuriText::setIndexMode(const KakkuriIndexMode mode, vector<ofIndexType> 
         break;
 
     case KAKKURI_INDEX_LINE:
-        ofLogNotice() << line_indices.size();
         mesh.addIndices(line_indices);
         break;
     case KAKKURI_INDEX_TRIANGLE:

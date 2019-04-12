@@ -88,7 +88,6 @@ void PhysicsLyric::initOsc() {
     });
 
     ofxSubscribeOsc(OF_PORT, "/physics_lyric/gravity", [&](const glm::vec3 v) {
-        ofLogNotice() << "gravity : " << v;
         world.setGravity(v);
     });
 
