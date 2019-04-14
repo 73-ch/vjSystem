@@ -65,6 +65,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-100",
+					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -82,7 +83,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 933.0, 529.0, 50.0, 22.0 ],
-					"text" : "0"
+					"text" : "1"
 				}
 
 			}
@@ -1066,7 +1067,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 585.13818359375, 243.0, 155.0, 24.0 ],
+					"patching_rect" : [ 619.13818359375, 213.0, 155.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -2494,13 +2495,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-59", 1 ],
-					"source" : [ "obj-23", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
 					"source" : [ "obj-24", 0 ]
 				}
@@ -3044,24 +3038,24 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-21" : [ "toggle[5]", "toggle[5]", 0 ],
-			"obj-14" : [ "live.slider[16]", "look.x", 0 ],
-			"obj-50" : [ "live.dial[3]", "metro", 0 ],
-			"obj-54" : [ "live.slider[22]", "light.z", 0 ],
-			"obj-26" : [ "live.slider[18]", "look.z", 0 ],
-			"obj-19" : [ "function[3]", "function", 0 ],
-			"obj-48" : [ "live.slider[21]", "cam.x", 0 ],
-			"obj-1" : [ "function[6]", "function", 0 ],
-			"obj-46" : [ "live.slider[19]", "cam.z", 0 ],
-			"obj-88" : [ "function[5]", "function", 0 ],
-			"obj-10" : [ "live.slider[15]", "timestep", 0 ],
-			"obj-5" : [ "live.slider[14]", "scale", 0 ],
-			"obj-55" : [ "live.slider[23]", "light.y", 0 ],
-			"obj-20" : [ "function[4]", "function", 0 ],
-			"obj-22" : [ "live.slider[17]", "look.y", 0 ],
 			"obj-87" : [ "toggle[6]", "toggle[6]", 0 ],
+			"obj-22" : [ "live.slider[17]", "look.y", 0 ],
+			"obj-46" : [ "live.slider[19]", "cam.z", 0 ],
+			"obj-10" : [ "live.slider[15]", "timestep", 0 ],
+			"obj-55" : [ "live.slider[23]", "light.y", 0 ],
+			"obj-21" : [ "toggle[5]", "toggle[5]", 0 ],
+			"obj-19" : [ "function[3]", "function", 0 ],
+			"obj-5" : [ "live.slider[14]", "scale", 0 ],
+			"obj-88" : [ "function[5]", "function", 0 ],
+			"obj-14" : [ "live.slider[16]", "look.x", 0 ],
 			"obj-47" : [ "live.slider[20]", "cam.y", 0 ],
+			"obj-1" : [ "function[6]", "function", 0 ],
+			"obj-26" : [ "live.slider[18]", "look.z", 0 ],
+			"obj-20" : [ "function[4]", "function", 0 ],
+			"obj-54" : [ "live.slider[22]", "light.z", 0 ],
+			"obj-50" : [ "live.dial[3]", "metro", 0 ],
 			"obj-58" : [ "live.slider[24]", "light.x", 0 ],
+			"obj-48" : [ "live.slider[21]", "cam.x", 0 ],
 			"parameterbanks" : 			{
 
 			}
