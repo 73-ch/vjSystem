@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 961.0, 101.0, 916.0, 561.0 ],
+		"rect" : [ 886.0, 154.0, 940.0, 559.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,66 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-46",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 245.0, 18.0, 24.0, 24.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_longname" : "toggle[1]",
+							"parameter_mmax" : 1.0,
+							"parameter_shortname" : "toggle[1]",
+							"parameter_enum" : [ "off", "on" ],
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"varname" : "toggle[1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-42",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 188.0, 20.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-38",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 138.0, 18.0, 24.0, 24.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_longname" : "toggle",
+							"parameter_mmax" : 1.0,
+							"parameter_shortname" : "toggle",
+							"parameter_enum" : [ "off", "on" ],
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"varname" : "toggle"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-34",
 					"maxclass" : "comment",
@@ -472,10 +532,10 @@
 									"range" : [ 0.0, 6.28000020980835 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_type" : 3,
 											"parameter_longname" : "function[1]",
 											"parameter_invisible" : 1,
-											"parameter_shortname" : "function"
+											"parameter_shortname" : "function",
+											"parameter_type" : 3
 										}
 
 									}
@@ -622,7 +682,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 589.0, 187.0, 60.0, 22.0 ],
-									"text" : "0.058768"
+									"text" : "0.292333"
 								}
 
 							}
@@ -886,11 +946,11 @@
 									"patching_rect" : [ 78.7381591796875, 425.0, 20.0, 20.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_enum" : [ "off", "on" ],
-											"parameter_type" : 2,
 											"parameter_longname" : "toggle[22]",
 											"parameter_mmax" : 1.0,
-											"parameter_shortname" : "toggle[21]"
+											"parameter_shortname" : "toggle[21]",
+											"parameter_enum" : [ "off", "on" ],
+											"parameter_type" : 2
 										}
 
 									}
@@ -913,10 +973,10 @@
 									"range" : [ 0.0, 6.28000020980835 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_type" : 3,
 											"parameter_longname" : "function[10]",
 											"parameter_invisible" : 1,
-											"parameter_shortname" : "function"
+											"parameter_shortname" : "function",
+											"parameter_type" : 3
 										}
 
 									}
@@ -1613,7 +1673,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 20.0, 112.0, 433.0, 370.0 ],
 					"rowhead" : 1,
-					"rows" : 40,
+					"rows" : 18,
 					"selmode" : 3
 				}
 
@@ -1747,11 +1807,11 @@
 					"presentation_rect" : [ 52.333362579345703, 31.166662216186523, 24.0, 24.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_enum" : [ "off", "on" ],
-							"parameter_type" : 2,
 							"parameter_longname" : "button[2]",
 							"parameter_mmax" : 1.0,
-							"parameter_shortname" : "button[2]"
+							"parameter_shortname" : "button[2]",
+							"parameter_enum" : [ "off", "on" ],
+							"parameter_type" : 2
 						}
 
 					}
@@ -1773,11 +1833,11 @@
 					"presentation_rect" : [ 19.833333969116211, 31.166662216186523, 24.0, 24.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_enum" : [ "off", "on" ],
-							"parameter_type" : 2,
 							"parameter_longname" : "button[1]",
 							"parameter_mmax" : 1.0,
-							"parameter_shortname" : "button[1]"
+							"parameter_shortname" : "button[1]",
+							"parameter_enum" : [ "off", "on" ],
+							"parameter_type" : 2
 						}
 
 					}
@@ -1820,7 +1880,7 @@
 					"patching_rect" : [ 331.0, 183.5, 141.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 228.999969482421875, 82.166664123535156, 215.0, 22.0 ],
-					"text" : "あいみょん"
+					"text" : "\"BUZZ THE BEARS\""
 				}
 
 			}
@@ -1834,7 +1894,7 @@
 					"patching_rect" : [ 167.666671752929688, 183.333328247070312, 154.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 228.999969482421875, 49.166664123535156, 215.0, 22.0 ],
-					"text" : "君はロックを聴かない"
+					"text" : "カントリーロード"
 				}
 
 			}
@@ -1921,7 +1981,7 @@
 					"patching_rect" : [ 43.0, 943.5, 587.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 16.833333969116211, 490.166656494140625, 433.0, 35.0 ],
-					"text" : "手を叩く合図"
+					"text" : "手繰り寄せる"
 				}
 
 			}
@@ -1941,9 +2001,9 @@
 					"presentation_rect" : [ 87.333366394042969, 57.166664123535156, 89.0, 42.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_type" : 0,
 							"parameter_longname" : "number",
-							"parameter_shortname" : "number"
+							"parameter_shortname" : "number",
+							"parameter_type" : 0
 						}
 
 					}
@@ -2175,6 +2235,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-68", 0 ],
+					"source" : [ "obj-38", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-39", 0 ]
 				}
@@ -2237,6 +2304,13 @@
 					"destination" : [ "obj-77", 0 ],
 					"order" : 1,
 					"source" : [ "obj-45", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-70", 0 ],
+					"source" : [ "obj-46", 0 ]
 				}
 
 			}

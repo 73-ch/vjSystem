@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1960.0, 199.0, 922.0, 967.0 ],
+		"rect" : [ -1675.0, 79.0, 1513.0, 831.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -320,6 +320,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-69",
+					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 3,
@@ -638,7 +639,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-46", 0 ],
+					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-64", 1 ]
 				}
 

@@ -30,7 +30,7 @@ vec3 M(float a){return vec3((a-.5)*.9,-(mod(a,.25)-.125)*4./(1.+step(-.24999,-ab
 vec3 N(float a){return vec3(vec2(sign(a*2.-1.)*min(abs(a*1.8-.9),.3),-mod(a,.33333333)*3.+.5),.0);}
 vec3 O(float a){return vec3(cos(a*PI_2)*.45,sin(a*PI_2)*.5,.0);}
 vec3 P(float a){return vec3(vec2(max(cos(PI_2*a),-.5)*.75-.25,sin(PI_2*a)/max(step(0.,cos(PI_2*a)),max(abs(sin(PI_2*a)),SQRT_3))*(1.-step(-.5,cos(PI_2*a))*.5)+.5*step(-.5,cos(PI_2*a)))*.5,0.);}
-vec3 Q(float a){return vec3(vec2(cos(a*PI_2*1.25)*.45,sin(a*PI_2*1.25)*.5)*step(-0.8001,-a)+vec2(a-.6, -(a-.5))*step(0.8001,a),.0);}
+vec3 Q(float a){return vec3(vec2(cos(a*PI_2*1.25)*.45,sin(a*PI_2*1.251  )*.5)*step(-0.8001,-a)+vec2(a-.6, -(a-.5))*step(0.8001,a),.0);}
 vec3 R(float a){return vec3(vec2(max(cos(PI_2*a),-.5)*.75-.25+4*(mod(a,.5)+.1)*step(.5,a)*step(-.66666666,-a)*step(.0,mod(a,.001)-.00051),sin(PI_2*a)/max(step(0.,cos(PI_2*a)),max(abs(sin(PI_2*a)),SQRT_3))*(1.-step(-.5,cos(PI_2*a))*.5)+.5*step(-.5,cos(PI_2*a)))*.5,0.);}
 vec3 S(float a){return vec3((vec2(cos((a*2.)*PI_2),(abs(sin((a*2.)*PI_2))+1.)*sign(a-.250001))*step(-.5,-a)+vec2(cos(a*PI_2),(sin(a*PI_2)+1.) * sign(a-.75))*step(.5000001,a))*vec2(.3,-.25),.0);}
 vec3 T(float a){return vec3(vec2(0.,a*2.-.5)*step(-.5,-a)+vec2((a-.5)*1.6-.4,.5)*step(.500001,a),.0);}
@@ -101,32 +101,30 @@ void main() {
     float t_size = 200.;
     float t_span = t_size / 2. + 20.;
 
+    // vf  = fract(vj*0.1 +time*0.1);
+
     vec3 shape;
 
     vec3 a = P(fract(vf*1.));
     vec3 mad = createMad(wordCreateInput);
     vec3 and = createAandD(wordCreateInput);
     vec3 mast = createMast(wordCreateInput);
+    // vec3 tsukuba = createTsukuba
 
-    vec3 text = mad;
+    vec3 text = mix(and, mast, seed.x);
 
     float s_size = 20 * seed.x + floor(sin(time) * 100.)*0.01;
     vec3 cylinder =  createCylinder(vf, s_size);
     vec3 plane = createPlane(vf, s_size);
-    // plane.y += fbm(plane.xz + vec2(sin(time), cos(time)), 1.3 + seed.x * 0.1);
-    gl_PointSize = 3.;
-    shape = plane;
+    plane.y += fbm(plane.xz + vec2(sin(time), cos(time)), 1.3 + seed.x * 0.1);
+    gl_PointSize = 5.;
+    shape = plane * cylinder;
 
     // shape = mix(plane, a, clamp(0.,1., sin(time)*1.5+.5));
 
     shape*= size;
 
-    // final = mix(shape,vec3(0.), sin(time));
-    final = shape;
-
-    final = text;
-
-    final = mix(and, mast, clamp(0.,1.,fract(time*.3)*3.-1.));
+    final = mix(shape, text, clamp(0.,1.,fract(time*.3)*3.-1.));
 
     // final *= size;
     // final = createProject(wordCreateInput);

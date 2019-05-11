@@ -9,3 +9,7 @@ controller/.idea/*
 
 vjSystemDebug-app
 vjSystem-app
+
+XcodeSigner2018.cert
+XcodeSigner2018.p12
+XcodeSigner2018.pem
