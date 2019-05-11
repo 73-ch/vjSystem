@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 2,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 897.0, 794.0, 986.0, 371.0 ],
+		"rect" : [ 539.0, 391.0, 986.0, 371.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,37 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-25",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "n4m.monitor.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 565.0, 565.0, 400.0, 220.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 356.0, 594.0, 32.0, 22.0 ],
+					"text" : "print"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-56",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -64,13 +95,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-45",
-					"linecount" : 22,
+					"linecount" : 28,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1325.0, 572.0, 38.0, 303.0 ],
-					"text" : "fetch \"Aoi - サカナクション\" \"ルーキー - サカナクション\" \"アイデンティティ - サカナクション\""
+					"patching_rect" : [ 1325.0, 572.0, 41.0, 384.0 ],
+					"text" : "fetch \"Aoi - サカナクション\" \"ルーキー - サカナクション\" \"アイデンティティ - サカナクション\" \"R.E.M. - Young Juvenile Youth\""
 				}
 
 			}
@@ -340,8 +371,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 970.0, 98.0, 145.0, 34.0 ],
-					"text" : "アイデンティティ サカナクション"
+					"patching_rect" : [ 970.0, 98.0, 145.0, 35.0 ],
+					"text" : "R.E.M. \"Young Juvenile Youth\""
 				}
 
 			}
@@ -594,7 +625,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1023.0, 330.0, 190.0, 22.0 ],
-					"text" : "アイデンティティ サカナクション"
+					"text" : "R.E.M. \"Young Juvenile Youth\""
 				}
 
 			}
@@ -658,7 +689,7 @@
 					"patching_rect" : [ 701.0, 330.0, 190.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 265.5, 115.499992370605469, 190.0, 22.0 ],
-					"text" : "アイデンティティ サカナクション"
+					"text" : "R.E.M. \"Young Juvenile Youth\""
 				}
 
 			}
@@ -736,7 +767,7 @@
 					"patching_rect" : [ 1013.0, 205.0, 175.0, 25.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 582.66668701171875, 61.0, 175.0, 39.0 ],
-					"text" : "サカナクション"
+					"text" : "\"Young Juvenile Youth\""
 				}
 
 			}
@@ -751,7 +782,7 @@
 					"patching_rect" : [ 750.5, 205.0, 175.0, 25.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 327.0, 61.0, 175.0, 39.0 ],
-					"text" : "アイデンティティ"
+					"text" : "R.E.M."
 				}
 
 			}
@@ -1008,7 +1039,7 @@
 				"box" : 				{
 					"fontsize" : 24.0,
 					"id" : "obj-90",
-					"items" : "アイデンティティ - サカナクション",
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1135,7 +1166,7 @@
 					"presentation_rect" : [ 142.5, -11.500003814697266, 79.0, 79.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_mmax" : 1.0,
+							"parameter_mmax" : 1,
 							"parameter_shortname" : "button",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
@@ -1204,7 +1235,7 @@
 				"box" : 				{
 					"fontsize" : 24.0,
 					"id" : "obj-36",
-					"items" : "アイデンティティ - サカナクション",
+					"items" : "R.E.M. - Young Juvenile Youth",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1312,8 +1343,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 171.5, 492.25, 753.0, 22.0 ],
-					"text" : "startRecognize /Users/Namikawa/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/audio/sample.wav"
+					"patching_rect" : [ 80.0, 553.0, 631.0, 22.0 ],
+					"text" : "startRecognize /Users/nami/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/audio/sample.wav"
 				}
 
 			}
@@ -1366,8 +1397,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node" : "",
-						"npm" : "",
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 1
 					}
 ,
@@ -1443,7 +1474,24 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"order" : 1,
+					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-155", 0 ],
+					"order" : 0,
+					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"order" : 2,
 					"source" : [ "obj-1", 1 ]
 				}
 

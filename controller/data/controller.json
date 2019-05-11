@@ -1,0 +1,347 @@
+{
+	"pattrstorage" : 	{
+		"name" : "controller",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"name" : "ShaderArt",
+				"data" : 				{
+					"container0_opacity" : [ 1.0 ],
+					"container1_opacity" : [ 0.0 ],
+					"container2_opacity" : [ 0.0 ],
+					"number" : [ 0.0 ],
+					"number[1]" : [ 0.0 ],
+					"live.slider[1]" : [  ],
+					"button[2]" : [  ],
+					"button[1]" : [  ],
+					"sound::bp.Snapshotter[1]::InputRange" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::Interval" : [ 4.929133858267717 ],
+					"sound::bp.Snapshotter[1]::OutputRange" : [ 0.0 ],
+					"sound::bp.Spectral::LinLog" : [ 0.0 ],
+					"sound::bp.Spectral::display" : [ 1.0 ],
+					"sound::bp.Classroom Filter::CV1" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV2" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV3" : [ 0.0 ],
+					"sound::bp.Classroom Filter::Freq" : [ 93.582693145002523 ],
+					"sound::bp.Classroom Filter::Gain" : [ 1.0 ],
+					"sound::bp.Classroom Filter::Resonance" : [ 4.325610003778993 ],
+					"sound::bp.Classroom Filter::filter_mode" : [ 2.0 ],
+					"sound::bp.Classroom Filter::power[1]" : [ 0.0 ],
+					"sound::bp.Classroom Filter::spectral" : [ 1.0 ],
+					"container0_scene" : [ 0 ],
+					"container1_scene" : [  ],
+					"container2_scene" : [  ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"name" : "VertexArt",
+				"data" : 				{
+					"container0_opacity" : [ 0.0 ],
+					"container1_opacity" : [ 1.0 ],
+					"container2_opacity" : [ 0.0 ],
+					"number" : [ 0.0 ],
+					"number[1]" : [ 0.0 ],
+					"live.slider[1]" : [  ],
+					"button[2]" : [  ],
+					"button[1]" : [  ],
+					"sound::bp.Snapshotter[1]::InputRange" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::Interval" : [ 4.929133858267717 ],
+					"sound::bp.Snapshotter[1]::OutputRange" : [ 0.0 ],
+					"sound::bp.Spectral::LinLog" : [ 0.0 ],
+					"sound::bp.Spectral::display" : [ 1.0 ],
+					"sound::bp.Classroom Filter::CV1" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV2" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV3" : [ 0.0 ],
+					"sound::bp.Classroom Filter::Freq" : [ 93.582693145002523 ],
+					"sound::bp.Classroom Filter::Gain" : [ 1.0 ],
+					"sound::bp.Classroom Filter::Resonance" : [ 4.325610003778993 ],
+					"sound::bp.Classroom Filter::filter_mode" : [ 2.0 ],
+					"sound::bp.Classroom Filter::power[1]" : [ 0.0 ],
+					"sound::bp.Classroom Filter::spectral" : [ 1.0 ],
+					
+					"container0_scene" : [  ],
+					"container1_scene" : [ 1 ],
+					"container2_scene" : [  ]
+				}
+
+			}
+,
+			"3" : 			{
+				"id" : 3,
+				"name" : "Instancing",
+				"data" : 				{
+					"container0_opacity" : [ 0.0 ],
+					"container1_opacity" : [ 0.0 ],
+					"container2_opacity" : [ 1.0 ],
+					"number" : [ 0.0 ],
+					"number[1]" : [ 0.0 ],
+					"live.slider[1]" : [ 65.000000000000014 ],
+					"button[2]" : [ 0.0 ],
+					"button[1]" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::InputRange" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::Interval" : [ 4.929133892059326 ],
+					"sound::bp.Snapshotter[1]::OutputRange" : [ 0.0 ],
+					"sound::bp.Spectral::LinLog" : [ 0.0 ],
+					"sound::bp.Spectral::display" : [ 1.0 ],
+					"sound::bp.Classroom Filter::CV1" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV2" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV3" : [ 0.0 ],
+					"sound::bp.Classroom Filter::Freq" : [ 93.582695007324205 ],
+					"sound::bp.Classroom Filter::Gain" : [ 1.0 ],
+					"sound::bp.Classroom Filter::Resonance" : [ 4.325610160827638 ],
+					"sound::bp.Classroom Filter::filter_mode" : [ 2.0 ],
+					"sound::bp.Classroom Filter::power[1]" : [ 0.0 ],
+					"sound::bp.Classroom Filter::spectral" : [ 1.0 ],
+				
+					"container0_scene" : [  ],
+					"container1_scene" : [  ],
+					"container2_scene" : [ 2 ]
+				}
+
+			}
+,
+			"4" : 			{
+				"id" : 4,
+				"name" : "FeedbackObject",
+				"data" : 				{
+					"container0_opacity" : [ 1.0 ],
+					"container1_opacity" : [ 0.0 ],
+					"container2_opacity" : [ 0.0 ],
+					"number" : [ 0.0 ],
+					"number[1]" : [ 0.0 ],
+					"live.slider[1]" : [ 65.000000000000014 ],
+					"button[2]" : [ 0.0 ],
+					"button[1]" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::InputRange" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::Interval" : [ 4.929133892059326 ],
+					"sound::bp.Snapshotter[1]::OutputRange" : [ 0.0 ],
+					"sound::bp.Spectral::LinLog" : [ 0.0 ],
+					"sound::bp.Spectral::display" : [ 1.0 ],
+					"sound::bp.Classroom Filter::CV1" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV2" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV3" : [ 0.0 ],
+					"sound::bp.Classroom Filter::Freq" : [ 93.582695007324205 ],
+					"sound::bp.Classroom Filter::Gain" : [ 1.0 ],
+					"sound::bp.Classroom Filter::Resonance" : [ 4.325610160827638 ],
+					"sound::bp.Classroom Filter::filter_mode" : [ 2.0 ],
+					"sound::bp.Classroom Filter::power[1]" : [ 0.0 ],
+					"sound::bp.Classroom Filter::spectral" : [ 1.0 ],
+					
+					"container0_scene" : [ 3 ],
+					"container1_scene" : [  ],
+					"container2_scene" : [  ]
+				}
+
+			}
+,
+			"5" : 			{
+				"id" : 5,
+				"name" : "MeshChain",
+				"data" : 				{
+					"container0_opacity" : [ 0.0 ],
+					"container1_opacity" : [ 1.0 ],
+					"container2_opacity" : [ 0.0 ],
+					"number" : [ 0.0 ],
+					"number[1]" : [ 0.0 ],
+					"live.slider[1]" : [ 65.000000000000014 ],
+					"button[2]" : [ 0.0 ],
+					"button[1]" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::InputRange" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::Interval" : [ 4.929133892059326 ],
+					"sound::bp.Snapshotter[1]::OutputRange" : [ 0.0 ],
+					"sound::bp.Spectral::LinLog" : [ 0.0 ],
+					"sound::bp.Spectral::display" : [ 1.0 ],
+					"sound::bp.Classroom Filter::CV1" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV2" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV3" : [ 0.0 ],
+					"sound::bp.Classroom Filter::Freq" : [ 93.582695007324205 ],
+					"sound::bp.Classroom Filter::Gain" : [ 1.0 ],
+					"sound::bp.Classroom Filter::Resonance" : [ 4.325610160827638 ],
+					"sound::bp.Classroom Filter::filter_mode" : [ 2.0 ],
+					"sound::bp.Classroom Filter::power[1]" : [ 0.0 ],
+					"sound::bp.Classroom Filter::spectral" : [ 1.0 ],
+					
+					"container0_scene" : [  ],
+					"container1_scene" : [ 4 ],
+					"container2_scene" : [  ]
+				}
+
+			}
+,
+			"6" : 			{
+				"id" : 6,
+				"name" : "RainDrop",
+				"data" : 				{
+					"container0_opacity" : [ 0.0 ],
+					"container1_opacity" : [ 0.0 ],
+					"container2_opacity" : [ 1.0 ],
+					"number" : [ 0.0 ],
+					"number[1]" : [ 0.0 ],
+					"live.slider[1]" : [ 65.000000000000014 ],
+					"button[2]" : [ 0.0 ],
+					"button[1]" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::InputRange" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::Interval" : [ 4.929133892059326 ],
+					"sound::bp.Snapshotter[1]::OutputRange" : [ 0.0 ],
+					"sound::bp.Spectral::LinLog" : [ 0.0 ],
+					"sound::bp.Spectral::display" : [ 1.0 ],
+					"sound::bp.Classroom Filter::CV1" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV2" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV3" : [ 0.0 ],
+					"sound::bp.Classroom Filter::Freq" : [ 93.582695007324205 ],
+					"sound::bp.Classroom Filter::Gain" : [ 1.0 ],
+					"sound::bp.Classroom Filter::Resonance" : [ 4.325610160827638 ],
+					"sound::bp.Classroom Filter::filter_mode" : [ 2.0 ],
+					"sound::bp.Classroom Filter::power[1]" : [ 0.0 ],
+					"sound::bp.Classroom Filter::spectral" : [ 1.0 ],
+					
+					"container0_scene" : [  ],
+					"container1_scene" : [  ],
+					"container2_scene" : [ 5 ]
+				}
+
+			}
+,
+			"7" : 			{
+				"id" : 7,
+				"name" : "TrainShadow",
+				"data" : 				{
+					"container0_opacity" : [ 1.0 ],
+					"container1_opacity" : [ 0.0 ],
+					"container2_opacity" : [ 0.0 ],
+					"number" : [ 0.0 ],
+					"number[1]" : [ 0.0 ],
+					"live.slider[1]" : [ 65.000000000000014 ],
+					"button[2]" : [ 0.0 ],
+					"button[1]" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::InputRange" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::Interval" : [ 4.929133892059326 ],
+					"sound::bp.Snapshotter[1]::OutputRange" : [ 0.0 ],
+					"sound::bp.Spectral::LinLog" : [ 0.0 ],
+					"sound::bp.Spectral::display" : [ 1.0 ],
+					"sound::bp.Classroom Filter::CV1" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV2" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV3" : [ 0.0 ],
+					"sound::bp.Classroom Filter::Freq" : [ 93.582695007324205 ],
+					"sound::bp.Classroom Filter::Gain" : [ 1.0 ],
+					"sound::bp.Classroom Filter::Resonance" : [ 4.325610160827638 ],
+					"sound::bp.Classroom Filter::filter_mode" : [ 2.0 ],
+					"sound::bp.Classroom Filter::power[1]" : [ 0.0 ],
+					"sound::bp.Classroom Filter::spectral" : [ 1.0 ],
+					
+					"container0_scene" : [ 6 ],
+					"container1_scene" : [  ],
+					"container2_scene" : [  ]
+				}
+
+			}
+,
+			"8" : 			{
+				"id" : 8,
+				"name" : "KakkuriText",
+				"data" : 				{
+					"container0_opacity" : [ 0.0 ],
+					"container1_opacity" : [ 1.0 ],
+					"container2_opacity" : [ 0.0 ],
+					"number" : [ 0.0 ],
+					"number[1]" : [ 0.0 ],
+					"live.slider[1]" : [ 65.000000000000014 ],
+					"button[2]" : [ 0.0 ],
+					"button[1]" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::InputRange" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::Interval" : [ 4.929133892059326 ],
+					"sound::bp.Snapshotter[1]::OutputRange" : [ 0.0 ],
+					"sound::bp.Spectral::LinLog" : [ 0.0 ],
+					"sound::bp.Spectral::display" : [ 1.0 ],
+					"sound::bp.Classroom Filter::CV1" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV2" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV3" : [ 0.0 ],
+					"sound::bp.Classroom Filter::Freq" : [ 93.582695007324205 ],
+					"sound::bp.Classroom Filter::Gain" : [ 1.0 ],
+					"sound::bp.Classroom Filter::Resonance" : [ 4.325610160827638 ],
+					"sound::bp.Classroom Filter::filter_mode" : [ 2.0 ],
+					"sound::bp.Classroom Filter::power[1]" : [ 0.0 ],
+					"sound::bp.Classroom Filter::spectral" : [ 1.0 ],
+					
+					"container0_scene" : [  ],
+					"container1_scene" : [ 7 ],
+					"container2_scene" : [  ]
+				}
+
+			}
+,
+			"9" : 			{
+				"id" : 9,
+				"name" : "PhysicsLyric",
+				"data" : 				{
+					"container0_opacity" : [ 0.0 ],
+					"container1_opacity" : [ 0.0 ],
+					"container2_opacity" : [ 1.0 ],
+					"number" : [ 0.0 ],
+					"number[1]" : [ 0.0 ],
+					"live.slider[1]" : [ 65.000000000000014 ],
+					"button[2]" : [ 0.0 ],
+					"button[1]" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::InputRange" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::Interval" : [ 4.929133892059326 ],
+					"sound::bp.Snapshotter[1]::OutputRange" : [ 0.0 ],
+					"sound::bp.Spectral::LinLog" : [ 0.0 ],
+					"sound::bp.Spectral::display" : [ 1.0 ],
+					"sound::bp.Classroom Filter::CV1" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV2" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV3" : [ 0.0 ],
+					"sound::bp.Classroom Filter::Freq" : [ 93.582695007324205 ],
+					"sound::bp.Classroom Filter::Gain" : [ 1.0 ],
+					"sound::bp.Classroom Filter::Resonance" : [ 4.325610160827638 ],
+					"sound::bp.Classroom Filter::filter_mode" : [ 2.0 ],
+					"sound::bp.Classroom Filter::power[1]" : [ 0.0 ],
+					"sound::bp.Classroom Filter::spectral" : [ 1.0 ],
+					
+					"container0_scene" : [  ],
+					"container1_scene" : [  ],
+					"container2_scene" : [ 8 ]
+				}
+
+			}
+,
+			"10" : 			{
+				"id" : 10,
+				"data" : 				{
+					"container0_opacity" : [ 1.0 ],
+					"container1_opacity" : [ 0.0 ],
+					"container2_opacity" : [ 0.0 ],
+					"number" : [ 0.0 ],
+					"number[1]" : [ 0.0 ],
+					"live.slider[1]" : [ 65.000000000000014 ],
+					"button[2]" : [ 0.0 ],
+					"button[1]" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::InputRange" : [ 0.0 ],
+					"sound::bp.Snapshotter[1]::Interval" : [ 4.929133892059326 ],
+					"sound::bp.Snapshotter[1]::OutputRange" : [ 0.0 ],
+					"sound::bp.Spectral::LinLog" : [ 0.0 ],
+					"sound::bp.Spectral::display" : [ 1.0 ],
+					"sound::bp.Classroom Filter::CV1" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV2" : [ 0.0 ],
+					"sound::bp.Classroom Filter::CV3" : [ 0.0 ],
+					"sound::bp.Classroom Filter::Freq" : [ 93.582695007324205 ],
+					"sound::bp.Classroom Filter::Gain" : [ 1.0 ],
+					"sound::bp.Classroom Filter::Resonance" : [ 4.325610160827638 ],
+					"sound::bp.Classroom Filter::filter_mode" : [ 2.0 ],
+					"sound::bp.Classroom Filter::power[1]" : [ 0.0 ],
+					"sound::bp.Classroom Filter::spectral" : [ 1.0 ],
+					
+					"container0_scene" : [ 9 ],
+					"container1_scene" : [  ],
+					"container2_scene" : [  ]
+				}
+
+			}
+
+		}
+
+	}
+
+}

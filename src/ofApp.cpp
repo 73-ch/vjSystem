@@ -4,7 +4,6 @@
 void ofApp::setup(){
     // oF setup
     ofSetBackgroundColor(0);
-//    ofSetVerticalSync(false);
     ofEnableAlphaBlending();
     ofHideCursor();
     
@@ -108,6 +107,11 @@ void ofApp::draw(){
     pingPong[1].draw(0,0,info.screen_size.x, info.screen_size.y);
     
 //    ofDrawBitmapString(ofToString(ofGetFrameRate()), 10, 10);
+}
+
+void ofApp::drawPrev(ofEventArgs & args) {
+    ofSetColor(255);
+    pingPong[0].draw(0,0,720,450);
 }
 
 //--------------------------------------------------------------

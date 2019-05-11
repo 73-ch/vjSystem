@@ -68,6 +68,7 @@ class MusicRecognizer {
       const musics = data.metadata.music;
 
       this.recognized_musics = musics.map(m => {
+        console.log(m);
         return {
           title: m.title,
           artist: m.artists[0] ? m.artists[0].name : ''

@@ -2,7 +2,7 @@
 	"name" : "controller",
 	"version" : 1,
 	"creationdate" : 3624367987,
-	"modificationdate" : 3637854045,
+	"modificationdate" : 3640356468,
 	"viewrect" : [ 131.0, 531.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -17,6 +17,11 @@
 			}
 ,
 			"shader_select.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"posteffect_selector.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -106,7 +111,7 @@
 				"local" : 1
 			}
 ,
-			"posteffect_selector.maxpat" : 			{
+			"ControllerPattrStorageSelector.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -118,6 +123,10 @@
 				"kind" : "javascript",
 				"local" : 1
 			}
+
+		}
+,
+		"data" : 		{
 
 		}
 ,
