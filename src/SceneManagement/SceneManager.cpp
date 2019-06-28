@@ -10,9 +10,8 @@ SceneManager::SceneManager(BasicInfos* g_info) {
     stored_scenes["MeshChain"] = new MeshChain(g_info);
     stored_scenes["RainDrop"] = new RainDrop(g_info);
     stored_scenes["TrainShadow"] = new TrainShadow(g_info);
-//    stored_scenes["KakkuriText"] = new KakkuriText(g_info);
-//    stored_scenes["PhysicsLyric"] = new PhysicsLyric(g_info);
     stored_scenes["PointShadowBox"] = new PointShadowBox(g_info);
+    stored_scenes["RayMarching"] = new RayMarching(g_info);
     
     // init container[3]
     for (size_t i = 0; i < MAX_SCENES; ++i) {
@@ -74,7 +73,8 @@ BaseScene * SceneManager::getSceneByName(const string name) {
         return stored_scenes[name];
     } else {
         ofLogError() << name << " is not found in stored_scenes.";
-        throw "scene not found";
+//        throw "scene not found";
+        return stored_scenes["Instancing"];
     }
 };
 

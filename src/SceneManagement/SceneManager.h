@@ -17,6 +17,7 @@
 #include "KakkuriText.hpp"
 #include "PhysicsLyric.hpp"
 #include "PointShadowBox.h"
+#include "RayMarching.h"
 
 #define MAX_SCENES 3
 
