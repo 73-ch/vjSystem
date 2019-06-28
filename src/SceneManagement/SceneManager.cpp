@@ -10,8 +10,8 @@ SceneManager::SceneManager(BasicInfos* g_info) {
     stored_scenes["MeshChain"] = new MeshChain(g_info);
     stored_scenes["RainDrop"] = new RainDrop(g_info);
     stored_scenes["TrainShadow"] = new TrainShadow(g_info);
-    stored_scenes["KakkuriText"] = new KakkuriText(g_info);
-    stored_scenes["PhysicsLyric"] = new PhysicsLyric(g_info);
+//    stored_scenes["KakkuriText"] = new KakkuriText(g_info);
+//    stored_scenes["PhysicsLyric"] = new PhysicsLyric(g_info);
     stored_scenes["PointShadowBox"] = new PointShadowBox(g_info);
     
     // init container[3]

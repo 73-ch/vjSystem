@@ -3,3 +3,4 @@ ofxBullet
 ofxOsc
 ofxPubSubOsc
 ofxShaderTex
+ofxSyphon

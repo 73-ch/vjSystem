@@ -3,6 +3,7 @@
 #include "common_settings.h"
 #include "BaseScene.h"
 #include "SceneManager.h"
+#include "ofxSyphon.h"
 
 class ofApp : public ofBaseApp {
 
@@ -50,5 +51,6 @@ class ofApp : public ofBaseApp {
     float adjust_angle;
     float adjust_scale = 1.0;
     glm::vec2 adjust_offset;
-    
+
+    ofxSyphonServer syphon;
 };
