@@ -670,8 +670,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 622.0, 525.0, 137.0, 22.0 ],
-					"restore" : [ 0.0 ],
+					"patching_rect" : [ 632.0, 431.0, 137.0, 22.0 ],
+					"restore" : [ 0.712956335003579 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1510,7 +1510,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1.0, 223.0, 288.0, 455.0 ],
+						"rect" : [ 1.0, 45.0, 288.0, 455.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1537,7 +1537,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-1",
@@ -1944,7 +1943,8 @@
 															"parameter_unitstyle" : 0,
 															"parameter_longname" : "Bypass",
 															"parameter_mmax" : 1.0,
-															"parameter_initial" : [ 0.0 ]
+															"parameter_initial" : [ 0.0 ],
+															"parameter_mmax" : 1.0
 														}
 
 													}
@@ -2432,7 +2432,7 @@
 													"patching_rect" : [ 32.939940999999997, 874.170409999999947, 360.0, 155.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 100.5, 42.838638305664062, 360.0, 155.0 ],
-													"setfilter" : [ 0, 3, 0, 0, 0, 92.498603820800781, 1.0, 4.325610160827637, 0.000099999997474, 22050.0, 0.000099999997474, 16.0, 0.5, 25.0 ],
+													"setfilter" : [ 0, 1, 0, 0, 0, 34.6478271484375, 1.0, 0.701650857925415, 0.000099999997474, 22050.0, 0.000099999997474, 16.0, 0.5, 25.0 ],
 													"textcolor" : [ 1.0, 1.0, 1.0, 0.0 ]
 												}
 
@@ -2485,7 +2485,7 @@
 															"parameter_defer" : 1,
 															"parameter_type" : 2,
 															"parameter_longname" : "spectral",
-															"parameter_mmax" : 1,
+															"parameter_mmax" : 1.0,
 															"parameter_initial" : [ 0.0 ]
 														}
 
@@ -2634,7 +2634,7 @@
 															"parameter_unitstyle" : 0,
 															"parameter_longname" : "filter_mode",
 															"parameter_initial_enable" : 1,
-															"parameter_mmax" : 6,
+															"parameter_mmax" : 6.0,
 															"parameter_initial" : [ 0.0 ]
 														}
 
@@ -2696,7 +2696,7 @@
 													"patching_rect" : [ 446.939940999999976, 874.170409999999947, 360.0, 155.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 100.5, 42.838638305664062, 360.0, 155.0 ],
-													"setfilter" : [ 0, 3, 0, 0, 0, 93.582695007324219, 1.0, 4.325610160827637, 0.000099999997474, 22050.0, 0.000099999997474, 16.0, 0.5, 25.0 ],
+													"setfilter" : [ 0, 1, 0, 0, 0, 33.928226470947266, 1.0, 0.701650857925415, 0.000099999997474, 22050.0, 0.000099999997474, 16.0, 0.5, 25.0 ],
 													"textcolor" : [ 1.0, 1.0, 1.0, 0.47 ]
 												}
 
@@ -3316,7 +3316,8 @@
 															"parameter_longname" : "CV2",
 															"parameter_initial_enable" : 1,
 															"parameter_mmax" : 100.0,
-															"parameter_initial" : [ 0.0 ]
+															"parameter_initial" : [ 0.0 ],
+															"parameter_mmax" : 100.0
 														}
 
 													}
@@ -3553,7 +3554,7 @@
 															"parameter_defer" : 1,
 															"parameter_type" : 2,
 															"parameter_longname" : "power",
-															"parameter_mmax" : 1,
+															"parameter_mmax" : 1.0,
 															"parameter_initial" : [ 0.0 ]
 														}
 
@@ -7130,7 +7131,7 @@
 															"parameter_unitstyle" : 0,
 															"parameter_longname" : "OutputRange[1]",
 															"parameter_initial_enable" : 1,
-															"parameter_mmax" : 1,
+															"parameter_mmax" : 1.0,
 															"parameter_initial" : [ 0 ]
 														}
 
@@ -8355,7 +8356,7 @@
 											"parameter_enum" : [ "off", "on" ],
 											"parameter_type" : 2,
 											"parameter_longname" : "toggle[20]",
-											"parameter_mmax" : 1
+											"parameter_mmax" : 1.0
 										}
 
 									}
@@ -8403,7 +8404,7 @@
 											"parameter_enum" : [ "off", "on" ],
 											"parameter_type" : 2,
 											"parameter_longname" : "toggle[19]",
-											"parameter_mmax" : 1
+											"parameter_mmax" : 1.0
 										}
 
 									}
@@ -8536,7 +8537,7 @@
 											"parameter_enum" : [ "off", "on" ],
 											"parameter_type" : 2,
 											"parameter_longname" : "toggle[18]",
-											"parameter_mmax" : 1
+											"parameter_mmax" : 1.0
 										}
 
 									}
@@ -8572,7 +8573,7 @@
 											"parameter_enum" : [ "off", "on" ],
 											"parameter_type" : 2,
 											"parameter_longname" : "toggle[17]",
-											"parameter_mmax" : 1
+											"parameter_mmax" : 1.0
 										}
 
 									}
@@ -8608,7 +8609,7 @@
 											"parameter_enum" : [ "off", "on" ],
 											"parameter_type" : 2,
 											"parameter_longname" : "toggle[16]",
-											"parameter_mmax" : 1
+											"parameter_mmax" : 1.0
 										}
 
 									}
@@ -9551,8 +9552,10 @@
 						"storage_rect" : [ 919, 45, 1913, 664 ]
 					}
 ,
+
 					"text" : "pattrstorage controller",
 					"varname" : "controller"
+
 				}
 
 			}
@@ -10664,13 +10667,6 @@
 					"flags" : 3
 				}
 ,
-				"toggle[1]" : 				{
-					"srcname" : "42.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3
-				}
-,
 				"toggle[2]" : 				{
 					"srcname" : "43.note.0.chan.midi",
 					"min" : 0.0,
@@ -10687,13 +10683,6 @@
 ,
 				"toggle[4]" : 				{
 					"srcname" : "57.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3
-				}
-,
-				"toggle" : 				{
-					"srcname" : "41.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3
@@ -11137,6 +11126,20 @@
 ,
 				"container2 _opacity[1]" : 				{
 					"srcname" : "43.ctrl.6.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 2
+				}
+,
+				"toggle" : 				{
+					"srcname" : "95.ctrl.6.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 2
+				}
+,
+				"toggle[1]" : 				{
+					"srcname" : "96.ctrl.6.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 2

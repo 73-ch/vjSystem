@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 84.0, 106.0, 217.0, 351.0 ],
+		"rect" : [ -1396.0, 81.0, 217.0, 351.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -277,7 +277,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 114.0, 421.0, 245.2618408203125, 22.0 ],
-					"text" : "0.96063 0. 0. 0."
+					"text" : "0.456693 0.875 0.313784 0."
 				}
 
 			}
@@ -778,7 +778,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 262.0, 850.0, 640.0, 290.0 ],
+						"rect" : [ -509.0, 524.0, 640.0, 290.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -845,7 +845,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-8",
-									"int" : 1,
 									"maxclass" : "gswitch",
 									"numinlets" : 3,
 									"numoutlets" : 1,
@@ -2681,6 +2680,12 @@
 ,
 		"parameter_map" : 		{
 			"midi" : 			{
+				"umenu[3]" : 				{
+					"srcname" : "47.ctrl.6.chan.midi",
+					"min" : 0.0,
+					"max" : 6.0,
+					"flags" : 2
+				}
 
 			}
 
