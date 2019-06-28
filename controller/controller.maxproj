@@ -2,8 +2,8 @@
 	"name" : "controller",
 	"version" : 1,
 	"creationdate" : 3624367987,
-	"modificationdate" : 3640356468,
-	"viewrect" : [ 131.0, 531.0, 300.0, 500.0 ],
+	"modificationdate" : 3640430479,
+	"viewrect" : [ 131.0, 45.0, 681.0, 986.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -112,6 +112,11 @@
 			}
 ,
 			"ControllerPattrStorageSelector.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"PointShadowBox.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}

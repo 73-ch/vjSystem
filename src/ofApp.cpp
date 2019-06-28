@@ -68,6 +68,11 @@ void ofApp::initOsc() {
     });
     
     ofxSubscribeOsc(OF_PORT, "/post_processing/seeds", seeds);
+    
+    ofxSubscribeOsc(OF_PORT, "/adjust/rotate", adjust_angle);
+    ofxSubscribeOsc(OF_PORT, "/adjust/scale", adjust_scale);
+    ofxSubscribeOsc(OF_PORT, "/adjust/offset", adjust_offset);
+    
 }
 
 //--------------------------------------------------------------
@@ -104,7 +109,17 @@ void ofApp::draw(){
     swap(pingPong[0], pingPong[1]);
     
     ofSetColor(255);
+    
+    ofPushMatrix();
+    ofTranslate(info.screen_size * .5);
+    ofTranslate(adjust_offset);
+    ofScale(adjust_scale);
+    ofRotateYDeg(adjust_angle);
+    ofTranslate(-info.screen_size * .5);
+    
+    
     pingPong[1].draw(0,0,info.screen_size.x, info.screen_size.y);
+    ofPopMatrix();
     
 //    ofDrawBitmapString(ofToString(ofGetFrameRate()), 10, 10);
 }

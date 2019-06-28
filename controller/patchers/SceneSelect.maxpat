@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 458.0, 146.0, 640.0, 480.0 ],
+		"rect" : [ 458.0, 146.0, 569.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -88,9 +88,8 @@
 			}
 , 			{
 				"box" : 				{
-					"allowdrag" : 0,
 					"id" : "obj-61",
-					"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop", ",", "TrainShadow", ",", "KakkuriText", ",", "PhysicsLyric" ],
+					"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop", ",", "TrainShadow", ",", "KakkuriText", ",", "PhysicsLyric", ",", "PointShadowBox" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -102,10 +101,10 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_shortname" : "umenu",
-							"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop", "TrainShadow", "KakkuriText", "PhysicsLyric" ],
+							"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop", "TrainShadow", "KakkuriText", "PhysicsLyric", "PointShadowBox" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "umenu[3]",
-							"parameter_mmax" : 8
+							"parameter_mmax" : 9
 						}
 
 					}

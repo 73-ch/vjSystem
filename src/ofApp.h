@@ -43,4 +43,12 @@ class ofApp : public ofBaseApp {
     
     BasicInfos info;
     array<ofFbo, 2> pingPong;
+    
+    ofMesh adjust_mesh;
+    
+    vector<glm::vec2> adjust_sizes;
+    float adjust_angle;
+    float adjust_scale = 1.0;
+    glm::vec2 adjust_offset;
+    
 };

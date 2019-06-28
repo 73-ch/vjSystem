@@ -16,6 +16,7 @@
 #include "AvoidObject.h"
 #include "KakkuriText.hpp"
 #include "PhysicsLyric.hpp"
+#include "PointShadowBox.h"
 
 #define MAX_SCENES 3
 

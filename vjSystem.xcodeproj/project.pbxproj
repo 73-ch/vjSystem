@@ -48,6 +48,7 @@
 		36BBEA581081D7DD198EB5B7 /* btDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC60ADB77342C27371B20AF5 /* btDispatcher.cpp */; };
 		38ADB93B3DEF5989046B3FBD /* PrimitiveRoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEF1CD9D4ED13E672222BB3E /* PrimitiveRoom.cpp */; };
 		38CE9694D5F4EA7E2524302E /* btConvexCast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACA3D0C8A3ED34272047B0DF /* btConvexCast.cpp */; };
+		391BF4FE2286901000C18B99 /* PointShadowBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 391BF4FC2286901000C18B99 /* PointShadowBox.cpp */; };
 		3927F7F3225C8D9D0065CA42 /* PhysicsLyric.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3927F7F1225C8D9D0065CA42 /* PhysicsLyric.cpp */; };
 		3927F7F7225C8E7C0065CA42 /* RigidText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3927F7F5225C8E7C0065CA42 /* RigidText.cpp */; };
 		3B2CBEF0B6128CADE347C05B /* btMultimaterialTriangleMeshShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5888434A0909403A4A8B6542 /* btMultimaterialTriangleMeshShape.cpp */; };
@@ -339,6 +340,8 @@
 		38DD89D2309FBC144EFC9F42 /* btContactProcessing.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = btContactProcessing.h; path = ../../../addons/ofxBullet/libs/bullet2.8.2/include/BulletCollision/Gimpact/btContactProcessing.h; sourceTree = SOURCE_ROOT; };
 		39135047C1CF86E03CA81470 /* btMatrix3x3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = btMatrix3x3.h; path = ../../../addons/ofxBullet/libs/bullet2.8.2/include/LinearMath/btMatrix3x3.h; sourceTree = SOURCE_ROOT; };
 		39157C47D15F25CBEF1E29D3 /* ofxBulletWorldRigid.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxBulletWorldRigid.cpp; path = ../../../addons/ofxBullet/src/ofxBulletWorldRigid.cpp; sourceTree = SOURCE_ROOT; };
+		391BF4FC2286901000C18B99 /* PointShadowBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PointShadowBox.cpp; sourceTree = "<group>"; };
+		391BF4FD2286901000C18B99 /* PointShadowBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointShadowBox.h; sourceTree = "<group>"; };
 		3927F7F1225C8D9D0065CA42 /* PhysicsLyric.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicsLyric.cpp; path = Scene/PhysicLyric/PhysicsLyric.cpp; sourceTree = "<group>"; };
 		3927F7F2225C8D9D0065CA42 /* PhysicsLyric.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = PhysicsLyric.hpp; path = Scene/PhysicLyric/PhysicsLyric.hpp; sourceTree = "<group>"; };
 		3927F7F5225C8E7C0065CA42 /* RigidText.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RigidText.cpp; path = Scene/PhysicLyric/RigidText.cpp; sourceTree = "<group>"; };
@@ -1129,6 +1132,15 @@
 			name = libs;
 			sourceTree = "<group>";
 		};
+		391BF4F822868F5100C18B99 /* PointShadowBox */ = {
+			isa = PBXGroup;
+			children = (
+				391BF4FC2286901000C18B99 /* PointShadowBox.cpp */,
+				391BF4FD2286901000C18B99 /* PointShadowBox.h */,
+			);
+			path = PointShadowBox;
+			sourceTree = "<group>";
+		};
 		3927F7EA225BF9FC0065CA42 /* Instancing */ = {
 			isa = PBXGroup;
 			children = (
@@ -1696,6 +1708,7 @@
 		B89229C0696BBC314DF43718 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				391BF4F822868F5100C18B99 /* PointShadowBox */,
 				3927F7EA225BF9FC0065CA42 /* Instancing */,
 				9F2008192F85F71FFE526789 /* RainDrop */,
 				4EDA8D38DE57BF9513C1AFBB /* AvoidObject */,
@@ -2636,6 +2649,7 @@
 				6FDB79E1612FC75322E4DD17 /* btPolarDecomposition.cpp in Sources */,
 				0B1850BD9F835110397FE248 /* btQuickprof.cpp in Sources */,
 				4FEEC9815844F988B5154BE3 /* btSerializer.cpp in Sources */,
+				391BF4FE2286901000C18B99 /* PointShadowBox.cpp in Sources */,
 				48741DBF80C2F3E072279DBF /* btVector3.cpp in Sources */,
 				D82740B1C3CA5499786DDB9F /* ofxBulletJoint.cpp in Sources */,
 				AE83F0CEA2C8D83D72618074 /* ofxBulletWorldRigid.cpp in Sources */,

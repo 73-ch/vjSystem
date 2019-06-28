@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 2,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,30 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-30",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 961.0, 250.0, 29.5, 22.0 ],
+					"text" : "* 7."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-27",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 953.0, 152.0, 95.0, 22.0 ],
+					"text" : "r seed_progress"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-33",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -60,10 +84,10 @@
 					"patching_rect" : [ 362.0, 177.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_longname" : "live.dial[2]",
 							"parameter_shortname" : "live.dial[2]",
 							"parameter_type" : 0,
-							"parameter_unitstyle" : 0
+							"parameter_unitstyle" : 0,
+							"parameter_longname" : "live.dial[2]"
 						}
 
 					}
@@ -276,10 +300,10 @@
 					"presentation_rect" : [ 107.399993896484375, 34.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_longname" : "live.dial[3]",
 							"parameter_shortname" : "metro",
 							"parameter_type" : 0,
-							"parameter_unitstyle" : 0
+							"parameter_unitstyle" : 0,
+							"parameter_longname" : "live.dial[3]"
 						}
 
 					}
@@ -350,11 +374,11 @@
 					"presentation_rect" : [ 32.7381591796875, 245.0, 24.0, 24.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_longname" : "toggle[5]",
-							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "toggle[5]",
 							"parameter_enum" : [ "off", "on" ],
-							"parameter_type" : 2
+							"parameter_type" : 2,
+							"parameter_longname" : "toggle[5]",
+							"parameter_mmax" : 1
 						}
 
 					}
@@ -377,10 +401,10 @@
 					"range" : [ 0.0, 6.28000020980835 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_longname" : "function[3]",
-							"parameter_invisible" : 1,
 							"parameter_shortname" : "function",
-							"parameter_type" : 3
+							"parameter_type" : 3,
+							"parameter_longname" : "function[3]",
+							"parameter_invisible" : 1
 						}
 
 					}
@@ -484,13 +508,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 275.0, 140.0, 1218.0, 480.0 ],
+						"rect" : [ 546.0, 198.0, 1218.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -541,10 +565,10 @@
 									"patching_rect" : [ 815.5, 18.0, 41.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "live.dial[1]",
 											"parameter_shortname" : "live.dial",
 											"parameter_type" : 0,
-											"parameter_unitstyle" : 0
+											"parameter_unitstyle" : 0,
+											"parameter_longname" : "live.dial[1]"
 										}
 
 									}
@@ -576,10 +600,10 @@
 									"patching_rect" : [ 501.5, 74.0, 41.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "live.dial",
 											"parameter_shortname" : "live.dial",
 											"parameter_type" : 0,
-											"parameter_unitstyle" : 0
+											"parameter_unitstyle" : 0,
+											"parameter_longname" : "live.dial"
 										}
 
 									}
@@ -614,10 +638,10 @@
 									"range" : [ 0.0, 2.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "function[7]",
-											"parameter_invisible" : 1,
 											"parameter_shortname" : "function",
-											"parameter_type" : 3
+											"parameter_type" : 3,
+											"parameter_longname" : "function[7]",
+											"parameter_invisible" : 1
 										}
 
 									}
@@ -712,10 +736,10 @@
 									"range" : [ 0.0, 2.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "function[6]",
-											"parameter_invisible" : 1,
 											"parameter_shortname" : "function",
-											"parameter_type" : 3
+											"parameter_type" : 3,
+											"parameter_longname" : "function[6]",
+											"parameter_invisible" : 1
 										}
 
 									}
@@ -738,10 +762,10 @@
 									"range" : [ 0.0, 2.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "function[5]",
-											"parameter_invisible" : 1,
 											"parameter_shortname" : "function",
-											"parameter_type" : 3
+											"parameter_type" : 3,
+											"parameter_longname" : "function[5]",
+											"parameter_invisible" : 1
 										}
 
 									}
@@ -824,10 +848,10 @@
 									"range" : [ 0.0, 2.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "function[4]",
-											"parameter_invisible" : 1,
 											"parameter_shortname" : "function",
-											"parameter_type" : 3
+											"parameter_type" : 3,
+											"parameter_longname" : "function[4]",
+											"parameter_invisible" : 1
 										}
 
 									}
@@ -918,10 +942,10 @@
 									"range" : [ 0.0, 6.28000020980835 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "function[2]",
-											"parameter_invisible" : 1,
 											"parameter_shortname" : "function",
-											"parameter_type" : 3
+											"parameter_type" : 3,
+											"parameter_longname" : "function[2]",
+											"parameter_invisible" : 1
 										}
 
 									}
@@ -1053,10 +1077,10 @@
 									"range" : [ 0.0, 6.28000020980835 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "function[1]",
-											"parameter_invisible" : 1,
 											"parameter_shortname" : "function",
-											"parameter_type" : 3
+											"parameter_type" : 3,
+											"parameter_longname" : "function[1]",
+											"parameter_invisible" : 1
 										}
 
 									}
@@ -1490,13 +1514,13 @@
 					"presentation_rect" : [ 22.2618408203125, 43.0, 150.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_longname" : "umenu[3]",
-							"parameter_initial_enable" : 1,
-							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 6 ],
 							"parameter_shortname" : "umenu[3]",
 							"parameter_enum" : [ "TRIANGLES", "TRIANGLE_STRIP", "TRIANGLE_FAN", "LINES", "LINE_STRIP", "LINE_LOOP", "POINTS" ],
-							"parameter_type" : 2
+							"parameter_type" : 2,
+							"parameter_longname" : "umenu[3]",
+							"parameter_initial_enable" : 1,
+							"parameter_mmax" : 6,
+							"parameter_initial" : [ 6 ]
 						}
 
 					}
@@ -1591,11 +1615,11 @@
 					"presentation_rect" : [ 16.833333969116211, 536.66668701171875, 223.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_longname" : "umenu[1]",
-							"parameter_mmax" : 3.0,
 							"parameter_shortname" : "umenu[1]",
 							"parameter_enum" : [ "KAKKURI_NO_INDEX", "KAKKURI_INDEX_LINE", "KAKKURI_INDEX_TRIANGLE", "KAKKURI_INDEX_CUSTOM" ],
-							"parameter_type" : 2
+							"parameter_type" : 2,
+							"parameter_longname" : "umenu[1]",
+							"parameter_mmax" : 3
 						}
 
 					}
@@ -1779,6 +1803,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-30", 0 ],
+					"source" : [ "obj-27", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-37", 0 ],
 					"source" : [ "obj-28", 0 ]
 				}
@@ -1795,6 +1826,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-28", 0 ],
+					"source" : [ "obj-30", 0 ]
 				}
 
 			}
@@ -1928,20 +1966,20 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-5::obj-14" : [ "function[6]", "function", 0 ],
+			"obj-5::obj-28" : [ "function[7]", "function", 0 ],
 			"obj-32" : [ "live.dial[2]", "live.dial[2]", 0 ],
-			"obj-5::obj-46" : [ "live.dial", "live.dial", 0 ],
-			"obj-5::obj-13" : [ "function[5]", "function", 0 ],
+			"obj-5::obj-29" : [ "function[2]", "function", 0 ],
+			"obj-5::obj-8" : [ "function[4]", "function", 0 ],
 			"obj-21" : [ "toggle[5]", "toggle[5]", 0 ],
-			"obj-5::obj-19" : [ "function[1]", "function", 0 ],
-			"obj-28" : [ "umenu[3]", "umenu[3]", 0 ],
 			"obj-20" : [ "function[3]", "function", 0 ],
+			"obj-5::obj-13" : [ "function[5]", "function", 0 ],
+			"obj-5::obj-14" : [ "function[6]", "function", 0 ],
 			"obj-50" : [ "live.dial[3]", "metro", 0 ],
 			"obj-5::obj-49" : [ "live.dial[1]", "live.dial", 0 ],
-			"obj-5::obj-8" : [ "function[4]", "function", 0 ],
+			"obj-5::obj-46" : [ "live.dial", "live.dial", 0 ],
+			"obj-5::obj-19" : [ "function[1]", "function", 0 ],
+			"obj-28" : [ "umenu[3]", "umenu[3]", 0 ],
 			"obj-2" : [ "umenu[1]", "umenu[1]", 0 ],
-			"obj-5::obj-29" : [ "function[2]", "function", 0 ],
-			"obj-5::obj-28" : [ "function[7]", "function", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -1985,7 +2023,7 @@
 		"dependency_cache" : [ 			{
 				"name" : "f3pb.maxpat",
 				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : "../../../../../../../Max 8/Library",
+				"patcherrelativepath" : "../../../../../../Max 8/Library",
 				"type" : "JSON",
 				"implicit" : 1
 			}
