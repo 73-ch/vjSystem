@@ -10,21 +10,19 @@ uniform float s_opacity2;
 uniform vec2 u_resolution;
 uniform vec4 seeds;
 uniform float time;
-
-vec2 st = gl_FragCoord.xy;
-
 out vec4 outputColor;
 
-float random (in vec2 st) {
-    return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
-}
+
+float rnd(vec2 p){return fract(sin(dot(p,vec2(15.79,81.93))*45678.9123));}
+float noise(vec2 p){vec2 i=floor(p);vec2 f=fract(p);f=f*f*(3.-2.*f);return mix(mix(rnd(i+vec2(0.,0.)),rnd(i+vec2(1.,0.)),f.x),mix(rnd(i+vec2(0.,1.)),rnd(i+vec2(1.,1.)),f.x),f.y);}
+float fbm(vec2 uv,float d){float sum=0.;float amp=.7;for(int i=0;i<4;++i){sum+=noise(uv)*amp;uv+=uv*d;amp*=.4;}return sum;}
 
 void main() {
     vec3 final;
-    vec2 diff = vec2(seeds.x * 10.);
-
+    vec2 st = gl_FragCoord.xy;
     float sum_opacity = max(s_opacity0 + s_opacity1 + s_opacity2, 1.0);
     
+
     if (s_opacity0 > 0.0) {
         final += texture(s_texture0, st).xyz * s_opacity0 / sum_opacity;
     }
@@ -34,17 +32,7 @@ void main() {
     if (s_opacity2 > 0.0) {
         final += texture(s_texture2, st).xyz * s_opacity2 / sum_opacity;
     }
-    vec3 n_final = mix(final, 1.0 - texture(before_texture,st).yxz, seeds.x*10. + 0.75);
-    
-        n_final = pow(n_final, vec3(21.0));
-        n_final.r *= 0.3 + seeds.x;
-        n_final  = clamp(n_final,vec3(0.35), vec3(0.65));
-    final = mix(final, n_final,0.4);
-    // final *= n_final;
-    
-    // final = final.gbr;
-    
-    
-    
+
+
     outputColor = vec4(final, 1.0);
 }

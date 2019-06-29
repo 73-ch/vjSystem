@@ -53,6 +53,6 @@ void main() {
     
     
     final *= 0.1;
-    final *= pow(1. - length((st* 2. - u_resolution)/ u_resolution), 0.1);
+    // final *= pow(max(.0, 1. - length((st* 2. - u_resolution)/ u_resolution) * 0.8), 1.0);
     outputColor = vec4(final, 1.0);
 }

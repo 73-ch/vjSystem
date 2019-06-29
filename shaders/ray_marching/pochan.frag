@@ -37,7 +37,7 @@ float ground(vec3 p) {
 
 float plate(vec3 p){
     vec3 q = abs(p);
-    return length(max(q - vec3(5., 0.5, 5.), 0.0));
+    return length(max(q - vec3(8., 0.5, 8.), 0.0));
 }
 
 float smoothMin(float d1, float d2, float k){
@@ -45,8 +45,19 @@ float smoothMin(float d1, float d2, float k){
     return -log(h) / k;
 }
 
+vec3 foldSphere(vec3 p) {
+    vec3 ret = p;
+    for (int i = 0; i < 4; i++) {
+         if (abs((p.x + i*5.0) / 4. + 0.001) < 2.) ret.x = mod(p.x + i*2.0, 4.) - 2.;
+         if (abs((p.z + i*2.0) / 4. + 0.001) < 2.) ret.z = mod(p.z, 4.) - 2.;
+    }
+    return p;
+}
+
 vec3 transSphere(vec3 p) {
-    return p + vec3(sin(sin(time * .1) * PI_2), (cos(time * .1) + 1.0) *.5, 0.);
+    vec3 dp = foldSphere(p);
+    return dp + vec3(sin(sin(time * .25) * PI_2), (-exp(cos(time * 0.1) + 1.0)) * 1.0 + 4., cos(pow(sin(time * .25),2.) * PI_2));
+    // return dp + vec3(sin(noise(vec2(sin(time * 1.), length(p) * step(length(p), 10.))) * PI_2), (-exp(cos(time * 0.1) + 1.0)) * 1.0 + 4., 0.);
     // return p ;
 }
 
@@ -111,7 +122,7 @@ void main() {
             vec3 halfLE = normalize(light_dir - cd);
             float specular = pow(clamp(dot(halfLE, normal), 0.0, 1.0), 1800.0);
 
-            final_color += vec3(hsv(inter + 0.4 + time * 0.02, 0.9)) * diff + specular * 0.3;
+            final_color += vec3(hsv(inter + 0.4 + time * 0.02, 0.9)) * diff + specular * 0.1;
         }
         final_color *= .1;    
         
