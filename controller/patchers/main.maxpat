@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 0.0, 20.0, 370.0, 180.0 ],
+		"rect" : [ 0.0, 40.0, 370.0, 160.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -249,7 +249,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 320.0, 401.0, 131.0, 22.0 ],
-					"restore" : [ 2 ],
+					"restore" : [ 3 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -268,7 +268,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 458.0, 405.0, 131.0, 22.0 ],
-					"restore" : [ 8 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -460,12 +460,12 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 300.0, 469.0, 56.0, 22.0 ],
 					"restore" : 					{
-						"number" : [ 83.158561706542969 ],
-						"number[1]" : [ 1882.2696533203125 ]
+						"number" : [ 66.329353332519531 ],
+						"number[1]" : [ 5232.677734375 ]
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u819004483"
+					"varname" : "u302002931"
 				}
 
 			}
@@ -690,7 +690,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 376.0, 525.0, 137.0, 22.0 ],
-					"restore" : [ 0.0 ],
+					"restore" : [ 0.007874015748031 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -821,7 +821,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 632.0, 659.0, 131.0, 35.0 ],
-					"text" : "/manager/set_opacity 2 0."
+					"text" : "/manager/set_scene 2 VertexArt"
 				}
 
 			}
@@ -846,7 +846,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 394.5, 659.0, 131.0, 35.0 ],
-					"text" : "/manager/set_opacity 1 0."
+					"text" : "/manager/set_opacity 1 0.007874"
 				}
 
 			}
@@ -870,8 +870,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 157.0, 659.0, 131.0, 35.0 ],
-					"text" : "/manager/set_opacity 0 1."
+					"patching_rect" : [ 144.0, 659.0, 131.0, 35.0 ],
+					"text" : "/manager/set_scene 0 RayMarching"
 				}
 
 			}
@@ -969,7 +969,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1058,7 +1058,7 @@
 									"lockeddragscroll" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "BPMmetro.maxpat",
-									"numinlets" : 1,
+									"numinlets" : 2,
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "bang" ],
@@ -1504,7 +1504,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1873,7 +1873,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 0,
-											"revision" : 6,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2277,7 +2277,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 0,
-											"revision" : 6,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2431,7 +2431,7 @@
 													"patching_rect" : [ 32.939940999999997, 874.170409999999947, 360.0, 155.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 100.5, 42.838638305664062, 360.0, 155.0 ],
-													"setfilter" : [ 0, 3, 0, 0, 0, 34.6478271484375, 1.0, 4.325610160827637, 0.000099999997474, 22050.0, 0.000099999997474, 16.0, 0.5, 25.0 ],
+													"setfilter" : [ 0, 3, 0, 0, 0, 92.498603820800781, 1.0, 4.325610160827637, 0.000099999997474, 22050.0, 0.000099999997474, 16.0, 0.5, 25.0 ],
 													"textcolor" : [ 1.0, 1.0, 1.0, 0.0 ]
 												}
 
@@ -2480,7 +2480,7 @@
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
 															"parameter_longname" : "spectral",
-															"parameter_mmax" : 1,
+															"parameter_mmax" : 1.0,
 															"parameter_initial" : [ 0.0 ],
 															"parameter_shortname" : "spectral",
 															"parameter_enum" : [ "val1", "val2" ],
@@ -2629,7 +2629,7 @@
 														"valueof" : 														{
 															"parameter_longname" : "filter_mode",
 															"parameter_initial_enable" : 1,
-															"parameter_mmax" : 6,
+															"parameter_mmax" : 6.0,
 															"parameter_initial" : [ 0.0 ],
 															"parameter_shortname" : "filter_mode",
 															"parameter_enum" : [ "lowpass", "highpass", "bandpass", "bandstop", "peaknotch", "lowshelf", "highshelf" ],
@@ -3548,7 +3548,7 @@
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
 															"parameter_longname" : "power",
-															"parameter_mmax" : 1,
+															"parameter_mmax" : 1.0,
 															"parameter_initial" : [ 0.0 ],
 															"parameter_shortname" : "power",
 															"parameter_enum" : [ "val1", "val2" ],
@@ -3601,7 +3601,7 @@
 													}
 ,
 													"text" : "autopattr",
-													"varname" : "u491004478"
+													"varname" : "u276002928"
 												}
 
 											}
@@ -4300,7 +4300,7 @@
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "live.button",
-											"parameter_mmax" : 1,
+											"parameter_mmax" : 1.0,
 											"parameter_speedlim" : 10.0,
 											"parameter_shortname" : "live.button",
 											"parameter_enum" : [ "off", "on" ],
@@ -4870,7 +4870,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 0,
-											"revision" : 6,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5757,7 +5757,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 0,
-											"revision" : 6,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6176,7 +6176,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 0,
-											"revision" : 6,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6302,8 +6302,8 @@
 										"styles" : [ 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -6492,7 +6492,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 0,
-											"revision" : 6,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6540,7 +6540,7 @@
 													}
 ,
 													"text" : "autopattr",
-													"varname" : "u516004476"
+													"varname" : "u711002926"
 												}
 
 											}
@@ -6567,7 +6567,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 0,
-															"revision" : 6,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -7125,7 +7125,7 @@
 														"valueof" : 														{
 															"parameter_longname" : "OutputRange[1]",
 															"parameter_initial_enable" : 1,
-															"parameter_mmax" : 1,
+															"parameter_mmax" : 1.0,
 															"parameter_initial" : [ 0 ],
 															"parameter_shortname" : "OutputRange",
 															"parameter_enum" : [ "Bipolar", "Unipolar" ],
@@ -7159,7 +7159,7 @@
 														"valueof" : 														{
 															"parameter_longname" : "InputRange[1]",
 															"parameter_initial_enable" : 1,
-															"parameter_mmax" : 1,
+															"parameter_mmax" : 1.0,
 															"parameter_initial" : [ 0 ],
 															"parameter_shortname" : "InputRange",
 															"parameter_enum" : [ "Bipolar", "Unipolar" ],
@@ -7930,8 +7930,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8040,13 +8040,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 201.0, 421.0, 485.0 ],
+						"rect" : [ 72.0, 319.0, 421.0, 485.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -8350,7 +8350,7 @@
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "toggle[20]",
-											"parameter_mmax" : 1,
+											"parameter_mmax" : 1.0,
 											"parameter_shortname" : "toggle[18]",
 											"parameter_enum" : [ "off", "on" ],
 											"parameter_type" : 2
@@ -8398,7 +8398,7 @@
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "toggle[19]",
-											"parameter_mmax" : 1,
+											"parameter_mmax" : 1.0,
 											"parameter_shortname" : "toggle[18]",
 											"parameter_enum" : [ "off", "on" ],
 											"parameter_type" : 2
@@ -8531,7 +8531,7 @@
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "toggle[18]",
-											"parameter_mmax" : 1,
+											"parameter_mmax" : 1.0,
 											"parameter_shortname" : "toggle[18]",
 											"parameter_enum" : [ "off", "on" ],
 											"parameter_type" : 2
@@ -8567,7 +8567,7 @@
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "toggle[17]",
-											"parameter_mmax" : 1,
+											"parameter_mmax" : 1.0,
 											"parameter_shortname" : "toggle[17]",
 											"parameter_enum" : [ "off", "on" ],
 											"parameter_type" : 2
@@ -8603,7 +8603,7 @@
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "toggle[16]",
-											"parameter_mmax" : 1,
+											"parameter_mmax" : 1.0,
 											"parameter_shortname" : "toggle[16]",
 											"parameter_enum" : [ "off", "on" ],
 											"parameter_type" : 2
@@ -9646,6 +9646,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node" : "",
+						"npm" : "",
 						"watch" : 0
 					}
 ,
@@ -9716,7 +9718,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -9749,7 +9751,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-11",
@@ -10566,66 +10567,66 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-2::obj-9::obj-33" : [ "InputRange[1]", "InputRange", 0 ],
-			"obj-2::obj-126::obj-26" : [ "spectral", "spectral", 0 ],
-			"obj-2::obj-126::obj-51" : [ "CV2", "CV2", 0 ],
-			"obj-2::obj-126::obj-11" : [ "Resonance", "Res", 0 ],
-			"obj-2::obj-5" : [ "live.gain~", "note_on", 0 ],
-			"obj-1::obj-2::obj-68" : [ "button[1]", "button[1]", 0 ],
-			"obj-10::obj-85" : [ "toggle[19]", "toggle[18]", 0 ],
-			"obj-10::obj-8" : [ "live.slider[11]", "live.slider[10]", 0 ],
-			"obj-2::obj-45" : [ "live.numbox", "live.numbox", 0 ],
-			"obj-28::obj-3" : [ "live.slider[29]", "seed.x", 0 ],
-			"obj-1::obj-40" : [ "live.gain~[3]", "live.gain~", 0 ],
-			"obj-10::obj-3" : [ "toggle[20]", "toggle[18]", 0 ],
-			"obj-1::obj-2::obj-22::obj-19" : [ "function[10]", "function", 0 ],
-			"obj-10::obj-55" : [ "toggle[17]", "toggle[17]", 0 ],
-			"obj-2::obj-71" : [ "live.dial[19]", "feedback", 0 ],
-			"obj-28::obj-6" : [ "live.slider[26]", "seed.w", 0 ],
-			"obj-2::obj-61::obj-69" : [ "LinLog", "LinLog", 0 ],
-			"obj-29::obj-61" : [ "umenu[8]", "umenu", 0 ],
-			"obj-2::obj-38" : [ "live.dial[16]", "noise_cut", 0 ],
-			"obj-2::obj-144::obj-29" : [ "Range", "wavefolder", 0 ],
-			"obj-47::obj-2::obj-61" : [ "umenu[11]", "umenu", 0 ],
-			"obj-10::obj-10" : [ "live.slider[12]", "live.slider[10]", 0 ],
-			"obj-97" : [ "scene1 _opacity[1]", "container1 _opacity", 0 ],
-			"obj-2::obj-126::obj-59" : [ "filter_mode", "filter_mode", 0 ],
-			"obj-2::obj-126::obj-95" : [ "Freq", "Freq", 0 ],
-			"obj-1::obj-2::obj-70" : [ "button[2]", "button[2]", 0 ],
-			"obj-2::obj-2" : [ "live.dial[18]", "noise cut", 0 ],
-			"obj-10::obj-11" : [ "live.slider[13]", "live.slider[10]", 0 ],
-			"obj-1::obj-2::obj-22::obj-83" : [ "function[1]", "function", 0 ],
-			"obj-28::obj-4" : [ "live.slider[28]", "seed.y", 0 ],
-			"obj-1::obj-2::obj-22::obj-21" : [ "toggle[22]", "toggle[21]", 0 ],
-			"obj-1::obj-54" : [ "button", "button", 0 ],
-			"obj-1::obj-2::obj-46" : [ "toggle[1]", "toggle[1]", 0 ],
-			"obj-2::obj-27" : [ "live.dial[1]", "thresh max", 0 ],
 			"obj-2::obj-126::obj-54" : [ "CV1", "CV1", 0 ],
-			"obj-18::obj-61" : [ "umenu[3]", "umenu", 0 ],
-			"obj-10::obj-57" : [ "toggle[18]", "toggle[18]", 0 ],
-			"obj-2::obj-9::obj-7" : [ "OutputRange[1]", "OutputRange", 0 ],
-			"obj-47::obj-145" : [ "live.slider[2]", "live.slider[2]", 0 ],
-			"obj-10::obj-4" : [ "live.slider[10]", "live.slider[10]", 0 ],
-			"obj-2::obj-6" : [ "live.gain~[1]", "gain/trim", 0 ],
-			"obj-67::obj-61" : [ "umenu[9]", "umenu", 0 ],
-			"obj-2::obj-200" : [ "live.gain~[2]", "input vol", 0 ],
-			"obj-2::obj-26" : [ "live.dial", "thresh min", 0 ],
-			"obj-2::obj-61::obj-7" : [ "display", "display", 0 ],
-			"obj-2::obj-144::obj-1" : [ "Bypass", "Bypass", 0 ],
-			"obj-2::obj-112" : [ "live.button", "live.button", 0 ],
-			"obj-47::obj-18::obj-61" : [ "umenu[10]", "umenu", 0 ],
-			"obj-70" : [ "container2 _opacity[1]", "container2 _opacity", 0 ],
-			"obj-10::obj-50" : [ "toggle[16]", "toggle[16]", 0 ],
-			"obj-2::obj-9::obj-129" : [ "Interval[1]", "Interval", 0 ],
-			"obj-1::obj-2::obj-38" : [ "toggle", "toggle", 0 ],
-			"obj-68" : [ "live.slider[1]", "container0 _opacity", 0 ],
-			"obj-2::obj-126::obj-98" : [ "Gain", "Gain", 0 ],
-			"obj-3::obj-61" : [ "umenu[7]", "umenu", 0 ],
-			"obj-2::obj-41" : [ "live.dial[17]", "amp_vol", 0 ],
+			"obj-2::obj-2" : [ "live.dial[18]", "noise cut", 0 ],
+			"obj-28::obj-6" : [ "live.slider[26]", "seed.w", 0 ],
+			"obj-2::obj-9::obj-33" : [ "InputRange[1]", "InputRange", 0 ],
+			"obj-2::obj-126::obj-59" : [ "filter_mode", "filter_mode", 0 ],
 			"obj-28::obj-5" : [ "live.slider[27]", "seed.z", 0 ],
-			"obj-2::obj-126::obj-63" : [ "CV3", "CV3", 0 ],
+			"obj-28::obj-4" : [ "live.slider[28]", "seed.y", 0 ],
+			"obj-28::obj-3" : [ "live.slider[29]", "seed.x", 0 ],
+			"obj-67::obj-61" : [ "umenu[9]", "umenu", 0 ],
+			"obj-10::obj-57" : [ "toggle[18]", "toggle[18]", 0 ],
+			"obj-18::obj-61" : [ "umenu[3]", "umenu", 0 ],
+			"obj-2::obj-126::obj-95" : [ "Freq", "Freq", 0 ],
+			"obj-2::obj-144::obj-1" : [ "Bypass", "Bypass", 0 ],
+			"obj-2::obj-38" : [ "live.dial[16]", "noise_cut", 0 ],
+			"obj-1::obj-2::obj-38" : [ "toggle", "toggle", 0 ],
+			"obj-1::obj-2::obj-68" : [ "button[1]", "button[1]", 0 ],
+			"obj-2::obj-6" : [ "live.gain~[1]", "gain/trim", 0 ],
 			"obj-1::obj-2::obj-112" : [ "number", "number", 0 ],
+			"obj-2::obj-9::obj-129" : [ "Interval[1]", "Interval", 0 ],
+			"obj-1::obj-2::obj-22::obj-21" : [ "toggle[22]", "toggle[21]", 0 ],
+			"obj-10::obj-50" : [ "toggle[16]", "toggle[16]", 0 ],
+			"obj-10::obj-8" : [ "live.slider[11]", "live.slider[10]", 0 ],
+			"obj-2::obj-9::obj-7" : [ "OutputRange[1]", "OutputRange", 0 ],
+			"obj-70" : [ "container2 _opacity[1]", "container2 _opacity", 0 ],
+			"obj-2::obj-126::obj-51" : [ "CV2", "CV2", 0 ],
+			"obj-2::obj-27" : [ "live.dial[1]", "thresh max", 0 ],
+			"obj-2::obj-26" : [ "live.dial", "thresh min", 0 ],
+			"obj-2::obj-126::obj-98" : [ "Gain", "Gain", 0 ],
+			"obj-2::obj-112" : [ "live.button", "live.button", 0 ],
+			"obj-2::obj-61::obj-7" : [ "display", "display", 0 ],
+			"obj-1::obj-2::obj-22::obj-83" : [ "function[1]", "function", 0 ],
+			"obj-10::obj-3" : [ "toggle[20]", "toggle[18]", 0 ],
+			"obj-29::obj-61" : [ "umenu[8]", "umenu", 0 ],
+			"obj-10::obj-10" : [ "live.slider[12]", "live.slider[10]", 0 ],
+			"obj-47::obj-18::obj-61" : [ "umenu[10]", "umenu", 0 ],
+			"obj-68" : [ "live.slider[1]", "container0 _opacity", 0 ],
+			"obj-10::obj-85" : [ "toggle[19]", "toggle[18]", 0 ],
+			"obj-2::obj-61::obj-69" : [ "LinLog", "LinLog", 0 ],
+			"obj-2::obj-126::obj-11" : [ "Resonance", "Res", 0 ],
+			"obj-1::obj-2::obj-46" : [ "toggle[1]", "toggle[1]", 0 ],
+			"obj-2::obj-200" : [ "live.gain~[2]", "input vol", 0 ],
 			"obj-2::obj-126::obj-55" : [ "power", "power", 0 ],
+			"obj-2::obj-5" : [ "live.gain~", "note_on", 0 ],
+			"obj-1::obj-2::obj-70" : [ "button[2]", "button[2]", 0 ],
+			"obj-2::obj-45" : [ "live.numbox", "live.numbox", 0 ],
+			"obj-3::obj-61" : [ "umenu[7]", "umenu", 0 ],
+			"obj-47::obj-145" : [ "live.slider[2]", "live.slider[2]", 0 ],
+			"obj-2::obj-71" : [ "live.dial[19]", "feedback", 0 ],
+			"obj-10::obj-55" : [ "toggle[17]", "toggle[17]", 0 ],
+			"obj-10::obj-11" : [ "live.slider[13]", "live.slider[10]", 0 ],
+			"obj-2::obj-126::obj-63" : [ "CV3", "CV3", 0 ],
+			"obj-2::obj-41" : [ "live.dial[17]", "amp_vol", 0 ],
+			"obj-2::obj-126::obj-26" : [ "spectral", "spectral", 0 ],
+			"obj-2::obj-144::obj-29" : [ "Range", "wavefolder", 0 ],
+			"obj-1::obj-40" : [ "live.gain~[3]", "live.gain~", 0 ],
+			"obj-47::obj-2::obj-61" : [ "umenu[11]", "umenu", 0 ],
+			"obj-10::obj-4" : [ "live.slider[10]", "live.slider[10]", 0 ],
+			"obj-1::obj-2::obj-22::obj-19" : [ "function[10]", "function", 0 ],
+			"obj-1::obj-54" : [ "button", "button", 0 ],
+			"obj-97" : [ "scene1 _opacity[1]", "container1 _opacity", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -11146,28 +11147,28 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "main.js",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/nodejs",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/nodejs",
 				"patcherrelativepath" : "../nodejs",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "controller.json",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/data",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/data",
 				"patcherrelativepath" : "../data",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "shader_select.maxpat",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "posteffect_selector.maxpat",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -11187,69 +11188,69 @@
 , 			{
 				"name" : "compel0_1.maxpat",
 				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : "../../../../../../Max 8/Library",
+				"patcherrelativepath" : "../../../../../../../Max 8/Library",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "BPMmetro.maxpat",
 				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : "../../../../../../Max 8/Library",
+				"patcherrelativepath" : "../../../../../../../Max 8/Library",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "BPMmeter.maxpat",
 				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : "../../../../../../Max 8/Library",
+				"patcherrelativepath" : "../../../../../../../Max 8/Library",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "container.maxpat",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "SceneSelect.maxpat",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "AutoLyric.maxpat",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "autolyrics-max.js",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/nodejs",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/nodejs",
 				"patcherrelativepath" : "../nodejs",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "dictumenugenerator.maxpat",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "LyricSelector.maxpat",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "lyric_cellblock_setter.maxpat",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -11257,7 +11258,7 @@
 , 			{
 				"name" : "f3pb.maxpat",
 				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : "../../../../../../Max 8/Library",
+				"patcherrelativepath" : "../../../../../../../Max 8/Library",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -11281,7 +11282,7 @@
 			}
 , 			{
 				"name" : "ControllerPattrStorageSelector.maxpat",
-				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
+				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
