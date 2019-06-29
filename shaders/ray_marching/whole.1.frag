@@ -1,8 +1,9 @@
 #version 150
-uniform vec2  resolution;
-uniform vec2  mouse;
-uniform float time;
-uniform vec4 seed;
+uniform vec2  resolution;     // resolution (width, height)
+uniform vec2  mouse;          // mouse      (0.0 ~ 1.0)
+uniform float time;           // time       (1second == 1.0)
+uniform sampler2D backbuffer; // previous scene
+
 out vec4 mainColor;
 
 #define trans(x) (mod(x,5.)-2.5)
@@ -33,7 +34,7 @@ float distanceFunction(vec3 p) {
 void main(void) {
 	vec2 p = (gl_FragCoord.xy * 2. - resolution) / min(resolution.x, resolution.y);
 	
-	vec3 camera_pos = vec3 (0.0, 0., 2.0 + time + seed.y);
+	vec3 camera_pos = vec3 (0.0, 0., 2.0 + time);
 	
 	float screen_z = 1.;
 	vec3 ray_direction = normalize(vec3(p, screen_z));
@@ -46,9 +47,9 @@ void main(void) {
 		float dist = distanceFunction(ray_pos);
 		dist = max(abs(dist), 0.02);
 		
-		ray_direction = normalize(ray_direction + trans(ray_pos) * 0.02 * sin(time * 1.0) * step(-0.05, -dist));
+		ray_direction = normalize(ray_direction + trans(ray_pos) * 0.02 * sin(time * 0.02) * step(-0.05, -dist));
 		
-		col += 0.05;
+		col += 0.005;
 		depth += dist* 0.5;
 	}
 	
