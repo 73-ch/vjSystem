@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 2,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -212,7 +212,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 167.0, 418.0, 79.0, 22.0 ],
-					"text" : "0.076302"
+					"text" : "0.320327"
 				}
 
 			}
@@ -227,7 +227,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -284,10 +284,10 @@
 									"patching_rect" : [ 237.0, 288.0, 41.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "live.dial",
-											"parameter_shortname" : "live.dial",
 											"parameter_type" : 0,
-											"parameter_unitstyle" : 0
+											"parameter_unitstyle" : 0,
+											"parameter_longname" : "live.dial",
+											"parameter_shortname" : "live.dial"
 										}
 
 									}
@@ -391,11 +391,11 @@
 									"patching_rect" : [ 516.7381591796875, 26.0, 20.0, 20.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
+											"parameter_type" : 2,
 											"parameter_longname" : "toggle[21]",
-											"parameter_mmax" : 1.0,
+											"parameter_mmax" : 1,
 											"parameter_shortname" : "toggle[21]",
-											"parameter_enum" : [ "off", "on" ],
-											"parameter_type" : 2
+											"parameter_enum" : [ "off", "on" ]
 										}
 
 									}
@@ -418,10 +418,10 @@
 									"range" : [ 0.0, 6.28000020980835 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
+											"parameter_type" : 3,
 											"parameter_longname" : "function",
 											"parameter_invisible" : 1,
-											"parameter_shortname" : "function",
-											"parameter_type" : 3
+											"parameter_shortname" : "function"
 										}
 
 									}
@@ -464,7 +464,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 190.0, 18.0, 50.0, 35.0 ],
-									"text" : "0.046851"
+									"text" : "0.329989"
 								}
 
 							}
@@ -1605,11 +1605,11 @@
 					"presentation_rect" : [ 139.0, 51.0, 39.0, 95.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 1,
 							"parameter_longname" : "live.slider[4]",
 							"parameter_mmax" : 1.0,
-							"parameter_shortname" : "seed.w",
-							"parameter_type" : 0,
-							"parameter_unitstyle" : 1
+							"parameter_shortname" : "seed.w"
 						}
 
 					}
@@ -1631,11 +1631,11 @@
 					"presentation_rect" : [ 98.0, 51.0, 39.0, 95.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 1,
 							"parameter_longname" : "live.slider[3]",
 							"parameter_mmax" : 1.0,
-							"parameter_shortname" : "seed.z",
-							"parameter_type" : 0,
-							"parameter_unitstyle" : 1
+							"parameter_shortname" : "seed.z"
 						}
 
 					}
@@ -1657,11 +1657,11 @@
 					"presentation_rect" : [ 57.0, 51.0, 39.0, 95.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 1,
 							"parameter_longname" : "live.slider[2]",
 							"parameter_mmax" : 1.0,
-							"parameter_shortname" : "seed.y",
-							"parameter_type" : 0,
-							"parameter_unitstyle" : 1
+							"parameter_shortname" : "seed.y"
 						}
 
 					}
@@ -1683,11 +1683,11 @@
 					"presentation_rect" : [ 16.0, 51.0, 39.0, 95.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 1,
 							"parameter_longname" : "live.slider[1]",
 							"parameter_mmax" : 1.0,
-							"parameter_shortname" : "seed.x",
-							"parameter_type" : 0,
-							"parameter_unitstyle" : 1
+							"parameter_shortname" : "seed.x"
 						}
 
 					}
@@ -1708,7 +1708,7 @@
 					"presentation" : 1,
 					"presentation_linecount" : 2,
 					"presentation_rect" : [ 57.0, 19.0, 118.0, 35.0 ],
-					"text" : "ray_marching/whole.frag"
+					"text" : "ray_marching/distance_colorful.frag"
 				}
 
 			}
@@ -2224,13 +2224,13 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-6" : [ "live.slider[4]", "seed.w", 0 ],
-			"obj-27::obj-52" : [ "live.dial", "live.dial", 0 ],
-			"obj-3" : [ "live.slider[1]", "seed.x", 0 ],
-			"obj-4" : [ "live.slider[2]", "seed.y", 0 ],
-			"obj-27::obj-43" : [ "toggle[21]", "toggle[21]", 0 ],
-			"obj-5" : [ "live.slider[3]", "seed.z", 0 ],
 			"obj-27::obj-19" : [ "function", "function", 0 ],
+			"obj-27::obj-52" : [ "live.dial", "live.dial", 0 ],
+			"obj-6" : [ "live.slider[4]", "seed.w", 0 ],
+			"obj-4" : [ "live.slider[2]", "seed.y", 0 ],
+			"obj-3" : [ "live.slider[1]", "seed.x", 0 ],
+			"obj-5" : [ "live.slider[3]", "seed.z", 0 ],
+			"obj-27::obj-43" : [ "toggle[21]", "toggle[21]", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -2252,7 +2252,7 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "shader_select.maxpat",
-				"bootpath" : "~/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
+				"bootpath" : "~/Documents/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1

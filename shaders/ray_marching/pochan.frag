@@ -56,8 +56,8 @@ vec3 foldSphere(vec3 p) {
 
 vec3 transSphere(vec3 p) {
     vec3 dp = foldSphere(p);
-    return dp + vec3(sin(sin(time * .25) * PI_2), (-exp(cos(time * 0.6) + 1.0)) * (1.0 + seed.z* 0.25) + 4., cos(pow(sin(time * .5),.3) * PI_2));
-    // return dp + vec3(sin(noise(vec2(sin(time * 1.), length(p) * step(length(p), 10.))) * PI_2), (-exp(cos(time * 0.1) + 1.0)) * 1.0 + 4., 0.);
+    // return dp + vec3(sin(sin(time * .25) * PI_2), (-exp(cos(time * 0.6) + 1.0)) * (1.0 + seed.z* 0.25) + 4., cos(pow(sin(time * .5),.3) * PI_2));
+    return dp + vec3(sin(noise(vec2(sin(time * 1.), length(p) * step(length(p), 10.))) * PI_2), (-exp(cos(time * 0.1) + 1.0)) * 1.0 + 4., 0.);
   
     // return p;
 }
