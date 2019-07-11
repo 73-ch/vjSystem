@@ -27,9 +27,14 @@ class ofApp : public ofBaseApp {
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    ofxOscReceiver receiver;
+    
+    // scenes
+    BasicInfos info;
     SceneManager manager;
     
+    
+    // post processing
+    array<ofFbo, 2> pingPong;
     ofShader post_processing;
     string pvs_text;
     string pfs_text;
@@ -42,9 +47,8 @@ class ofApp : public ofBaseApp {
     
     ofImage image;
     
-    BasicInfos info;
-    array<ofFbo, 2> pingPong;
     
+    // plane adjust
     ofMesh adjust_mesh;
     
     vector<glm::vec2> adjust_sizes;
@@ -52,5 +56,7 @@ class ofApp : public ofBaseApp {
     float adjust_scale = 1.0;
     glm::vec2 adjust_offset;
 
+    
+    // output to syphon
     ofxSyphonServer syphon;
 };
