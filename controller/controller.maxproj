@@ -2,10 +2,10 @@
 	"name" : "controller",
 	"version" : 1,
 	"creationdate" : 3624367987,
-	"modificationdate" : 3640430479,
+	"modificationdate" : 3645939517,
 	"viewrect" : [ 131.0, 45.0, 681.0, 986.0 ],
 	"autoorganize" : 1,
-	"hideprojectwindow" : 0,
+	"hideprojectwindow" : 1,
 	"showdependencies" : 1,
 	"autolocalize" : 0,
 	"contents" : 	{
@@ -52,6 +52,11 @@
 			}
 ,
 			"lyric_cellblock_setter.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"ControllerPattrStorageSelector.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -107,11 +112,6 @@
 			}
 ,
 			"PhysicsLyric.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
-,
-			"ControllerPattrStorageSelector.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}

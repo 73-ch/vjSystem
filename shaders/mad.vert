@@ -109,9 +109,9 @@ void main() {
     vec3 mad = createMad(wordCreateInput);
     vec3 and = createAandD(wordCreateInput);
     vec3 mast = createMast(wordCreateInput);
-    // vec3 tsukuba = createTsukuba
+    vec3 tsukuba = createTsukuba(wordCreateInput);
 
-    vec3 text = mix(and, mast, seed.x);
+    vec3 text = tsukuba;
 
     float s_size = 20 * seed.x + floor(sin(time) * 100.)*0.01;
     vec3 cylinder =  createCylinder(vf, s_size);
