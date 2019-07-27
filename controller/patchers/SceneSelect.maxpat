@@ -89,7 +89,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-61",
-					"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop", ",", "TrainShadow", ",", ",", "PointShadowBox", ",", "RayMarching" ],
+					"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop", ",", "TrainShadow", ",", ",", "PointShadowBox", ",", "RayMarching", ",", "ItanoCircus" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -101,9 +101,9 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "umenu[3]",
-							"parameter_mmax" : 8,
+							"parameter_mmax" : 9,
 							"parameter_shortname" : "umenu",
-							"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop", "TrainShadow", "PointShadowBox", "RayMarching" ],
+							"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop", "TrainShadow", "PointShadowBox", "RayMarching", "ItanoCircus" ],
 							"parameter_type" : 2
 						}
 

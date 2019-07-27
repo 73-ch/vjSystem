@@ -52,6 +52,8 @@
 		36BBEA581081D7DD198EB5B7 /* btDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC60ADB77342C27371B20AF5 /* btDispatcher.cpp */; };
 		38ADB93B3DEF5989046B3FBD /* PrimitiveRoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEF1CD9D4ED13E672222BB3E /* PrimitiveRoom.cpp */; };
 		38CE9694D5F4EA7E2524302E /* btConvexCast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACA3D0C8A3ED34272047B0DF /* btConvexCast.cpp */; };
+		390D596A22EC78260045E7BE /* ItanoCircus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 390D596822EC78260045E7BE /* ItanoCircus.cpp */; };
+		390D596D22EC79460045E7BE /* Trail.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 390D596B22EC79460045E7BE /* Trail.cpp */; };
 		396DACF422C637D6003A17B0 /* RayMarching.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 396DACF222C637D6003A17B0 /* RayMarching.cpp */; };
 		3B2CBEF0B6128CADE347C05B /* btMultimaterialTriangleMeshShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5888434A0909403A4A8B6542 /* btMultimaterialTriangleMeshShape.cpp */; };
 		3B8120368B4FCCD80883BAF3 /* ofxAssimpAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36068D6C1D6D412786A5C4C1 /* ofxAssimpAnimation.cpp */; };
@@ -352,6 +354,10 @@
 		376684BA29774FBF8C1AA040 /* gim_radixsort.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = gim_radixsort.h; path = ../../../addons/ofxBullet/libs/bullet2.8.2/include/BulletCollision/Gimpact/gim_radixsort.h; sourceTree = SOURCE_ROOT; };
 		38554466D302FE9B6E512AF6 /* btMinMax.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = btMinMax.h; path = ../../../addons/ofxBullet/libs/bullet2.8.2/include/LinearMath/btMinMax.h; sourceTree = SOURCE_ROOT; };
 		38DD89D2309FBC144EFC9F42 /* btContactProcessing.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = btContactProcessing.h; path = ../../../addons/ofxBullet/libs/bullet2.8.2/include/BulletCollision/Gimpact/btContactProcessing.h; sourceTree = SOURCE_ROOT; };
+		390D596822EC78260045E7BE /* ItanoCircus.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ItanoCircus.cpp; sourceTree = "<group>"; };
+		390D596922EC78260045E7BE /* ItanoCircus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItanoCircus.h; sourceTree = "<group>"; };
+		390D596B22EC79460045E7BE /* Trail.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Trail.cpp; sourceTree = "<group>"; };
+		390D596C22EC79460045E7BE /* Trail.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Trail.hpp; sourceTree = "<group>"; };
 		39135047C1CF86E03CA81470 /* btMatrix3x3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = btMatrix3x3.h; path = ../../../addons/ofxBullet/libs/bullet2.8.2/include/LinearMath/btMatrix3x3.h; sourceTree = SOURCE_ROOT; };
 		39157C47D15F25CBEF1E29D3 /* ofxBulletWorldRigid.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxBulletWorldRigid.cpp; path = ../../../addons/ofxBullet/src/ofxBulletWorldRigid.cpp; sourceTree = SOURCE_ROOT; };
 		3933A48B89278580FD31FDBE /* btRandom.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = btRandom.h; path = ../../../addons/ofxBullet/libs/bullet2.8.2/include/LinearMath/btRandom.h; sourceTree = SOURCE_ROOT; };
@@ -1161,6 +1167,17 @@
 			name = libs;
 			sourceTree = "<group>";
 		};
+		390D596722EC76EB0045E7BE /* ItanoCircus */ = {
+			isa = PBXGroup;
+			children = (
+				390D596822EC78260045E7BE /* ItanoCircus.cpp */,
+				390D596922EC78260045E7BE /* ItanoCircus.h */,
+				390D596B22EC79460045E7BE /* Trail.cpp */,
+				390D596C22EC79460045E7BE /* Trail.hpp */,
+			);
+			path = ItanoCircus;
+			sourceTree = "<group>";
+		};
 		396DACF122C637C8003A17B0 /* RayMarching */ = {
 			isa = PBXGroup;
 			children = (
@@ -1785,6 +1802,7 @@
 		B89229C0696BBC314DF43718 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				390D596722EC76EB0045E7BE /* ItanoCircus */,
 				396DACF122C637C8003A17B0 /* RayMarching */,
 				310A667AB51058DFE6BF5F6D /* ShaderArt */,
 				BE4AC0DE5123EBC56C729147 /* KakkuriText */,
@@ -2652,6 +2670,7 @@
 				314FA66C599A22F8405D6871 /* btConvexPolyhedron.cpp in Sources */,
 				2DB04F6886183584C88E18B8 /* btConvexShape.cpp in Sources */,
 				11693E952036145A3CFA60C5 /* btConvexTriangleMeshShape.cpp in Sources */,
+				390D596D22EC79460045E7BE /* Trail.cpp in Sources */,
 				0042A5AA39E1C2F11DF8C355 /* btCylinderShape.cpp in Sources */,
 				890FEAB62511C010A6CE0502 /* btEmptyShape.cpp in Sources */,
 				64AC16BD963CB88D2675C3B3 /* btHeightfieldTerrainShape.cpp in Sources */,
@@ -2756,6 +2775,7 @@
 				77B82690CE6B39B5612E276D /* ofxBulletEllipsoid.cpp in Sources */,
 				899BB31E060EF6090C3E8FCF /* ofxBulletPatch.cpp in Sources */,
 				9044B5916AB1558FC8152751 /* ofxBulletRigidBody.cpp in Sources */,
+				390D596A22EC78260045E7BE /* ItanoCircus.cpp in Sources */,
 				098F82CFBF2F06332E3A94ED /* ofxBulletRope.cpp in Sources */,
 				575AF9B9FFDB69F9FBF2107F /* ofxBulletSoftBody.cpp in Sources */,
 				E47C31A80E2037AEA00B5349 /* ofxBulletSoftTriMesh.cpp in Sources */,
