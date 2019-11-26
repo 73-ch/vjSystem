@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 4,
+			"minor" : 1,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 104.0, 875.0, 653.0 ],
+		"rect" : [ 585.0, 163.0, 875.0, 653.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,42 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-34",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 436.0, 90.0, 89.0, 22.0 ],
+					"text" : "r seed_random"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-32",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 520.0, 284.0, 81.0, 22.0 ],
+					"text" : "r audio_event"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-30",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 525.0, 322.0, 59.0, 22.0 ],
+					"text" : "random 8"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-42",
 					"maxclass" : "newobj",
@@ -93,7 +129,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 264.0, 128.0, 50.0, 22.0 ],
-					"text" : "0.5"
+					"text" : "0.25"
 				}
 
 			}
@@ -136,12 +172,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-23",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 492.0, 192.0, 50.0, 22.0 ],
-					"text" : "1."
+					"patching_rect" : [ 492.0, 192.0, 50.0, 35.0 ],
+					"text" : "0.507528"
 				}
 
 			}
@@ -261,8 +298,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 200.13092041015625, 2.0, 89.0, 22.0 ],
-					"text" : "r audio_bang_r"
+					"patching_rect" : [ 200.13092041015625, 2.0, 81.0, 22.0 ],
+					"text" : "r audio_event"
 				}
 
 			}
@@ -439,12 +476,12 @@
 					"patching_rect" : [ 265.0, 364.0, 50.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ 237 ],
 							"parameter_speedlim" : 100.0,
 							"parameter_shortname" : "number",
 							"parameter_type" : 1,
 							"parameter_longname" : "number[1]",
-							"parameter_invisible" : 1
+							"parameter_invisible" : 1,
+							"parameter_initial" : [ 237 ]
 						}
 
 					}
@@ -466,12 +503,12 @@
 					"patching_rect" : [ 310.0, 364.0, 50.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ 237 ],
 							"parameter_speedlim" : 100.0,
 							"parameter_shortname" : "number",
 							"parameter_type" : 1,
 							"parameter_longname" : "number",
-							"parameter_invisible" : 1
+							"parameter_invisible" : 1,
+							"parameter_initial" : [ 237 ]
 						}
 
 					}
@@ -998,8 +1035,29 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-43", 0 ],
+					"source" : [ "obj-30", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-30", 0 ],
+					"source" : [ "obj-32", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
 					"source" : [ "obj-33", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-28", 0 ],
+					"source" : [ "obj-34", 0 ]
 				}
 
 			}
@@ -1173,12 +1231,12 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-13" : [ "live.dial[20]", "fall_speed", 0 ],
+			"obj-43" : [ "number", "number", 0 ],
+			"obj-10" : [ "live.dial[15]", "time_scale", 0 ],
 			"obj-20" : [ "live.dial[22]", "probability", 0 ],
 			"obj-15" : [ "live.dial[21]", "trail_rate", 0 ],
-			"obj-43" : [ "number", "number", 0 ],
-			"obj-13" : [ "live.dial[20]", "fall_speed", 0 ],
 			"obj-44" : [ "number[1]", "number", 0 ],
-			"obj-10" : [ "live.dial[15]", "time_scale", 0 ],
 			"parameterbanks" : 			{
 
 			}

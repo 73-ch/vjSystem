@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 2,
+			"minor" : 1,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -127,6 +127,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-27",
+					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -223,7 +224,7 @@
 			}
 , 			{
 				"box" : 				{
-					"addpoints_with_curve" : [ 0.0, 0.0, 2, 0.0, 199.468085106382972, 0.72, 2, 0.0, 300.531914893617, 0.44, 0, 0.0, 343.085106382978722, 0.24, 0, 0.0, 369.680851063829778, 0.0, 2, 0.0, 598.404255319148888, 0.0, 2, 0.0, 837.765957446808557, 1.0, 2, 0.0, 1000.0, 1.0, 2, 0.0 ],
+					"addpoints_with_curve" : [ 0.0, 0.0, 2, 0.0, 199.468085106382972, 0.72, 2, 0.0, 300.531914893617, 0.44, 0, 0.0, 343.085106382978722, 0.24, 0, 0.0, 369.680851063829778, 0.0, 2, 0.0, 513.297872340425556, 0.786666666666667, 2, 0.0, 598.404255319148888, 0.0, 2, 0.0, 837.765957446808557, 1.0, 2, 0.0, 1000.0, 1.0, 2, 0.0 ],
 					"id" : "obj-19",
 					"maxclass" : "function",
 					"mode" : 1,
@@ -366,14 +367,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 2,
+							"minor" : 1,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 849.0, 1331.0, 274.0 ],
+						"rect" : [ 344.0, 766.0, 1331.0, 274.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -607,10 +608,10 @@
 									"range" : [ 0.0, 6.28000020980835 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "function[9]",
-											"parameter_invisible" : 1,
 											"parameter_shortname" : "function",
-											"parameter_type" : 3
+											"parameter_type" : 3,
+											"parameter_longname" : "function[9]",
+											"parameter_invisible" : 1
 										}
 
 									}
@@ -709,10 +710,10 @@
 									"patching_rect" : [ 329.0, 15.0, 41.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "live.dial[14]",
 											"parameter_shortname" : "live.dial[13]",
 											"parameter_type" : 0,
-											"parameter_unitstyle" : 0
+											"parameter_unitstyle" : 0,
+											"parameter_longname" : "live.dial[14]"
 										}
 
 									}
@@ -843,10 +844,10 @@
 									"range" : [ 0.0, 6.28000020980835 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "function[8]",
-											"parameter_invisible" : 1,
 											"parameter_shortname" : "function",
-											"parameter_type" : 3
+											"parameter_type" : 3,
+											"parameter_longname" : "function[8]",
+											"parameter_invisible" : 1
 										}
 
 									}
@@ -1351,6 +1352,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-17", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
@@ -1532,8 +1540,8 @@
  ],
 		"parameters" : 		{
 			"obj-50::obj-4" : [ "live.dial[14]", "live.dial[13]", 0 ],
-			"obj-50::obj-19" : [ "function[8]", "function", 0 ],
 			"obj-50::obj-28" : [ "function[9]", "function", 0 ],
+			"obj-50::obj-19" : [ "function[8]", "function", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -1543,7 +1551,7 @@
 		"dependency_cache" : [ 			{
 				"name" : "f3pb.maxpat",
 				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : "../../../../../../../Max 8/Library",
+				"patcherrelativepath" : "../../../../../../Max 8/Library",
 				"type" : "JSON",
 				"implicit" : 1
 			}

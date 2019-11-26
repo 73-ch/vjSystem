@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 5,
+			"minor" : 1,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 539.0, 391.0, 986.0, 371.0 ],
+		"rect" : [ 427.0, 158.0, 986.0, 371.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,68 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-74",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 256.0, 240.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 203.0, 11.999996185302734, 55.5, 55.5 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-65",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 403.0, 213.0, 101.0, 22.0 ],
+					"text" : "write sample.wav"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-62",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 343.0, 168.333333333333314, 34.0, 22.0 ],
+					"text" : "write"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-58",
+					"maxclass" : "newobj",
+					"numinlets" : 4,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 26.0, 343.333333333333258, 97.0, 22.0 ],
+					"text" : "record~ record 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-57",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 13.0, 368.583333333333258, 123.0, 22.0 ],
+					"text" : "buffer~ record 5000 2"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"bgmode" : 0,
 					"border" : 0,
@@ -95,13 +157,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-45",
-					"linecount" : 28,
+					"linecount" : 104,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1325.0, 572.0, 41.0, 384.0 ],
-					"text" : "fetch \"Aoi - サカナクション\" \"ルーキー - サカナクション\" \"アイデンティティ - サカナクション\" \"R.E.M. - Young Juvenile Youth\""
+					"patching_rect" : [ 1325.0, 572.0, 43.0, 1403.0 ],
+					"text" : "fetch \"Aoi - サカナクション\" \"ルーキー - サカナクション\" \"アイデンティティ - サカナクション\" \"R.E.M. - Young Juvenile Youth\" \"無線LANばり便利 - ヤバイTシャツ屋さん\" \"無線LANばり便利 - ヤバイTシャツ屋さん\" \"無線LANばり便利 - ヤバイTシャツ屋さん\" \"Down Town - 星野源\" \"Down Town - 星野源\" \"Down Town - 星野源\" \"Down Town - 星野源\" \"Down Town - 星野源\" \"Shake Your Body (Down To The Ground) - THE JACKSONS\" \"Shake Your Body (Down To The Ground) - THE JACKSONS\" \"長く短い祭 - 椎名 林檎\""
 				}
 
 			}
@@ -366,13 +428,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-198",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 970.0, 98.0, 145.0, 35.0 ],
-					"text" : "R.E.M. \"Young Juvenile Youth\""
+					"patching_rect" : [ 970.0, 98.0, 145.0, 23.0 ],
+					"text" : "長く短い祭 \"椎名 林檎\""
 				}
 
 			}
@@ -624,8 +685,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1023.0, 330.0, 190.0, 22.0 ],
-					"text" : "R.E.M. \"Young Juvenile Youth\""
+					"patching_rect" : [ 1023.0, 330.0, 190.0, 23.0 ],
+					"text" : "長く短い祭 \"椎名 林檎\""
 				}
 
 			}
@@ -686,10 +747,10 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 701.0, 330.0, 190.0, 22.0 ],
+					"patching_rect" : [ 701.0, 330.0, 190.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 265.5, 115.499992370605469, 190.0, 22.0 ],
-					"text" : "R.E.M. \"Young Juvenile Youth\""
+					"presentation_rect" : [ 265.5, 115.499992370605469, 190.0, 23.0 ],
+					"text" : "長く短い祭 \"椎名 林檎\""
 				}
 
 			}
@@ -767,7 +828,7 @@
 					"patching_rect" : [ 1013.0, 205.0, 175.0, 25.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 582.66668701171875, 61.0, 175.0, 39.0 ],
-					"text" : "\"Young Juvenile Youth\""
+					"text" : "\"椎名 林檎\""
 				}
 
 			}
@@ -782,7 +843,7 @@
 					"patching_rect" : [ 750.5, 205.0, 175.0, 25.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 327.0, 61.0, 175.0, 39.0 ],
-					"text" : "R.E.M."
+					"text" : "長く短い祭"
 				}
 
 			}
@@ -1039,7 +1100,7 @@
 				"box" : 				{
 					"fontsize" : 24.0,
 					"id" : "obj-90",
-					"items" : "<empty>",
+					"items" : [ "長く短い祭 - 椎名林檎", ",", "長く短い祭 - 椎名林檎と浮雲" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1163,14 +1224,14 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 146.5, 21.833333333333314, 79.0, 79.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 142.5, -11.500003814697266, 79.0, 79.0 ],
+					"presentation_rect" : [ 142.5, 11.999996185302734, 55.5, 55.5 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_mmax" : 1,
 							"parameter_shortname" : "button",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
-							"parameter_longname" : "button"
+							"parameter_longname" : "button",
+							"parameter_mmax" : 1
 						}
 
 					}
@@ -1205,12 +1266,12 @@
 					"presentation_rect" : [ 29.0, 18.833330154418945, 48.0, 136.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_mmax" : 6.0,
 							"parameter_shortname" : "live.gain~",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
-							"parameter_longname" : "live.gain~[3]"
+							"parameter_longname" : "live.gain~[3]",
+							"parameter_mmax" : 6.0
 						}
 
 					}
@@ -1235,7 +1296,7 @@
 				"box" : 				{
 					"fontsize" : 24.0,
 					"id" : "obj-36",
-					"items" : "R.E.M. - Young Juvenile Youth",
+					"items" : "長く短い祭 - 椎名 林檎",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1350,20 +1411,6 @@
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
-					"id" : "obj-33",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 26.0, 336.833333333333314, 74.0, 23.0 ],
-					"text" : "sfrecord~ 2"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-13",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -1397,25 +1444,10 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 1
 					}
 ,
 					"text" : "node.script autolyrics-max.js @watch 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-9",
-					"linecount" : 3,
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 357.5, 174.833328247070312, 619.0, 49.0 ],
-					"text" : "open /Users/Namikawa/Documents/openframeworks/of_v0.10.1_osx_release/apps/myApps/vjSystem/controller/audio/sample.wav wave"
 				}
 
 			}
@@ -1468,6 +1500,18 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1342.5, 297.0, 35.0, 22.0 ],
 					"text" : "set 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-78",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 327.0, 338.583332999999982, 35.0, 22.0 ],
+					"text" : "clear"
 				}
 
 			}
@@ -1853,30 +1897,21 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 1 ],
+					"destination" : [ "obj-58", 1 ],
 					"source" : [ "obj-40", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
+					"destination" : [ "obj-58", 0 ],
 					"source" : [ "obj-40", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
-					"order" : 1,
-					"source" : [ "obj-41", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-63", 0 ],
-					"order" : 0,
 					"source" : [ "obj-41", 0 ]
 				}
 
@@ -2016,16 +2051,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-83", 0 ],
-					"source" : [ "obj-52", 1 ]
+					"destination" : [ "obj-78", 0 ],
+					"order" : 1,
+					"source" : [ "obj-52", 2 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
-					"order" : 1,
-					"source" : [ "obj-52", 2 ]
+					"destination" : [ "obj-83", 0 ],
+					"source" : [ "obj-52", 1 ]
 				}
 
 			}
@@ -2066,6 +2101,27 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-57", 0 ],
+					"source" : [ "obj-62", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"source" : [ "obj-63", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-57", 0 ],
+					"source" : [ "obj-65", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
 					"source" : [ "obj-66", 0 ]
 				}
@@ -2101,6 +2157,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-42", 0 ],
+					"source" : [ "obj-74", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-193", 0 ],
 					"source" : [ "obj-75", 1 ]
 				}
@@ -2122,8 +2185,23 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-57", 0 ],
+					"source" : [ "obj-78", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-62", 0 ],
+					"order" : 0,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-87", 0 ],
-					"order" : 1,
+					"order" : 2,
 					"source" : [ "obj-83", 0 ]
 				}
 
@@ -2131,7 +2209,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-88", 0 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-83", 0 ]
 				}
 
@@ -2140,20 +2218,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-41", 0 ],
 					"source" : [ "obj-87", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-42", 0 ],
-					"source" : [ "obj-88", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
-					"source" : [ "obj-9", 0 ]
 				}
 
 			}

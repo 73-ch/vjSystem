@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 2,
+			"minor" : 1,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -598,7 +598,7 @@
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "toggle[15]",
-							"parameter_mmax" : 1.0
+							"parameter_mmax" : 1
 						}
 
 					}
@@ -648,7 +648,7 @@
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "toggle[14]",
-							"parameter_mmax" : 1.0
+							"parameter_mmax" : 1
 						}
 
 					}
@@ -698,7 +698,7 @@
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "toggle[13]",
-							"parameter_mmax" : 1.0
+							"parameter_mmax" : 1
 						}
 
 					}
@@ -748,7 +748,7 @@
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "toggle[12]",
-							"parameter_mmax" : 1.0
+							"parameter_mmax" : 1
 						}
 
 					}
@@ -798,7 +798,7 @@
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "toggle[11]",
-							"parameter_mmax" : 1.0
+							"parameter_mmax" : 1
 						}
 
 					}
@@ -848,7 +848,7 @@
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "toggle[10]",
-							"parameter_mmax" : 1.0
+							"parameter_mmax" : 1
 						}
 
 					}
@@ -898,7 +898,7 @@
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "toggle[9]",
-							"parameter_mmax" : 1.0
+							"parameter_mmax" : 1
 						}
 
 					}
@@ -948,7 +948,7 @@
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "toggle[8]",
-							"parameter_mmax" : 1.0
+							"parameter_mmax" : 1
 						}
 
 					}
@@ -986,7 +986,7 @@
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "toggle[7]",
-							"parameter_mmax" : 1.0
+							"parameter_mmax" : 1
 						}
 
 					}
@@ -1328,7 +1328,7 @@
 							"parameter_enum" : [ "NONE", "BOX_MESH", "BOX_WIREFRAME", "SPHERE_MESH", "SPHERE_WIREFRAME", "ABLETON_LOGO", "MAX", "ABLETON", "WINDOW1", "WINDOW2" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "umenu[4]",
-							"parameter_mmax" : 9.0
+							"parameter_mmax" : 9
 						}
 
 					}
@@ -2075,25 +2075,25 @@
 			"obj-38" : [ "live.dial[6]", "live.dial[6]", 0 ],
 			"obj-33" : [ "live.dial[2]", "live.dial[2]", 0 ],
 			"obj-41" : [ "live.dial[9]", "live.dial[6]", 0 ],
+			"obj-18" : [ "live.dial[11]", "live.dial[10]", 0 ],
 			"obj-55" : [ "toggle[10]", "toggle[7]", 0 ],
 			"obj-70" : [ "toggle[15]", "toggle[7]", 0 ],
-			"obj-3" : [ "umenu[4]", "umenu[4]", 0 ],
+			"obj-32" : [ "function[7]", "function", 0 ],
 			"obj-39" : [ "live.dial[7]", "live.dial[6]", 0 ],
-			"obj-89" : [ "live.dial[24]", "live.dial[24]", 0 ],
 			"obj-17" : [ "live.dial[12]", "live.dial[10]", 0 ],
 			"obj-46" : [ "toggle[8]", "toggle[7]", 0 ],
 			"obj-64" : [ "toggle[13]", "toggle[7]", 0 ],
 			"obj-75" : [ "live.dial[13]", "live.dial[2]", 0 ],
+			"obj-3" : [ "umenu[4]", "umenu[4]", 0 ],
 			"obj-34" : [ "live.dial[4]", "live.dial[2]", 0 ],
-			"obj-32" : [ "function[7]", "function", 0 ],
 			"obj-45" : [ "toggle[7]", "toggle[7]", 0 ],
+			"obj-89" : [ "live.dial[24]", "live.dial[24]", 0 ],
 			"obj-58" : [ "toggle[11]", "toggle[7]", 0 ],
 			"obj-78" : [ "live.slider[25]", "live.slider[25]", 0 ],
 			"obj-40" : [ "live.dial[8]", "live.dial[6]", 0 ],
 			"obj-52" : [ "toggle[9]", "toggle[7]", 0 ],
 			"obj-67" : [ "toggle[14]", "toggle[7]", 0 ],
 			"obj-35" : [ "live.dial[5]", "live.dial[2]", 0 ],
-			"obj-18" : [ "live.dial[11]", "live.dial[10]", 0 ],
 			"obj-19" : [ "live.dial[10]", "live.dial[10]", 0 ],
 			"parameterbanks" : 			{
 
@@ -2124,7 +2124,7 @@
 		"dependency_cache" : [ 			{
 				"name" : "f3pb.maxpat",
 				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : "../../../../../../../Max 8/Library",
+				"patcherrelativepath" : "../../../../../../Max 8/Library",
 				"type" : "JSON",
 				"implicit" : 1
 			}
