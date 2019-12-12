@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 5,
+			"minor" : 1,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 49.0, 580.0, 1057.0, 586.0 ],
+		"rect" : [ 49.0, 500.0, 1057.0, 586.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -174,7 +174,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 643.0, 138.399993896484375, 107.0, 22.0 ],
+					"patching_rect" : [ 643.0, 138.399993896484375, 107.0, 23.0 ],
 					"text" : "starting... 起動中..."
 				}
 
@@ -186,7 +186,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 616.0, 114.399993896484375, 134.0, 22.0 ],
+					"patching_rect" : [ 616.0, 114.399993896484375, 134.0, 23.0 ],
 					"text" : "fetching... 歌詞取得中..."
 				}
 
@@ -198,7 +198,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 572.16668701171875, 91.399993896484375, 129.0, 22.0 ],
+					"patching_rect" : [ 572.16668701171875, 91.399993896484375, 129.0, 23.0 ],
 					"text" : "recognizing... 認識中..."
 				}
 
@@ -246,7 +246,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 536.16668701171875, 65.399993896484375, 118.0, 22.0 ],
+					"patching_rect" : [ 536.16668701171875, 65.399993896484375, 118.0, 23.0 ],
 					"text" : "recording... 録音中..."
 				}
 
@@ -507,14 +507,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 5,
+							"minor" : 1,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 546.0, 198.0, 1218.0, 480.0 ],
+						"rect" : [ 428.0, 277.0, 1218.0, 431.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1966,20 +1966,20 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-5::obj-28" : [ "function[7]", "function", 0 ],
-			"obj-32" : [ "live.dial[2]", "live.dial[2]", 0 ],
-			"obj-5::obj-29" : [ "function[2]", "function", 0 ],
-			"obj-5::obj-8" : [ "function[4]", "function", 0 ],
-			"obj-21" : [ "toggle[5]", "toggle[5]", 0 ],
 			"obj-20" : [ "function[3]", "function", 0 ],
 			"obj-5::obj-13" : [ "function[5]", "function", 0 ],
+			"obj-32" : [ "live.dial[2]", "live.dial[2]", 0 ],
 			"obj-5::obj-14" : [ "function[6]", "function", 0 ],
-			"obj-50" : [ "live.dial[3]", "metro", 0 ],
-			"obj-5::obj-49" : [ "live.dial[1]", "live.dial", 0 ],
-			"obj-5::obj-46" : [ "live.dial", "live.dial", 0 ],
+			"obj-5::obj-28" : [ "function[7]", "function", 0 ],
+			"obj-21" : [ "toggle[5]", "toggle[5]", 0 ],
 			"obj-5::obj-19" : [ "function[1]", "function", 0 ],
-			"obj-28" : [ "umenu[3]", "umenu[3]", 0 ],
+			"obj-5::obj-8" : [ "function[4]", "function", 0 ],
+			"obj-5::obj-46" : [ "live.dial", "live.dial", 0 ],
+			"obj-50" : [ "live.dial[3]", "metro", 0 ],
 			"obj-2" : [ "umenu[1]", "umenu[1]", 0 ],
+			"obj-5::obj-49" : [ "live.dial[1]", "live.dial", 0 ],
+			"obj-28" : [ "umenu[3]", "umenu[3]", 0 ],
+			"obj-5::obj-29" : [ "function[2]", "function", 0 ],
 			"parameterbanks" : 			{
 
 			}

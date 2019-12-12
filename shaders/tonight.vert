@@ -106,7 +106,7 @@ void main() {
 
     // final = mix(shape,vec3(0.), sin(time));
     final = createTonight(wordCreateInput);
-    final = shape;
+    final = mix(final, shape, sin(time));
     // final *= size;
     // final = createProject(wordCreateInput);
 
