@@ -30,7 +30,13 @@ SceneManager::~SceneManager() {
 void SceneManager::initOsc() {
     // set container scene
     ofxSubscribeOsc(OF_PORT, "/manager/set_scene", [=](const unsigned int i, const string &scene_name) {
-        setScene(i, getSceneByName(scene_name));
+        try {
+            auto scene = getSceneByName(scene_name);
+            setScene(i, scene);
+        } catch (...) {
+            
+        }
+        
     });
     
     // set container opacity
