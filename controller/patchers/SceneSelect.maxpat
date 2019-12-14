@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 5,
+			"minor" : 1,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -89,7 +89,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-61",
-					"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop", ",", "TrainShadow", ",", "KakkuriText", ",", "PhysicsLyric", ",", "PointShadowBox" ],
+					"items" : [ "ShaderArt", ",", "VertexArt", ",", "Instancing", ",", "FeedbackObject", ",", "MeshChain", ",", "RainDrop", ",", "TrainShadow", ",", "KakkuriText", ",", "PhysicsLyric", ",", "PointShadowBox", ",", "SyphonReceiver" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -100,11 +100,11 @@
 					"presentation_rect" : [ 0.0, 0.0, 100.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_mmax" : 10,
 							"parameter_shortname" : "umenu",
-							"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop", "TrainShadow", "KakkuriText", "PhysicsLyric", "PointShadowBox" ],
+							"parameter_enum" : [ "ShaderArt", "VertexArt", "Instancing", "FeedbackObject", "MeshChain", "RainDrop", "TrainShadow", "KakkuriText", "PhysicsLyric", "PointShadowBox", "SyphonReceiver" ],
 							"parameter_type" : 2,
-							"parameter_longname" : "umenu[3]",
-							"parameter_mmax" : 9
+							"parameter_longname" : "umenu[3]"
 						}
 
 					}

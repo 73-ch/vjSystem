@@ -13,6 +13,7 @@ SceneManager::SceneManager(BasicInfos* g_info) {
     stored_scenes["KakkuriText"] = new KakkuriText(g_info);
     stored_scenes["PhysicsLyric"] = new PhysicsLyric(g_info);
     stored_scenes["PointShadowBox"] = new PointShadowBox(g_info);
+    stored_scenes["SyphonReceiver"] = new SyphonReceiver(g_info);
     
     // init container[3]
     for (size_t i = 0; i < MAX_SCENES; ++i) {
