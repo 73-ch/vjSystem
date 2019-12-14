@@ -18,6 +18,8 @@
 #include "PhysicsLyric.hpp"
 #include "PointShadowBox.h"
 #include "SyphonReceiver.hpp"
+#include "RayMarching.h"
+#include "ItanoCircus.h"
 
 #define MAX_SCENES 3
 
