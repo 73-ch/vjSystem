@@ -1,5 +1,5 @@
 vjSystem.xcodeproj
-bin/vjSystemDebug.app
+*.app
 
 controller/nodejs/node_modules/*
 controller/nodejs/package-lock.json
