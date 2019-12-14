@@ -4,10 +4,14 @@
 
 //========================================================================
 int main( ){
-    
-    cout << "choose window mode (0: main, 1: main&preview)" << endl;
     int mode;
-    cin >> mode;
+    if (getenv("SELECT_MODE_DISABLE")) {
+        mode = 0;
+    } else {
+        cout << "choose window mode (0: main, 1: main&preview)" << endl;
+        cin >> mode;
+    }
+    
     // システム環境設定で、ウィンドウの配置も行いつつ、調整を行う
     ofGLFWWindowSettings settings;
     settings.setGLVersion(3, 2);
