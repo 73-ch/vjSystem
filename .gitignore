@@ -1,4 +1,4 @@
-vjSystem.xcodeproj
+*.xcodeproj
 *.app
 
 controller/nodejs/node_modules/*
